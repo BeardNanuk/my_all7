@@ -1,0 +1,36 @@
+#!/bin/bash 
+
+## plot all vp/vs in the output folder 
+## (obspy) jiazeh@farm:~/inversion_test$ vi zplotallmodel
+## a subroutine to the zbash_try shorter 
+
+## created on Sun Nov  4 10:13:31 EST 2018
+## created by Jiaze He
+
+. zpara_headers
+
+filename2=$1   # 'vp','vs','*'(for *, see what has been excluded for plotting in zplotbin)
+
+echo 'dododo'
+echo 'jobs_perchuck' $jobs_perchuck
+for i in `seq 0 $Nloop`;do
+        for j in `seq 1 $jobs_perchuck` ;do
+        k=$(($jobs_perchuck*$i+$j))
+        if [ "$k" -le "$Nit" ]
+        then
+        #break  # Skip entire rest of loop.
+        #fi
+        K="$(printf "%04d" $k)"
+        dirname=$(printf "./output/model_$K")
+        fullp=$(printf "./output/model_$K_$filename2.bin");
+        echo $fullp
+        ./zplotbin $dirname $filename2 $k &
+            #cp $REP/model_true/*_[xz].bin $REP/output/model_$K
+            #python $REP/plotbin $REP/output/model_$K $REP/Images/$variable/model/It$K $variable  >> xxx &
+            #./plot_grad_and_diff $k $variable $REP/Images/$variable/analyse/It$K >> xxx &
+        fi
+        done
+wait
+done
+echo 'jobs_perchuck' $jobs_perchuck
+echo 'Nloop' $Nloop

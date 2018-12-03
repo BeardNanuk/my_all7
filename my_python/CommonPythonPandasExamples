@@ -1,0 +1,169 @@
+#! /user/bin/python
+
+
+import pandas as pd
+import numpy as np
+
+def answer_one():
+    xls_file = pd.ExcelFile('Energy Indicators.xls')
+    energy = xls_file.parse(skiprows=17,skip_footer=(38))
+    energyAll = xls_file.parse('Energy')
+    energytry = xls_file.parse(skiprows=17,skip_footer=(38))
+    energytry = energytry.drop(['Unnamed: 0','Unnamed: 1'],1)
+    # reset columns to the required
+    energytry.columns=['Country', 'Energy Supply', 'Energy Supply per Capita', '% Renewable']
+    energytry2=energytry.copy()
+    # replace ''...' with np.NaN and converted to NaN
+    energytry2[['Energy Supply', 'Energy Supply per Capita', '% Renewable']]=energytry2[['Energy Supply', 'Energy Supply per Capita', '% Renewable']].replace('...',np.NaN).apply(pd.to_numeric)
+    # convert  petajoule to gigajoules
+    energytry2['Energy Supply'] = energytry2['Energy Supply']*1000000
+    # "\d" is digit    " \(.*\)" 
+    energytry2['Country'].replace(regex=True,inplace=True,to_replace=r'\d',value=r'')
+    energytry2['Country'].replace(regex=True,inplace=True,to_replace=r' \(.*\)',value=r'')
+    # replaced the four required countries 
+    energytry2['Country']=energytry2['Country'].replace({"Republic of Korea": "South Korea", "United States of America": "United States", "United Kingdom of Great Britain and Northern Ireland": "United Kingdom", "China, Hong Kong Special Administrative Region": "Hong Kong"}) 
+    # check if replacement works 
+    energytry2[(energytry2['Country']=='South Korea') | (energytry2['Country']=='United Kingdom') | (energytry2['Country']=='United States')| (energytry2['Country']=='Hong Kong')]
+
+    GDP = pd.read_csv('world_bank.csv',skiprows=4)
+    GDP2 = GDP.copy()
+     # replaced the four required countries 
+    GDP2['Country Name']=GDP2['Country Name'].replace({"Korea, Rep.": "South Korea", "Iran, Islamic Rep.": "Iran", "Hong Kong SAR, China": "Hong Kong"}) 
+     # check if replacement works 
+    GDP2[(GDP2['Country Name']=='South Korea') | (GDP2['Country Name']=='Iran') | (GDP2['Country Name']=='Hong Kong')]
+    GDP3 = GDP2
+    GDP4 = GDP3[['Country Name','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015']]
+    
+    
+    ScimEn = pd.read_excel(io='scimagojr-3.xlsx')
+    ScimEn2 = ScimEn[:15]
+    part1 = pd.merge(energytry2,GDP4,how='left',left_on = 'Country', right_on='Country Name')
+    part1.drop('Country Name',axis=1, inplace=True)
+    part2 = pd.merge(ScimEn2,part1,how='inner', left_on = 'Country', right_on = 'Country')
+    final = part2.set_index('Country')
+    
+    return final
+
+
+answer_one()
+
+
+
+# apply, applymap, map
+Summing up, apply works on a row / column basis of a DataFrame, applymap works element-wise on a DataFrame, and map works element-wise on a Series.
+
+
+
+# k-means clustering Example 
+#Let's make some fake data that includes people clustered by income and age, randomly:
+
+from numpy import random, array
+
+#Create fake income/age clusters for N people in k clusters
+def createClusteredData(N, k):
+    random.seed(10)
+    pointsPerCluster = float(N)/k
+    X = []
+    for i in range (k):
+        incomeCentroid = random.uniform(20000.0, 200000.0)
+        ageCentroid = random.uniform(20.0, 70.0)
+        for j in range(int(pointsPerCluster)):
+            X.append([random.normal(incomeCentroid, 10000.0), random.normal(ageCentroid, 2.0)])
+    X = array(X)
+    return X
+
+%matplotlib inline
+
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import scale
+from numpy import random, float
+
+data = createClusteredData(100, 5)
+model = KMeans(n_clusters=5)
+# Note I'm scaling the data to normalize it! Important for good results.
+model = model.fit(scale(data))
+# We can look at the clusters each data point was assigned to
+print(model.labels_)
+# And we'll visualize it:
+plt.figure(figsize=(8, 6))
+plt.scatter(data[:,0], data[:,1], c=model.labels_.astype(float))
+plt.show()
+
+
+############### KNN exmaple start 
+
+
+import pandas as pd
+
+r_cols = ['user_id', 'movie_id', 'rating']
+ratings = pd.read_csv('e:/sundog-consult/udemy/datascience/ml-100k/u.data', sep='\t', names=r_cols, usecols=range(3))
+ratings.head()
+
+import numpy as np
+
+movieProperties = ratings.groupby('movie_id').agg({'rating': [np.size, np.mean]})
+movieProperties.head()
+
+
+movieNumRatings = pd.DataFrame(movieProperties['rating']['size'])
+movieNormalizedNumRatings = movieNumRatings.apply(lambda x: (x - np.min(x)) / (np.max(x) - np.min(x)))
+movieNormalizedNumRatings.head()
+
+movieDict = {}
+with open(r'/home/j2/Desktop/PythonTry/DataScience-Python3/ml-100k/u.item','r',encoding="ISO-8859-1") as f:
+    temp = ''
+    for line in f:
+        #line.decode("ISO-8859-1")
+        fields = line.rstrip('\n').split('|')
+        movieID = int(fields[0])
+        name = fields[1]
+        genres = fields[5:25]
+        genres = map(int, genres)
+        movieDict[movieID] = (name, np.array(list(genres)), movieNormalizedNumRatings.loc[movieID].get('size'), movieProperties.loc[movieID].rating.get('mean'))
+
+
+print(movieDict[1])        
+
+from scipy import spatial
+
+def ComputeDistance(a, b):
+    genresA = a[1]
+    genresB = b[1]
+    genreDistance = spatial.distance.cosine(genresA, genresB)
+    popularityA = a[2]
+    popularityB = b[2]
+    popularityDistance = abs(popularityA - popularityB)
+    return genreDistance + popularityDistance
+    
+    
+ComputeDistance(movieDict[2], movieDict[4])
+
+
+import operator
+
+def getNeighbors(movieID, K):
+    distances = []
+    for movie in movieDict:
+        if (movie != movieID):
+            dist = ComputeDistance(movieDict[movieID], movieDict[movie])
+            distances.append((movie, dist))
+    distances.sort(key=operator.itemgetter(1))
+    neighbors = []
+    for x in range(K):
+        neighbors.append(distances[x][0])
+    return neighbors
+
+K = 10
+avgRating = 0
+neighbors = getNeighbors(1, K)
+for neighbor in neighbors:
+    avgRating += movieDict[neighbor][3]
+    print (movieDict[neighbor][0] + " " + str(movieDict[neighbor][3]))
+    
+avgRating /= K
+
+#comparison 
+avgRating
+movieDict[1]
+############### KNN exmaple end

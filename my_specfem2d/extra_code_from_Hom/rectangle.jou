@@ -1,0 +1,45 @@
+create surface rectangle width 100 height 100 zplane 
+surface 1  size 1
+surface 1  size 10
+surface 1  size 10
+surface 1  size 10
+mesh surface 1 
+surface 1  size 10
+imprint all
+compress all
+merge all
+save as "/home/hgharti/meshes/jason/rectangle.cub" overwrite
+graphics triad off
+undo group begin
+label node Off
+display
+undo group end
+undo group begin
+label hex Off
+display
+undo group end
+set duplicate block elements off
+block 1 surface 1  
+Sideset 1 curve 4 3 2  
+sideset 1 name 'absorbing_boundary'
+Sideset 2 curve 1  
+sideset 2 name 'free_boundary'
+Sideset 3 edge 102 121 140  wrt face 33 43 53 
+sideset 3 name 'force_boundary'
+merge all
+compress all
+save as "/home/hgharti/meshes/jason/rectangle.cub" overwrite
+draw Block 1
+draw Sideset 1
+save as "/home/hgharti/meshes/jason/rectangle.cub" overwrite
+undo group begin
+set large exodus file on
+export mesh "/home/hgharti/meshes/jason/rectangle.e" dimension 3 overwrite
+undo group end
+block all element type quad4
+save as "/home/hgharti/meshes/jason/rectangle.cub" overwrite
+save as "/home/hgharti/meshes/jason/rectangle.cub" overwrite
+undo group begin
+set large exodus file on
+export mesh "/home/hgharti/meshes/jason/rectangle.e" dimension 3 overwrite
+undo group end

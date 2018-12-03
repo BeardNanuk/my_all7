@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "open my trello board to record things I learned and did"
+
+firefox "https://www.princeton.edu/geosciences/people/index.xml?all=yes"
+
+

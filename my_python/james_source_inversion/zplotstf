@@ -1,0 +1,27 @@
+#!/usr/bin/env python
+
+#import os
+#print("The python script has been invoked successfully")
+#print(os.environ['flag_seismotype'])
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+from myFormat.ze_plot_summary import one_signal_plot,txt_signal_load
+
+#one_signal_plot(t,nd_a[1,:],figtitle='hey',y_label='foo')
+
+stf_load = np.loadtxt("src_csic_jp_results/z2istf_trstar090_trend091")
+#stf_load = txt_signal_load()
+one_signal_plot(stf_load[:,0],stf_load[:,1])
+#one_signal_plot(stf_load[:,0],stf_load[:,1],figtitle='hey',y_label='foo')
+
+#stf_load = np.loadtxt("OUTPUT_FILES/plot_source_time_function.txt")
+#print('stf_load shape',stf_load.shape)
+
+#plt.plot(stf_load[:,0],stf_load[:,1])
+#plt.show()
+
+
+
+

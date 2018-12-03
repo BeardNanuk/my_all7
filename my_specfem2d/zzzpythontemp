@@ -1,0 +1,6 @@
+#!/usr/bin/env python
+
+import os
+print("The python script has been invoked successfully")
+print(os.environ['flag_seismotype'])
+

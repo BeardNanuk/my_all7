@@ -1,0 +1,6 @@
+#!/bin/bash
+
+ssh -Y jiazeh@nobel.princeton.edu
+
+
+

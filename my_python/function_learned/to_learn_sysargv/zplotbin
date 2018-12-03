@@ -1,0 +1,40 @@
+#!/bin/bash
+''''exec python -W ignore -- "$0" "$@" # '''
+
+
+import os
+import sys
+import numpy as np
+import matplotlib.pyplot as plt
+import pylab
+from glob import glob
+from os.path import abspath, join
+from seisflows.plugins.solver_io.fortran_binary import _read
+from seisflows.tools.tools import exists
+
+
+
+dirname = sys.argv[1]
+filenames2 = sys.argv[2]
+filenames = glob(dirname+'/'+'proc000000_' + filenames2 + '.bin*')
+filenames_inside = dirname+'/'+'proc000000_' + filenames2 + '.bin*'
+filenames_temp = glob(dirname+'/'+'proc000000_' + filenames2 + '.bin*')
+filenames.sort()
+
+
+print(dirname)
+print dirname
+
+print(filenames2)
+
+print(filenames_inside) 
+
+print(filenames_temp)
+
+
+print(filenames)
+
+
+
+
+

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "open my common_specfem3d file"
+
+
+
+vi $HOME/Desktop/my_files/my_specfem3d/common_specfem3d
+

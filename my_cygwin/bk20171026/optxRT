@@ -1,0 +1,14 @@
+#!/bin/sh
+echo "Tex setup for Radon SHMIJ"
+cygstart /cygdrive/c/Program\ Files\ \(x86\)/Texmaker/texmaker.exe
+cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/SHMIJ2017/LlrtmShmPaperBk
+cygstart /cygdrive/d/dk_ze/D\ SHM
+cygstart /cygdrive/d/dk_ze/Radon_transform/\!Radon_paper/\!paper/figures
+cygstart /cygdrive/d/dk_ze/Current\ Research/Conferences/2017\ IWSHM/PPT/material
+cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/SHMIJ2017/LlrtmShmPaperBk/References_Radon_SHMIJ
+cygstart chrome "https://scholar-google-com.prox.lib.ncsu.edu/"
+cygstart firefox "http://www.thefreedictionary.com/serve"
+cygstart /cygdrive/c/Program\ Files/Tracker\ Software/PDF\ Viewer/PDFXCview.exe
+#cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/SAGE\ LaTeX\ template/mybibfile_v2.bib
+cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/SHMIJ2017/LlrtmShmPaperBk/RadonSHMv30_20170917.tex
+cygstart TeXworks mybibfile_v6_20170921

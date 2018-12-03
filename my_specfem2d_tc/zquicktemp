@@ -1,0 +1,21 @@
+#!/bin/bash
+
+        Xint=1.0
+        Yint=1000.0
+        Clip_percent=90
+
+./savesismo ./OUTPUT_FILES/Up_file_single.su -save=./OUTPUT_FILES/seismo.png -c=$Clip_percent -xint=$Xint -yint=$Yint > /dev/null &
+
+python zconvert_su_to_mat
+python zsavesismo
+
+
+
+
+
+
+
+
+
+
+

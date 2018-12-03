@@ -1,0 +1,1545 @@
+total 20
+drwxrwxr-x.  8 jiazeh jiazeh  206 Jun 13 22:18 .
+drwx------. 29 jiazeh jiazeh 4096 Jun 13 22:43 ..
+drwxrwxr-x.  4 jiazeh jiazeh  171 Jun  8 20:39 docs
+drwxrwxr-x.  8 jiazeh jiazeh  211 Jun  8 20:39 .git
+-rw-rw-r--.  1 jiazeh jiazeh   50 Jun  8 20:39 .gitignore
+-rw-rw-r--.  1 jiazeh jiazeh 1299 Jun  8 20:39 LICENSE
+drwxrwxr-x.  2 jiazeh jiazeh  227 Jun 10 22:19 model_init
+-rw-rw-r--.  1 jiazeh jiazeh 2594 Jun  8 20:39 README.md
+drwxrwxr-x.  3 jiazeh jiazeh  129 Jun 13 22:35 scripts
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 seisflows
+drwxrwxr-x.  3 jiazeh jiazeh  229 Jun  8 21:06 tests
+-rw-rw-r--.  1 jiazeh jiazeh  366 Jun  8 20:39 .travis.yml
+
+./docs:
+total 40
+drwxrwxr-x. 4 jiazeh jiazeh  171 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh  206 Jun 13 22:18 ..
+-rw-rw-r--. 1 jiazeh jiazeh 8367 Jun  8 20:39 conf.py
+-rw-rw-r--. 1 jiazeh jiazeh 2381 Jun  8 20:39 index.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1675 Jun  8 20:39 instructions_local.rst
+-rw-rw-r--. 1 jiazeh jiazeh 7673 Jun  8 20:39 instructions_remote.rst
+-rw-rw-r--. 1 jiazeh jiazeh 6774 Jun  8 20:39 Makefile
+drwxrwxr-x. 2 jiazeh jiazeh 4096 Jun  8 20:39 ref
+drwxrwxr-x. 2 jiazeh jiazeh   55 Jun  8 20:39 usage
+
+./docs/ref:
+total 72
+drwxrwxr-x. 2 jiazeh jiazeh 4096 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh  171 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh  223 Jun  8 20:39 modules.rst
+-rw-rw-r--. 1 jiazeh jiazeh  652 Jun  8 20:39 seisflows.extensions.optimize.rst
+-rw-rw-r--. 1 jiazeh jiazeh  431 Jun  8 20:39 seisflows.extensions.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1405 Jun  8 20:39 seisflows.extensions.solver.rst
+-rw-rw-r--. 1 jiazeh jiazeh  631 Jun  8 20:39 seisflows.extensions.system.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1130 Jun  8 20:39 seisflows.extensions.workflow.rst
+-rw-rw-r--. 1 jiazeh jiazeh  929 Jun  8 20:39 seisflows.optimize.lib.rst
+-rw-rw-r--. 1 jiazeh jiazeh  441 Jun  8 20:39 seisflows.optimize.rst
+-rw-rw-r--. 1 jiazeh jiazeh  392 Jun  8 20:39 seisflows.postprocess.rst
+-rw-rw-r--. 1 jiazeh jiazeh  386 Jun  8 20:39 seisflows.preprocess.rst
+-rw-rw-r--. 1 jiazeh jiazeh  401 Jun  8 20:39 seisflows.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1684 Jun  8 20:39 seisflows.seistools.rst
+-rw-rw-r--. 1 jiazeh jiazeh  780 Jun  8 20:39 seisflows.seistools.segy.rst
+-rw-rw-r--. 1 jiazeh jiazeh  538 Jun  8 20:39 seisflows.solver.rst
+-rw-rw-r--. 1 jiazeh jiazeh  872 Jun  8 20:39 seisflows.system.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1018 Jun  8 20:39 seisflows.tools.rst
+-rw-rw-r--. 1 jiazeh jiazeh  729 Jun  8 20:39 seisflows.workflow.rst
+
+./docs/usage:
+total 20
+drwxrwxr-x. 2 jiazeh jiazeh    55 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh   171 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh    53 Jun  8 20:39 contents.rst
+-rw-rw-r--. 1 jiazeh jiazeh 12667 Jun  8 20:39 usage.rst
+
+./.git:
+total 32
+drwxrwxr-x. 8 jiazeh jiazeh   211 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh   206 Jun 13 22:18 ..
+drwxrwxr-x. 2 jiazeh jiazeh     6 Jun  8 20:39 branches
+-rw-rw-r--. 1 jiazeh jiazeh   265 Jun  8 20:39 config
+-rw-rw-r--. 1 jiazeh jiazeh    73 Jun  8 20:39 description
+-rw-rw-r--. 1 jiazeh jiazeh    23 Jun  8 20:39 HEAD
+drwxrwxr-x. 2 jiazeh jiazeh   242 Jun  8 20:39 hooks
+-rw-rw-r--. 1 jiazeh jiazeh 13648 Jun  8 20:39 index
+drwxrwxr-x. 2 jiazeh jiazeh    29 Jun  8 20:39 info
+drwxrwxr-x. 3 jiazeh jiazeh    30 Jun  8 20:39 logs
+drwxrwxr-x. 4 jiazeh jiazeh    30 Jun  8 20:39 objects
+-rw-rw-r--. 1 jiazeh jiazeh   304 Jun  8 20:39 packed-refs
+drwxrwxr-x. 5 jiazeh jiazeh    62 Jun  8 20:39 refs
+
+./.git/branches:
+total 0
+drwxrwxr-x. 2 jiazeh jiazeh   6 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+
+./.git/hooks:
+total 40
+drwxrwxr-x. 2 jiazeh jiazeh  242 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh  211 Jun  8 20:39 ..
+-rwxrwxr-x. 1 jiazeh jiazeh  452 Jun  8 20:39 applypatch-msg.sample
+-rwxrwxr-x. 1 jiazeh jiazeh  896 Jun  8 20:39 commit-msg.sample
+-rwxrwxr-x. 1 jiazeh jiazeh  189 Jun  8 20:39 post-update.sample
+-rwxrwxr-x. 1 jiazeh jiazeh  398 Jun  8 20:39 pre-applypatch.sample
+-rwxrwxr-x. 1 jiazeh jiazeh 1704 Jun  8 20:39 pre-commit.sample
+-rwxrwxr-x. 1 jiazeh jiazeh 1239 Jun  8 20:39 prepare-commit-msg.sample
+-rw-rw-r--. 1 jiazeh jiazeh 1348 Jun  8 20:39 pre-push.sample
+-rwxrwxr-x. 1 jiazeh jiazeh 4951 Jun  8 20:39 pre-rebase.sample
+-rwxrwxr-x. 1 jiazeh jiazeh 3611 Jun  8 20:39 update.sample
+
+./.git/info:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh  29 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 240 Jun  8 20:39 exclude
+
+./.git/logs:
+total 4
+drwxrwxr-x. 3 jiazeh jiazeh  30 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 190 Jun  8 20:39 HEAD
+drwxrwxr-x. 4 jiazeh jiazeh  46 Jun  8 20:39 refs
+
+./.git/logs/refs:
+total 0
+drwxrwxr-x. 4 jiazeh jiazeh 46 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh 30 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh 20 Jun  8 20:39 heads
+drwxrwxr-x. 3 jiazeh jiazeh 28 Jun  8 20:39 remotes
+
+./.git/logs/refs/heads:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh  20 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh  46 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 190 Jun  8 20:39 master
+
+./.git/logs/refs/remotes:
+total 0
+drwxrwxr-x. 3 jiazeh jiazeh 28 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh 46 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh 26 Jun  8 20:39 origin
+
+./.git/logs/refs/remotes/origin:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh  26 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh  28 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 190 Jun  8 20:39 HEAD
+
+./.git/objects:
+total 0
+drwxrwxr-x. 4 jiazeh jiazeh  30 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh  10 Jun  8 20:39 info
+drwxrwxr-x. 2 jiazeh jiazeh 133 Jun  8 20:39 pack
+
+./.git/objects/info:
+total 0
+drwxrwxr-x. 2 jiazeh jiazeh 10 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh 30 Jun  8 20:39 ..
+
+./.git/objects/pack:
+total 23880
+drwxrwxr-x. 2 jiazeh jiazeh      133 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh       30 Jun  8 20:39 ..
+-r--r--r--. 1 jiazeh jiazeh   248648 Jun  8 20:39 pack-e27140d51e5bfba2cc2a01ace3e92f7c3ff9e684.idx
+-r--r--r--. 1 jiazeh jiazeh 24202029 Jun  8 20:39 pack-e27140d51e5bfba2cc2a01ace3e92f7c3ff9e684.pack
+
+./.git/refs:
+total 0
+drwxrwxr-x. 5 jiazeh jiazeh  62 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh  28 Jun  8 20:39 heads
+drwxrwxr-x. 3 jiazeh jiazeh  28 Jun  8 20:39 remotes
+drwxrwxr-x. 2 jiazeh jiazeh   6 Jun  8 20:39 tags
+
+./.git/refs/heads:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh 28 Jun  8 20:39 .
+drwxrwxr-x. 5 jiazeh jiazeh 62 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 41 Jun  8 20:39 master
+
+./.git/refs/remotes:
+total 0
+drwxrwxr-x. 3 jiazeh jiazeh 28 Jun  8 20:39 .
+drwxrwxr-x. 5 jiazeh jiazeh 62 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh 26 Jun  8 20:39 origin
+
+./.git/refs/remotes/origin:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh 26 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh 28 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 32 Jun  8 20:39 HEAD
+
+./.git/refs/tags:
+total 0
+drwxrwxr-x. 2 jiazeh jiazeh  6 Jun  8 20:39 .
+drwxrwxr-x. 5 jiazeh jiazeh 62 Jun  8 20:39 ..
+
+./model_init:
+total 4396
+drwxrwxr-x. 2 jiazeh jiazeh    227 Jun 10 22:19 .
+drwxrwxr-x. 8 jiazeh jiazeh    206 Jun 13 22:18 ..
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_jacobian.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640020 Jun 10 22:19 proc000000_NSPEC_ibool.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_rho.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_vp.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_vs.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_x.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_z.bin
+
+./scripts:
+total 16
+drwxrwxr-x. 3 jiazeh jiazeh  129 Jun 13 22:35 .
+drwxrwxr-x. 8 jiazeh jiazeh  206 Jun 13 22:18 ..
+-rwxrwxr-x. 1 jiazeh jiazeh   42 Jun  8 20:39 sfclean
+-rwxrwxr-x. 1 jiazeh jiazeh 1141 Jun 13 22:33 sfexamples
+-rwxrwxr-x. 1 jiazeh jiazeh 1308 Jun  8 20:39 sfresume
+lrwxrwxrwx. 1 jiazeh jiazeh    8 Jun  8 20:39 sfrun -> sfsubmit
+-rwxrwxr-x. 1 jiazeh jiazeh 1035 Jun  8 20:39 sfsubmit
+drwxrwxr-x. 3 jiazeh jiazeh   70 Jun 13 22:36 visualize
+
+./scripts/visualize:
+total 8
+drwxrwxr-x. 3 jiazeh jiazeh   70 Jun 13 22:36 .
+drwxrwxr-x. 3 jiazeh jiazeh  129 Jun 13 22:35 ..
+-rwxrwxr-x. 1 jiazeh jiazeh 2488 Jun  8 20:39 sfplot
+-rwxrwxr-x. 1 jiazeh jiazeh 1668 Jun  8 20:39 sfsection
+drwxrwxr-x. 2 jiazeh jiazeh   50 Jun  8 20:39 specfem2d
+
+./scripts/visualize/specfem2d:
+total 8
+drwxrwxr-x. 2 jiazeh jiazeh   50 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh   70 Jun 13 22:36 ..
+-rwxrwxr-x. 1 jiazeh jiazeh 2753 Jun  8 20:39 plotgll
+-rwxrwxr-x. 1 jiazeh jiazeh 2332 Jun  8 20:39 quickplot
+
+./seisflows:
+total 44
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 .
+drwxrwxr-x.  8 jiazeh jiazeh  206 Jun 13 22:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 6784 Jun  8 20:39 config.py
+-rw-rw-r--.  1 jiazeh jiazeh 8626 Jun 10 23:18 config.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  233 Jun 10 22:41 __init__.pyc
+drwxrwxr-x.  2 jiazeh jiazeh  207 Jun 11 17:33 optimize
+drwxrwxr-x.  7 jiazeh jiazeh 4096 Jun 11 20:37 plugins
+drwxrwxr-x.  2 jiazeh jiazeh  118 Jun 10 23:24 postprocess
+drwxrwxr-x.  2 jiazeh jiazeh  150 Jun 10 23:18 preprocess
+drwxrwxr-x.  2 jiazeh jiazeh  231 Jun 11 19:57 solver
+drwxrwxr-x.  3 jiazeh jiazeh 4096 Jun 10 23:18 system
+drwxrwxr-x.  2 jiazeh jiazeh 4096 Jun 11 00:18 tools
+drwxrwxr-x.  2 jiazeh jiazeh 4096 Jun 11 17:33 workflow
+
+./seisflows/optimize:
+total 52
+drwxrwxr-x.  2 jiazeh jiazeh  207 Jun 11 17:33 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 9252 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 9139 Jun 10 23:24 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  242 Jun 10 23:24 __init__.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 1412 Jun  8 20:39 LBFGS.py
+-rw-rw-r--.  1 jiazeh jiazeh 2103 Jun 10 23:24 LBFGS.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 1279 Jun  8 20:39 NLCG.py
+-rw-rw-r--.  1 jiazeh jiazeh 2012 Jun 11 17:33 NLCG.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  770 Jun  8 20:39 steepest_descent.py
+
+./seisflows/plugins:
+total 52
+drwxrwxr-x.  7 jiazeh jiazeh 4096 Jun 11 20:37 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 3254 Jun 10 23:39 adjoint.py
+-rw-rw-r--.  1 jiazeh jiazeh 4432 Jun 10 23:39 adjoint.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  241 Jun 10 22:41 __init__.pyc
+drwxrwxr-x.  2 jiazeh jiazeh  190 Jun 10 23:24 line_search
+-rw-rw-r--.  1 jiazeh jiazeh 2373 Jun  8 20:39 misfit.py
+-rw-rw-r--.  1 jiazeh jiazeh 3727 Jun 10 23:24 misfit.pyc
+drwxrwxr-x.  2 jiazeh jiazeh  213 Jun 10 23:24 optimize
+drwxrwxr-x.  2 jiazeh jiazeh   84 Jun 10 23:24 preconds
+-rw-rw-r--.  1 jiazeh jiazeh 1214 Jun  8 20:39 readers.py
+-rw-rw-r--.  1 jiazeh jiazeh 1391 Jun 10 23:24 readers.pyc
+drwxrwxr-x.  3 jiazeh jiazeh  181 Jun 10 23:24 solver
+drwxrwxr-x.  2 jiazeh jiazeh  136 Jun 10 22:41 solver_io
+-rw-rw-r--.  1 jiazeh jiazeh  810 Jun  8 20:39 wavelets.py
+-rw-rw-r--.  1 jiazeh jiazeh 1102 Jun  8 20:39 writers.py
+-rw-rw-r--.  1 jiazeh jiazeh 1234 Jun 10 23:24 writers.pyc
+
+./seisflows/plugins/line_search:
+total 40
+drwxrwxr-x. 2 jiazeh jiazeh  190 Jun 10 23:24 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh 1857 Jun  8 20:39 backtrack.py
+-rw-rw-r--. 1 jiazeh jiazeh 2093 Jun 10 23:24 backtrack.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 3939 Jun  8 20:39 base.py
+-rw-rw-r--. 1 jiazeh jiazeh 5137 Jun 10 23:24 base.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 2845 Jun  8 20:39 bracket.py
+-rw-rw-r--. 1 jiazeh jiazeh 2919 Jun 10 23:24 bracket.pyc
+-rw-rw-r--. 1 jiazeh jiazeh   84 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  308 Jun 10 23:24 __init__.pyc
+
+./seisflows/plugins/optimize:
+total 52
+drwxrwxr-x. 2 jiazeh jiazeh  213 Jun 10 23:24 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh  178 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  299 Jun 10 23:24 __init__.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 4106 Jun  8 20:39 LBFGS.py
+-rw-rw-r--. 1 jiazeh jiazeh 5011 Jun 10 23:24 LBFGS.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 2078 Jun  8 20:39 LCG.py
+-rw-rw-r--. 1 jiazeh jiazeh 2864 Jun 10 23:24 LCG.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 2540 Jun  8 20:39 NLCG.py
+-rw-rw-r--. 1 jiazeh jiazeh 3659 Jun 10 23:24 NLCG.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 3039 Jun  8 20:39 PLCG.py
+-rw-rw-r--. 1 jiazeh jiazeh 3226 Jun 10 23:24 PLCG.pyc
+
+./seisflows/plugins/preconds:
+total 20
+drwxrwxr-x. 2 jiazeh jiazeh   84 Jun 10 23:24 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh  818 Jun  8 20:39 diagonal.py
+-rw-rw-r--. 1 jiazeh jiazeh 1406 Jun 10 23:24 diagonal.pyc
+-rw-rw-r--. 1 jiazeh jiazeh  101 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  205 Jun 10 23:24 __init__.pyc
+
+./seisflows/plugins/solver:
+total 24
+drwxrwxr-x. 3 jiazeh jiazeh  181 Jun 10 23:24 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh    0 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  146 Jun 10 23:24 __init__.pyc
+drwxrwxr-x. 2 jiazeh jiazeh   28 Jun  8 20:39 specfem2d
+-rw-rw-r--. 1 jiazeh jiazeh 3232 Jun  8 20:39 specfem2d.py
+-rw-rw-r--. 1 jiazeh jiazeh 3033 Jun 10 23:24 specfem2d.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 1228 Jun  8 20:39 specfem3d_globe.py
+-rw-rw-r--. 1 jiazeh jiazeh 1085 Jun  8 20:39 specfem3d.py
+
+./seisflows/plugins/solver/specfem2d:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh  28 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh 181 Jun 10 23:24 ..
+-rw-rw-r--. 1 jiazeh jiazeh 192 Jun  8 20:39 SOURCE
+
+./seisflows/plugins/solver_io:
+total 24
+drwxrwxr-x. 2 jiazeh jiazeh  136 Jun 10 22:41 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh  617 Jun  8 20:39 adios.py
+-rw-rw-r--. 1 jiazeh jiazeh 1658 Jun  8 20:39 fortran_binary.py
+-rw-rw-r--. 1 jiazeh jiazeh 2493 Jun 10 22:41 fortran_binary.pyc
+-rw-rw-r--. 1 jiazeh jiazeh  183 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  185 Jun 10 22:41 __init__.pyc
+
+./seisflows/postprocess:
+total 20
+drwxrwxr-x.  2 jiazeh jiazeh  118 Jun 10 23:24 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 3955 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 3349 Jun 10 23:24 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  386 Jun  8 20:39 default.py
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  245 Jun 10 23:24 __init__.pyc
+
+./seisflows/preprocess:
+total 44
+drwxrwxr-x.  2 jiazeh jiazeh   150 Jun 10 23:18 .
+drwxrwxr-x. 10 jiazeh jiazeh   257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 12213 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 11014 Jun 10 23:18 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   418 Jun  8 20:39 default.py
+-rw-rw-r--.  1 jiazeh jiazeh  5809 Jun  8 20:39 double_difference.py
+-rw-rw-r--.  1 jiazeh jiazeh    77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh   244 Jun 10 23:18 __init__.pyc
+
+./seisflows/solver:
+total 96
+drwxrwxr-x.  2 jiazeh jiazeh   231 Jun 11 19:57 .
+drwxrwxr-x. 10 jiazeh jiazeh   257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 19236 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 19685 Jun 10 23:24 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh    77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh   240 Jun 10 23:24 __init__.pyc
+-rw-r--r--.  1 jiazeh jiazeh  8722 Jun 10 23:15 specfem2d_new.py
+-rw-r--r--.  1 jiazeh jiazeh  9646 Jun 10 23:24 specfem2d_new.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  6488 Jun  8 20:39 specfem2d.py
+-rw-rw-r--.  1 jiazeh jiazeh  7020 Jun  8 20:39 specfem3d_globe.py
+-rw-rw-r--.  1 jiazeh jiazeh  6762 Jun  8 20:39 specfem3d.py
+
+./seisflows/system:
+total 104
+drwxrwxr-x.  3 jiazeh jiazeh 4096 Jun 10 23:18 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 1305 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 2292 Jun 10 23:18 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  240 Jun 10 23:18 __init__.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 8275 Jun  8 20:39 lsf_lg.py
+-rw-rw-r--.  1 jiazeh jiazeh   26 Jun  8 20:39 lsf_sm.py
+-rw-rw-r--.  1 jiazeh jiazeh 3492 Jun  8 20:39 multicore.py
+-rw-rw-r--.  1 jiazeh jiazeh 4070 Jun 10 23:18 multicore.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 1200 Jun  8 20:39 multithreaded.py
+-rw-rw-r--.  1 jiazeh jiazeh 8478 Jun  8 20:39 pbs_lg.py
+-rw-rw-r--.  1 jiazeh jiazeh 6118 Jun  8 20:39 pbs_sm.py
+-rw-rw-r--.  1 jiazeh jiazeh 3509 Jun  8 20:39 serial.py
+-rw-rw-r--.  1 jiazeh jiazeh 4021 Jun 10 23:18 serial.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 8527 Jun  8 20:39 slurm_lg.py
+-rw-rw-r--.  1 jiazeh jiazeh 5283 Jun  8 20:39 slurm_sm.py
+-rw-rw-r--.  1 jiazeh jiazeh 1258 Jun  8 20:39 tiger_lg.py
+-rw-rw-r--.  1 jiazeh jiazeh 1147 Jun  8 20:39 tiger_sm.py
+drwxrwxr-x.  2 jiazeh jiazeh   58 Jun  8 20:39 wrappers
+
+./seisflows/system/wrappers:
+total 16
+drwxrwxr-x. 2 jiazeh jiazeh   58 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh 4096 Jun 10 23:18 ..
+-rwxrwxr-x. 1 jiazeh jiazeh  231 Jun  8 20:39 dsh
+-rwxrwxr-x. 1 jiazeh jiazeh  978 Jun  8 20:39 run
+-rwxrwxr-x. 1 jiazeh jiazeh  478 Jun  8 20:39 submit
+
+./seisflows/tools:
+total 132
+drwxrwxr-x.  2 jiazeh jiazeh 4096 Jun 11 00:18 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 3801 Jun  8 20:39 array.py
+-rw-rw-r--.  1 jiazeh jiazeh 4969 Jun 10 23:24 array.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  612 Jun  8 20:39 err.py
+-rw-rw-r--.  1 jiazeh jiazeh  926 Jun 10 23:18 err.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 4907 Jun  8 20:39 graphics.py
+-rw-rw-r--.  1 jiazeh jiazeh 6176 Jun 11 00:18 graphics.pyc
+-rw-rw-r--.  1 jiazeh jiazeh    0 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  137 Jun 10 22:41 __init__.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 4412 Jun  8 20:39 math.py
+-rw-rw-r--.  1 jiazeh jiazeh 7462 Jun 10 23:24 math.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 5629 Jun  8 20:39 msg.py
+-rw-rw-r--.  1 jiazeh jiazeh 5897 Jun 10 22:41 msg.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 3856 Jun  8 20:39 seismic.py
+-rw-rw-r--.  1 jiazeh jiazeh 5877 Jun 10 23:24 seismic.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 4431 Jun  8 20:39 signal.py
+-rw-rw-r--.  1 jiazeh jiazeh 5154 Jun 10 23:24 signal.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 4338 Jun  8 20:39 tools.py
+-rw-rw-r--.  1 jiazeh jiazeh 7448 Jun 10 22:41 tools.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 3102 Jun  8 20:39 unix.py
+-rw-rw-r--.  1 jiazeh jiazeh 5124 Jun 10 23:18 unix.pyc
+
+./seisflows/workflow:
+total 96
+drwxrwxr-x.  2 jiazeh jiazeh  4096 Jun 11 17:33 .
+drwxrwxr-x. 10 jiazeh jiazeh   257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh   621 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh  1306 Jun 10 23:24 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh    77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh   242 Jun 10 23:24 __init__.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  8880 Jun  8 20:39 inversion.py
+-rw-rw-r--.  1 jiazeh jiazeh 10324 Jun 10 23:24 inversion.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  3324 Jun  8 20:39 migration.py
+-rw-rw-r--.  1 jiazeh jiazeh  3427 Jun  8 20:39 test_adjoint.py
+-rw-rw-r--.  1 jiazeh jiazeh  1003 Jun  8 20:39 test_forward.py
+-rw-rw-r--.  1 jiazeh jiazeh  4350 Jun  8 20:39 test_optimize.py
+-rw-rw-r--.  1 jiazeh jiazeh  5525 Jun 11 17:33 test_optimize.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   856 Jun  8 20:39 test_postprocess.py
+-rw-rw-r--.  1 jiazeh jiazeh  5225 Jun  8 20:39 test_preprocess.py
+-rw-rw-r--.  1 jiazeh jiazeh   940 Jun  8 20:39 test_system.py
+-rw-rw-r--.  1 jiazeh jiazeh  1684 Jun 11 17:29 test_system.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  1716 Jun  8 20:39 thrifty_inversion.py
+
+./tests:
+total 28
+drwxrwxr-x. 3 jiazeh jiazeh 229 Jun  8 21:06 .
+drwxrwxr-x. 8 jiazeh jiazeh 206 Jun 13 22:18 ..
+-rwxrwxr-x. 1 jiazeh jiazeh 113 Jun  8 20:39 run_test_import
+-rwxrwxr-x. 1 jiazeh jiazeh 449 Jun  8 20:39 run_test_optimize
+-rwxrwxr-x. 1 jiazeh jiazeh 438 Jun  8 20:39 run_test_preprocess
+-rwxrwxr-x. 1 jiazeh jiazeh 395 Jun  8 20:39 run_test_system
+-rwxrwxr-x. 1 jiazeh jiazeh 155 Jun  8 20:39 run_test_tools
+-rwxrwxr-x. 1 jiazeh jiazeh 868 Jun  8 20:39 run_tiger_inversion
+-rwxrwxr-x. 1 jiazeh jiazeh 792 Jun  8 20:39 run_tiger_migration
+drwxrwxr-x. 6 jiazeh jiazeh 130 Jun  8 20:39 setup
+
+./tests/setup:
+total 4
+drwxrwxr-x. 6 jiazeh jiazeh  130 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh  229 Jun  8 21:06 ..
+-rwxrwxr-x. 1 jiazeh jiazeh 2729 Jun  8 20:39 test_import
+drwxrwxr-x. 3 jiazeh jiazeh  177 Jun 11 17:43 test_optimize
+drwxrwxr-x. 2 jiazeh jiazeh   93 Jun  8 20:39 test_preprocess
+drwxrwxr-x. 2 jiazeh jiazeh  141 Jun 11 17:31 test_system
+drwxrwxr-x. 2 jiazeh jiazeh   49 Jun  8 20:39 test_tools
+
+./tests/setup/test_optimize:
+total 20
+drwxrwxr-x. 3 jiazeh jiazeh 177 Jun 11 17:43 .
+drwxrwxr-x. 6 jiazeh jiazeh 130 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 101 Jun  8 20:39 parameters_LBFGS
+-rw-rw-r--. 1 jiazeh jiazeh 319 Jun 11 17:33 parameters_LBFGSc
+-rw-rw-r--. 1 jiazeh jiazeh 121 Jun  8 20:39 parameters_NLCG
+-rw-rw-r--. 1 jiazeh jiazeh 352 Jun 11 17:33 parameters_NLCGc
+-rw-rw-r--. 1 jiazeh jiazeh   0 Jun  8 20:39 paths
+-rw-rw-r--. 1 jiazeh jiazeh 141 Jun 11 17:33 pathsc
+drwxrwxr-x. 2 jiazeh jiazeh 111 Jun 11 17:33 problems
+
+./tests/setup/test_optimize/problems:
+total 12
+drwxrwxr-x. 2 jiazeh jiazeh  111 Jun 11 17:33 .
+drwxrwxr-x. 3 jiazeh jiazeh  177 Jun 11 17:43 ..
+-rw-rw-r--. 1 jiazeh jiazeh    0 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  499 Jun  8 20:39 rosenbrock_n.py
+-rw-rw-r--. 1 jiazeh jiazeh  313 Jun  8 20:39 rosenbrock.py
+-rw-rw-r--. 1 jiazeh jiazeh 1151 Jun 11 17:33 rosenbrock.pyc
+
+./tests/setup/test_preprocess:
+total 29544
+drwxrwxr-x. 2 jiazeh jiazeh       93 Jun  8 20:39 .
+drwxrwxr-x. 6 jiazeh jiazeh      130 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 15120000 Jun  8 20:39 data.su
+-rw-rw-r--. 1 jiazeh jiazeh      282 Jun  8 20:39 parameters
+-rw-rw-r--. 1 jiazeh jiazeh      129 Jun  8 20:39 paths
+-rw-rw-r--. 1 jiazeh jiazeh 15120000 Jun  8 20:39 synthetics.su
+
+./tests/setup/test_system:
+total 20
+drwxrwxr-x. 2 jiazeh jiazeh 141 Jun 11 17:31 .
+drwxrwxr-x. 6 jiazeh jiazeh 130 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh  62 Jun  8 20:39 parameters_multicore
+-rw-rw-r--. 1 jiazeh jiazeh 266 Jun 11 17:29 parameters_multicorec
+-rw-rw-r--. 1 jiazeh jiazeh  56 Jun  8 20:39 parameters_serial
+-rw-rw-r--. 1 jiazeh jiazeh 262 Jun 11 17:29 parameters_serialc
+-rw-rw-r--. 1 jiazeh jiazeh   0 Jun  8 20:39 paths
+-rw-rw-r--. 1 jiazeh jiazeh 139 Jun 11 17:29 pathsc
+
+./tests/setup/test_tools:
+total 8
+drwxrwxr-x. 2 jiazeh jiazeh   49 Jun  8 20:39 .
+drwxrwxr-x. 6 jiazeh jiazeh  130 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh  666 Jun  8 20:39 test_signal.py
+-rw-rw-r--. 1 jiazeh jiazeh 2019 Jun  8 20:39 test_tools.py
+total 20
+drwxrwxr-x.  8 jiazeh jiazeh  206 Jun 13 22:18 .
+drwx------. 29 jiazeh jiazeh 4096 Jun 13 22:43 ..
+drwxrwxr-x.  4 jiazeh jiazeh  171 Jun  8 20:39 docs
+drwxrwxr-x.  8 jiazeh jiazeh  211 Jun  8 20:39 .git
+-rw-rw-r--.  1 jiazeh jiazeh   50 Jun  8 20:39 .gitignore
+-rw-rw-r--.  1 jiazeh jiazeh 1299 Jun  8 20:39 LICENSE
+drwxrwxr-x.  2 jiazeh jiazeh  227 Jun 10 22:19 model_init
+-rw-rw-r--.  1 jiazeh jiazeh 2594 Jun  8 20:39 README.md
+drwxrwxr-x.  3 jiazeh jiazeh  129 Jun 13 22:35 scripts
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 seisflows
+drwxrwxr-x.  3 jiazeh jiazeh  229 Jun  8 21:06 tests
+-rw-rw-r--.  1 jiazeh jiazeh  366 Jun  8 20:39 .travis.yml
+
+./docs:
+total 40
+drwxrwxr-x. 4 jiazeh jiazeh  171 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh  206 Jun 13 22:18 ..
+-rw-rw-r--. 1 jiazeh jiazeh 8367 Jun  8 20:39 conf.py
+-rw-rw-r--. 1 jiazeh jiazeh 2381 Jun  8 20:39 index.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1675 Jun  8 20:39 instructions_local.rst
+-rw-rw-r--. 1 jiazeh jiazeh 7673 Jun  8 20:39 instructions_remote.rst
+-rw-rw-r--. 1 jiazeh jiazeh 6774 Jun  8 20:39 Makefile
+drwxrwxr-x. 2 jiazeh jiazeh 4096 Jun  8 20:39 ref
+drwxrwxr-x. 2 jiazeh jiazeh   55 Jun  8 20:39 usage
+
+./docs/ref:
+total 72
+drwxrwxr-x. 2 jiazeh jiazeh 4096 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh  171 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh  223 Jun  8 20:39 modules.rst
+-rw-rw-r--. 1 jiazeh jiazeh  652 Jun  8 20:39 seisflows.extensions.optimize.rst
+-rw-rw-r--. 1 jiazeh jiazeh  431 Jun  8 20:39 seisflows.extensions.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1405 Jun  8 20:39 seisflows.extensions.solver.rst
+-rw-rw-r--. 1 jiazeh jiazeh  631 Jun  8 20:39 seisflows.extensions.system.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1130 Jun  8 20:39 seisflows.extensions.workflow.rst
+-rw-rw-r--. 1 jiazeh jiazeh  929 Jun  8 20:39 seisflows.optimize.lib.rst
+-rw-rw-r--. 1 jiazeh jiazeh  441 Jun  8 20:39 seisflows.optimize.rst
+-rw-rw-r--. 1 jiazeh jiazeh  392 Jun  8 20:39 seisflows.postprocess.rst
+-rw-rw-r--. 1 jiazeh jiazeh  386 Jun  8 20:39 seisflows.preprocess.rst
+-rw-rw-r--. 1 jiazeh jiazeh  401 Jun  8 20:39 seisflows.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1684 Jun  8 20:39 seisflows.seistools.rst
+-rw-rw-r--. 1 jiazeh jiazeh  780 Jun  8 20:39 seisflows.seistools.segy.rst
+-rw-rw-r--. 1 jiazeh jiazeh  538 Jun  8 20:39 seisflows.solver.rst
+-rw-rw-r--. 1 jiazeh jiazeh  872 Jun  8 20:39 seisflows.system.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1018 Jun  8 20:39 seisflows.tools.rst
+-rw-rw-r--. 1 jiazeh jiazeh  729 Jun  8 20:39 seisflows.workflow.rst
+
+./docs/usage:
+total 20
+drwxrwxr-x. 2 jiazeh jiazeh    55 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh   171 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh    53 Jun  8 20:39 contents.rst
+-rw-rw-r--. 1 jiazeh jiazeh 12667 Jun  8 20:39 usage.rst
+
+./.git:
+total 32
+drwxrwxr-x. 8 jiazeh jiazeh   211 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh   206 Jun 13 22:18 ..
+drwxrwxr-x. 2 jiazeh jiazeh     6 Jun  8 20:39 branches
+-rw-rw-r--. 1 jiazeh jiazeh   265 Jun  8 20:39 config
+-rw-rw-r--. 1 jiazeh jiazeh    73 Jun  8 20:39 description
+-rw-rw-r--. 1 jiazeh jiazeh    23 Jun  8 20:39 HEAD
+drwxrwxr-x. 2 jiazeh jiazeh   242 Jun  8 20:39 hooks
+-rw-rw-r--. 1 jiazeh jiazeh 13648 Jun  8 20:39 index
+drwxrwxr-x. 2 jiazeh jiazeh    29 Jun  8 20:39 info
+drwxrwxr-x. 3 jiazeh jiazeh    30 Jun  8 20:39 logs
+drwxrwxr-x. 4 jiazeh jiazeh    30 Jun  8 20:39 objects
+-rw-rw-r--. 1 jiazeh jiazeh   304 Jun  8 20:39 packed-refs
+drwxrwxr-x. 5 jiazeh jiazeh    62 Jun  8 20:39 refs
+
+./.git/branches:
+total 0
+drwxrwxr-x. 2 jiazeh jiazeh   6 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+
+./.git/hooks:
+total 40
+drwxrwxr-x. 2 jiazeh jiazeh  242 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh  211 Jun  8 20:39 ..
+-rwxrwxr-x. 1 jiazeh jiazeh  452 Jun  8 20:39 applypatch-msg.sample
+-rwxrwxr-x. 1 jiazeh jiazeh  896 Jun  8 20:39 commit-msg.sample
+-rwxrwxr-x. 1 jiazeh jiazeh  189 Jun  8 20:39 post-update.sample
+-rwxrwxr-x. 1 jiazeh jiazeh  398 Jun  8 20:39 pre-applypatch.sample
+-rwxrwxr-x. 1 jiazeh jiazeh 1704 Jun  8 20:39 pre-commit.sample
+-rwxrwxr-x. 1 jiazeh jiazeh 1239 Jun  8 20:39 prepare-commit-msg.sample
+-rw-rw-r--. 1 jiazeh jiazeh 1348 Jun  8 20:39 pre-push.sample
+-rwxrwxr-x. 1 jiazeh jiazeh 4951 Jun  8 20:39 pre-rebase.sample
+-rwxrwxr-x. 1 jiazeh jiazeh 3611 Jun  8 20:39 update.sample
+
+./.git/info:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh  29 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 240 Jun  8 20:39 exclude
+
+./.git/logs:
+total 4
+drwxrwxr-x. 3 jiazeh jiazeh  30 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 190 Jun  8 20:39 HEAD
+drwxrwxr-x. 4 jiazeh jiazeh  46 Jun  8 20:39 refs
+
+./.git/logs/refs:
+total 0
+drwxrwxr-x. 4 jiazeh jiazeh 46 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh 30 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh 20 Jun  8 20:39 heads
+drwxrwxr-x. 3 jiazeh jiazeh 28 Jun  8 20:39 remotes
+
+./.git/logs/refs/heads:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh  20 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh  46 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 190 Jun  8 20:39 master
+
+./.git/logs/refs/remotes:
+total 0
+drwxrwxr-x. 3 jiazeh jiazeh 28 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh 46 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh 26 Jun  8 20:39 origin
+
+./.git/logs/refs/remotes/origin:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh  26 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh  28 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 190 Jun  8 20:39 HEAD
+
+./.git/objects:
+total 0
+drwxrwxr-x. 4 jiazeh jiazeh  30 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh  10 Jun  8 20:39 info
+drwxrwxr-x. 2 jiazeh jiazeh 133 Jun  8 20:39 pack
+
+./.git/objects/info:
+total 0
+drwxrwxr-x. 2 jiazeh jiazeh 10 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh 30 Jun  8 20:39 ..
+
+./.git/objects/pack:
+total 23880
+drwxrwxr-x. 2 jiazeh jiazeh      133 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh       30 Jun  8 20:39 ..
+-r--r--r--. 1 jiazeh jiazeh   248648 Jun  8 20:39 pack-e27140d51e5bfba2cc2a01ace3e92f7c3ff9e684.idx
+-r--r--r--. 1 jiazeh jiazeh 24202029 Jun  8 20:39 pack-e27140d51e5bfba2cc2a01ace3e92f7c3ff9e684.pack
+
+./.git/refs:
+total 0
+drwxrwxr-x. 5 jiazeh jiazeh  62 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh  28 Jun  8 20:39 heads
+drwxrwxr-x. 3 jiazeh jiazeh  28 Jun  8 20:39 remotes
+drwxrwxr-x. 2 jiazeh jiazeh   6 Jun  8 20:39 tags
+
+./.git/refs/heads:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh 28 Jun  8 20:39 .
+drwxrwxr-x. 5 jiazeh jiazeh 62 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 41 Jun  8 20:39 master
+
+./.git/refs/remotes:
+total 0
+drwxrwxr-x. 3 jiazeh jiazeh 28 Jun  8 20:39 .
+drwxrwxr-x. 5 jiazeh jiazeh 62 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh 26 Jun  8 20:39 origin
+
+./.git/refs/remotes/origin:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh 26 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh 28 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 32 Jun  8 20:39 HEAD
+
+./.git/refs/tags:
+total 0
+drwxrwxr-x. 2 jiazeh jiazeh  6 Jun  8 20:39 .
+drwxrwxr-x. 5 jiazeh jiazeh 62 Jun  8 20:39 ..
+
+./model_init:
+total 4396
+drwxrwxr-x. 2 jiazeh jiazeh    227 Jun 10 22:19 .
+drwxrwxr-x. 8 jiazeh jiazeh    206 Jun 13 22:18 ..
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_jacobian.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640020 Jun 10 22:19 proc000000_NSPEC_ibool.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_rho.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_vp.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_vs.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_x.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_z.bin
+
+./scripts:
+total 16
+drwxrwxr-x. 3 jiazeh jiazeh  129 Jun 13 22:35 .
+drwxrwxr-x. 8 jiazeh jiazeh  206 Jun 13 22:18 ..
+-rwxrwxr-x. 1 jiazeh jiazeh   42 Jun  8 20:39 sfclean
+-rwxrwxr-x. 1 jiazeh jiazeh 1141 Jun 13 22:33 sfexamples
+-rwxrwxr-x. 1 jiazeh jiazeh 1308 Jun  8 20:39 sfresume
+lrwxrwxrwx. 1 jiazeh jiazeh    8 Jun  8 20:39 sfrun -> sfsubmit
+-rwxrwxr-x. 1 jiazeh jiazeh 1035 Jun  8 20:39 sfsubmit
+drwxrwxr-x. 3 jiazeh jiazeh   70 Jun 13 22:36 visualize
+
+./scripts/visualize:
+total 8
+drwxrwxr-x. 3 jiazeh jiazeh   70 Jun 13 22:36 .
+drwxrwxr-x. 3 jiazeh jiazeh  129 Jun 13 22:35 ..
+-rwxrwxr-x. 1 jiazeh jiazeh 2488 Jun  8 20:39 sfplot
+-rwxrwxr-x. 1 jiazeh jiazeh 1668 Jun  8 20:39 sfsection
+drwxrwxr-x. 2 jiazeh jiazeh   50 Jun  8 20:39 specfem2d
+
+./scripts/visualize/specfem2d:
+total 8
+drwxrwxr-x. 2 jiazeh jiazeh   50 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh   70 Jun 13 22:36 ..
+-rwxrwxr-x. 1 jiazeh jiazeh 2753 Jun  8 20:39 plotgll
+-rwxrwxr-x. 1 jiazeh jiazeh 2332 Jun  8 20:39 quickplot
+
+./seisflows:
+total 44
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 .
+drwxrwxr-x.  8 jiazeh jiazeh  206 Jun 13 22:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 6784 Jun  8 20:39 config.py
+-rw-rw-r--.  1 jiazeh jiazeh 8626 Jun 10 23:18 config.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  233 Jun 10 22:41 __init__.pyc
+drwxrwxr-x.  2 jiazeh jiazeh  207 Jun 11 17:33 optimize
+drwxrwxr-x.  7 jiazeh jiazeh 4096 Jun 11 20:37 plugins
+drwxrwxr-x.  2 jiazeh jiazeh  118 Jun 10 23:24 postprocess
+drwxrwxr-x.  2 jiazeh jiazeh  150 Jun 10 23:18 preprocess
+drwxrwxr-x.  2 jiazeh jiazeh  231 Jun 11 19:57 solver
+drwxrwxr-x.  3 jiazeh jiazeh 4096 Jun 10 23:18 system
+drwxrwxr-x.  2 jiazeh jiazeh 4096 Jun 11 00:18 tools
+drwxrwxr-x.  2 jiazeh jiazeh 4096 Jun 11 17:33 workflow
+
+./seisflows/optimize:
+total 52
+drwxrwxr-x.  2 jiazeh jiazeh  207 Jun 11 17:33 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 9252 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 9139 Jun 10 23:24 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  242 Jun 10 23:24 __init__.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 1412 Jun  8 20:39 LBFGS.py
+-rw-rw-r--.  1 jiazeh jiazeh 2103 Jun 10 23:24 LBFGS.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 1279 Jun  8 20:39 NLCG.py
+-rw-rw-r--.  1 jiazeh jiazeh 2012 Jun 11 17:33 NLCG.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  770 Jun  8 20:39 steepest_descent.py
+
+./seisflows/plugins:
+total 52
+drwxrwxr-x.  7 jiazeh jiazeh 4096 Jun 11 20:37 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 3254 Jun 10 23:39 adjoint.py
+-rw-rw-r--.  1 jiazeh jiazeh 4432 Jun 10 23:39 adjoint.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  241 Jun 10 22:41 __init__.pyc
+drwxrwxr-x.  2 jiazeh jiazeh  190 Jun 10 23:24 line_search
+-rw-rw-r--.  1 jiazeh jiazeh 2373 Jun  8 20:39 misfit.py
+-rw-rw-r--.  1 jiazeh jiazeh 3727 Jun 10 23:24 misfit.pyc
+drwxrwxr-x.  2 jiazeh jiazeh  213 Jun 10 23:24 optimize
+drwxrwxr-x.  2 jiazeh jiazeh   84 Jun 10 23:24 preconds
+-rw-rw-r--.  1 jiazeh jiazeh 1214 Jun  8 20:39 readers.py
+-rw-rw-r--.  1 jiazeh jiazeh 1391 Jun 10 23:24 readers.pyc
+drwxrwxr-x.  3 jiazeh jiazeh  181 Jun 10 23:24 solver
+drwxrwxr-x.  2 jiazeh jiazeh  136 Jun 10 22:41 solver_io
+-rw-rw-r--.  1 jiazeh jiazeh  810 Jun  8 20:39 wavelets.py
+-rw-rw-r--.  1 jiazeh jiazeh 1102 Jun  8 20:39 writers.py
+-rw-rw-r--.  1 jiazeh jiazeh 1234 Jun 10 23:24 writers.pyc
+
+./seisflows/plugins/line_search:
+total 40
+drwxrwxr-x. 2 jiazeh jiazeh  190 Jun 10 23:24 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh 1857 Jun  8 20:39 backtrack.py
+-rw-rw-r--. 1 jiazeh jiazeh 2093 Jun 10 23:24 backtrack.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 3939 Jun  8 20:39 base.py
+-rw-rw-r--. 1 jiazeh jiazeh 5137 Jun 10 23:24 base.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 2845 Jun  8 20:39 bracket.py
+-rw-rw-r--. 1 jiazeh jiazeh 2919 Jun 10 23:24 bracket.pyc
+-rw-rw-r--. 1 jiazeh jiazeh   84 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  308 Jun 10 23:24 __init__.pyc
+
+./seisflows/plugins/optimize:
+total 52
+drwxrwxr-x. 2 jiazeh jiazeh  213 Jun 10 23:24 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh  178 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  299 Jun 10 23:24 __init__.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 4106 Jun  8 20:39 LBFGS.py
+-rw-rw-r--. 1 jiazeh jiazeh 5011 Jun 10 23:24 LBFGS.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 2078 Jun  8 20:39 LCG.py
+-rw-rw-r--. 1 jiazeh jiazeh 2864 Jun 10 23:24 LCG.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 2540 Jun  8 20:39 NLCG.py
+-rw-rw-r--. 1 jiazeh jiazeh 3659 Jun 10 23:24 NLCG.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 3039 Jun  8 20:39 PLCG.py
+-rw-rw-r--. 1 jiazeh jiazeh 3226 Jun 10 23:24 PLCG.pyc
+
+./seisflows/plugins/preconds:
+total 20
+drwxrwxr-x. 2 jiazeh jiazeh   84 Jun 10 23:24 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh  818 Jun  8 20:39 diagonal.py
+-rw-rw-r--. 1 jiazeh jiazeh 1406 Jun 10 23:24 diagonal.pyc
+-rw-rw-r--. 1 jiazeh jiazeh  101 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  205 Jun 10 23:24 __init__.pyc
+
+./seisflows/plugins/solver:
+total 24
+drwxrwxr-x. 3 jiazeh jiazeh  181 Jun 10 23:24 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh    0 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  146 Jun 10 23:24 __init__.pyc
+drwxrwxr-x. 2 jiazeh jiazeh   28 Jun  8 20:39 specfem2d
+-rw-rw-r--. 1 jiazeh jiazeh 3232 Jun  8 20:39 specfem2d.py
+-rw-rw-r--. 1 jiazeh jiazeh 3033 Jun 10 23:24 specfem2d.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 1228 Jun  8 20:39 specfem3d_globe.py
+-rw-rw-r--. 1 jiazeh jiazeh 1085 Jun  8 20:39 specfem3d.py
+
+./seisflows/plugins/solver/specfem2d:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh  28 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh 181 Jun 10 23:24 ..
+-rw-rw-r--. 1 jiazeh jiazeh 192 Jun  8 20:39 SOURCE
+
+./seisflows/plugins/solver_io:
+total 24
+drwxrwxr-x. 2 jiazeh jiazeh  136 Jun 10 22:41 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh  617 Jun  8 20:39 adios.py
+-rw-rw-r--. 1 jiazeh jiazeh 1658 Jun  8 20:39 fortran_binary.py
+-rw-rw-r--. 1 jiazeh jiazeh 2493 Jun 10 22:41 fortran_binary.pyc
+-rw-rw-r--. 1 jiazeh jiazeh  183 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  185 Jun 10 22:41 __init__.pyc
+
+./seisflows/postprocess:
+total 20
+drwxrwxr-x.  2 jiazeh jiazeh  118 Jun 10 23:24 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 3955 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 3349 Jun 10 23:24 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  386 Jun  8 20:39 default.py
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  245 Jun 10 23:24 __init__.pyc
+
+./seisflows/preprocess:
+total 44
+drwxrwxr-x.  2 jiazeh jiazeh   150 Jun 10 23:18 .
+drwxrwxr-x. 10 jiazeh jiazeh   257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 12213 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 11014 Jun 10 23:18 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   418 Jun  8 20:39 default.py
+-rw-rw-r--.  1 jiazeh jiazeh  5809 Jun  8 20:39 double_difference.py
+-rw-rw-r--.  1 jiazeh jiazeh    77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh   244 Jun 10 23:18 __init__.pyc
+
+./seisflows/solver:
+total 96
+drwxrwxr-x.  2 jiazeh jiazeh   231 Jun 11 19:57 .
+drwxrwxr-x. 10 jiazeh jiazeh   257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 19236 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 19685 Jun 10 23:24 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh    77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh   240 Jun 10 23:24 __init__.pyc
+-rw-r--r--.  1 jiazeh jiazeh  8722 Jun 10 23:15 specfem2d_new.py
+-rw-r--r--.  1 jiazeh jiazeh  9646 Jun 10 23:24 specfem2d_new.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  6488 Jun  8 20:39 specfem2d.py
+-rw-rw-r--.  1 jiazeh jiazeh  7020 Jun  8 20:39 specfem3d_globe.py
+-rw-rw-r--.  1 jiazeh jiazeh  6762 Jun  8 20:39 specfem3d.py
+
+./seisflows/system:
+total 104
+drwxrwxr-x.  3 jiazeh jiazeh 4096 Jun 10 23:18 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 1305 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 2292 Jun 10 23:18 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  240 Jun 10 23:18 __init__.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 8275 Jun  8 20:39 lsf_lg.py
+-rw-rw-r--.  1 jiazeh jiazeh   26 Jun  8 20:39 lsf_sm.py
+-rw-rw-r--.  1 jiazeh jiazeh 3492 Jun  8 20:39 multicore.py
+-rw-rw-r--.  1 jiazeh jiazeh 4070 Jun 10 23:18 multicore.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 1200 Jun  8 20:39 multithreaded.py
+-rw-rw-r--.  1 jiazeh jiazeh 8478 Jun  8 20:39 pbs_lg.py
+-rw-rw-r--.  1 jiazeh jiazeh 6118 Jun  8 20:39 pbs_sm.py
+-rw-rw-r--.  1 jiazeh jiazeh 3509 Jun  8 20:39 serial.py
+-rw-rw-r--.  1 jiazeh jiazeh 4021 Jun 10 23:18 serial.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 8527 Jun  8 20:39 slurm_lg.py
+-rw-rw-r--.  1 jiazeh jiazeh 5283 Jun  8 20:39 slurm_sm.py
+-rw-rw-r--.  1 jiazeh jiazeh 1258 Jun  8 20:39 tiger_lg.py
+-rw-rw-r--.  1 jiazeh jiazeh 1147 Jun  8 20:39 tiger_sm.py
+drwxrwxr-x.  2 jiazeh jiazeh   58 Jun  8 20:39 wrappers
+
+./seisflows/system/wrappers:
+total 16
+drwxrwxr-x. 2 jiazeh jiazeh   58 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh 4096 Jun 10 23:18 ..
+-rwxrwxr-x. 1 jiazeh jiazeh  231 Jun  8 20:39 dsh
+-rwxrwxr-x. 1 jiazeh jiazeh  978 Jun  8 20:39 run
+-rwxrwxr-x. 1 jiazeh jiazeh  478 Jun  8 20:39 submit
+
+./seisflows/tools:
+total 132
+drwxrwxr-x.  2 jiazeh jiazeh 4096 Jun 11 00:18 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 3801 Jun  8 20:39 array.py
+-rw-rw-r--.  1 jiazeh jiazeh 4969 Jun 10 23:24 array.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  612 Jun  8 20:39 err.py
+-rw-rw-r--.  1 jiazeh jiazeh  926 Jun 10 23:18 err.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 4907 Jun  8 20:39 graphics.py
+-rw-rw-r--.  1 jiazeh jiazeh 6176 Jun 11 00:18 graphics.pyc
+-rw-rw-r--.  1 jiazeh jiazeh    0 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  137 Jun 10 22:41 __init__.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 4412 Jun  8 20:39 math.py
+-rw-rw-r--.  1 jiazeh jiazeh 7462 Jun 10 23:24 math.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 5629 Jun  8 20:39 msg.py
+-rw-rw-r--.  1 jiazeh jiazeh 5897 Jun 10 22:41 msg.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 3856 Jun  8 20:39 seismic.py
+-rw-rw-r--.  1 jiazeh jiazeh 5877 Jun 10 23:24 seismic.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 4431 Jun  8 20:39 signal.py
+-rw-rw-r--.  1 jiazeh jiazeh 5154 Jun 10 23:24 signal.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 4338 Jun  8 20:39 tools.py
+-rw-rw-r--.  1 jiazeh jiazeh 7448 Jun 10 22:41 tools.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 3102 Jun  8 20:39 unix.py
+-rw-rw-r--.  1 jiazeh jiazeh 5124 Jun 10 23:18 unix.pyc
+
+./seisflows/workflow:
+total 96
+drwxrwxr-x.  2 jiazeh jiazeh  4096 Jun 11 17:33 .
+drwxrwxr-x. 10 jiazeh jiazeh   257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh   621 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh  1306 Jun 10 23:24 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh    77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh   242 Jun 10 23:24 __init__.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  8880 Jun  8 20:39 inversion.py
+-rw-rw-r--.  1 jiazeh jiazeh 10324 Jun 10 23:24 inversion.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  3324 Jun  8 20:39 migration.py
+-rw-rw-r--.  1 jiazeh jiazeh  3427 Jun  8 20:39 test_adjoint.py
+-rw-rw-r--.  1 jiazeh jiazeh  1003 Jun  8 20:39 test_forward.py
+-rw-rw-r--.  1 jiazeh jiazeh  4350 Jun  8 20:39 test_optimize.py
+-rw-rw-r--.  1 jiazeh jiazeh  5525 Jun 11 17:33 test_optimize.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   856 Jun  8 20:39 test_postprocess.py
+-rw-rw-r--.  1 jiazeh jiazeh  5225 Jun  8 20:39 test_preprocess.py
+-rw-rw-r--.  1 jiazeh jiazeh   940 Jun  8 20:39 test_system.py
+-rw-rw-r--.  1 jiazeh jiazeh  1684 Jun 11 17:29 test_system.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  1716 Jun  8 20:39 thrifty_inversion.py
+
+./tests:
+total 28
+drwxrwxr-x. 3 jiazeh jiazeh 229 Jun  8 21:06 .
+drwxrwxr-x. 8 jiazeh jiazeh 206 Jun 13 22:18 ..
+-rwxrwxr-x. 1 jiazeh jiazeh 113 Jun  8 20:39 run_test_import
+-rwxrwxr-x. 1 jiazeh jiazeh 449 Jun  8 20:39 run_test_optimize
+-rwxrwxr-x. 1 jiazeh jiazeh 438 Jun  8 20:39 run_test_preprocess
+-rwxrwxr-x. 1 jiazeh jiazeh 395 Jun  8 20:39 run_test_system
+-rwxrwxr-x. 1 jiazeh jiazeh 155 Jun  8 20:39 run_test_tools
+-rwxrwxr-x. 1 jiazeh jiazeh 868 Jun  8 20:39 run_tiger_inversion
+-rwxrwxr-x. 1 jiazeh jiazeh 792 Jun  8 20:39 run_tiger_migration
+drwxrwxr-x. 6 jiazeh jiazeh 130 Jun  8 20:39 setup
+
+./tests/setup:
+total 4
+drwxrwxr-x. 6 jiazeh jiazeh  130 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh  229 Jun  8 21:06 ..
+-rwxrwxr-x. 1 jiazeh jiazeh 2729 Jun  8 20:39 test_import
+drwxrwxr-x. 3 jiazeh jiazeh  177 Jun 11 17:43 test_optimize
+drwxrwxr-x. 2 jiazeh jiazeh   93 Jun  8 20:39 test_preprocess
+drwxrwxr-x. 2 jiazeh jiazeh  141 Jun 11 17:31 test_system
+drwxrwxr-x. 2 jiazeh jiazeh   49 Jun  8 20:39 test_tools
+
+./tests/setup/test_optimize:
+total 20
+drwxrwxr-x. 3 jiazeh jiazeh 177 Jun 11 17:43 .
+drwxrwxr-x. 6 jiazeh jiazeh 130 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 101 Jun  8 20:39 parameters_LBFGS
+-rw-rw-r--. 1 jiazeh jiazeh 319 Jun 11 17:33 parameters_LBFGSc
+-rw-rw-r--. 1 jiazeh jiazeh 121 Jun  8 20:39 parameters_NLCG
+-rw-rw-r--. 1 jiazeh jiazeh 352 Jun 11 17:33 parameters_NLCGc
+-rw-rw-r--. 1 jiazeh jiazeh   0 Jun  8 20:39 paths
+-rw-rw-r--. 1 jiazeh jiazeh 141 Jun 11 17:33 pathsc
+drwxrwxr-x. 2 jiazeh jiazeh 111 Jun 11 17:33 problems
+
+./tests/setup/test_optimize/problems:
+total 12
+drwxrwxr-x. 2 jiazeh jiazeh  111 Jun 11 17:33 .
+drwxrwxr-x. 3 jiazeh jiazeh  177 Jun 11 17:43 ..
+-rw-rw-r--. 1 jiazeh jiazeh    0 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  499 Jun  8 20:39 rosenbrock_n.py
+-rw-rw-r--. 1 jiazeh jiazeh  313 Jun  8 20:39 rosenbrock.py
+-rw-rw-r--. 1 jiazeh jiazeh 1151 Jun 11 17:33 rosenbrock.pyc
+
+./tests/setup/test_preprocess:
+total 29544
+drwxrwxr-x. 2 jiazeh jiazeh       93 Jun  8 20:39 .
+drwxrwxr-x. 6 jiazeh jiazeh      130 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 15120000 Jun  8 20:39 data.su
+-rw-rw-r--. 1 jiazeh jiazeh      282 Jun  8 20:39 parameters
+-rw-rw-r--. 1 jiazeh jiazeh      129 Jun  8 20:39 paths
+-rw-rw-r--. 1 jiazeh jiazeh 15120000 Jun  8 20:39 synthetics.su
+
+./tests/setup/test_system:
+total 20
+drwxrwxr-x. 2 jiazeh jiazeh 141 Jun 11 17:31 .
+drwxrwxr-x. 6 jiazeh jiazeh 130 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh  62 Jun  8 20:39 parameters_multicore
+-rw-rw-r--. 1 jiazeh jiazeh 266 Jun 11 17:29 parameters_multicorec
+-rw-rw-r--. 1 jiazeh jiazeh  56 Jun  8 20:39 parameters_serial
+-rw-rw-r--. 1 jiazeh jiazeh 262 Jun 11 17:29 parameters_serialc
+-rw-rw-r--. 1 jiazeh jiazeh   0 Jun  8 20:39 paths
+-rw-rw-r--. 1 jiazeh jiazeh 139 Jun 11 17:29 pathsc
+
+./tests/setup/test_tools:
+total 8
+drwxrwxr-x. 2 jiazeh jiazeh   49 Jun  8 20:39 .
+drwxrwxr-x. 6 jiazeh jiazeh  130 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh  666 Jun  8 20:39 test_signal.py
+-rw-rw-r--. 1 jiazeh jiazeh 2019 Jun  8 20:39 test_tools.py
+total 20
+drwxrwxr-x.  8 jiazeh jiazeh  206 Jun 13 22:18 .
+drwx------. 29 jiazeh jiazeh 4096 Jun 13 22:43 ..
+drwxrwxr-x.  4 jiazeh jiazeh  171 Jun  8 20:39 docs
+drwxrwxr-x.  8 jiazeh jiazeh  211 Jun  8 20:39 .git
+-rw-rw-r--.  1 jiazeh jiazeh   50 Jun  8 20:39 .gitignore
+-rw-rw-r--.  1 jiazeh jiazeh 1299 Jun  8 20:39 LICENSE
+drwxrwxr-x.  2 jiazeh jiazeh  227 Jun 10 22:19 model_init
+-rw-rw-r--.  1 jiazeh jiazeh 2594 Jun  8 20:39 README.md
+drwxrwxr-x.  3 jiazeh jiazeh  129 Jun 13 22:35 scripts
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 seisflows
+drwxrwxr-x.  3 jiazeh jiazeh  229 Jun  8 21:06 tests
+-rw-rw-r--.  1 jiazeh jiazeh  366 Jun  8 20:39 .travis.yml
+
+./docs:
+total 40
+drwxrwxr-x. 4 jiazeh jiazeh  171 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh  206 Jun 13 22:18 ..
+-rw-rw-r--. 1 jiazeh jiazeh 8367 Jun  8 20:39 conf.py
+-rw-rw-r--. 1 jiazeh jiazeh 2381 Jun  8 20:39 index.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1675 Jun  8 20:39 instructions_local.rst
+-rw-rw-r--. 1 jiazeh jiazeh 7673 Jun  8 20:39 instructions_remote.rst
+-rw-rw-r--. 1 jiazeh jiazeh 6774 Jun  8 20:39 Makefile
+drwxrwxr-x. 2 jiazeh jiazeh 4096 Jun  8 20:39 ref
+drwxrwxr-x. 2 jiazeh jiazeh   55 Jun  8 20:39 usage
+
+./docs/ref:
+total 72
+drwxrwxr-x. 2 jiazeh jiazeh 4096 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh  171 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh  223 Jun  8 20:39 modules.rst
+-rw-rw-r--. 1 jiazeh jiazeh  652 Jun  8 20:39 seisflows.extensions.optimize.rst
+-rw-rw-r--. 1 jiazeh jiazeh  431 Jun  8 20:39 seisflows.extensions.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1405 Jun  8 20:39 seisflows.extensions.solver.rst
+-rw-rw-r--. 1 jiazeh jiazeh  631 Jun  8 20:39 seisflows.extensions.system.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1130 Jun  8 20:39 seisflows.extensions.workflow.rst
+-rw-rw-r--. 1 jiazeh jiazeh  929 Jun  8 20:39 seisflows.optimize.lib.rst
+-rw-rw-r--. 1 jiazeh jiazeh  441 Jun  8 20:39 seisflows.optimize.rst
+-rw-rw-r--. 1 jiazeh jiazeh  392 Jun  8 20:39 seisflows.postprocess.rst
+-rw-rw-r--. 1 jiazeh jiazeh  386 Jun  8 20:39 seisflows.preprocess.rst
+-rw-rw-r--. 1 jiazeh jiazeh  401 Jun  8 20:39 seisflows.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1684 Jun  8 20:39 seisflows.seistools.rst
+-rw-rw-r--. 1 jiazeh jiazeh  780 Jun  8 20:39 seisflows.seistools.segy.rst
+-rw-rw-r--. 1 jiazeh jiazeh  538 Jun  8 20:39 seisflows.solver.rst
+-rw-rw-r--. 1 jiazeh jiazeh  872 Jun  8 20:39 seisflows.system.rst
+-rw-rw-r--. 1 jiazeh jiazeh 1018 Jun  8 20:39 seisflows.tools.rst
+-rw-rw-r--. 1 jiazeh jiazeh  729 Jun  8 20:39 seisflows.workflow.rst
+
+./docs/usage:
+total 20
+drwxrwxr-x. 2 jiazeh jiazeh    55 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh   171 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh    53 Jun  8 20:39 contents.rst
+-rw-rw-r--. 1 jiazeh jiazeh 12667 Jun  8 20:39 usage.rst
+
+./.git:
+total 32
+drwxrwxr-x. 8 jiazeh jiazeh   211 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh   206 Jun 13 22:18 ..
+drwxrwxr-x. 2 jiazeh jiazeh     6 Jun  8 20:39 branches
+-rw-rw-r--. 1 jiazeh jiazeh   265 Jun  8 20:39 config
+-rw-rw-r--. 1 jiazeh jiazeh    73 Jun  8 20:39 description
+-rw-rw-r--. 1 jiazeh jiazeh    23 Jun  8 20:39 HEAD
+drwxrwxr-x. 2 jiazeh jiazeh   242 Jun  8 20:39 hooks
+-rw-rw-r--. 1 jiazeh jiazeh 13648 Jun  8 20:39 index
+drwxrwxr-x. 2 jiazeh jiazeh    29 Jun  8 20:39 info
+drwxrwxr-x. 3 jiazeh jiazeh    30 Jun  8 20:39 logs
+drwxrwxr-x. 4 jiazeh jiazeh    30 Jun  8 20:39 objects
+-rw-rw-r--. 1 jiazeh jiazeh   304 Jun  8 20:39 packed-refs
+drwxrwxr-x. 5 jiazeh jiazeh    62 Jun  8 20:39 refs
+
+./.git/branches:
+total 0
+drwxrwxr-x. 2 jiazeh jiazeh   6 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+
+./.git/hooks:
+total 40
+drwxrwxr-x. 2 jiazeh jiazeh  242 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh  211 Jun  8 20:39 ..
+-rwxrwxr-x. 1 jiazeh jiazeh  452 Jun  8 20:39 applypatch-msg.sample
+-rwxrwxr-x. 1 jiazeh jiazeh  896 Jun  8 20:39 commit-msg.sample
+-rwxrwxr-x. 1 jiazeh jiazeh  189 Jun  8 20:39 post-update.sample
+-rwxrwxr-x. 1 jiazeh jiazeh  398 Jun  8 20:39 pre-applypatch.sample
+-rwxrwxr-x. 1 jiazeh jiazeh 1704 Jun  8 20:39 pre-commit.sample
+-rwxrwxr-x. 1 jiazeh jiazeh 1239 Jun  8 20:39 prepare-commit-msg.sample
+-rw-rw-r--. 1 jiazeh jiazeh 1348 Jun  8 20:39 pre-push.sample
+-rwxrwxr-x. 1 jiazeh jiazeh 4951 Jun  8 20:39 pre-rebase.sample
+-rwxrwxr-x. 1 jiazeh jiazeh 3611 Jun  8 20:39 update.sample
+
+./.git/info:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh  29 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 240 Jun  8 20:39 exclude
+
+./.git/logs:
+total 4
+drwxrwxr-x. 3 jiazeh jiazeh  30 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 190 Jun  8 20:39 HEAD
+drwxrwxr-x. 4 jiazeh jiazeh  46 Jun  8 20:39 refs
+
+./.git/logs/refs:
+total 0
+drwxrwxr-x. 4 jiazeh jiazeh 46 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh 30 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh 20 Jun  8 20:39 heads
+drwxrwxr-x. 3 jiazeh jiazeh 28 Jun  8 20:39 remotes
+
+./.git/logs/refs/heads:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh  20 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh  46 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 190 Jun  8 20:39 master
+
+./.git/logs/refs/remotes:
+total 0
+drwxrwxr-x. 3 jiazeh jiazeh 28 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh 46 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh 26 Jun  8 20:39 origin
+
+./.git/logs/refs/remotes/origin:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh  26 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh  28 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 190 Jun  8 20:39 HEAD
+
+./.git/objects:
+total 0
+drwxrwxr-x. 4 jiazeh jiazeh  30 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh  10 Jun  8 20:39 info
+drwxrwxr-x. 2 jiazeh jiazeh 133 Jun  8 20:39 pack
+
+./.git/objects/info:
+total 0
+drwxrwxr-x. 2 jiazeh jiazeh 10 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh 30 Jun  8 20:39 ..
+
+./.git/objects/pack:
+total 23880
+drwxrwxr-x. 2 jiazeh jiazeh      133 Jun  8 20:39 .
+drwxrwxr-x. 4 jiazeh jiazeh       30 Jun  8 20:39 ..
+-r--r--r--. 1 jiazeh jiazeh   248648 Jun  8 20:39 pack-e27140d51e5bfba2cc2a01ace3e92f7c3ff9e684.idx
+-r--r--r--. 1 jiazeh jiazeh 24202029 Jun  8 20:39 pack-e27140d51e5bfba2cc2a01ace3e92f7c3ff9e684.pack
+
+./.git/refs:
+total 0
+drwxrwxr-x. 5 jiazeh jiazeh  62 Jun  8 20:39 .
+drwxrwxr-x. 8 jiazeh jiazeh 211 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh  28 Jun  8 20:39 heads
+drwxrwxr-x. 3 jiazeh jiazeh  28 Jun  8 20:39 remotes
+drwxrwxr-x. 2 jiazeh jiazeh   6 Jun  8 20:39 tags
+
+./.git/refs/heads:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh 28 Jun  8 20:39 .
+drwxrwxr-x. 5 jiazeh jiazeh 62 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 41 Jun  8 20:39 master
+
+./.git/refs/remotes:
+total 0
+drwxrwxr-x. 3 jiazeh jiazeh 28 Jun  8 20:39 .
+drwxrwxr-x. 5 jiazeh jiazeh 62 Jun  8 20:39 ..
+drwxrwxr-x. 2 jiazeh jiazeh 26 Jun  8 20:39 origin
+
+./.git/refs/remotes/origin:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh 26 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh 28 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 32 Jun  8 20:39 HEAD
+
+./.git/refs/tags:
+total 0
+drwxrwxr-x. 2 jiazeh jiazeh  6 Jun  8 20:39 .
+drwxrwxr-x. 5 jiazeh jiazeh 62 Jun  8 20:39 ..
+
+./model_init:
+total 4396
+drwxrwxr-x. 2 jiazeh jiazeh    227 Jun 10 22:19 .
+drwxrwxr-x. 8 jiazeh jiazeh    206 Jun 13 22:18 ..
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_jacobian.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640020 Jun 10 22:19 proc000000_NSPEC_ibool.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_rho.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_vp.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_vs.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_x.bin
+-rw-rw-r--. 1 jiazeh jiazeh 640008 Jun 10 22:19 proc000000_z.bin
+
+./scripts:
+total 16
+drwxrwxr-x. 3 jiazeh jiazeh  129 Jun 13 22:35 .
+drwxrwxr-x. 8 jiazeh jiazeh  206 Jun 13 22:18 ..
+-rwxrwxr-x. 1 jiazeh jiazeh   42 Jun  8 20:39 sfclean
+-rwxrwxr-x. 1 jiazeh jiazeh 1141 Jun 13 22:33 sfexamples
+-rwxrwxr-x. 1 jiazeh jiazeh 1308 Jun  8 20:39 sfresume
+lrwxrwxrwx. 1 jiazeh jiazeh    8 Jun  8 20:39 sfrun -> sfsubmit
+-rwxrwxr-x. 1 jiazeh jiazeh 1035 Jun  8 20:39 sfsubmit
+drwxrwxr-x. 3 jiazeh jiazeh   70 Jun 13 22:36 visualize
+
+./scripts/visualize:
+total 8
+drwxrwxr-x. 3 jiazeh jiazeh   70 Jun 13 22:36 .
+drwxrwxr-x. 3 jiazeh jiazeh  129 Jun 13 22:35 ..
+-rwxrwxr-x. 1 jiazeh jiazeh 2488 Jun  8 20:39 sfplot
+-rwxrwxr-x. 1 jiazeh jiazeh 1668 Jun  8 20:39 sfsection
+drwxrwxr-x. 2 jiazeh jiazeh   50 Jun  8 20:39 specfem2d
+
+./scripts/visualize/specfem2d:
+total 8
+drwxrwxr-x. 2 jiazeh jiazeh   50 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh   70 Jun 13 22:36 ..
+-rwxrwxr-x. 1 jiazeh jiazeh 2753 Jun  8 20:39 plotgll
+-rwxrwxr-x. 1 jiazeh jiazeh 2332 Jun  8 20:39 quickplot
+
+./seisflows:
+total 44
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 .
+drwxrwxr-x.  8 jiazeh jiazeh  206 Jun 13 22:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 6784 Jun  8 20:39 config.py
+-rw-rw-r--.  1 jiazeh jiazeh 8626 Jun 10 23:18 config.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  233 Jun 10 22:41 __init__.pyc
+drwxrwxr-x.  2 jiazeh jiazeh  207 Jun 11 17:33 optimize
+drwxrwxr-x.  7 jiazeh jiazeh 4096 Jun 11 20:37 plugins
+drwxrwxr-x.  2 jiazeh jiazeh  118 Jun 10 23:24 postprocess
+drwxrwxr-x.  2 jiazeh jiazeh  150 Jun 10 23:18 preprocess
+drwxrwxr-x.  2 jiazeh jiazeh  231 Jun 11 19:57 solver
+drwxrwxr-x.  3 jiazeh jiazeh 4096 Jun 10 23:18 system
+drwxrwxr-x.  2 jiazeh jiazeh 4096 Jun 11 00:18 tools
+drwxrwxr-x.  2 jiazeh jiazeh 4096 Jun 11 17:33 workflow
+
+./seisflows/optimize:
+total 52
+drwxrwxr-x.  2 jiazeh jiazeh  207 Jun 11 17:33 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 9252 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 9139 Jun 10 23:24 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  242 Jun 10 23:24 __init__.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 1412 Jun  8 20:39 LBFGS.py
+-rw-rw-r--.  1 jiazeh jiazeh 2103 Jun 10 23:24 LBFGS.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 1279 Jun  8 20:39 NLCG.py
+-rw-rw-r--.  1 jiazeh jiazeh 2012 Jun 11 17:33 NLCG.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  770 Jun  8 20:39 steepest_descent.py
+
+./seisflows/plugins:
+total 52
+drwxrwxr-x.  7 jiazeh jiazeh 4096 Jun 11 20:37 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 3254 Jun 10 23:39 adjoint.py
+-rw-rw-r--.  1 jiazeh jiazeh 4432 Jun 10 23:39 adjoint.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  241 Jun 10 22:41 __init__.pyc
+drwxrwxr-x.  2 jiazeh jiazeh  190 Jun 10 23:24 line_search
+-rw-rw-r--.  1 jiazeh jiazeh 2373 Jun  8 20:39 misfit.py
+-rw-rw-r--.  1 jiazeh jiazeh 3727 Jun 10 23:24 misfit.pyc
+drwxrwxr-x.  2 jiazeh jiazeh  213 Jun 10 23:24 optimize
+drwxrwxr-x.  2 jiazeh jiazeh   84 Jun 10 23:24 preconds
+-rw-rw-r--.  1 jiazeh jiazeh 1214 Jun  8 20:39 readers.py
+-rw-rw-r--.  1 jiazeh jiazeh 1391 Jun 10 23:24 readers.pyc
+drwxrwxr-x.  3 jiazeh jiazeh  181 Jun 10 23:24 solver
+drwxrwxr-x.  2 jiazeh jiazeh  136 Jun 10 22:41 solver_io
+-rw-rw-r--.  1 jiazeh jiazeh  810 Jun  8 20:39 wavelets.py
+-rw-rw-r--.  1 jiazeh jiazeh 1102 Jun  8 20:39 writers.py
+-rw-rw-r--.  1 jiazeh jiazeh 1234 Jun 10 23:24 writers.pyc
+
+./seisflows/plugins/line_search:
+total 40
+drwxrwxr-x. 2 jiazeh jiazeh  190 Jun 10 23:24 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh 1857 Jun  8 20:39 backtrack.py
+-rw-rw-r--. 1 jiazeh jiazeh 2093 Jun 10 23:24 backtrack.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 3939 Jun  8 20:39 base.py
+-rw-rw-r--. 1 jiazeh jiazeh 5137 Jun 10 23:24 base.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 2845 Jun  8 20:39 bracket.py
+-rw-rw-r--. 1 jiazeh jiazeh 2919 Jun 10 23:24 bracket.pyc
+-rw-rw-r--. 1 jiazeh jiazeh   84 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  308 Jun 10 23:24 __init__.pyc
+
+./seisflows/plugins/optimize:
+total 52
+drwxrwxr-x. 2 jiazeh jiazeh  213 Jun 10 23:24 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh  178 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  299 Jun 10 23:24 __init__.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 4106 Jun  8 20:39 LBFGS.py
+-rw-rw-r--. 1 jiazeh jiazeh 5011 Jun 10 23:24 LBFGS.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 2078 Jun  8 20:39 LCG.py
+-rw-rw-r--. 1 jiazeh jiazeh 2864 Jun 10 23:24 LCG.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 2540 Jun  8 20:39 NLCG.py
+-rw-rw-r--. 1 jiazeh jiazeh 3659 Jun 10 23:24 NLCG.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 3039 Jun  8 20:39 PLCG.py
+-rw-rw-r--. 1 jiazeh jiazeh 3226 Jun 10 23:24 PLCG.pyc
+
+./seisflows/plugins/preconds:
+total 20
+drwxrwxr-x. 2 jiazeh jiazeh   84 Jun 10 23:24 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh  818 Jun  8 20:39 diagonal.py
+-rw-rw-r--. 1 jiazeh jiazeh 1406 Jun 10 23:24 diagonal.pyc
+-rw-rw-r--. 1 jiazeh jiazeh  101 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  205 Jun 10 23:24 __init__.pyc
+
+./seisflows/plugins/solver:
+total 24
+drwxrwxr-x. 3 jiazeh jiazeh  181 Jun 10 23:24 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh    0 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  146 Jun 10 23:24 __init__.pyc
+drwxrwxr-x. 2 jiazeh jiazeh   28 Jun  8 20:39 specfem2d
+-rw-rw-r--. 1 jiazeh jiazeh 3232 Jun  8 20:39 specfem2d.py
+-rw-rw-r--. 1 jiazeh jiazeh 3033 Jun 10 23:24 specfem2d.pyc
+-rw-rw-r--. 1 jiazeh jiazeh 1228 Jun  8 20:39 specfem3d_globe.py
+-rw-rw-r--. 1 jiazeh jiazeh 1085 Jun  8 20:39 specfem3d.py
+
+./seisflows/plugins/solver/specfem2d:
+total 4
+drwxrwxr-x. 2 jiazeh jiazeh  28 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh 181 Jun 10 23:24 ..
+-rw-rw-r--. 1 jiazeh jiazeh 192 Jun  8 20:39 SOURCE
+
+./seisflows/plugins/solver_io:
+total 24
+drwxrwxr-x. 2 jiazeh jiazeh  136 Jun 10 22:41 .
+drwxrwxr-x. 7 jiazeh jiazeh 4096 Jun 11 20:37 ..
+-rw-rw-r--. 1 jiazeh jiazeh  617 Jun  8 20:39 adios.py
+-rw-rw-r--. 1 jiazeh jiazeh 1658 Jun  8 20:39 fortran_binary.py
+-rw-rw-r--. 1 jiazeh jiazeh 2493 Jun 10 22:41 fortran_binary.pyc
+-rw-rw-r--. 1 jiazeh jiazeh  183 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  185 Jun 10 22:41 __init__.pyc
+
+./seisflows/postprocess:
+total 20
+drwxrwxr-x.  2 jiazeh jiazeh  118 Jun 10 23:24 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 3955 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 3349 Jun 10 23:24 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  386 Jun  8 20:39 default.py
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  245 Jun 10 23:24 __init__.pyc
+
+./seisflows/preprocess:
+total 44
+drwxrwxr-x.  2 jiazeh jiazeh   150 Jun 10 23:18 .
+drwxrwxr-x. 10 jiazeh jiazeh   257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 12213 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 11014 Jun 10 23:18 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   418 Jun  8 20:39 default.py
+-rw-rw-r--.  1 jiazeh jiazeh  5809 Jun  8 20:39 double_difference.py
+-rw-rw-r--.  1 jiazeh jiazeh    77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh   244 Jun 10 23:18 __init__.pyc
+
+./seisflows/solver:
+total 96
+drwxrwxr-x.  2 jiazeh jiazeh   231 Jun 11 19:57 .
+drwxrwxr-x. 10 jiazeh jiazeh   257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 19236 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 19685 Jun 10 23:24 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh    77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh   240 Jun 10 23:24 __init__.pyc
+-rw-r--r--.  1 jiazeh jiazeh  8722 Jun 10 23:15 specfem2d_new.py
+-rw-r--r--.  1 jiazeh jiazeh  9646 Jun 10 23:24 specfem2d_new.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  6488 Jun  8 20:39 specfem2d.py
+-rw-rw-r--.  1 jiazeh jiazeh  7020 Jun  8 20:39 specfem3d_globe.py
+-rw-rw-r--.  1 jiazeh jiazeh  6762 Jun  8 20:39 specfem3d.py
+
+./seisflows/system:
+total 104
+drwxrwxr-x.  3 jiazeh jiazeh 4096 Jun 10 23:18 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 1305 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh 2292 Jun 10 23:18 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  240 Jun 10 23:18 __init__.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 8275 Jun  8 20:39 lsf_lg.py
+-rw-rw-r--.  1 jiazeh jiazeh   26 Jun  8 20:39 lsf_sm.py
+-rw-rw-r--.  1 jiazeh jiazeh 3492 Jun  8 20:39 multicore.py
+-rw-rw-r--.  1 jiazeh jiazeh 4070 Jun 10 23:18 multicore.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 1200 Jun  8 20:39 multithreaded.py
+-rw-rw-r--.  1 jiazeh jiazeh 8478 Jun  8 20:39 pbs_lg.py
+-rw-rw-r--.  1 jiazeh jiazeh 6118 Jun  8 20:39 pbs_sm.py
+-rw-rw-r--.  1 jiazeh jiazeh 3509 Jun  8 20:39 serial.py
+-rw-rw-r--.  1 jiazeh jiazeh 4021 Jun 10 23:18 serial.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 8527 Jun  8 20:39 slurm_lg.py
+-rw-rw-r--.  1 jiazeh jiazeh 5283 Jun  8 20:39 slurm_sm.py
+-rw-rw-r--.  1 jiazeh jiazeh 1258 Jun  8 20:39 tiger_lg.py
+-rw-rw-r--.  1 jiazeh jiazeh 1147 Jun  8 20:39 tiger_sm.py
+drwxrwxr-x.  2 jiazeh jiazeh   58 Jun  8 20:39 wrappers
+
+./seisflows/system/wrappers:
+total 16
+drwxrwxr-x. 2 jiazeh jiazeh   58 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh 4096 Jun 10 23:18 ..
+-rwxrwxr-x. 1 jiazeh jiazeh  231 Jun  8 20:39 dsh
+-rwxrwxr-x. 1 jiazeh jiazeh  978 Jun  8 20:39 run
+-rwxrwxr-x. 1 jiazeh jiazeh  478 Jun  8 20:39 submit
+
+./seisflows/tools:
+total 132
+drwxrwxr-x.  2 jiazeh jiazeh 4096 Jun 11 00:18 .
+drwxrwxr-x. 10 jiazeh jiazeh  257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh 3801 Jun  8 20:39 array.py
+-rw-rw-r--.  1 jiazeh jiazeh 4969 Jun 10 23:24 array.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  612 Jun  8 20:39 err.py
+-rw-rw-r--.  1 jiazeh jiazeh  926 Jun 10 23:18 err.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 4907 Jun  8 20:39 graphics.py
+-rw-rw-r--.  1 jiazeh jiazeh 6176 Jun 11 00:18 graphics.pyc
+-rw-rw-r--.  1 jiazeh jiazeh    0 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh  137 Jun 10 22:41 __init__.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 4412 Jun  8 20:39 math.py
+-rw-rw-r--.  1 jiazeh jiazeh 7462 Jun 10 23:24 math.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 5629 Jun  8 20:39 msg.py
+-rw-rw-r--.  1 jiazeh jiazeh 5897 Jun 10 22:41 msg.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 3856 Jun  8 20:39 seismic.py
+-rw-rw-r--.  1 jiazeh jiazeh 5877 Jun 10 23:24 seismic.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 4431 Jun  8 20:39 signal.py
+-rw-rw-r--.  1 jiazeh jiazeh 5154 Jun 10 23:24 signal.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 4338 Jun  8 20:39 tools.py
+-rw-rw-r--.  1 jiazeh jiazeh 7448 Jun 10 22:41 tools.pyc
+-rw-rw-r--.  1 jiazeh jiazeh 3102 Jun  8 20:39 unix.py
+-rw-rw-r--.  1 jiazeh jiazeh 5124 Jun 10 23:18 unix.pyc
+
+./seisflows/workflow:
+total 96
+drwxrwxr-x.  2 jiazeh jiazeh  4096 Jun 11 17:33 .
+drwxrwxr-x. 10 jiazeh jiazeh   257 Jun 10 23:18 ..
+-rw-rw-r--.  1 jiazeh jiazeh   621 Jun  8 20:39 base.py
+-rw-rw-r--.  1 jiazeh jiazeh  1306 Jun 10 23:24 base.pyc
+-rw-rw-r--.  1 jiazeh jiazeh    77 Jun  8 20:39 __init__.py
+-rw-rw-r--.  1 jiazeh jiazeh   242 Jun 10 23:24 __init__.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  8880 Jun  8 20:39 inversion.py
+-rw-rw-r--.  1 jiazeh jiazeh 10324 Jun 10 23:24 inversion.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  3324 Jun  8 20:39 migration.py
+-rw-rw-r--.  1 jiazeh jiazeh  3427 Jun  8 20:39 test_adjoint.py
+-rw-rw-r--.  1 jiazeh jiazeh  1003 Jun  8 20:39 test_forward.py
+-rw-rw-r--.  1 jiazeh jiazeh  4350 Jun  8 20:39 test_optimize.py
+-rw-rw-r--.  1 jiazeh jiazeh  5525 Jun 11 17:33 test_optimize.pyc
+-rw-rw-r--.  1 jiazeh jiazeh   856 Jun  8 20:39 test_postprocess.py
+-rw-rw-r--.  1 jiazeh jiazeh  5225 Jun  8 20:39 test_preprocess.py
+-rw-rw-r--.  1 jiazeh jiazeh   940 Jun  8 20:39 test_system.py
+-rw-rw-r--.  1 jiazeh jiazeh  1684 Jun 11 17:29 test_system.pyc
+-rw-rw-r--.  1 jiazeh jiazeh  1716 Jun  8 20:39 thrifty_inversion.py
+
+./tests:
+total 28
+drwxrwxr-x. 3 jiazeh jiazeh 229 Jun  8 21:06 .
+drwxrwxr-x. 8 jiazeh jiazeh 206 Jun 13 22:18 ..
+-rwxrwxr-x. 1 jiazeh jiazeh 113 Jun  8 20:39 run_test_import
+-rwxrwxr-x. 1 jiazeh jiazeh 449 Jun  8 20:39 run_test_optimize
+-rwxrwxr-x. 1 jiazeh jiazeh 438 Jun  8 20:39 run_test_preprocess
+-rwxrwxr-x. 1 jiazeh jiazeh 395 Jun  8 20:39 run_test_system
+-rwxrwxr-x. 1 jiazeh jiazeh 155 Jun  8 20:39 run_test_tools
+-rwxrwxr-x. 1 jiazeh jiazeh 868 Jun  8 20:39 run_tiger_inversion
+-rwxrwxr-x. 1 jiazeh jiazeh 792 Jun  8 20:39 run_tiger_migration
+drwxrwxr-x. 6 jiazeh jiazeh 130 Jun  8 20:39 setup
+
+./tests/setup:
+total 4
+drwxrwxr-x. 6 jiazeh jiazeh  130 Jun  8 20:39 .
+drwxrwxr-x. 3 jiazeh jiazeh  229 Jun  8 21:06 ..
+-rwxrwxr-x. 1 jiazeh jiazeh 2729 Jun  8 20:39 test_import
+drwxrwxr-x. 3 jiazeh jiazeh  177 Jun 11 17:43 test_optimize
+drwxrwxr-x. 2 jiazeh jiazeh   93 Jun  8 20:39 test_preprocess
+drwxrwxr-x. 2 jiazeh jiazeh  141 Jun 11 17:31 test_system
+drwxrwxr-x. 2 jiazeh jiazeh   49 Jun  8 20:39 test_tools
+
+./tests/setup/test_optimize:
+total 20
+drwxrwxr-x. 3 jiazeh jiazeh 177 Jun 11 17:43 .
+drwxrwxr-x. 6 jiazeh jiazeh 130 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 101 Jun  8 20:39 parameters_LBFGS
+-rw-rw-r--. 1 jiazeh jiazeh 319 Jun 11 17:33 parameters_LBFGSc
+-rw-rw-r--. 1 jiazeh jiazeh 121 Jun  8 20:39 parameters_NLCG
+-rw-rw-r--. 1 jiazeh jiazeh 352 Jun 11 17:33 parameters_NLCGc
+-rw-rw-r--. 1 jiazeh jiazeh   0 Jun  8 20:39 paths
+-rw-rw-r--. 1 jiazeh jiazeh 141 Jun 11 17:33 pathsc
+drwxrwxr-x. 2 jiazeh jiazeh 111 Jun 11 17:33 problems
+
+./tests/setup/test_optimize/problems:
+total 12
+drwxrwxr-x. 2 jiazeh jiazeh  111 Jun 11 17:33 .
+drwxrwxr-x. 3 jiazeh jiazeh  177 Jun 11 17:43 ..
+-rw-rw-r--. 1 jiazeh jiazeh    0 Jun  8 20:39 __init__.py
+-rw-rw-r--. 1 jiazeh jiazeh  499 Jun  8 20:39 rosenbrock_n.py
+-rw-rw-r--. 1 jiazeh jiazeh  313 Jun  8 20:39 rosenbrock.py
+-rw-rw-r--. 1 jiazeh jiazeh 1151 Jun 11 17:33 rosenbrock.pyc
+
+./tests/setup/test_preprocess:
+total 29544
+drwxrwxr-x. 2 jiazeh jiazeh       93 Jun  8 20:39 .
+drwxrwxr-x. 6 jiazeh jiazeh      130 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh 15120000 Jun  8 20:39 data.su
+-rw-rw-r--. 1 jiazeh jiazeh      282 Jun  8 20:39 parameters
+-rw-rw-r--. 1 jiazeh jiazeh      129 Jun  8 20:39 paths
+-rw-rw-r--. 1 jiazeh jiazeh 15120000 Jun  8 20:39 synthetics.su
+
+./tests/setup/test_system:
+total 20
+drwxrwxr-x. 2 jiazeh jiazeh 141 Jun 11 17:31 .
+drwxrwxr-x. 6 jiazeh jiazeh 130 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh  62 Jun  8 20:39 parameters_multicore
+-rw-rw-r--. 1 jiazeh jiazeh 266 Jun 11 17:29 parameters_multicorec
+-rw-rw-r--. 1 jiazeh jiazeh  56 Jun  8 20:39 parameters_serial
+-rw-rw-r--. 1 jiazeh jiazeh 262 Jun 11 17:29 parameters_serialc
+-rw-rw-r--. 1 jiazeh jiazeh   0 Jun  8 20:39 paths
+-rw-rw-r--. 1 jiazeh jiazeh 139 Jun 11 17:29 pathsc
+
+./tests/setup/test_tools:
+total 8
+drwxrwxr-x. 2 jiazeh jiazeh   49 Jun  8 20:39 .
+drwxrwxr-x. 6 jiazeh jiazeh  130 Jun  8 20:39 ..
+-rw-rw-r--. 1 jiazeh jiazeh  666 Jun  8 20:39 test_signal.py
+-rw-rw-r--. 1 jiazeh jiazeh 2019 Jun  8 20:39 test_tools.py

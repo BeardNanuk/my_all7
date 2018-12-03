@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "copy SOURCE* STATIONS to $HOME/inversion_test/specfem_data"
+
+#cp $HOME/Desktop/my_files/my_bin/QuickCreate/pptinfo2.odp .
+
+cp SOURCE* $HOME/inversion_test/specfem_data
+cp ST* $HOME/inversion_test/specfem_data
+
+

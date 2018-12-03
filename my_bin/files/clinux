@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "open my common_linux keyboard combo files"
+
+vi $HOME/Desktop/my_files/my_linux/commmon_linux_springdale
+

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "copy all files in current folder to jiazeh@paris:/home/jiazeh/temp"
+
+#firefox "https://www.google.com/"
+
+#cd /home/jiazeh/Desktop/my_files/my_bin
+
+scp ./* jiazeh@paris:/home/jiazeh/temp

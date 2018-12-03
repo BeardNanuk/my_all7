@@ -1,0 +1,18 @@
+#!/bin/sh
+echo "create a word file in the current directory"
+
+
+# oxford
+cp /usr/local/bin/QuickCreate/blankdoc.docx blankdoc1.docx
+cygstart blankdoc1.docx
+
+
+
+
+
+
+
+
+
+
+

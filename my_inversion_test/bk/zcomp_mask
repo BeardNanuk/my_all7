@@ -1,0 +1,5 @@
+#!/bin/bash
+
+gfortran cree_masque_ring.f90 -o cree_masque_try_exe
+#./cree_masque_try_exe
+

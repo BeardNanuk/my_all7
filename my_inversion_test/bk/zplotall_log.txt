@@ -1,0 +1,114 @@
+intf0 =1000000
+nx =80
+D_T =1d_8
+NSTEP =4200
+Nit = 11
+[32m[1mSimulation : Elastic[0m
+[32m[1mDensity : Constant[0m
+[32m[1mNumber of iterations: 11[0m
+
+[31m[1mOutput seismographs[0m
+3
+dododo
+jobs_perchuck 10
+./output/model_vp.bin
+./output/model_vp.bin
+./output/model_vp.bin
+./output/model_vp.bin
+./output/model_vp.bin
+./output/model_vp.bin
+./output/model_vp.bin
+./output/model_vp.bin
+./output/model_vp.bin
+./output/model_vp.bin
+num of iteration: 7
+name of the current dir: ./output/model_0007
+name of the current bin fileanme : ['./output/model_0007/proc000000_vp.bin']
+x shape: (160000,)
+z shape: (160000,)
+whatever in par: vp
+shape of w (160000,)
+shape of w undersampled : (160000,)
+num of iteration: 10
+name of the current dir: ./output/model_0010
+name of the current bin fileanme : ['./output/model_0010/proc000000_vp.bin']
+x shape: (160000,)
+z shape: (160000,)
+whatever in par: vp
+shape of w (160000,)
+shape of w undersampled : (160000,)
+num of iteration: 2
+name of the current dir: ./output/model_0002
+name of the current bin fileanme : ['./output/model_0002/proc000000_vp.bin']
+x shape: (160000,)
+z shape: (160000,)
+whatever in par: vp
+shape of w (160000,)
+shape of w undersampled : (160000,)
+num of iteration: 9
+name of the current dir: ./output/model_0009
+name of the current bin fileanme : ['./output/model_0009/proc000000_vp.bin']
+x shape: (160000,)
+z shape: (160000,)
+whatever in par: vp
+shape of w (160000,)
+shape of w undersampled : (160000,)
+num of iteration: 3
+name of the current dir: ./output/model_0003
+name of the current bin fileanme : ['./output/model_0003/proc000000_vp.bin']
+x shape: (160000,)
+z shape: (160000,)
+whatever in par: vp
+shape of w (160000,)
+shape of w undersampled : (160000,)
+num of iteration: 1
+name of the current dir: ./output/model_0001
+name of the current bin fileanme : ['./output/model_0001/proc000000_vp.bin']
+num of iteration: 5x shape:
+ name of the current dir: ./output/model_0005
+(name of the current bin fileanme : ['./output/model_0005/proc000000_vp.bin']160000
+,)
+z shape: (160000,)
+whatever in par: vp
+shape of w (160000,)
+shape of w undersampled : (160000,)
+x shape: (160000,)
+z shape: (160000,)
+whatever in par: vp
+shape of w (160000,)
+shape of w undersampled : (160000,)
+num of iteration: 4
+name of the current dir: ./output/model_0004
+name of the current bin fileanme : ['./output/model_0004/proc000000_vp.bin']
+x shape: (160000,)
+z shape: (160000,)
+whatever in par: vp
+shape of w (160000,)
+shape of w undersampled : (160000,)
+num of iteration: 8
+name of the current dir: ./output/model_0008
+name of the current bin fileanme : ['./output/model_0008/proc000000_vp.bin']
+num of iteration: 6
+name of the current dir: ./output/model_0006
+name of the current bin fileanme : ['./output/model_0006/proc000000_vp.bin']
+x shape: (160000,)
+z shape: (160000,)
+whatever in par: vp
+shape of w (160000,)
+shape of w undersampled : (160000,)
+x shape: (160000,)
+z shape: (160000,)
+whatever in par: vp
+shape of w (160000,)
+shape of w undersampled : (160000,)
+./output/model_vp.bin
+num of iteration: 11
+name of the current dir: ./output/model_0011
+name of the current bin fileanme : ['./output/model_0011/proc000000_vp.bin']
+x shape: (160000,)
+z shape: (160000,)
+whatever in par: vp
+shape of w (160000,)
+shape of w undersampled : (160000,)
+jobs_perchuck 10
+Nloop 2

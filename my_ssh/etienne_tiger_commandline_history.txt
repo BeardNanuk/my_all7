@@ -1,0 +1,591 @@
+    1  ls /scratch/gpfs/jiazeh/
+    2  ls
+    3  pwd
+    4  cd /scratch/gpfs/jiazeh/
+    5  ls
+    6  pwd
+    7  echo $HOME
+    8  vi ~/.bashrc 
+    9  logout
+   10  pwd
+   11  echo $HOME
+   12  pwd
+   13  vi .bashrc 
+   14  logout
+   15  pwd
+   16  ls -a
+   17  echo $~
+   18  echo ~
+   19  module avail
+   20  vi /home/jiazeh/.bashrc 
+   21  git clone --recursive --branch devel https://github.com/geodynamics/specfem2d.git
+   22  cd specfem2d/
+   23  ./configure --with-mpi
+   24  logout
+   25  cd specfem2d/
+   26  ./configure --with-mpi
+   27  make -j
+   28  ./configure FC=ifort --with-mpi
+   29  make realclean
+   30  make -j
+   31  ls ..
+   32  mv ../parallel ./
+   33  module list
+   34  make -j
+   35  ls bi n
+   36  ls bin
+   37  ls
+   38  vi parallel 
+   39  slurmtop
+   40  slurmtop -u jiazeh
+   41  squeue -u jiazeh
+   42  scancel -u jiazeh
+   43  vi parallel 
+   44  vi DATA/Par_file 
+   45  sbatch parallel 
+   46  ls
+   47  cat slurm-757633.out 
+   48  cat outputmesher 
+   49  cat outputsolver 
+   50  ls
+   51  vi DATA/Par_file 
+   52  rm slurm-757633.out 
+   53  sbatch parallel 
+   54  cat slurm-757635.out 
+   55  cat outputsolver 
+   56  vi parallel 
+   57  ls
+   58  display OUTPUT_FILES/forward_image0000800.jpg 
+   59  logout
+   60  display OUTPUT_FILES/forward_image0000800.jpg 
+   61  module list
+   62  cd specfem2d/2d
+   63  cd specfem2d/
+   64  ls
+   65  module list
+   66  ./configure FC=ifort --with-mpi --with-cuda=cuda8
+   67  make realclean
+   68  make -j
+   69  vi DATA/Par_file 
+   70  vi parallel 
+   71  rm slurm-757635.out 
+   72  sbatch parallel 
+   73  ls
+   74  cat slurm-757960.out 
+   75  vi parallel 
+   76  rm slurm-757960.out 
+   77  sbatch parallel 
+   78  ls
+   79  cat slurm-757961.out 
+   80  logout
+   81  pwd
+   82  ls
+   83  cd specfem2d/
+   84  ls
+   85  cat slurm-757961.out 
+   86  rm skl
+   87  rm slurm-757961.out 
+   88  sbatch parallel 
+   89  ls
+   90  cat slurm-757965.out 
+   91  vi parallel 
+   92  rm slurm-757965.out 
+   93  sbatch parallel 
+   94  cat slurm-757970.out 
+   95  module avail
+   96  module purge
+   97  module load
+   98  module load openmpi/intel-16.0/1.10.2/64 cudatoolkit/9.2 intel/16.0/64/16.0.4.258
+   99  ./configure FC=ifort --with-mpi --with-cuda=cuda8
+  100  make realclean
+  101  make -j
+  102  vi parallel 
+  103  ls
+  104  rm slurm-757970.out 
+  105  sbatch parallel 
+  106  ls
+  107  cat slurm-757982.out 
+  108  cat outputsolver 
+  109  history
+  110  cat history -> etienne_gpu.txt
+  111   history -> etienne_gpu.txt
+  112   history | tee etienne_gpu.txt
+  113  ls
+  114  cd ..
+  115  ls
+  116  mkdir data_bk_specfem2d
+  117  ls
+  118  cd specfem2d/
+  119  ls
+  120  vi etienne_gpu.txt 
+  121  mv etienne_gpu.txt ../data_bk_specfem2d/
+  122  logout
+  123  clear
+  124  pwd
+  125  ls
+  126  cd ..
+  127  ls
+  128  cd -
+  129  ls
+  130  clear
+  131  ls
+  132  pwd
+  133  mkdir .ssh
+  134  cd .ssh/
+  135  ls
+  136  clear
+  137  pwd
+  138  ls
+  139  cat ~/.ssh/uploaded_key.pub >> /scratch/gpfs/jiazeh/.ssh/authorized_keys
+  140  ls
+  141  cat authorized_keys 
+  142  chmod 700 /scratch/gpfs/jiazeh/.ssh/
+  143  chmod 600 /scratch/gpfs/jiazeh/.ssh/*
+  144  cd ..
+  145  ls
+  146  pwd
+  147  ls -la
+  148  pwd
+  149  ls
+  150  ls -la
+  151  cp -r ./.ssh /home/jiazeh
+  152  logout
+  153  module avail
+  154  pwd
+  155  cd home/jiazeh
+  156  cd 
+  157  ls
+  158  cd ..
+  159  pwd
+  160  cd ..
+  161  ls
+  162  cd ..
+  163  ls
+  164  pwd
+  165  cd /home/jiazeh
+  166  pwd
+  167  ls -a
+  168  vi .bash
+  169  vi .bashrc 
+  170  cd ~
+  171  ls
+  172  cd data_bk_specfem2d/
+  173  ls
+  174  vi etienne_gpu.txt 
+  175  cp ../specfem2d/parallel ./parallel
+  176  ls
+  177  vi etienne_gpu.txt 
+  178  vi parallel 
+  179  clear
+  180  pw
+  181  cd ~
+  182  ls
+  183  cd specfem2d/
+  184  ls
+  185  clear
+  186  ls
+  187  clear
+  188  ls
+  189  clear
+  190  pwd
+  191  cd /home/jiazeh/
+  192  ls
+  193  pwd
+  194  ls -la
+  195  cd /etc/
+  196  ls
+  197  cd ssh/
+  198  ls
+  199  cp sshd_config sshd_config.bak
+  200  sudo cp sshd_config sshd_config.bak
+  201  vi sshd_config 
+  202  cd ..
+  203  ls
+  204  cd ..
+  205  ls
+  206  cd ..
+  207  pwd
+  208  cd usr/
+  209  ls
+  210  cd /home/jiazeh
+  211  ls
+  212  pwd
+  213  ls -la
+  214  logout
+  215  logotu
+  216  logout
+  217  pwd
+  218  ls
+  219  cd specfem2d/
+  220  ls
+  221  vi parallel 
+  222  clear
+  223  ls
+  224  logout
+  225  history
+  226  clear
+  227  ls
+  228  cd specfem2d/
+  229  ls
+  230  vi parallelgpu 
+  231  vi DATA/Par_file 
+  232  vi parallelgpu 
+  233  module purge
+  234  module load openmpi/intel-16.0/1.10.2/64 cudatoolkit/9.2 intel/16.0/64/16.0.4.258
+  235  ./configure FC=ifort --with-mpi --with-cuda=cuda8
+  236  make realclean
+  237  make -j
+  238  ./parallelgpu 
+  239  clear
+  240  ls
+  241  vi slurm-757982.out 
+  242  vi qmeshergpu 
+  243  vi Makefile
+  244  vi vsolvergpu 
+  245  vi DATA/Par_file 
+  246  vi parallelgpu 
+  247  vi hcparallel 
+  248  vi parallelgpu 
+  249  . parallelgpu 
+  250  module list
+  251  module purge
+  252  module avail
+  253   module load openmpi/intel-16.0/1.10.2/64 cudatoolkit/9.2 intel/16.0/64/16.0.4.258
+  254  module list
+  255  module purge
+  256  module list
+  257   module load openmpi/intel-16.0/1.10.2/64 cudatoolkit/9.2 intel/16.0/64/16.0.4.258
+  258  module list
+  259  ./configure FC=ifort --with-mpi --with-cuda=cuda8
+  260  make realclean
+  261  make -j
+  262  clear
+  263  ./parallelgpu 
+  264  vi parallelgpu 
+  265  ./parallelgpu 
+  266  clear
+  267  ls
+  268  rm slurm-757982.out 
+  269  clear
+  270  ./parallelgpu 
+  271  ls
+  272  clear
+  273  ls
+  274  vi qmeshergpu 
+  275  vi DATA/Par_file 
+  276  ./parallelgpu 
+  277  ls OUTPUT_FILES/
+  278  vi OUTPUT_FILES/error_message_00000
+  279  vi OUTPUT_FILES/error_message_000000.txt 
+  280  vi /home/jiazeh/.bashrc 
+  281  ./parallelgpu 
+  282  vi parallelgpu 
+  283  sbatch parallelgpu 
+  284  ls
+  285  clear
+  286  logout
+  287  ls
+  288  cd specfem2d/
+  289  ls
+  290  module avail
+  291  module list
+  292  module purge
+  293  module load cudatoolkit/9.2 intel/16.0/64/16.0.4.258 openmpi/intel-16.0/1.10.2/64
+  294  module avail
+  295  module list
+  296  module purge
+  297  module list
+  298  module load openmpi/intel-16.0/1.10.2/64 intel/16.0/64/16.0.4.258
+  299  ./configure FC=ifort
+  300  make realclean
+  301  make -j
+  302  clear
+  303  ls
+  304  mv parallel parallelgpu
+  305  cp parallelgpu parallelcpu
+  306  vi parallelcpu 
+  307  vi DATA/Par_file 
+  308  clear
+  309  ls
+  310  mv parallelcpu cparallel
+  311  vi cparallel 
+  312  mv cparallel hcparallel
+  313  vi hcparallel 
+  314  clear
+  315  ls
+  316  chmod u+x hcparallel
+  317  ls
+  318  clear
+  319  ls
+  320  ./hcparallel 
+  321  clear
+  322  ls
+  323  vi cmesherz 
+  324  vi DATA/Par_file 
+  325  vi hcparallel 
+  326  rm cmesherz csolverz 
+  327  clear
+  328  ./hcparallel 
+  329  clear
+  330  ./hcparallel 
+  331  vi jmesherz 
+  332  vi hcparallel 
+  333  vi jmesherz 
+  334  module avail
+  335  module list
+  336  vi hcparallel 
+  337  ./hcparallel 
+  338  ls
+  339  vi slurm-757982.out 
+  340  vi jmesherz 
+  341  vi hcparallel 
+  342  ./hcparallel 
+  343  vi jmesherz 
+  344  vi hcparallel 
+  345  ./hcparallel 
+  346  vi jmesherz 
+  347  vi hcparallel 
+  348  vi jmesherz 
+  349  ./hcparallel 
+  350  vi DATA/Par_file 
+  351  vi jmesherz 
+  352  vi Makefile
+  353  module purge
+  354  module load openmpi/intel-16.0/1.10.2/64 intel/16.0/64/16.0.4.258
+  355  module list
+  356  make realclean
+  357  ./configure FC=ifort --with-mpi
+  358  vi Makefile
+  359  make -j
+  360  ./hcparallel 
+  361  ls OUTPUT_FILES/
+  362  clear
+  363  ls
+  364  clear
+  365  ls
+  366  rm jmesherz 
+  367  ls
+  368  vi parallelgpu 
+  369  vi DATA/Par_file 
+  370  chmod u+x parallelgpu 
+  371  ./parallelgpu 
+  372  logout
+  373  ssh tigergpu
+  374  logout
+  375  ls
+  376  vi OUTPUT_FILES/
+  377  logout
+  378  ls
+  379  cd data_bk_specfem2d/
+  380  ls
+  381  vi parallel 
+  382  ls
+  383  vi etienne_gpu.txt 
+  384  cd ..
+  385  ls
+  386  pwd
+  387  cd /home/jiazeh/
+  388  ls
+  389  pwd
+  390  ls
+  391  ls -la
+  392  module avail
+  393  clear
+  394  pwd
+  395  cd ~
+  396  ls
+  397  cd specfem2d/
+  398  ls
+  399  rm outputmesher outputsolver 
+  400  ls
+  401  clear
+  402  ls
+  403  clear
+  404  vi hcparallel 
+  405  vi DATA/Par_file 
+  406  slurmtop
+  407  slurmtop -u jiazeh
+  408  ls
+  409  rm jsolverz 
+  410  clear
+  411  cat ksolvercpu 
+  412  clear
+  413  ls
+  414  logout
+  415  history
+  416  clear
+  417  logout
+  418  clear
+  419  ls
+  420  slurmtop
+  421  . specfem2d/
+  422  cd specfem2d/
+  423  ls
+  424  logout
+  425  module avail
+  426  module list
+  427  clear
+  428  git clone https://github.com/rmodrak/seisflows.git
+  429  ls
+  430  cd seisflows/
+  431  ls
+  432  cd ..
+  433  cd -
+  434  pwd
+  435  ls
+  436  cd scripts/
+  437  pw
+  438  pwd
+  439  cd ..
+  440  ls
+  441  cd ..
+  442  ls
+  443  logout
+  444  vi /home/jiazeh/.bashrc 
+  445  python
+  446  clear
+  447  logout
+  448  lear
+  449  clear
+  450  source /home/jiazeh/.bashrc 
+  451  clear
+  452  ls
+  453  mkdir inversion_test
+  454  ls
+  455  cd inversion_test/
+  456  sfclean
+  457  sfrun
+  458  scp jiazeh@paris:/home/jiazeh/inversion_test/parameters.py ~/inversion_test
+  459  scp jiazeh@paris:/home/jiazeh/inversion_test/* ~/inversion_test
+  460  logout
+  461  cd inversion_test/
+  462  ls
+  463  rm parameters.py 
+  464  ls
+  465  cd /home/jiazeh/
+  466  ls
+  467  ls -la
+  468  cd .ssh/
+  469  ls
+  470  ssh-keygen -t rsa -b 4096
+  471  clear
+  472  ls
+  473  scp ./id_rsa.pub jiazeh@paris:/home/jiazeh/.ssh/uploaded_key.pub
+  474  logout
+  475  clear
+  476  ls
+  477  cd inversion_test/
+  478  ls
+  479  rm ./*.png 
+  480  ls
+  481  rm xxx 
+  482  ls
+  483  clear
+  484  vi
+  485  ls
+  486  mkdir model_init
+  487  mkdir model_true
+  488  clear
+  489  ls
+  490  module avail
+  491  module load anaconda3/4.4.0 
+  492  module list
+  493  conda
+  494  which conda
+  495  clear
+  496  conda config --add channels conda-forge
+  497  conda create -n obspy python=2.7
+  498  conda activate obspy
+  499  source activate obspy
+  500  clear
+  501  ./zallseis
+  502  sfclean
+  503  sfrun
+  504  which pip
+  505  pip numpy
+  506  pip install --user numpy
+  507  sfrun
+  508  pip install --user obspy
+  509  ls
+  510  sfrun
+  511  ls
+  512  clar
+  513  clear
+  514  ls
+  515  clar
+  516  clear
+  517  ls
+  518  mv ../launch_specfem.sh .
+  519  ls
+  520  clear
+  521  l
+  522  ls
+  523  mv launch_specfem_tigergpu.sh 
+  524  mv launch_specfem.sh launch_specfem_tigergpu.sh 
+  525  clear
+  526  ls
+  527  vi launch_specfem_tigergpu.sh 
+  528  sfclean
+  529  sfrun
+  530  vi /home/jiazeh/.bashrc 
+  531  sfclean
+  532  sfrun
+  533  ls
+  534  ls misfit_values 
+  535  cat misfit_values 
+  536  :q
+  537  clear
+  538  ls
+  539  ls output
+  540  rm -r output/*
+  541  ls
+  542  cd output
+  543  cd ..
+  544  rm output.optim 
+  545  cd output.stats/
+  546  ls
+  547  cat step_count 
+  548  cd ..
+  549  cd -
+  550  rm ./*
+  551  ls
+  552  clear
+  553  cd ..
+  554  ls
+  555  display sismo.png 
+  556  xdg-open sismo.png 
+  557  clear
+  558  ls
+  559  rm *.png 
+  560  ls
+  561  clear
+  562  sfclean
+  563  sfrun
+  564  vi parameters.py
+  565  vi paths.py
+  566  vi launch_specfem_tigergpu.sh 
+  567  pwd
+  568  ls
+  569  clear
+  570  ls
+  571  vi /home/jiazeh/.bashrc 
+  572  source /home/jiazeh/.bashrc
+  573  ls
+  574  . sp2d
+  575  ls
+  576  cd ..
+  577  clear
+  578  . inversion_test
+  579  ls
+  580  vi launch_specfem_tigergpu.sh 
+  581  vi specfem_data/Par_file
+  582  vi launch_specfem_tigergpu.sh 
+  583  vi parameters.py
+  584  sbatch launch_specfem_tigergpu.sh 
+  585  slurmtop
+  586  slurmtop -u jiazeh
+  587  squeue -u jiazeh
+  588  . sp2d
+  589  ls
+  590  history
+  591  history > etienne_tiger_commandline_history.txt

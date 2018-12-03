@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "mv all files from $HOME/Dropbox\ \(Princeton\)/Sync/princeton/quick_transfer to the current dir"
+
+#cp $HOME/Desktop/my_files/my_bin/QuickCreate/pptinfo2.odp .
+#mv /home/jiazeh/temp/* . 
+
+final_dir="$HOME/Dropbox\ \(Princeton\)/Sync/princeton/quick_transfer"
+
+eval mv $final_dir/* .
+
+

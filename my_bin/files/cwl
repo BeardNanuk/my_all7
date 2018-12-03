@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "open my working dir for current folder"
+
+date >> $HOME/Desktop/my_files/personal/working_dir/things_done_20180907
+
+vi $HOME/Desktop/my_files/personal/working_dir/things_done_20180907
+
+

@@ -1,0 +1,14 @@
+#!/usr/bin/env python
+# this is a quick test platform for python program
+
+import sys
+from glob :import glob
+
+print(sys.argv[0])
+
+print(sys.argv[1])
+
+glob.
+
+
+

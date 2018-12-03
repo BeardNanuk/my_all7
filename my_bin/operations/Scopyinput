@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "copy to Fan0*.mat $HOME/Desktop/my_files/py2project/pythonvenv_playground/james_source_inversion/obf/input"
+
+#cp $HOME/Desktop/my_files/my_bin/QuickCreate/pptinfo2.odp .
+cp Fan0*.mat $HOME/Desktop/my_files/py2project/pythonvenv_playground/james_source_inversion/obf/input
+

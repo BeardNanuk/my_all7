@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "open funding folder"
+
+cygstart /cygdrive/d/dk_ze/NIA/\!NIA_proposals/20161022_proposals/navy/ONR
+#cygstart /cygdrive/d/dk_ze/NIA/\!NIA_proposals

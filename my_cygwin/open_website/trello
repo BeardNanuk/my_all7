@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "open trello"
+ 
+cygstart chrome "https://trello.com/"
+ 

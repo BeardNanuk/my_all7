@@ -1,0 +1,22 @@
+#!/bin/sh
+
+echo "open google scholar and the active scholars in field"
+
+google-chrome "https://scholar.google.com/"
+# Fuh-Gwo Yuan
+google-chrome "https://scholar.google.com/citations?hl=en&user=GnJ57rkAAAAJ&view_op=list_works&sortby=pubdate"
+# peter cawley
+google-chrome "https://scholar.google.com/citations?hl=en&user=G8ciTZEAAAAJ&view_op=list_works&sortby=pubdate"
+# cara leckey 
+google-chrome "https://scholar.google.com/citations?hl=en&user=3d7XoYMAAAAJ&view_op=list_works&sortby=pubdate"
+# Carlos E.S. Cesnik 
+google-chrome "https://scholar.google.com/citations?hl=en&user=3d7XoYMAAAAJ&view_op=list_works&sortby=pubdate"
+# Chun-Hui Wang 
+google-chrome "https://scholar.google.com/citations?hl=en&user=tji0d8IAAAAJ&view_op=list_works&sortby=pubdate"
+# Bruce W Drinkwater 
+google-chrome "https://scholar.google.com/citations?hl=en&user=0CNVZiMAAAAJ&view_op=list_works&sortby=pubdate"
+
+
+
+#cd /home/jiazeh/Desktop/my_files/my_bin
+

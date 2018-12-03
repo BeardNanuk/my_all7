@@ -1,0 +1,23 @@
+#!/bin/bash
+
+f0=$(sed -n 1,15p specfem_data/SOURCE | grep 'f0' | cut -d\= -f2 | tr -d '[:space:]')
+
+intf0=${f0%.*}
+echo 'intf0 ='$intf0
+
+#nx=$(sed -n 266,268p DATA/Par_fie | grep 'nx' | cut -d\= -f2 | tr -d '[:space:]')
+nx=`grep ^nx specfem_data/ATA/Par_file | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '`
+echo 'nx ='$nx
+
+D_T=`grep ^DT specfem_data/Par_file | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '| sed 's/-/\_/g'`
+echo 'D_T ='$D_T
+
+NSTEP=$(sed -n 26,28p specfem_data/Par_file | grep 'NSTEP' | cut -d\= -f2 | tr -d '[:space:]')
+echo 'NSTEP ='$NSTEP
+
+
+
+
+
+
+

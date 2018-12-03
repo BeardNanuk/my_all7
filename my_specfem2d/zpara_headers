@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# headers for files saving 
+
+# revised on Tue Oct 16 20:14:21 UTC 2018
+# created by Jiaze He
+
+
+
+f0=$(sed -n 1,15p DATA/SOURCE | grep 'f0' | cut -d\= -f2 | tr -d '[:space:]')
+
+intf0=${f0%.*}
+echo 'intf0 ='$intf0
+
+#nx=$(sed -n 266,268p DATA/Par_fie | grep 'nx' | cut -d\= -f2 | tr -d '[:space:]')
+nx=`grep ^nx DATA/Par_file | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '`
+echo 'nx ='$nx
+
+D_T=`grep ^DT DATA/Par_file | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '| sed 's/-/\_/g'`
+echo 'D_T ='$D_T
+
+

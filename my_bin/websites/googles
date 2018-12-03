@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "open google scholar in chrome"
+
+google-chrome "https://scholar.google.com/"
+
+#cd /home/jiazeh/Desktop/my_files/my_bin
+

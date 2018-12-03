@@ -1,0 +1,11 @@
+#!/bin/sh
+echo "preparation for shandong university - natural"
+#cygstart /cygdrive/d/dk_ze/IamAProgrammer/Machine_Learning/DataSciencePython/DataScience/DataScience-Python3
+cygstart /cygdrive/c/JH_fast/山大
+#cygstart chrome "http://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html"
+cygstart /cygdrive/c/Program\ Files/Tracker\ Software/PDF\ Viewer/PDFXCview.exe
+cygstart /cygdrive/c/JH_fast/山大/Full_efforts
+#cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017/Jobs/PennState/Full_Efforts_Prepare
+cygstart /cygdrive/c/JH_fast
+
+cygstart /cygdrive/c/Program\ Files\ \(x86\)/Mosaico/Mosaico.exe

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "open my google drive with ncsu"
+
+#(firefox &)
+#. /usr/bin/firefox
+google-chrome "https://drive.google.com/drive/u/0/my-drive?ogsrc=32"
+
+#cd /home/jiazeh/Desktop/my_files/my_bin
+

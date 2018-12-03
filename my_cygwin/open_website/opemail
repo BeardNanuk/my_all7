@@ -1,0 +1,9 @@
+#!/bin/sh
+echo "open my four emails"
+
+cygstart chrome 
+cygstart chrome "https://mail.google.com/mail/u/1/#inbox"
+cygstart chrome "https://mail.google.com/mail/u/0/?tab=wm#inbox"
+cygstart chrome "https://mex08.emailsrvr.com/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fmex08.emailsrvr.com%2fowa"
+cygstart chrome "https://owa.princeton.edu/owa/"
+

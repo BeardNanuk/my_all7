@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "open PU selfservice"
+ 
+cygstart chrome "http://www.princeton.edu/hr/progserv/sds/applications/selfservice.html"
+ 

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "switch to the path and folder to data_bk/specfem2d_data"
+
+cd $HOME/data_bk/specfem2d_data
+
+
+

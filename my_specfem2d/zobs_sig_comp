@@ -1,0 +1,152 @@
+#!/usr/bin/env python
+
+## load Ux Uy in su format
+## projection then save as numpy array
+
+# revised on Tue Oct 16 20:14:21 UTC 2018
+# created by Jiaze He
+
+# revised on Thu Nov 15 00:56:06 UTC 2018
+# add the optional of CSIC SrcRecDiffNorm 
+
+import obspy
+import numpy as np
+import pandas as pd
+from myFormat.data_format import para_struct
+from seisflows.tools.graphics import _convert_to_array
+from scipy.interpolate import interp1d
+
+## for ploting
+import matplotlib.pyplot as plt
+from seisflows.tools.graphics import plot_section
+
+import argparse
+
+## for i/o
+from obspy import read
+import scipy.io as sio
+from obspy.core.stream import Stream
+import os 
+
+# for file finding
+import glob
+
+flag_seismotype = int(os.environ['flag_seismotype'])
+D_T = float(os.environ['D_T'])
+NSTEP = int(os.environ['NSTEP'])
+print(type(D_T))
+#flag_seismotype = 4
+
+data_para = para_struct('data_para')
+OUTPUT_FILES_path = "obf/output"
+INPUT_path = "obf/input"
+data_para.filenamelist = glob.glob(INPUT_path + '/' + "*file_single.su")
+print(data_para.filenamelist)
+for f in data_para.filenamelist:
+    fhead=(f[len(INPUT_path)+1:len(INPUT_path)+3])
+    print(fhead)
+    #relativefiles = './' + OUTPUT_FILES_path + '/' + fhead
+    stream = read(f,format='SU', byteorder='<')
+    #sismo_png_fn = './' + OUTPUT_FILES_path + '/' + fhead + '_seismo.png'
+    #./savesismo f -save= sismo_png_fn -c=100 -xint=2 -yint=1000 -c=90 > /dev/null &
+    ###matfile = './' + OUTPUT_FILES_path + '/' + fhead + '.mat'
+    ###txtfile = './' + OUTPUT_FILES_path + '/' + fhead + '.txt'
+    
+        # convert stream to image array
+    data = _convert_to_array(stream)
+    adict = {}
+    adict[f[:2]] = data
+    #adict['pkt_np_array'] = data
+    adict['whatever'] = 1
+
+    ###sio.savemat(matfile,adict)
+    ###np.savetxt(txtfile, data, fmt='%20.19f')   # X is an array
+    
+    ###npfile = './' + OUTPUT_FILES_path + '/' + fhead 
+    
+    if fhead=='Ux':
+        print('is'+fhead)
+        Ux_data = np.asarray(data)
+        print('shape of Ux_data:', Ux_data.shape)
+        #np.save(npfile,Ux_data)
+    elif fhead=='Uz':
+        print('is'+fhead)
+        Uz_data = np.asarray(data)
+        print('shape of Uz_data:', Uz_data.shape)
+        #np.save(npfile,Uz_data)
+    elif fhead=='Up':
+        print('is'+fhead)
+        Up_data = np.asarray(data)
+        print('shape of Up_data:', Up_data.shape)
+        #np.save(npfile,Uz_data)
+        
+#if flag_seismotype != 4 or flag_seismotype != 6:
+if flag_seismotype not in (4,6):
+   ### Projection to the normal vector of receiver surfaces
+   # all component of all received signals
+   data_big = np.stack((Ux_data,Uz_data)).transpose(1,0,2)
+   print('the shape of the multi-dim array:', data_big.shape)
+   
+   # construct the receiver normal directions 
+   ###### load angles from USCT - 2D
+   ###RecPos_fn = 'obf/input/RecPos_fn_000000.dat'
+   ###RecPos = pd.read_csv(RecPos_fn,header=None)
+   ###RecPosValues=(RecPos.values/0.1).transpose()
+   import h5py 
+   ### load mat data over -v7.3
+   #with h5py.File('obf/input/Fan01_SRC08_para.mat', 'r') as file:
+   #   mystation_para = list(file['mystation']) # matrix filename is para
+   #print(mystation_para)
+   from scipy.io import loadmat
+   matfile2=loadmat('obf/input/Fan01_SRC08_SrcRecDiffNorm.mat')
+   RecPosValues = matfile2['SrcRecDiffNorm']
+   ###RecPosValues = mystation_para.SrcRecDiffNorm
+   #print('data_obs:', mystation_para.shape)
+   print('the shape of the unit normal vectors for all receivers:', RecPosValues.shape)
+   
+   # projection to the normal vectors for all receivers
+   pd_big = RecPosValues*data_big
+   Un_data = pd_big.sum(1)
+else: 
+   print('pressure or fluid potential')
+   
+
+
+
+### copy npy as input
+
+## convert txt file to numpy 
+Ue_data_pd = pd.read_csv(INPUT_path + "/Uexp.txt",header=None)
+Ue_data=np.transpose(Ue_data_pd.values)
+
+##npfile = 'obf/output/Ue'
+##np.save(npfile,Ue_data)
+#if flag_seismotype != 4:
+if flag_seismotype not in (4,6):
+   data_para.Ux_data = Ux_data
+   data_para.Uz_data = Uz_data
+   data_para.Un_data = Un_data
+else: 
+   data_para.Up_data = Up_data
+
+
+data_para.Ue_data = Ue_data
+
+t_cut = np.arange(0,NSTEP*D_T,D_T)
+data_para.t_cut=t_cut
+
+#Uefile = INPUT_path + 'Ue'
+import pickle
+pickle.dump(data_para,open('obf/input/data_para.pickle','wb'))
+
+
+
+
+
+
+
+
+
+
+
+

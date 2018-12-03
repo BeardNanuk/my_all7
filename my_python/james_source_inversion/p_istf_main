@@ -1,0 +1,18 @@
+#!/usr/bin/env python
+
+
+## 1. 1 preparation for source inversion
+#### import libraries
+#### load data from estimated Green's functions, represented by the received signals from (relatively) wide-band received signals generating from a Gaussian stf
+#### load observed data from experimental signals
+
+#%%capture
+#execfile('plot_csic_main')
+execfile('plib_load.py')
+execfile('pinitial_data_load.py')
+
+
+### 1.2 all constants are created here 
+execfile('pconstant_setup.py')
+
+

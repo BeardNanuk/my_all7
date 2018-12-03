@@ -1,0 +1,102 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH -t 0:41:00
+#SBATCH --gres=gpu:1
+
+
+#cd $SBATCH_O_WORKDIR 
+cd $HOME/specfem3d/
+
+echo `pwd`
+module purge
+module load intel/16.0/64/16.0.4.258   
+module load openmpi/intel-16.0/1.10.2/64
+module load cudatoolkit/9.2
+
+module list
+
+NPROC=1	
+rm -f qmeshergpu
+rm -f qgenerate_database_gpu
+rm -f vsolvergpu
+rm OUTPUT_FILES/*
+#rm slurm* 
+# creates and decomposes mesh
+echo
+echo "running mesher..."
+echo
+mpirun -n $NPROC  ./bin/xmeshfem3D >> qmeshergpu
+
+echo
+echo "running generate databases..."
+echo
+mpirun -n $NPROC  ./bin/xgenerate_databases >> qgenerate_database_gpu
+
+# runs simulation
+echo
+echo "  running solver..."
+echo
+
+mpirun -n $NPROC ./bin/xspecfem3D >> vsolvergpu 
+
+#mpirun -n $NPROC ./bin/xsmooth_sem 0.002 0.002 Qkappa ./DATA/ ./model T
+#mv ./model/proc000000_vp_smooth.bin ./model/proc000000_vp.bin 
+
+echo "running solver - done"
+
+
+
+
+
+##f0=$(sed -n 1,15p DATA/SOURCE | grep 'f0' | cut -d\= -f2 | tr -d '[:space:]')
+##
+##intf0=${f0%.*}
+##echo 'intf0 ='$intf0
+##
+###nx=$(sed -n 266,268p DATA/Par_fie | grep 'nx' | cut -d\= -f2 | tr -d '[:space:]')
+##nx=`grep ^nx DATA/Par_file | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '`
+##echo 'nx ='$nx
+##
+##D_T=`grep ^DT DATA/Par_file | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '| sed 's/-/\_/g'`
+##echo 'D_T ='$D_T
+##
+##NSTEP=$(sed -n 26,28p DATA/Par_file | grep 'NSTEP' | cut -d\= -f2 | tr -d '[:space:]')
+##echo 'NSTEP ='$NSTEP
+##
+##foldname_for_results_saving=$(printf "$HOME/data_bk/specfem2d_data/noutput_intf0_${intf0}_nx${nx}_D_T${D_T}_NSTEP${NSTEP}")
+##echo 'bk path is '$foldname_for_results_saving
+##
+##        if [ -d "$foldname_for_results_saving" ]; then
+##        echo 'nothing'
+##        else
+##        echo 'make a folder'
+##        mkdir "$foldname_for_results_saving"
+##        fi
+##
+##        wait
+##
+##cp -r ./* "$foldname_for_results_saving"/ &
+##	wait
+##
+##path_remote=$(printf "jiazeh@paris:/home/jiazeh/data_bk/specfem2d_tiger_data")
+##echo 'remote path is '$path_remote
+##
+##       # if [ -d "$foldname_for_results_saving_remote" ]; then
+##       # echo 'nothing'
+##       # else
+##       # echo 'make a folder'
+##       # mkdir "$foldname_for_results_saving_remote"
+##       # fi
+###
+##scp -qr ${foldname_for_results_saving} ${path_remote}
+##
+##       wait 
+##echo "copying files has been completed"
+##
+##
+##echo
+##echo "see results in directory: OUTPUT_FILES/"
+##echo
+##echo "done"
+##date
+##

@@ -1,0 +1,48 @@
+#!/bin/sh
+echo "open indeed with a few common searches"
+
+
+cygstart "https://www.bbc.com/news/entertainment_and_arts"
+
+
+cygstart "https://home.grantsolutions.gov/home/"
+cygstart "https://www.grants.gov/web/grants/search-grants.html"
+
+
+
+
+
+cygstart "https://science.energy.gov/grants/foas/open/"
+
+
+
+#Army 
+cygstart "/www.usamraa.army.mil/Pages/BAA.aspx"
+
+
+#NIH
+cygstart "https://grants.nih.gov/funding/searchguide/index.html"
+cygstart "https://www.pop.upenn.edu/aggregator/sources/1"
+
+
+#NASA
+cygstart "https://nspires.nasaprs.com/external/solicitations/solicitations.do?orderBy=release_date&sortOrder=ASC&year=&method="
+
+
+
+
+cygstart "https://www.indeed.com/q-ultrasound-imaging-phd-jobs.html"
+cygstart "https://www.indeed.com/jobs?q=signal+processing+imaging+phd+&l="
+cygstart "https://www.indeed.com/jobs?q=ultrasonics+imaging+phd&l="
+cygstart "https://www.indeed.com/"
+cygstart "https://www.indeed.com/jobs?q=wave+propagation+phd&l="
+
+
+cygstart "https://www.indeed.com/jobs?q=%22structural+health+monitoring%22+professor"
+cygstart "https://www.indeed.com/jobs?q=%22non+destructive%22+professor&l="
+cygstart "https://www.indeed.com/jobs?q=%22ultrasound%22+professor&l="
+cygstart "https://www.indeed.com/q-mechanical-engineering-assistant-professor-jobs.html"
+cygstart "https://www.indeed.com/jobs?q=aerospace+engineering+assistant+professor&l="
+
+
+#cygstart /cygdrive/d/dk_ze/NIA/\!NIA_proposals

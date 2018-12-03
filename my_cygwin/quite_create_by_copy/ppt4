@@ -1,0 +1,18 @@
+#!/bin/sh
+echo "create a PPT file with four images for publications in the current directory"
+
+
+# oxford
+cp /usr/local/bin/QuickCreate/blankppt4.pptx blankppt4.pptx
+cygstart blankppt4.pptx
+
+
+
+
+
+
+
+
+
+
+

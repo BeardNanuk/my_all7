@@ -1,0 +1,7 @@
+#!/bin/sh
+echo "linkedin for looking at others using Mr. White"
+ 
+#cygstart chrome "https://scholar-google-com.prox.lib.ncsu.edu/"
+#cygstart firefox "http://www.thefreedictionary.com/serve"
+ 
+cygstart iexplore "https://www.linkedin.com/feed/" 

@@ -1,0 +1,11 @@
+#!/bin/sh
+echo "hello say hello2"
+echo "hello say hello"
+cygstart /cygdrive/c/Program\ Files\ \(x86\)/Texmaker/texmaker.exe
+cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/SAGE\ LaTeX\ template
+cygstart /cygdrive/d/dk_ze/MUSIC_Laser_composites/C_17_aileron_paper/!PaperReviewReferences
+cygstart /cygdrive/d/dk_ze/D\ SHM
+cygstart "https://scholar-google-com.prox.lib.ncsu.edu/"
+cygstart /cygdrive/c/Program\ Files\ \(x86\)/Notepad++/Notepad++.exe
+cygstart /cygdrive/c/Program\ Files/Tracker\ Software/PDF\ Viewer/PDFXCview.exe
+cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/SAGE\ LaTeX\ template/mybibfile_v2.bib

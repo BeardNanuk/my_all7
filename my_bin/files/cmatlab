@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "open my common_matlab file"
+
+vi $HOME/Desktop/my_files/my_matlab/common_matlab
+

@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Open dictionary with firefoxs"
+
+cygstart firefox "http://www.thefreedictionary.com/serve"

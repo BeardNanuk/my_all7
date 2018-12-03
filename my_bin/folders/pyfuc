@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "switch to the path and folder to Desktop/my_files/my_python/ze_sys_pyfunc"
+
+cd $HOME/Desktop/my_files/my_python/ze_sys_pyfunc
+
+
+

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "Open the folder for TeamViewer"
+cygstart Ubuntu
+cygstart Ubuntu
+cygstart Ubuntu
+cygstart Ubuntu
+cygstart Ubuntu
+cygstart Ubuntu
+cd . && exit

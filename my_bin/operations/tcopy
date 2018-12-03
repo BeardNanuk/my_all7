@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "copy specfem2d/results and gif to current dir"
+
+#cp $HOME/Desktop/my_files/my_bin/QuickCreate/pptinfo2.odp .
+cp /home/jiazeh/specfem2d/OUTPUT_FILES/Up_seismo.png .
+cp /home/jiazeh/specfem2d/v*.png .
+cp /home/jiazeh/specfem2d/DATA/Par_file .
+cp /home/jiazeh/specfem2d/DATA/SOURCE .
+cp /home/jiazeh/specfem2d/DATA/STATIONS .
+mv /home/jiazeh/Downloads/ezgif.com-gif-maker.gif .
+

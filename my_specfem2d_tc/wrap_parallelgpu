@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sbatch parallelgpu
+
+#. zcluster_copy
+
+
+
+
+

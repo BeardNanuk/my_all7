@@ -1,0 +1,532 @@
+#!/usr/local/bin/matlab
+
+# my common matlab command summary
+% load and save 
+
+if flagv==1
+        filename = sprintf('vx/fkNZLCC');
+
+        fdzlccname=sprintf('vx/fkpics/vxA0S0Filtered');
+elseif flagv==2
+        filename = sprintf('vy/fkNZLCC');
+
+        fdzlccname=sprintf('vy/fkpics/vyA0S0Filtered');
+elseif flagv==3
+        filename = sprintf('vz/fkNZLCC');
+
+        fdzlccname=sprintf('vz/fkpics/vyA0S0Filtered');
+end
+eval(['mkdir ', filename;]);
+% eval(['load ', fdzlccname, ' coevideo';]);
+eval(['load ', fdzlccname, ' UpFiltered2A0Reduce UpFiltered2S0Reduce UpFiltered2S0Reduce UnFiltered2A0Reduce UnFiltered2S0Reduce TrystarGrid radius_gridMatrix radius_grid1Matrix radius_grid2Matrix']);
+
+
+      load Forward_vx;
+      U_z1=surfvx;
+      load vx_Forward_Pristine;
+      U_z2=surfvx;
+      surfvxss = U_z1 - U_z2;
+      save('vxDefect', 'surfvxss', 'ds','dt','excitation','t','time_increment','-v7.3');
+      clear
+
+
+
+if flagv==1
+fn_fkxky=())('vx/fkNZLCC/Figure_multif_%d_r%dr%dr%dr%d',...
+    FreqNum,radius_grid0,radius_grid,radius_grid1,radius_grid2);
+elseif flagv==2
+fn_fkxky=sprintf('vy/fkNZLCC/Figure_multif_%d_r%dr%dr%dr%d',...
+    FreqNum,radius_grid0,radius_grid,radius_grid1,radius_grid2);
+elseif flagv==3
+fn_fkxky=sprintf('vz/fkNZLCC/Figure_multif_%d_r%dr%dr%dr%d',...
+    FreqNum,radius_grid0,radius_grid,radius_grid1,radius_grid2);
+end
+
+%_inner%d_outer%d iter_inner,iter_outer,
+% saveas(f,fn_fkxky,'jpg');
+saveas(f,fn_fkxky,'tif');
+saveas(f,fn_fkxky,'fig');
+
+
+ eval(['save ', fdzlccname, ' coevideo';]);
+
+
+% csv load
+filename = 'csvlist.dat';
+M = csvread(filename)
+
+
+
+
+
+% figure and subplot 
+
+str1 = ' jet'
+
+subrows=3;
+subcols=4;
+
+% %%
+f=figure('Color',[1 1 1],'Position', [20, 50, 1050, 900])
+
+subplot(subrows,subcols,1)
+surf(a_ZLCC_sum);
+
+% imagesc(I_xy_den2);
+shading interp;
+title(['Frequency domain Uncut'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+
+%%axis([0 2*pi -1.5 1.5])
+% axis equal;
+
+subplot(subrows,subcols,2)
+surf(I_xy_den3);
+% imagesc(I_xy_den2);
+shading interp;
+title(['Notch cut'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+
+subplot(subrows,subcols,3)
+surf(I_xy_den2);
+% imagesc(I_xy_den2);
+shading interp;
+title(['Left, right BC cut'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+
+subplot(subrows,subcols,subcols)
+axis off;
+textSimuYstar=0.9;
+text(-0.1,textSimuYstar,['up row start = ',num2str(qrowupstar)]);
+text(-0.1,textSimuYstar-0.1,['up row end = ', num2str(qrowupend)]);
+text(-0.1,textSimuYstar-0.2,['left col start = ', num2str(qcolleftstar)]);
+text(-0.1,textSimuYstar-0.3,['left col end = ', num2str(qcolleftend)]);
+text(-0.1,textSimuYstar-0.4,['right col start = ', num2str(qcolrightstar)]);
+text(-0.1,textSimuYstar-0.5,['right col start = ', num2str(qcolrightend)]);
+text(-0.1,textSimuYstar-0.6,['colormap type = ', str1]);
+text(-0.1,textSimuYstar-0.7,['threshold notch cut = ', num2str(th3percent*100), ' %']);
+text(-0.1,textSimuYstar-0.8,['threshold left righ BC cut  = ', num2str(th2percent*100), '%']);
+
+
+
+subplot(subrows,subcols,subcols+1)
+pcolor(a_ZLCC_sum);
+% imagesc(I_xy_den2);
+shading flat;
+% grid off;
+title(['Frequency domain Uncut'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+% axis equal;
+
+subplot(subrows,subcols,subcols+2)
+pcolor(I_xy_den3);
+% imagesc(I_xy_den2);
+shading flat;
+title(['Notch cut'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+
+subplot(subrows,subcols,subcols+3)
+pcolor(I_xy_den2);
+% imagesc(I_xy_den2);
+shading flat;
+title(['Left, right BC cut'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+
+
+
+subplot(subrows,subcols,2*subcols+1)
+pcolor(a_ZLCC_sum);
+% imagesc(I_xy_den2);
+shading interp;
+title(['Frequency domain Uncut'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+% axis equal;
+
+subplot(subrows,subcols,2*subcols+2)
+pcolor(I_xy_den3);
+% imagesc(I_xy_den2);
+shading interp;
+title(['Notch cut'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+
+subplot(subrows,subcols,2*subcols+3)
+pcolor(I_xy_den2);
+% imagesc(I_xy_den2);
+shading interp;
+% colormap hsv
+
+eval(['colormap ' str1]);
+% colormap hsv
+title(['Left, right BC cut'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+
+
+s1 = 'Good';
+s2 = 'morning';
+s = strcat(s1,s2)
+
+
+u2_rec=[D_star_y D_star_x; D_star_y D_end_x; D_end_y D_end_x; ...
+    D_end_y D_star_x; D_star_y D_star_x];
+
+plot(u2_rec(:,1),u2_rec(:,2),'r-','LineWidth',1.5);
+
+
+
+
+
+
+
+% figure and subplot 
+
+ftsizetitle = 14;
+lbsize = 14; 
+
+zlimMin = -0.1
+zlimMax = 0.1
+
+
+str1 = ' jet'
+
+subrows=2;
+subcols=3;
+
+% %%
+f=figure('Color',[1 1 1],'Position', [20, 50, 1050, 900])
+
+subplot(subrows,subcols,1)
+surf(d050);
+
+% imagesc(I_xy_den2);
+shading interp;
+title(['Reflectivity = 0.5'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+zlim([zlimMin,zlimMax]);
+%%axis([0 2*pi -1.5 1.5])
+% axis equal;
+
+subplot(subrows,subcols,2)
+surf(d012);
+% imagesc(I_xy_den2);
+shading interp;
+title(['Reflectivity = 0.12'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+zlim([zlimMin,zlimMax]);
+
+subplot(subrows,subcols,3)
+surf(diffdd);
+% imagesc(I_xy_den2);
+shading interp;
+title(['difference CSG'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+zlim([zlimMin,zlimMax]);
+
+
+subplot(subrows,subcols,1+subcols)
+pcolor(d050);
+%imagesc(I_xy_den2);
+shading interp;
+title(['Reflectivity = 0.5'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+%%axis([0 2*pi -1.5 1.5])
+% axis equal;
+
+subplot(subrows,subcols,2+subcols)
+pcolor(d012);
+% imagesc(I_xy_den2);
+shading interp;
+title(['Reflectivity = 0.12'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+
+subplot(subrows,subcols,3+subcols)
+pcolor(diffdd);
+% imagesc(I_xy_den2);
+shading interp;
+title(['difference CSG'],'FontSize', ftsizetitle);
+set(gca,'FontSize', lbsize);
+
+
+
+%%%%%%%%%%%% for a single figure 
+% figure and subplot 
+
+ftsizetitle = 24;
+lbsize = 24; 
+
+zlimMin = -0.1
+zlimMax = 0.1
+
+
+str1 = ' jet'
+
+subrows=1;
+subcols=1;
+
+% %%
+numofiter  =  length(OFR); 
+
+f=figure('Color',[1 1 1],'Position', [20, 50, 600, 400])
+plot(1:numofiter,OFR,'b-','LineWidth',2);
+
+% imagesc(I_xy_den2);
+shading interp;
+xlabel('Iteration','FontSize',ftsizetitle)
+ylabel('$J$','Interpreter','latex','FontSize',ftsizetitle)
+%title('$\hat{\psi}$','Interpreter','latex')
+%title(['iteration'],'FontSize', ftsizetitle);
+set(gca,'FontSize', ftsizetitle);
+ 
+picnameOriginal= sprintf('OFRoriginal%d',numofiter);
+saveas(f,picnameOriginal,'tif');
+close all
+
+
+%%%%%%%%%%%%%%%
+
+zlimMin = 0
+zlimMax = 1
+
+
+f=figure('Color',[1 1 1],'Position', [20, 50, 600, 400])
+plot(1:numofiter,OFR/(max(max(OFR))),'b-','LineWidth',2);
+
+% imagesc(I_xy_den2);
+shading interp;
+xlabel('Iteration','FontSize',ftsizetitle)
+ylabel('$J$','Interpreter','latex','FontSize',ftsizetitle)
+%title('$\hat{\psi}$','Interpreter','latex')
+%title(['iteration'],'FontSize', ftsizetitle);
+set(gca,'FontSize', ftsizetitle);
+zlim([zlimMin,zlimMax]);
+
+picnameOriginal= sprintf('OFRnorlized%d',numofiter);
+saveas(f,picnameOriginal,'tif');
+close all
+
+
+
+%%%%%%%%%%%%% plot two subfigures with proper labels 
+close all; 
+
+move_x=414;
+move_y=492;
+imag_x_star=-20; 
+imag_y_star=392;
+% %%
+
+%% row and column of 
+subrows=1;
+subcols=2;
+
+FONTSIZE_TTTLE = 16;
+FONTSIZE_LABEL = 16;
+FONTSIZE_TICK = 14;
+
+FLAG_ZLIM = 1;
+
+
+% frame starting x,y,width,height
+f=figure('Color',[1 1 1]);
+%f=figure('Color',[1 1 1],'Position', [20, 100, 800, 400]);
+
+%% actual ploting starting from here 
+subplot(subrows,subcols,1)
+pcolor(damageLongDelayn); hold on;
+shading flat;
+colormap(bone)
+zlimMin = min(min(damageLongDelayn))
+zlimMax = max(max(damageLongDelayn))
+if FLAG_ZLIM == 1
+% zlim([zlimMin,zlimMax]);
+set(gca, 'clim', [zlimMin,zlimMax]);
+end
+
+% title and labeling, with their fontsize 
+title(['Experimental signals'],'FontSize', FONTSIZE_TTTLE);
+x_label_text = (['Sensor Number']);
+xlabel(x_label_text,'FontSize',FONTSIZE_LABEL)
+y_label_text=(['Time (\mus) ']);
+ylabel(y_label_text, 'FontSize',FONTSIZE_LABEL)
+% label text (what actually to show)
+y_label='';
+y_ticknum=6;
+for ii=1:y_ticknum
+   y_label=[y_label deblank(num2str(round((ii-1)*dt*timeStpLenSimuWD/(y_ticknum-1)*1e6),'%3.0f')) '|'];%*disp_factor_t
+end
+% tick position regarding the data dimensions (to locate the above label)
+indent_y=1;
+y_tick_label=[indent_y:round(timeStpLenSimuWD/(y_ticknum-1)):timeStpLenSimuWD+indent_y - round(timeStpLenSimuWD/(y_ticknum-1))];
+y_tick_label = [y_tick_label round(timeStpLenSimuWD)]
+% include the those things 
+set(gca,'YTick',y_tick_label);
+set(gca,'YTickLabel',y_label,'FontSize',FONTSIZE_TICK);
+
+
+subplot(subrows,subcols,2)
+pcolor(totalreceivedWD(:,2:end)); hold on;
+shading flat;
+zlimMin = min(min(totalreceivedWD))*0.5;
+zlimMax = max(max(totalreceivedWD))*0.5;
+if FLAG_ZLIM == 1
+%CLim([zlimMin,zlimMax]);set(gca, 'clim', [0 1]);
+set(gca, 'clim', [zlimMin,zlimMax]);
+end
+
+% title and labeling, with their fontsize 
+title(['Simulation signals'],'FontSize', FONTSIZE_TTTLE);
+x_label_text = (['Sensor Number']);
+xlabel(x_label_text,'FontSize',FONTSIZE_LABEL)
+y_label_text=(['Time (\mus) ']);
+ylabel(y_label_text, 'FontSize',FONTSIZE_LABEL)
+
+%   IF FLAG_SPECIFY_TICKVALUE = 1;
+% label text (what actually to show)
+y_label='';
+y_ticknum=6;
+for ii=1:y_ticknum
+   y_label=[y_label deblank(num2str(round((ii-1)*dt*timeStpLenSimuWD/(y_ticknum-1)*1e6),'%3.0f')) '|'];%*disp_factor_t
+end
+% tick position regarding the data dimensions (to locate the above label)
+indent_y=1;
+y_tick_label=[indent_y:round(timeStpLenSimuWD/(y_ticknum-1)):timeStpLenSimuWD+indent_y - round(timeStpLenSimuWD/(y_ticknum-1))];
+y_tick_label = [y_tick_label round(timeStpLenSimuWD)]
+% include the those things 
+set(gca,'YTick',y_tick_label);
+set(gca,'YTickLabel',y_label,'FontSize',FONTSIZE_TICK);
+
+ set(gcf, 'PaperUnits', 'centimeters');
+ set(gcf, 'PaperPosition', [0, 0, 20, 10]); %x_width=10cm y_width=15cm
+
+filename = sprintf('output/ExpSimu');
+saveas(f,filename,'jpg')
+saveas(f,filename,'fig')
+saveas(gcf,'output/fig1.tif')
+% axis equal;
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% plotMainv4  %%%%%%%%%%
+
+
+
+
+%%
+close all; 
+
+move_x=414;
+move_y=492;
+imag_x_star=-20; 
+imag_y_star=392;
+% %%
+
+%% row and column of 
+subrows=2;
+subcols=3;
+
+FONTSIZE_TTTLE = 16;FONTSIZE_LABEL = 16;FONTSIZE_TICK = 14;
+%for label
+TOTAL_LABEL_X = 24; TOTAL_LABEL_Y = 26;
+% for tick
+LENGTH_X = col_len;LENGTH_Y = row_len;
+FLAG_ZLIM = 2;
+FIGURE_POSITION = [20, 100, 1000, 680]; % in pixel
+OUTPUT_POSITION = [0, 0, 20, 10]; % in cm
+
+%%% matrices to plot 
+matrix1 = RMS_matrix_unmasked;TITLENAME1 = 'RMS';
+matrix2 = CTWE;TITLENAME2 = 'CTWE';
+matrix3 = CSWEAbs;TITLENAME3 = 'CSWE';
+matrix4 = abs_RMS_matrix_masked;TITLENAME4 = 'filter masked RMS';
+matrix5 = abs(I_xy_den); TITLENAME5 = 'ZLCC (TD)';
+matrix6 = abs(a_ZLCC_conj_sum);TITLENAME6 = 'ZLCC (FD)';
+
+
+
+if flag_output_figure ==1
+% frame starting x,y,width,height
+f=figure('Color',[1 1 1],'Position', FIGURE_POSITION);
+%f=figure('Color',[1 1 1],'Position', [20, 100, 800, 400]);
+
+%% actual ploting starting from here 
+plotmatrix = matrix1;titlenametemp = TITLENAME1;subnum = 1;subplotcommon;
+plotmatrix = matrix2;titlenametemp = TITLENAME2;subnum = 2;subplotcommon;
+plotmatrix = matrix3;titlenametemp = TITLENAME3;subnum = 3;subplotcommon;
+plotmatrix = matrix4;titlenametemp = TITLENAME4;subnum = 4;subplotcommon;
+plotmatrix = matrix5;titlenametemp = TITLENAME5;subnum = 5;subplotcommon;
+plotmatrix = matrix6;titlenametemp = TITLENAME6;subnum = 6;subplotcommon;
+
+% set(gcf, 'PaperUnits', 'centimeters');
+% set(gcf, 'PaperPosition', OUTPUT_POSITION); %x_width=10cm y_width=15cm
+
+filename = sprintf('output/ExpSimu');
+saveas(f,filename,'jpg')
+saveas(f,filename,'fig')
+% saveas(gcf,'output/fig1.tif')
+% axis equal;
+
+end  % flag_fk_figure
+
+
+
+%%%%%%% %%%%%%
+
+% subplotcommon
+
+%%%%%%% Subplot  %%%%%%%%%%%%%%%%%%
+subplot(subrows,subcols,subnum)
+pcolor(plotmatrix); hold on;
+shading flat;
+axis equal;
+% colormap(bone)
+
+if FLAG_ZLIM == 1
+zlimMin = min(min(plotmatrix))
+zlimMax = max(max(plotmatrix))
+% zlim([zlimMin,zlimMax]);
+set(gca, 'clim', [zlimMin,zlimMax]);
+end
+
+%%%%% title and labeling, with their fontsize 
+title([titlenametemp],'FontSize', FONTSIZE_TTTLE);
+x_label_text = (['x (mm)']);
+xlabel(x_label_text,'FontSize',FONTSIZE_LABEL)
+y_label_text=([' y (mm) ']);
+ylabel(y_label_text, 'FontSize',FONTSIZE_LABEL)
+%%%%% label text (what actually to show)
+x_label='';
+x_ticknum=5;
+for ii=1:x_ticknum
+   x_label=[x_label deblank(num2str(round((ii-1)*TOTAL_LABEL_X/...
+       (x_ticknum-1)),'%3.1f')) '|'];%*disp_factor_t
+end
+
+y_label='';
+y_ticknum=5;
+for ii=1:y_ticknum
+   y_label=[y_label deblank(num2str(((ii-1)*TOTAL_LABEL_Y/...
+       (y_ticknum-1)),'%3.1f')) '|'];%*disp_factor_t
+end
+%%%%% tick position regarding the data dimensions (to locate the above label)
+indent_x=0;
+x_tick_label=[indent_x:round(LENGTH_X/(x_ticknum-1)):LENGTH_X+indent_x...
+    - round(LENGTH_X/(x_ticknum-1))];
+x_tick_label = [x_tick_label round(LENGTH_X)]
+% include the those things 
+set(gca,'XTick',x_tick_label);
+set(gca,'XTickLabel',x_label,'FontSize',FONTSIZE_TICK);
+
+indent_y=1;
+y_tick_label=[indent_y:round(LENGTH_Y/(y_ticknum-1)):LENGTH_Y+indent_y...
+    - round(LENGTH_Y/(y_ticknum-1))];
+y_tick_label = [y_tick_label round(LENGTH_Y)]
+% include the those things 
+set(gca,'YTick',y_tick_label);
+set(gca,'YTickLabel',y_label,'FontSize',FONTSIZE_TICK);
+
+
+
+generate Datastring in matlab for logging

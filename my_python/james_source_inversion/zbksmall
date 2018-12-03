@@ -1,0 +1,75 @@
+#!/bin/bash
+
+# copy the important but limited number of i/o files of jp to /home/jiazeh/temp
+
+
+#created on Mon Oct  8 14:06:55 UTC 2018
+#created by Jiazeh 
+
+#f0=$(sed -n 1,15p DATA/SOURCE | grep 'f0' | cut -d\= -f2 | tr -d '[:space:]')
+
+#intf0=${f0%.*}
+#echo 'intf0 ='$intf0
+
+# foldername 
+foldername="20181130_filtered"
+#foldername="gauss_empty_scan_f0$intf0"
+echo 'foldername='$foldername
+
+#!!!!!!!!!!!! be really careful about the destination 
+final_dir="$HOME/Desktop/my_files/py2project/pythonvenv_playground/james_source_inversion/src_csic/vip_istf"
+
+final_foldername=$(printf "${final_dir}/${foldername}")
+#final_foldername=$(printf "${final_dir}/f0_${intf0}")
+echo 'final_foldername='$final_foldername
+
+###final_stf_filename=$(printf "${final_dir}/stf_${foldername}")
+#final_stf_filename=$(printf "${final_dir}/stf_f0_${intf0}")
+
+###echo 'final_stf_filename='$final_stf_filename
+
+
+###final_seis_filename=$(printf "${final_dir}/seis_${foldername}.png")
+#eval cp "$HOME/specfem2d/OUTPUT_FILES/plot_source_time_function.txt" $final_dir
+
+rm -rf bk_small
+mkdir bk_small
+
+
+#final_dir="bk_small"
+dfolder='bk_small'
+
+temp_full="$dfolder"
+mkdir -p $temp_full && eval cp -r src_csic_jp_results/* $temp_full
+mkdir -p $temp_full && eval cp -r ./p* $temp_full
+mkdir -p $temp_full && eval cp -r src_csic_jp_results/*pdf $temp_full
+mkdir -p $temp_full && eval cp -r ./src_csic_average_v2.ipynb $temp_full
+
+
+
+
+#temp_full="$dfolder/OUTPUT_FILES"
+#mkdir -p $temp_full && eval cp -r OUTPUT_FILES/* $temp_full
+#temp_full="$dfolder/obf/output"
+#mkdir -p $temp_full && eval cp -r obf/output/* $temp_full
+#temp_full="$dfolder/src/specfem2D"
+#mkdir -p $temp_full && eval cp -r src/specfem2D/compute_add_sources_acoustic.f90 $temp_full
+
+#vi $final_dir/zreadme.txt && 
+echo $PWD > $dfolder/zreadme.txt
+echo $foldername >> $dfolder/zreadme.txt
+today=`date +%Y-%m-%d.%H:%M:%S` # or whatever pattern you desire
+echo $today >> $dfolder/zreadme.txt
+eval mv $dfolder $final_foldername
+
+## an option to generate the renamed stf for src inversion 
+#eval mv "$final_foldername/OUTPUT_FILES/plot_source_time_function.txt" $final_stf_filename
+#eval mv "$final_foldername/obf/output/p_src01_delay.png" $final_seis_filename
+
+
+#eval mv "$final_foldername/obf/output/p_src01_delay.png" "$final_stf_filename/$foldername"
+
+
+#cp2temp 'DATA/Par_file'
+#cp2temp 'DATA/Par_file'
+

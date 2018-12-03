@@ -1,0 +1,13 @@
+#!/bin/sh
+
+echo "clean specfem2d - for reducing specfem backup spacing"
+
+#xdg-open ./OUTPUT_FILES/forward_image0000100.jpg 
+#cd /home/jiazeh/specfem2d
+
+rm -r ./EXAMPLES
+rm -r ./OUTPUT_FILES/f*
+
+
+
+

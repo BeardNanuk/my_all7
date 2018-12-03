@@ -1,0 +1,126 @@
+#!/bin/bash
+
+#i greb the total iteration number in the misfit file 
+Nit=`wc -l ./output.stats/misfit | cut -f1 -d' '`
+# break the total iterations in the small chucks. Ei greb the total iteration number in the misfit file 
+Nit=`wc -l ./output.stats/misfit | cut -f1 -d' '`
+# break the total iterations in the small chucks. Each chuck will be excuted in parallel with all
+# the process a computer have; the trick is to include & for continue excution without waitiing;
+# it works only with the number total jobs in each iteration (10) larger than the total core numbers (8)
+# but also will have enough memory for the computer to "SAVE" for undone jobs (due to '&')
+Nloop=$(($Nit/$jobs_perchuck+1))
+
+# get the lines to search for, then search the word "NSTEP", output the number after the '='
+NSTEP=$(sed -n 26,28p specfem_data/Par_file | grep 'NSTEP' | cut -d\= -f2)
+
+ach chuck will be excuted in parallel with all
+# the process a computer have; the trick is to include & for continue excution without waitiing;
+# it works only with the number total jobs in each iteration (10) larger than the total core numbers (8)
+# but also will have enough memory for the computer to "SAVE" for undone jobs (due to '&')
+Nloop=$(($Nit/$jobs_perchuck+1))
+
+# get the lines to search for, then search the word "NSTEP", output the number after the '='
+	NSTEP=$(sed -n 26,28p specfem_data/Par_file | grep 'NSTEP' | cut -d\= -f2)
+
+	i.e., 3 jobs each loop, then total jobs perchuck is 3*jobs_perchuck = 30; this number
+# should be larger than the number of cores (to make the most use of the computer)
+# should also be small enough to make the computers memory not blow up
+	jobs_perchuck=10
+
+
+
+# greb the total iteration number in the misfit file 
+	Nit=`wc -l ./output.stats/misfit | cut -f1 -d' '`
+# break the total iterations in the small chucks. Each chuck will be excuted in parallel with all
+# the process a computer have; the trick is to include & for continue excution without waitiing;
+# it works only with the number total jobs in each iteration (10) larger than the total core numbers (8)
+# but also will have enough memory for the computer to "SAVE" for undone jobs (due to '&')
+Nloop=$(($Nit/$jobs_perchuck+1))
+
+# get the lines to search for, then search the word "NSTEP", output the number after the '='
+NSTEP=$(sed -n 26,28p specfem_data/Par_file | grep 'NSTEP' | cut -d\= -f2)
+
+echo 'number of time steps is '$NSTEP 
+
+
+# Get various parameters to determine the repository name and the images to process
+AC_or_El=`grep ^MATERIALS   ./parameters.py | cut -d = -f 2 | sed 's/ //g'| tr -d \'`
+Density=`grep ^DENSITY   ./parameters.py | cut -d = -f 2 | sed 's/ //g' | tr -d \'`
+#Nevent=`grep ^NSRC   ./parameters.py | cut -d = -f 2 | sed 's/ //g' | tr -d \'`
+#Nevent=$(sed -n 17,19p ./parameters.py | grep 'NSRC' | cut -d\= -f2)
+Nevent=$(sed -n 17,19p ./parameters.py | grep 'NSRC' | cut -d\= -f2 | sed 's/\#.*//')
+
+#Nit=`wc -l ./output.stats/misfit | cut -f1 -d' '`
+Nit="$(printf "%04d" $Nit)"
+echo  -e "\033[32m\033[1mSimulation : $AC_or_El\033[0m"
+echo  -e "\033[32m\033[1mDensity : $Density\033[0m"
+echo  -e "\033[32m\033[1mNumber of iterations: $Nit\033[0m"
+echo
+
+ech   -e "\033[31m\033[1mOutput seismographs\033[0m"
+echo
+# Plot the seismograms
+str='Elastic'
+Nevent=$(($Nevent-1))
+
+echo $Nevent	
+
+#for i in `seq 0 $Nloop`;do
+#for j in `seq 1 $jobs_perchuck` ;do
+#	k=$((10*$i+$j))
+#           if [ "$k" -gt "$Nit" ]
+#           then
+#             break  # Skip entire rest of loop.
+#           fi
+        
+for n_event in `seq 0 $Nevent` ; do
+NE="$(printf "%06d" $n_event)"
+
+#   K="$(printf "%04d" $k)"
+       #   dirname=$(printf "./output/model_$K")
+       #   fullp=$(printf "./output/model_$K_$filename2.bin");
+       #   echo $fullp
+        #   ./zplotbin $dirname $filename2 $k &
+
+
+echo 'the number of events for seimography generation is '$NE
+
+if [ "$AC_or_El" == "$str" ]
+then
+  ./savesismo ./scratch/solver/$NE/traces/obs/Ux_file_single.su -save=$REP/traces/obs_disp_x_event_$NE.png  > /dev/null &
+  ./savesismo ./scratch/solver/$NE/traces/obs/Uz_file_single.su -save=$REP/traces/obs_disp_z_event_$NE.png > /dev/null &
+  ./savesismo ./scratch/solver/$NE/traces/syn/Ux_file_single.su -save=$REP/traces/syn_disp_x_event_$NE.png > /dev/null &
+  ./savesismo ./scratch/solver/$NE/traces/syn/Uz_file_single.su -save=$REP/traces/syn_disp_z_event_$NE.png > /dev/null &
+  ./savesismo ./scratch/solver/$NE/traces/adj/Ux_file_single.su.adj -save=$REP/traces/last_adj_disp_x_event_$NE.png > /dev/null &
+  ./savesismo ./scratch/solver/$NE/traces/adj/Uz_file_single.su.adj -save=$REP/traces/last_adj_disp_z_event_$NE.png > /dev/null &
+else
+./savesismo ./scratch/solver/$NE/traces/obs/Up_file_single.su -save=./output/traces/obs_event_$NE.png > /dev/null &
+./savesismo ./scratch/solver/$NE/traces/syn/Up_file_single.su -save=./output/traces/syn_event_$NE.png > /dev/null &
+./savesismo ./scratch/solver/$NE/traces/adj/Up_file_single.su.adj -save=./output/traces/last_adj_event_$NE.png > /dev/null &
+fi
+done
+wait
+#           cp $REP/model_true/*_[xz].bin $REP/output/model_$K
+#           python $REP/plotbin $REP/output/model_$K $REP/Images/$variable/model/It$K $variable  >> xxx &
+#           ./plot_grad_and_diff $k $variable $REP/Images/$variable/analyse/It$K >> xxx &
+#      done
+#wait
+#      done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

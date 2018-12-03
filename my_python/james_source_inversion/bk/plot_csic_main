@@ -1,0 +1,98 @@
+#!/usr/bin/env python
+
+### preparation for source inversion 
+## import libraries, load data from estimated Green's functions, represented by the received signals from (relatively wide-banded) Gaussian stf
+## observed data from experimental signals  
+
+# created by Jiaze He 
+# created on Tue Nov 13 20:43:18 STD 2018
+
+
+import obspy
+import numpy as np
+import pandas as pd
+from myFormat.data_format import para_struct
+from seisflows.tools.graphics import _convert_to_array
+from scipy.interpolate import interp1d
+
+## for ploting
+import matplotlib.pyplot as plt 
+from seisflows.tools.graphics import plot_section
+
+import argparse
+
+
+# for filtering
+from obspy.signal.filter import bandpass
+
+
+#### for spectrum plotting
+from scipy import signal
+#from obspy.signal.util import _npts2nfft
+#from obspy.signal.invsim import cosine_sac_taper
+from scipy.fftpack import fft, ifft, fftfreq
+
+#%matplotlib inline
+import matplotlib.pyplot as plt
+from obspy import read, UTCDateTime
+## for i/o
+#from obspy import read
+import scipy.io as sio 
+from obspy.core.stream import Stream
+import os  
+
+from scipy import interpolate
+import pickle
+
+#os.environ['REQUESTS_CA_BUNDLE'] = os.path.join(os.getcwd(), 'cacert.pem')
+
+flag_obs_type = 2 # 1 for su, 2 for matlabi
+flag_syn_type = 2 # 1 for su, 2 for pickle  
+
+
+if flag_obs_type is 1: 
+    stream_obs = read('obf/input/Up_delayed_ricker_f0500000.su',format='SU', byteorder='<')
+    data_obs = _convert_to_array(stream_obs)
+elif flag_obs_type is 2:
+    from scipy.io import loadmat
+    matfile2=loadmat('obf/input/Fan01_SRC08_mat.mat')
+    data_obs = matfile2['fan_beam_scan_full']
+    #type(data_obs)
+
+print('the shape of the observed data: ', data_obs.shape)
+    
+
+if flag_syn_type is 1: 
+   stream_syn = read('obf/input/Up_csic_syn_gauss_f04000000_DT4d_9.su',format='SU', byteorder='<')
+   data_syn = _convert_to_array(stream_syn)
+elif flag_syn_type is 2:
+   import pickle
+   # pickle.dump(exp_para,open('obf/input/data_para.pickle','wb'))
+   with open('obf/input/data_para_csic_gauss_rvelc_f04000000_DT4d_9.pickle', 'rb') as pickle_file:
+      data_para = pickle.load(pickle_file)
+   data_syn = data_para.Un_data 
+print('the shape of the synthetic data: ', data_syn.shape)
+
+
+#### load stf function 
+stf_syn_pd = pd.read_csv('obf/input/stf_csic_syn_gauss_f04000000_DT4d_9',header=None,delim_whitespace=True)
+stf_syn_1Dnp = stf_syn_pd.values
+stf_syn = stf_syn_1Dnp[:,1]
+stf_obs_1Dnp = pd.read_csv('obf/input/stf_delayed_ricker_f0500000',header=None,delim_whitespace=True).values
+stf_obs = stf_obs_1Dnp[:,1]
+
+syn_name = 'gaussian'
+obs_name = 'tbd' # to be determined
+
+import h5py
+### load mat data over -v7.3
+#with h5py.File('obf/input/Fan01_SRC08_para.mat', 'r') as file:
+#    mystation_para = list(file['mystation']) # matrix filename is para 
+
+
+#execfile('pconstant_setup.py')
+#execfile('pstf_inverse_wrap.py')
+
+#execfile('ptraceprepare_wrap.py')
+
+

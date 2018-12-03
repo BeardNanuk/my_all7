@@ -1,0 +1,3 @@
+#!/bin/sh
+echo "open wechat"
+cygstart chrome "https://web.wechat.com/"

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+sbatch qparllelgpu_map_plot
+
+#. zcluster_copy
+
+
+
+
+

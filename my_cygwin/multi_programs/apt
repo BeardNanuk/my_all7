@@ -1,0 +1,25 @@
+#!/bin/sh
+echo "open my apartment search for princeton"
+cygstart chrome 
+cygstart "https://www.apartments.com/my-account/#FavoriteListings" 
+cygstart "https://www.apartmentguide.com/myplaces/" 
+cygstart "https://www.zillow.com/savedhomes/"
+cygstart "https://hotpads.com/user/listings/favorite"
+
+cygstart chrome
+cygstart "https://www.google.com/search?q=sq+ft+to+sq+m&oq=sq+ft+to+sq+m&aqs=chrome..69i57.10068j0j7&sourceid=chrome&ie=UTF-8" 
+cygstart "https://www.google.com/search?q=usd+to+rmb&oq=usd+to+rmb&aqs=chrome..69i57.5082j0j7&sourceid=chrome&ie=UTF-8"
+cygstart "https://www.google.com/maps/dir//Princeton+University+-+Department+of+Geosciences,+Guyot+Hall,+Princeton,+NJ/@40.3460137,-74.7245567,12z/data=!4m9!4m8!1m0!1m5!1m1!1s0x89c3e6c4601da379:0x8323db2ff2003131!2m2!1d-74.6545161!2d40.345904!3e0"
+cygstart "http://www.areavibes.com/" 
+
+
+
+cygstart /cygdrive/c/JH_fast/princeton/Living
+cygstart /cygdrive/c/JH_fast/princeton/Living/Apartment_lists.xlsx
+ 
+
+
+
+
+
+

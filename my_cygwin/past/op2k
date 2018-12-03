@@ -1,0 +1,8 @@
+#!/bin/sh
+echo "open 2k"
+
+cygstart /cygdrive/c/Program\ Files\ \(x86\)/NBA2K15/NBA2K15
+
+cygstart /cygdrive/c/Program\ Files\ \(x86\)/NBA2K15
+
+ 

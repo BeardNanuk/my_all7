@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "copy SOURCE* STATIONS to specfem2d/DATA "
+
+#cp $HOME/Desktop/my_files/my_bin/QuickCreate/pptinfo2.odp .
+
+cp SOURCE* /home/jiazeh/specfem2d/DATA/SOURCE 
+cp ST* /home/jiazeh/specfem2d/DATA/STATIONS
+

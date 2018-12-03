@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "folder for LSRTM tex paper writing"
+#cygstart /cygdrive/c/Program\ Files\ \(x86\)/Texmaker/texmaker.exe
+cygstart /cygdrive/d/dk_ze/Wavefield_inversion_in_SHM/LlrtmShmPaper

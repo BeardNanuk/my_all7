@@ -1,0 +1,9 @@
+#!/bin/bash
+
+echo "switch to copy all files in the current dir to quick_transfer"
+## $1 = file name or ./*
+
+final_dir="$HOME/Dropbox\ \(Princeton\)/Sync/princeton/quick_transfer"
+
+#eval cp -r ./* $final_dir
+eval cp -r $1 $final_dir

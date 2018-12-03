@@ -1,0 +1,46 @@
+#!/bin/bash
+
+#f0=$(sed -n 1,15p DATA/SOURCE | grep 'f0' | cut -d\= -f2 | tr -d '[:space:]')
+#
+#intf0=${f0%.*}
+#echo 'intf0 ='$intf0
+#
+##nx=$(sed -n 266,268p DATA/Par_fie | grep 'nx' | cut -d\= -f2 | tr -d '[:space:]')
+#nx=`grep ^nx DATA/Par_file | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '`
+#echo 'nx ='$nx
+#
+#D_T=`grep ^DT DATA/Par_file | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '| sed 's/-/\_/g'`
+#echo 'D_T ='$D_T
+#
+#NSTEP=$(sed -n 26,28p DATA/Par_file | grep 'NSTEP' | cut -d\= -f2 | tr -d '[:space:]')
+#echo 'NSTEP ='$NSTEP
+
+
+. zpara_headers
+
+#foldername="20181104obsdelayed_ricker_stfgaussian_mask_contains0f0$intf0"
+final_dir="$HOME/data_bk/inversion_test_data/src_demo/"
+final_foldername=$(printf "${final_dir}${foldername}")
+echo "copy folder name "$final_foldername
+
+#foldname_for_results_saving=$(printf "$HOME/data_bk/inversion_test_data/src_demo/obsdelayed_ricker_stfgassu_f0500kHz_mask_contains0_f0${intf0}_nx${nx}_D_T${D_T}_NSTEP${NSTEP}")
+foldname_for_results_saving=$final_foldername
+rm -rf $final_foldername 
+mkdir -p $final_foldername
+
+#echo 'bk path is '$foldname_for_results_saving
+
+#        if [ -d "$foldname_for_results_saving" ]; then
+#        echo 'delete the folder'
+#        rm -r "$foldname_for_results_saving"
+#        else
+#        echo 'make a folder'
+#        mkdir "$foldname_for_results_saving"
+#        fi
+
+cp -r ./* $final_foldername
+        wait
+        #cp -r OUTPUT_FILES "$foldname_for_results_saving"/ &
+        #cp -r DATA "$foldname_for_results_saving"/ &
+
+echo "copying files has been completed"

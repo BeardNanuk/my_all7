@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "start jupyter notebook"
+cygstart jupyter notebook
+
+

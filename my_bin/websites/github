@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "open github webpage "
+
+google-chrome "https://github.com/"
+
+

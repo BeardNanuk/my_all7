@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "open jupyter notebook "
+
+jupyter notebook 

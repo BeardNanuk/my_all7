@@ -1,0 +1,16 @@
+#!/bin/sh
+echo "Tex setup for LSRTM"
+cygstart /cygdrive/c/Program\ Files\ \(x86\)/Texmaker/texmaker.exe
+cygstart /cygdrive/d/dk_ze/PHM\ and\ Risk\ Analysis
+cygstart /cygdrive/c/Users/Administrator1/Downloads
+cygstart /cygdrive/d/dk_ze/Wavefield_inversion_in_SHM/LSRTM_deve
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017/Jobs/ARL
+cygstart /cygdrive/d/dk_ze/Current\ Research/1D\ Jiaze\ research\ experience/Technical/Latex/miktex_pkgs/doc/latex/revtex/sample/ARL_white_paper
+cygstart chrome "https://scholar-google-com.prox.lib.ncsu.edu/"
+cygstart chrome "https://scholar-google-com.prox.lib.ncsu.edu/"
+#cygstart firefox "http://www.thefreedictionary.com/serve"
+cygstart /cygdrive/c/Program\ Files/Tracker\ Software/PDF\ Viewer/PDFXCview.exe
+#cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/SAGE\ LaTeX\ template/mybibfile_v2.bib
+#cygstart /cygdrive/d/dk_ze/Wavefield_inversion_in_SHM/LlrtmShmPaper/Wavefield20170616.tex
+
+cygstart /cygdrive/c/Program\ Files\ \(x86\)/Mosaico/Mosaico.exe

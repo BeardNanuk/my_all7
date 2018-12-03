@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "open my developmental log for specfem2d "
+
+filename=$HOME/Desktop/my_files/py2project/pythonvenv_playground/james_source_inversion/good_bk/logjp
+
+date >> $filename
+#date >> $HOME/Desktop/my_files/py2project/pythonvenv_playground/james_source_inversion/good_bk/logjp
+
+vi $filename
+#vi $HOME/data_bk/specfem2d_data/log_specfem2d/log_specfem2d
+

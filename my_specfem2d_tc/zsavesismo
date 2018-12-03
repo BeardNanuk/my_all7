@@ -1,0 +1,78 @@
+#!/usr/bin/env python
+
+# save several seismo signals 
+# Specialized script used to visualize seismic section.
+
+# create on Tue Jul 17 14:57:36 UTC 2018
+# Creator: Jiaze He 
+
+# import argparse
+
+from obspy import read
+import matplotlib.pyplot as plt
+import pickle
+
+from seisflows.tools.graphics import plot_vector, plot_section
+
+import numpy as np
+import pandas as pd	
+
+# for file finding
+import glob
+
+OUTPUT_FILES_path = "OUTPUT_FILES"
+
+signal_type_list = glob.glob(OUTPUT_FILES_path + '/' + "U*.txt")
+
+
+mat_rec_plot = np.array([20, 100, 225]) 
+num_rec = len(mat_rec_plot)
+
+time_function_type = 8
+    
+if time_function_type == 8: 
+    usct_load = np.loadtxt("DATA/filtered_signal_no_delay")
+    t = usct_load[:,0]      
+ 
+
+
+for f in signal_type_list:
+    print(f)
+    fhead=(f[len(OUTPUT_FILES_path)+1:len(OUTPUT_FILES_path)+3])
+    if fhead=='Ux':
+        data_load_Ux = np.loadtxt(f)
+    elif fhead=='Uz':
+        data_load_Uz = np.loadtxt(f)
+    elif fhead=='U_':
+        data_load_U_ = np.loadtxt(f)
+    elif fhead=='Ue':
+        data_load_Ue_novalues = pd.read_csv(f,header=None)
+        data_load_Ue=0.3*data_load_Ue_novalues.values.transpose()  
+
+
+fig = plt.figure()
+ 
+for i in range(num_rec):
+    col_num = mat_rec_plot[i] 
+    titlename = fhead + ' receiver: %d ' % (col_num) 
+    #fig, ax = plt.subplot(num_rec, 1, i+1)
+    ax = fig.add_subplot(num_rec, 1, i+1)
+    ax.plot(t, data_load_Ux[:,col_num], 'b-',label='Ux')
+    ax.plot(t, data_load_Uz[:,col_num], 'g-',label='Uz')
+    ax.plot(t, data_load_U_[:,col_num], 'm-',label='U_')
+    ax.plot(t, data_load_Ue[:,col_num], 'r-',label='Ue')
+    ax.hold(True)
+    
+    ax.set_title(titlename)
+    ax.legend()
+
+
+u_receives_signals_fn = OUTPUT_FILES_path + '/' + 'receives_signals' 
+
+plt.savefig(u_receives_signals_fn, format='eps', dpi=1000)
+    #plt.savefig('OUTPUT_FILES/u_receives_signals.png', format='png')
+pickle.dump(fig,open('OUTPUT_FILES/U_norm.pickle','wb'))
+plt.show()     
+
+
+     

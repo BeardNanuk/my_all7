@@ -1,0 +1,28 @@
+#!/bin/sh
+echo "news"
+
+
+#cygstart /cygdrive/d/dk_ze/NIA/\!NIA_proposals
+cygstart chrome 
+# general 
+cygstart "https://www.google.com/search?q=news&safe=off&source=lnms&tbm=nws&sa=X&ved=0ahUKEwiM77rpwPXdAhWImuAKHc_KDN8Q_AUIDigB&biw=1680&bih=913"
+cygstart "https://www.google.com/search?safe=off&biw=1680&bih=913&tbm=nws&ei=2pm6W47sD9Hn_QaFzJPwBQ&q=news+french+&oq=news+french+&gs_l=psy-ab.3...1140.3891.0.4039.12.10.2.0.0.0.202.793.9j0j1.10.0....0...1.1.64.psy-ab..0.11.714...0j0i13k1.0.XjOFDBC-EwM"
+cygstart "https://www.google.com/search?safe=off&biw=1680&bih=913&tbm=nws&ei=_5m6W52vEIayggexy7rgBw&q=news+australia&oq=news+aus&gs_l=psy-ab.3.0.0l10.2128.2483.0.3821.3.3.0.0.0.0.77.204.3.3.0....0...1.1.64.psy-ab..0.3.204....0.-lQ8KklSl9s"
+
+
+# DOE
+cygstart "https://www.google.com/search?safe=off&biw=1680&bih=913&tbm=nws&ei=H5q6W4T2J8iMggfx9YzABw&q=news+netherlands&oq=news+netherlands&gs_l=psy-ab.3..0.2016.2489.0.2756.5.5.0.0.0.0.120.444.2j3.5.0....0...1.1.64.psy-ab..0.5.444....0.ysqurfDro2o"
+
+#Army 
+cygstart "https://www.google.com/search?safe=off&biw=1680&bih=913&tbm=nws&ei=RZq6W6yOBsOl_Qbgp57wDw&q=news+russia&oq=news+russia&gs_l=psy-ab.3..0l10.32278.32278.0.32527.1.1.0.0.0.0.91.91.1.1.0....0...1.1.64.psy-ab..0.1.90....0.FWng1yaQzu8"
+cygstart "https://www.google.com/search?safe=off&biw=1680&bih=913&tbm=nws&ei=Zpq6W9zaEuWl_QaepIb4CA&q=news+germany&oq=news+ge&gs_l=psy-ab.3.0.0l10.11166.11315.0.13176.2.2.0.0.0.0.67.127.2.2.0....0...1.1.64.psy-ab..0.2.127....0.pDIY3NP2oY0"
+
+# DOT
+cygstart "https://www.google.com/search?safe=off&biw=1680&bih=913&tbm=nws&ei=dJq6W7yMC4S6gge70IXgCg&q=news+norway+&oq=news+norway+&gs_l=psy-ab.3...28327.39662.0.39835.37.11.26.0.0.0.193.893.8j2.10.0....0...1.1.64.psy-ab..1.29.640...0j0i13k1.0.w6wlleWCPgY"
+
+cygstart "https://www.google.com/search?safe=off&biw=1680&bih=913&tbm=nws&ei=5Zq6W5LaLeS8ggee07KYAw&q=news+nepal&oq=news+nepal&gs_l=psy-ab.12...0.0.0.11066.0.0.0.0.0.0.0.0..0.0....0...1..64.psy-ab..0.0.0....0.ZdW7XxDIz4g"
+
+
+
+
+#cygstart /cygdrive/d/dk_ze/NIA/\!NIA_proposals

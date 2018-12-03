@@ -1,0 +1,106 @@
+#!/bin/bash
+''''exec python -W ignore -- "$0" "$@" # '''
+
+
+import os
+import sys
+import numpy as np
+import matplotlib.pyplot as plt
+import pylab
+from glob import glob
+from os.path import abspath, join
+from seisflows.plugins.solver_io.fortran_binary import _read
+from seisflows.tools.tools import exists
+
+
+def getcoords(dir):
+    for names in getnames(dir):
+        if exists(names):
+            x, z = _read(names[0]), _read(names[1])
+            return x, z
+    else:
+        print('Coordinate files not found.')
+        sys.exit()
+
+
+def meshplot(x, y, z):
+    """ Plots values on 2D unstructured mesh
+    """
+    r = (max(x) - min(x))/(max(y) - min(y))
+    rx = r/np.sqrt(1 + r**2)
+    ry = 1/np.sqrt(1 + r**2)
+
+    f = plt.figure(figsize=(10*rx, 10*ry))
+    p = plt.tricontourf(x, y, z, 125)
+    plt.axis('image')
+    return f, p
+
+
+def getnames(dir):
+    return [
+        (abspath(join(dir, subdir, 'proc000000_x.bin')),
+         abspath(join(dir, subdir, 'proc000000_z.bin')))
+         for subdir in [
+         '.',
+         '../model',
+         '../output/model_init',
+         '../../output/model_init',
+         '../../../output/model_init',
+         '../../../../output/model_init',
+         ]]
+
+
+dirname = sys.argv[1]
+filenames2 = sys.argv[2]
+iter = sys.argv[3]
+K='%04d' % int(iter)
+filenames = glob(dirname+'/'+'proc000000_' + filenames2 + '.bin*')
+#filenames_inside = dirname+'/'+'proc000000_' + filenames2 + '.bin*'
+#filenames_temp = glob(dirname+'/'+'proc000000_' + filenames2 + '.bin*')
+filenames.sort()
+
+
+print 'num of iteration: %d' % int(iter) 
+print 'name of the current dir: %s' % dirname
+#print dirname
+#print(filenames2)
+#print(filenames_inside) 
+#print(filenames_temp)
+print 'name of the current bin fileanme : %s' % filenames
+
+x,z = getcoords(dirname)
+
+#print('x shape' x.shape) 
+print 'x shape:',x.shape 
+print 'z shape:',z.shape 
+
+for i, filename in enumerate(filenames):
+	if '_x.bin' in filename: filenames.remove(filename); continue
+        if '_z.bin' in filename: filenames.remove(filename); continue
+        if '_rho.bin' in filename: filenames.remove(filename); continue
+        if '_jacobian.bin' in filename: filenames.remove(filename); continue
+        if '_NSPEC_ibool.bin' in filename: filenames.remove(filename); continue
+	par = filename.split("000000_",1)[1]
+        par = par[0:len(par)-4]
+        print 'whatever in par: %s' % par 
+	#print 
+        v = _read(filename)
+	#w = v[1:-1]
+	w = v
+	print w
+	print type(w)
+	print 'shape of w', w.shape 
+
+	f, p = meshplot(x, z, w)
+
+	plt.xticks( color = 'k', size = 18)
+        plt.yticks( color = 'k', size = 18)
+        p.set_cmap(plt.cm.rainbow)
+        cbar=plt.colorbar(fraction=0.046, pad=0.04,orientation='vertical')
+        cbar.ax.tick_params(labelsize=18)
+        #plt.show()
+        figure = plt.gcf() # get current figure
+        figure.set_size_inches(10, 6)
+        pylab.title(par + ' iter num %d' % int(iter),size=26)
+        #pylab.title('iter num %d' % int(iter),size=30)
+        plt.savefig('./output/'+ par + K + '.png')	

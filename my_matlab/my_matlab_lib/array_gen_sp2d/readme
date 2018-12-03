@@ -1,0 +1,22 @@
+Generate SOURCE/STATIONS files for specfem usage
+input from different sources 
+
+created on Mon Oct 15 13:40:26 UTC 2018
+created by Jiaze He 
+
+revised on Sun Oct 28 21:58:29 UTC 2018
+(obspy) [jiazeh@paris array_gen_sp2d]$ vi create_STATIONS.m 
+add line array sensors - 
+
+ 32     case 31
+ 33     for i = 1:round(src.NRec)
+ 34         % horizontal line, rec_center
+ 35         Bottom_x(i,1)=src.x_center- 0.5*src.r ...
+ 36             + src.delta_length*i;
+ 37         Bottom_y(i,1)=src.y_center;
+ 38 
+ 39         Rec.RecPos(i,1)=Bottom_x(i,1);
+ 40         Rec.RecPos(i,2)=Bottom_y(i,1);
+ 41     end
+
+

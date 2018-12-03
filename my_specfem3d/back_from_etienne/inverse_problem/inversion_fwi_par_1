@@ -1,0 +1,28 @@
+#
+#
+#              Parameter file for FWI 
+#
+#  Each line begin by # is a comment and will not read by the code
+#
+#    To set a parameter the line is
+#
+#         keyword : value to set   
+#         
+#
+##########   stopping critteria ##########################################
+Niter : 25            # maximum FWI iteration allowed 
+relat_grad : 1e-5     # relative decrease on gradient 
+relat_cost : 1e-5     # relative decrease on cost function
+
+
+#############  Band frequency ###########################################
+fl : 0.001   # min frequency Hz
+fh : 1.      # max frequensy Hz
+
+########### MASK ON GRADIENT ############################################
+# gradient=0 outisde domain : xmin, xmax, ymin, ymax, zmin, zmax defined below
+tapper : 200. 4000. 200. 4000. -1600. -200.
+
+############ I/O options ################################################
+input_fd_model : .false.  # read input fd model 
+output_model : .true.     # write ouput model on SEM grid 

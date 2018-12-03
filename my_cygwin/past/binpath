@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "Open the folder for all ze bin files"
+cygstart /usr/local/bin
+#cygstart jupyter notebook
+#cygstart chrome "http://sundog-education.com/datascience/"
+#cygstart chrome "https://www.udemy.com/data-science-and-machine-learning-with-python-hands-on/learn/v4/content"
+#cygstart /cygdrive/d/dk_ze/IamAProgrammer/Machine_Learning/DataSciencePython/DataScience/concepts.pptx
+
+

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "switch to the path and folder to quick_transfer"
+
+final_dir="$HOME/Dropbox\ \(Princeton\)/Sync/princeton/quick_transfer"
+
+eval cd $final_dir
+
+
+#cd /home/jiazeh/Desktop/my_files/my_bin

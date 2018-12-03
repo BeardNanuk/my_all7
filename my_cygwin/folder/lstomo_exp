@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "Tex setup for LSRTM Tomography"
+#cygstart /cygdrive/c/Program\ Files\ \(x86\)/Texmaker/texmaker.exe
+cygstart /cygdrive/c/JH_fast/LlrtmGuidedWaveTomoPaper/experiment/wave_alignment/20180425_100k/Radon20180510_exp_circular_array/wave_alignment_inner
+

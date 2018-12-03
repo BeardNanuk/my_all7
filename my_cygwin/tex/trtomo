@@ -1,0 +1,17 @@
+#!/bin/sh
+echo "Tex setup for LSRTM Tomography"
+cygstart /cygdrive/c/Program\ Files\ \(x86\)/Texmaker/texmaker.exe
+#cygstart /cygdrive/c/JH_fast/LlrtmGuidedWaveTomoPaper
+cygstart /cygdrive/c/JH_fast/20180416_composite_TR_MUSIC
+
+cygstart /cygdrive/d/dk_ze/D\ SHM
+cygstart /cygdrive/c/JH_fast/20180416_composite_TR_MUSIC/result_core
+cygstart /cygdrive/c/JH_fast/20180416_composite_TR_MUSIC/tex_paper_music_tomo
+#cygstart chrome "https://scholar-google-com.prox.lib.ncsu.edu/"
+cygstart chrome "https://scholar-google-com.ezproxy.princeton.edu/"
+cygstart firefox "http://www.thefreedictionary.com/serve"
+cygstart /cygdrive/c/Program\ Files/Tracker\ Software/PDF\ Viewer/PDFXCview.exe
+ 
+#cygstart /cygdrive/d/dk_ze/Wavefield_inversion_in_SHM/LlrtmShmPaper/Wavefield20170616.tex
+
+cygstart /cygdrive/c/Program\ Files\ \(x86\)/Mosaico/Mosaico.exe

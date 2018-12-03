@@ -1,0 +1,117 @@
+#!/bin/sh
+''''exec python -W ignore -- "$0" "$@" # '''
+
+import os
+import sys
+import numpy as np
+import matplotlib.pyplot as plt
+import pylab
+from glob import glob
+from os.path import abspath, join
+from seisflows.plugins.solver_io.fortran_binary import _read
+from seisflows.tools.tools import exists
+
+
+def getcoords(dir,num=0):
+    for names in getnames(dir,num):
+        if exists(names):
+            x, z = _read(names[0]), _read(names[1])
+            return x, z
+    else:
+        print('Coordinate files not found.')
+        sys.exit()
+
+
+def meshplot(x, y, z):
+    """ Plots values on 2D unstructured mesh
+    """
+    r = (max(x) - min(x))/(max(y) - min(y))
+    rx = r/np.sqrt(1 + r**2)
+    ry = 1/np.sqrt(1 + r**2)
+
+    f = plt.figure(figsize=(10*rx, 10*ry))
+    p = plt.tricontourf(x, y, z, 125, extend="both")
+    plt.axis('image')
+    return f, p
+
+
+def getnames(dir,num=0):
+    return [
+        (abspath(join(dir, subdir, 'proc' + str(num).zfill(6) + '_x.bin')),
+         abspath(join(dir, subdir, 'proc' + str(num).zfill(6) + '_z.bin'))) 
+         for subdir in [
+         '.',
+         '../model', 
+         '../output/model_init',
+         '../../output/model_init',
+         '../../../output/model_init',
+         '../../../../output/model_init',
+         ]]
+
+
+msg = '''
+%s\nmin, max: %f, %f
+'''
+
+
+if __name__ == '__main__':
+    """ Plots data on 2-D unstructured mesh
+
+    Reads mesh coordinates from first two columns of text file and data from
+    subsequent columns, computes Delaunay triangulation, and plots data
+    using matplotlib.
+
+    In particular, can be used to plot kernels and models output from SPECFEM2D
+    on unstructured GLL bases.
+    """
+
+    nproc=8 
+    dirname = sys.argv[1]
+    par = sys.argv[2]
+    #get coordinate vector
+    x=np.array([])
+    z=np.array([])
+    for i in range(nproc):
+      x_temp, z_temp = getcoords(dirname,i)
+      x=np.append(x,x_temp)
+      z=np.append(z,z_temp)
+
+    #get parameter to image vector
+    v=np.array([])
+    for i in range(nproc):
+      filename=dirname +'/'+'proc' + str(i).zfill(6) + '_' + par + '.bin'
+      v= np.append(v,_read(filename))
+
+    minval = min(v)
+    maxval = max(v)
+    maxabs = max(abs(v))
+    w=v
+#    w = v
+    undersamp_fact = 25
+    w_undersamp = w[::undersamp_fact]
+    #w_undersamp = w
+    x_undersamp = x[::undersamp_fact]
+    #x_undersamp = x
+    z_undersamp = z[::undersamp_fact]
+    #z_undersamp = z
+
+#    if par =='vs':
+#      w=np.clip(v, 4273.232910, 4780.356445)
+#    if par =='Qkappa':
+#      w=np.clip(v,0.006667, 0.012500)
+#       w=np.clip(v,0.001667, 0.003333)
+    temp='echelle ='
+    print temp, maxval-minval
+    print msg % (filename, minval, maxval)
+    f, p = meshplot(x_undersamp, z_undersamp, w_undersamp) 
+    plt.xticks( color = 'k', size = 18)
+    plt.yticks( color = 'k', size = 18)
+    p.set_cmap(plt.cm.RdYlBu)
+    #    p.cmap.set_over('k')
+    cbar=plt.colorbar(fraction=0.046, pad=0.04,orientation='vertical')
+    cbar.ax.tick_params(labelsize=18) 
+    #plt.show()
+    figure = plt.gcf() # get current figure
+    figure.set_size_inches(10, 6)
+    pylab.title(par,size=30)
+    plt.savefig(par +'.png')

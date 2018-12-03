@@ -1,0 +1,6 @@
+#!/bin/sh
+echo "open indeed with a few common searches"
+
+cygstart "https://princetonol.com/events/"
+
+ 

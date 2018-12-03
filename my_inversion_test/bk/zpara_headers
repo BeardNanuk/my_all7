@@ -1,0 +1,78 @@
+#!/bin/bash
+
+## some common parameters for ploting for inversion_test
+
+## created on Sat Nov  3 15:34:10 UTC 2018
+## created by Jiaze He 
+
+## revised by 
+
+# should be larger than the number of cores (to make the most use of the computer)
+# should also be small enough to make the computers memory not blow up
+jobs_perchuck=10
+
+f0=$(sed -n 1,15p specfem_data/SOURCE | grep 'f0' | cut -d\= -f2 | tr -d '[:space:]')
+
+intf0=${f0%.*}
+echo 'intf0 ='$intf0
+
+#nx=$(sed -n 266,268p DATA/Par_fie | grep 'nx' | cut -d\= -f2 | tr -d '[:space:]')
+nx=`grep ^nx specfem_data/Par_file | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '`
+echo 'nx ='$nx
+
+D_T=`grep ^DT specfem_data/Par_file | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '| sed 's/-/\_/g'`
+echo 'D_T ='$D_T
+
+NSTEP=$(sed -n 26,28p specfem_data/Par_file | grep 'NSTEP' | cut -d\= -f2 | tr -d '[:space:]')
+echo 'NSTEP ='$NSTEP
+
+
+############## parameter grebbing ################
+# greb the total iteration number in the misfit file 
+        Nit=`wc -l ./output.stats/misfit | cut -f1 -d' '`
+#Nit=10
+echo 'Nit = '$Nit
+# break the total iterations in the small chucks. Each chuck will be excuted in parallel with all
+# the process a computer have; the trick is to include & for continue excution without waitiing;
+# it works only with the number total jobs in each iteration (10) larger than the total core numbers (8)
+# but also will have enough memory for the computer to "SAVE" for undone jobs (due to '&')
+        Nloop=$(($Nit/$jobs_perchuck+1))
+
+# get the lines to search for, then search the word "NSTEP", output the number after the '='
+        NSTEP=$(sed -n 26,28p specfem_data/Par_file | grep 'NSTEP' | cut -d\= -f2 | tr -d '[:space:]')
+
+# Get various parameters to determine the repository name and the images to process
+        AC_or_El=`grep ^MATERIALS   ./parameters.py | cut -d = -f 2 | sed 's/ //g'| tr -d \'`
+        Density=`grep ^DENSITY   ./parameters.py | cut -d = -f 2 | sed 's/ //g' | tr -d \'`
+        Nevent=$(sed -n 17,19p ./parameters.py | grep 'NSRC' | cut -d\= -f2 | sed 's/\#.*//')
+
+        echo  -e "\033[32m\033[1mSimulation : $AC_or_El\033[0m"
+        echo  -e "\033[32m\033[1mDensity : $Density\033[0m"
+        echo  -e "\033[32m\033[1mNumber of iterations: $Nit\033[0m"
+        echo
+        echo  -e "\033[31m\033[1mOutput seismographs\033[0m"
+
+############## parameter grebbing ################
+
+
+
+        str='Elastic'
+        Nevent=$(($Nevent-1)) # make loop easy
+        echo $Nevent 
+
+        Xint=1.0
+        Yint=200.0
+        Clip_percent=90
+
+## see if png files exist
+        count=`ls -1 ./output/*.png 2>/dev/null | wc -l`
+
+
+############# Plot the models ################
+# should be larger than the number of cores (to make the most use of the computer)
+# should also be small enough to make the computers memory not blow up
+
+foldername="20181104elastic_xf0$intf0"
+
+
+

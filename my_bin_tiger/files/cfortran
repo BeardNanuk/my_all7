@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "open my common_fortran file"
+
+vi $HOME/Desktop/my_files/my_fortran/common_fortran.f90

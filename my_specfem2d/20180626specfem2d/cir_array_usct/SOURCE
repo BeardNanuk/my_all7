@@ -1,0 +1,14 @@
+source_surf = .false.
+xs = 0.475
+zs = 0.475
+source_type = 1
+time_function_type =1
+name_of_source_file             = "/scratch/gpfs/etienneb/specfem2d/DATA/signal000000.bin"
+burst_band_width                = 100.415
+f0=100000.0
+tshift =0
+anglesource = 0.00
+Mxx = 1.000000
+Mzz = 1.000000
+Mxz = 0.000000
+factor = 1000.000

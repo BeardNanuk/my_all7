@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "open my trello board to record things I learned and did"
+
+#(firefox &)
+#. /usr/bin/firefox
+firefox "https://trello.com/jiazehe1/boards"
+#firefox "https://mail.google.com/mail/u/1/#inbox"
+#firefox "https://owa.princeton.edu/owa/"
+
+#cd /home/jiazeh/Desktop/my_files/my_bin
+

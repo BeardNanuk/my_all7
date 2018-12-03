@@ -1,0 +1,21 @@
+#!/bin/sh
+echo "open indeed with a few common searches"
+
+cygstart "https://www.indeed.com/jobs?q=geophysics+phd+&l="
+cygstart "https://www.indeed.com/q-ultrasound-phd-jobs.html"
+cygstart "https://www.indeed.com/jobs?q=machine+learning+imaging+phd&l="
+cygstart "https://www.indeed.com/q-nde-phd-jobs.html"
+cygstart "https://www.indeed.com/jobs?q=composite+phd+ndt&l="
+
+cygstart "https://www.indeed.com/q-ultrasound-imaging-phd-jobs.html"
+cygstart "https://www.indeed.com/jobs?q=signal+processing+imaging+phd+&l="
+cygstart "https://www.indeed.com/jobs?q=ultrasonics+imaging+phd&l="
+cygstart "https://www.indeed.com/"
+cygstart "https://www.indeed.com/jobs?q=wave+propagation+phd&l="
+
+
+cygstart "https://www.indeed.com/jobs?q=%22structural+health+monitoring%22+professor"
+cygstart "https://www.indeed.com/jobs?q=%22non+destructive%22+professor&l="
+cygstart "https://www.indeed.com/jobs?q=%22ultrasound%22+professor&l="
+cygstart "https://www.indeed.com/q-mechanical-engineering-assistant-professor-jobs.html"
+cygstart "https://www.indeed.com/jobs?q=aerospace+engineering+assistant+professor&l="

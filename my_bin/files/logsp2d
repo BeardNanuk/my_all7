@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "open my developmental log for specfem2d "
+
+date >> $HOME/data_bk/specfem2d_data/log_specfem2d/log_specfem2d
+
+vi $HOME/data_bk/specfem2d_data/log_specfem2d/log_specfem2d
+

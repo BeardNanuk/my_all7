@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "open my common_gnuplot file"
+
+vi $HOME/Desktop/my_files/my_gnuplot/common_gnuplot
+

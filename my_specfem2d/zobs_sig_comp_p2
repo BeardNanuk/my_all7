@@ -1,0 +1,207 @@
+#!/usr/bin/env python
+
+### comparison between experimental data with simulations 
+
+# revised on Tue Oct 16 20:14:21 UTC 2018
+# created by Jiaze He
+
+import numpy as np 
+# for file finding
+import scipy.io as sio
+import glob
+import pandas as pd
+
+## input environment variable 
+import os
+
+import pickle
+# pickle.dump(exp_para,open('obf/input/data_para.pickle','wb'))
+with open('obf/input/data_para.pickle', 'rb') as pickle_file:
+     data_para = pickle.load(pickle_file)
+
+flag_seismotype = int(os.environ['flag_seismotype'])
+
+print('flag_seismotype is ',flag_seismotype )
+        
+#flag_seismotype = 4
+flag_exp_data = 2 # 1 for include signal from experiment, 2 for not  
+flag_sp2d_src = 1 # 1 for include signal from experiment, 2 for not  
+
+
+if flag_seismotype not in (4,6):
+   Ux_data = data_para.Ux_data
+   Uz_data = data_para.Uz_data
+   Un_data = data_para.Un_data
+else:  
+## use Un to represent Up as the syc
+   Un_data = data_para.Up_data
+
+print('shape of Un_data',Un_data.shape)
+
+Ue_data = data_para.Ue_data
+
+
+from obspy import read
+import matplotlib.pyplot as plt
+from seisflows.tools.graphics import plot_vector, plot_section, _cscale, get_regular_ticks
+import pickle
+from myFormat.ze_plot_summary import textplot,plot_section_ze
+from myFormat.data_format import para_struct
+
+
+## calculation of new delay  using cc
+from seisflows.plugins.misfit import Traveltime
+
+OUTPUT_FILES_path = "OUTPUT_FILES"
+
+
+if (flag_exp_data is 1):
+    with open('obf/input/exp_para.pickle', 'rb') as pickle_file:
+     exp_para = pickle.load(pickle_file)
+    print('exp_para.Nt :', exp_para.Nt)
+    t_cut = exp_para.t_cut
+    textplot(exp_para,flag_close=0,flag_save_fig=0)
+else:
+    t_cut=data_para.t_cut
+
+
+#print('Ux_data:', Ux_data.shape)
+#print('Uz_data:', Uz_data.shape)
+#print('Un_data:', Un_data.shape)
+#print('Ue_data:', Ue_data.shape)
+
+#plot_section_ze(Ux_data,y_step_end=15000,title = 'Ux_data')
+#plot_section_ze(Uz_data,y_step_end=15000,title = 'Uz_data')
+#plot_section_ze(Un_data,y_step_end=15000,title = 'Un_data')
+#plot_section_ze(Ue_data,title = 'Ue_data')
+#plt.show()
+
+
+time_step_star = 0
+time_step_comp = 8400 
+t = t_cut[time_step_star:time_step_comp]*1e6
+
+rec_num_comp = 150;
+
+act_to_plot = 1
+
+#mat_rec_plot = np.array([150])
+mat_rec_plot = np.array([90,120,150])
+#mat_rec_plot = np.array([150,200,250,300])
+#mat_rec_plot = np.array([150,180,210,240,270,300])
+num_rec = len(mat_rec_plot)
+
+num_rec_plus1 = num_rec + 1
+
+if (flag_exp_data is 1):
+   time_diff =Traveltime(Un_data[0:time_step_comp,rec_num_comp],Ue_data[0:time_step_comp,rec_num_comp], time_step_comp, exp_para.dtNew)
+   time_delay = int(round(time_diff/exp_para.dtNew))
+   print('difference in time in s:', time_diff)
+   print('difference in timesteps :', time_delay)
+   amp_factor = np.max(np.abs(Un_data[time_step_star:time_step_comp,rec_num_comp]))/np.max(np.abs(Ue_data[time_step_star:time_step_comp,rec_num_comp])) 
+   print('the ratio of max of Un/ max of Ue: %f', amp_factor)
+
+fig = plt.figure()
+
+for i in range(num_rec):
+#for ax in range(num_rec):
+    #fig,ax = plt.figure()
+    col_num = mat_rec_plot[i]
+    #titlename = fhead + ' receiver: %d ' % (col_num)
+    if (flag_exp_data is 1): # 1 for include, 2 for not 
+        titlename = ' source: %d receiver: %d amp_factor:%f' % (act_to_plot,col_num,amp_factor)
+    elif (flag_exp_data is 2):
+        titlename = ' source: %d receiver: %d ' % (act_to_plot,col_num)
+    #fig, ax = plt.subplot(num_rec, 1, i+1)
+    ax = fig.add_subplot(num_rec, 1, i+1)
+    if flag_seismotype not in (4,6):
+       ax.plot(t, Ux_data[time_step_star:time_step_comp,col_num], 'b-',label='Ux')
+       ax.plot(t, Uz_data[time_step_star:time_step_comp,col_num], 'g-',label='Uz')
+    ax.plot(t, Un_data[time_step_star:time_step_comp,col_num], 'm-',label='Un')
+    if (flag_exp_data is 1):
+    	ax.plot(t, amp_factor*Ue_data[time_step_star:time_step_comp,col_num], 'r-',label='Ue')
+    ax.hold(True)
+        
+    ax.set_title(titlename)
+    ax.legend(loc='right')
+
+if flag_seismotype == 1:
+   u_receives_signals_fn = 'obf/output/disp_src%02d.png' % (act_to_plot)    
+elif flag_seismotype == 2: 
+   u_receives_signals_fn = 'obf/output/vp_src%02d.png' % (act_to_plot)    
+elif flag_seismotype == 3: 
+   u_receives_signals_fn = 'obf/output/ac_src%02d.png' % (act_to_plot)    
+else:
+   u_receives_signals_fn = 'obf/output/p_src%02d.png' % (act_to_plot)    
+
+fig.savefig(u_receives_signals_fn, format='png', dpi=1000)
+    #plt.close()
+#INPUT_path = 'obf/input'
+
+
+###u_receives_signals_fn = 'obf/output/received_signal_src%02drec%03d' % (act_to_plot,col_num) 
+
+###fig.savefig(u_receives_signals_fn, format='eps', dpi=1000)
+
+#pickle.dump(fig,open('obf/output/U_norm.pickle','wb'))
+
+
+
+## see the influence of applying additional delay adjustment 
+
+
+
+fig = plt.figure()
+ 
+for i in range(num_rec):
+    col_num = mat_rec_plot[i]
+    if (flag_exp_data is 1):
+        titlename = 'add delay steps %d source: %d receiver: %d ' % (time_delay,act_to_plot,col_num)
+    else:
+        titlename = 'source: %d receiver: %d ' % (act_to_plot,col_num+1)
+    #fig, ax = plt.subplot(num_rec, 1, i+1)
+    ax = fig.add_subplot(num_rec_plus1, 1, i+1)
+    if flag_seismotype not in (4,6):
+       ax.plot(t, Ux_data[time_step_star:time_step_comp,col_num], 'b-',label='Ux')
+       ax.plot(t, Uz_data[time_step_star:time_step_comp,col_num], 'g-',label='Uz')
+    ax.plot(t, Un_data[time_step_star:time_step_comp,col_num], 'm-',label='U_')
+    if (flag_exp_data is 1):
+        ax.plot(t, amp_factor*Ue_data[time_step_star:time_step_comp,col_num], 'r-',label='Ue')
+    ax.hold(True)
+    ax.set_title(titlename)
+    ax.legend()
+
+src_fn ='OUTPUT_FILES/plot_source_time_function.txt'
+src_np = pd.read_csv(src_fn,header=None, delimiter=r"\s+").values
+#src_pd = pd.read_csv(src_fn,header=None,delimiter=' ').values
+#src_pd_Values=(src_pd.values/0.1).transpose()
+#print(src_pd.shape)
+
+ax = fig.add_subplot(num_rec_plus1, 1, num_rec_plus1)
+titlename = ' act %d source used by specfem2d' % (act_to_plot)
+
+#ax.plot(t_cut[time_step_star:time_step_comp], src_pd[time_step_star:time_step_comp,1], 'm-',label='U_')
+ax.plot(src_np[time_step_star:time_step_comp,0]*1e6,src_np[time_step_star:time_step_comp,1], 'm-',label='U_')
+plt.xlabel(r'time ($\mu s$)')
+#ax.xlabel('time')
+ax.hold(True)
+ax.set_title(titlename)
+ax.legend(loc='right')
+fig.tight_layout()         
+
+
+if flag_seismotype == 1:
+   u_receives_signals_fn = 'obf/output/disp_src%02d_delay.png' % (act_to_plot)    
+elif flag_seismotype == 2: 
+   u_receives_signals_fn = 'obf/output/vp_src%02d_delay.png' % (act_to_plot)    
+elif flag_seismotype == 3: 
+   u_receives_signals_fn = 'obf/output/ac_src%02d_delay.png' % (act_to_plot)    
+else: 
+   u_receives_signals_fn = 'obf/output/p_src%02d_delay.png' % (act_to_plot)    
+
+fig.savefig(u_receives_signals_fn,format='png', dpi=1000)
+
+#plt.show()
+#plt.close(fig)
+
+

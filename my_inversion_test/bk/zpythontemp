@@ -1,0 +1,22 @@
+#!/usr/bin/env python
+
+###! /usr/bin/python
+
+import glob
+import os 
+
+print(os.getcwd())
+
+os.chdir('output')
+
+print(os.getcwd())
+
+#for file in glob.glob("output/vp*.png"):
+#    print file
+
+
+#filelist=glob.glob("vp*.png")
+#print filelist
+#maxfile=max([glob.glob("vp*.png")])
+maxfile=max(glob.glob("vp*.png"))
+print maxfile

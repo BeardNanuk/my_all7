@@ -1,0 +1,16 @@
+#!/bin/sh
+
+echo "copy specfem2d/DATA to quick_transfer"
+
+#cp $HOME/Desktop/my_files/my_bin/QuickCreate/pptinfo2.odp .
+#cp /home/jiazeh/specfem2d/OUTPUT_FILES/Up_seismo.png .
+#cp /home/jiazeh/specfem2d/v*.png .
+#cp /home/jiazeh/specfem2d/DATA/Par_file .
+#cp /home/jiazeh/specfem2d/DATA/SOURCE .
+#cp /home/jiazeh/specfem2d/DATA/STATIONS .
+#mv /home/jiazeh/Downloads/ezgif.com-gif-maker.gif .
+final_dir="$HOME/Dropbox\ \(Princeton\)/Sync/princeton/quick_transfer"
+eval cp ./Par_file $final_dir 
+eval cp ./interfaces.dat $final_dir 
+eval cp ./SOURCE $final_dir 
+eval cp ./STATIONS $final_dir 

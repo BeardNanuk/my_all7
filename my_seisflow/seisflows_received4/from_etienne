@@ -1,0 +1,1000 @@
+   70  ls
+   71  cd Desktop/my_files/py2project/
+   72  ls
+   73  virtualenv venv
+   74  pip2
+   75  source active
+   76  ls
+   77  vi poly_formal.ipynb 
+   78  python poly_formal.ipynb 
+   79  ls
+   80  ls python_functions/
+   81  vi python_functions/poly_formal_fitting 
+   82  ls
+   83  subl
+   84  module avail
+   85  nano
+   86  ls
+   87  nano common_specfem2D 
+   88  ls
+   89  vi common_specfem2D 
+   90  clear
+   91  . sp2D
+   92  . spenv
+   93  vi for_try 
+   94  . for_try 
+   95  vi for_try
+   96  vi for_try 
+   97  . for_try 
+   98  ls
+   99  ls bk
+  100  rm bk/*
+  101  rm -rf bk/*
+  102  ls bk
+  103  vi for_try 
+  104  ls
+  105  vi for_try 
+  106  . for_try 
+  107  l2d
+  108  osolve
+  109  l2d
+  110  ofori
+  111  ls
+  112  l2d
+  113  ls
+  114  vi launch_specfem.sh 
+  115  l2d
+  116  ls
+  117  par
+  118  l2d
+  119  ofori
+  120  par
+  121  clear
+  122  l2d
+  123  ofori
+  124  par
+  125  l2d
+  126  ofori
+  127  pa
+  128  par
+  129  ls
+  130  ls DATA/
+  131  vi DATA/SOURCE 
+  132  vi DATA/STATIONS 
+  133  vi DATA/interfaces.dat 
+  134  vi DATA/output_solver 
+  135  vi DATA/interfaces.dat 
+  136  par
+  137  l2d
+  138  ofori
+  139  ls
+  140  cd OUTPUT_FILES/
+  141  ls
+  142  ofori
+  143  par
+  144  cd ..
+  145  cd DATA/
+  146  pwd
+  147  par
+  148  l2
+  149  l2d
+  150  cd ..
+  151  vi launch_specfem.sh 
+  152  l2d
+  153  clear
+  154  ls
+  155  l2d
+  156  ofori
+  157  par
+  158  l2d
+  159  cd 
+  160  . sp2D
+  161  ls
+  162  par
+  163  l2d
+  164  ls
+  165  ofori
+  166  par
+  167  ls
+  168  l2d
+  169  clear
+  170  l2d
+  171  ar
+  172  par
+  173  ofori
+  174  l2d
+  175  ofori\
+  176  ofori
+  177  par
+  178  l2d
+  179  ofori
+  180  par
+  181  grep "plot" DATA/Par_file 
+  182  grep -n "plot" DATA/Par_file 
+  183  par
+  184  ls
+  185  cd OUTPUT_FILES/
+  186  ls
+  187  par
+  188  cd ..
+  189  ls
+  190  grep -ni "seismo" DATA/Par_file 
+  191  par
+  192  ls OUTPUT_FILES/
+  193  ls
+  194  mkdir ze_code_bk
+  195  ls
+  196  cd ze_code_bk/
+  197  pwd
+  198  ls
+  199  cp sfplot sfsection ../OUTPUT_FILES/
+  200  cd ..
+  201  ls
+  202  cd DATA/
+  203  ls
+  204  cd ..
+  205  cd OUTPUT_FILES/
+  206  ls
+  207  sfsection
+  208  . sfsection
+  209  python
+  210  ls
+  211  vi sfplot
+  212  ls
+  213  clea
+  214  clear
+  215  cd opt
+  216  ls 
+  217  ls .
+  218  ls /opt
+  219  cd /opt
+  220  pwd
+  221  ls
+  222  cd rh
+  223  ls
+  224  which python
+  225  cd /user/bin/python
+  226  cd /user/bin
+  227  python version
+  228  python 
+  229  clear
+  230  pip
+  231  pip2
+  232  pip3
+  233  pip
+  234  source /opt/rh/python36
+  235  source /opt/rh/python36/enable
+  236  cd 
+  237  source /opt/rh/python36/enable
+  238  cd -
+  239  ls
+  240  pwd
+  241  cd rh-python36/
+  242  ls
+  243  source enable
+  244  pip3
+  245  virtual environment
+  246  pwd
+  247  ls
+  248  ls
+  249  cd 
+  250  ls
+  251  d Desktop/my_files/my_bin/
+  252  ls
+  253  cd Desktop/my_files/my_bin/
+  254  ls
+  255  vi binpath
+  256  cp goo opemail
+  257  vi opemail 
+  258  opemail
+  259  vi opemail
+  260  opemail
+  261  vi opemail 
+  262  ls
+  263  opemail
+  264  opemail\
+  265  opemail
+  266  vi opemail 
+  267  opemail
+  268  which firefox
+  269  vi opemail
+  270  opemail
+  271  vi opemail 
+  272  opemail
+  273  vi opemail 
+  274  opemail
+  275  vi opemail 
+  276  opemail
+  277  vi opemail 
+  278  opemail
+  279  vi opemail 
+  280  opemail
+  281  vi opemail 
+  282  opemail
+  283  vi opemail 
+  284  opemail
+  285  cd 
+  286  cd Desktop/
+  287  ls
+  288  cd my_files/y
+  289  cd my_files/
+  290  ls
+  291  cd my_seisflow/
+  292  ls
+  293  cd seisflows-master/
+  294  ls
+  295  cd scripts/
+  296  ls
+  297  vi sfexamples 
+  298  chmod u+x sfexamples.sh
+  299  ls
+  300  vi sfexamples 
+  301  sfexamples 
+  302  ./sfexamples 
+  303  cd visualize/
+  304  ls
+  305  ./sfsection 
+  306  vi sfsection
+  307  pip
+  308  pip3
+  309  which pip
+  310  conda
+  311  module avail
+  312  jupyter notebook
+  313  ls
+  314  pwd
+  315  pwd
+  316  ls
+  317  cd Desktop/
+  318  ls
+  319  cd my_files/
+  320  ls
+  321  cd py3project/
+  322  ls
+  323  cd ..
+  324  cd personal/
+  325  ls
+  326  cd for_springdale/
+  327  ls
+  328  cd MLshm/
+  329  ls
+  330  cd ..
+  331  ls Linux
+  332  ls gittest/
+  333  ls
+  334  clear
+  335  ls
+  336  cd MLshm/
+  337  ls
+  338  cd python_functions/
+  339  ls
+  340  cd ..
+  341  ls
+  342  cd ..
+  343  ls
+  344  cd git
+  345  cd gittest/
+  346  ls
+  347  cd MyPython/
+  348  ls
+  349  cd ..
+  350  cp MyPython/ /home/jiazeh/Desktop/my_files/my_python
+  351  cp -rf MyPython/ /home/jiazeh/Desktop/my_files/my_python
+  352  ls
+  353  cd My
+  354  ls
+  355  cd MyPython/
+  356  ls
+  357  cd 
+  358  clear
+  359  ls
+  360  cd Desktop/my_files/l
+  361  cd Desktop/my_files/
+  362  ls
+  363  cd py2project/
+  364  ls
+  365  ls
+  366  cd for_springdale/
+  367  ls
+  368  cd MLshm/
+  369  cd ..
+  370  ls
+  371  cd gittest/
+  372  ls
+  373  cd ..
+  374  ls Linux
+  375  cp Linux/CommonBash /home/jiazeh/Desktop/my_files/bash_practice
+  376  ls
+  377  clea
+  378  clear
+  379  ls
+  380  cd ..
+  381  cd /opt
+  382  ls
+  383  cd rh/rh-python36/
+  384  pwd
+  385  ls
+  386  pip2
+  387  :
+  388  ls
+  389  cd 
+  390  jupyter 
+  391  jupyter notebook
+  392  ls
+  393  pip
+  394  pip install --user jupyter
+  395  jupyter notebook
+  396  ls
+  397  cd Desktop/
+  398  ls
+  399  cd my_files/
+  400  ls
+  401  cd my_python/
+  402  ls
+  403  cd MyPython/
+  404  ls
+  405  vi CommonPythonPandas
+  406  ls
+  407  cd ..
+  408  ls
+  409  cd ..
+  410  ls
+  411  cd py2project/
+  412  ls
+  413  source venv/bin/activate
+  414  ls
+  415  python
+  416  deactivate
+  417  ls
+  418  pwd
+  419  cd ..
+  420  cd py3project/
+  421  ls
+  422  virtualenv -p python3 venv
+  423  python3
+  424  source /opt/rh/rh-python36/enable
+  425  python3
+  426  virtualenv -p python3 venv
+  427  ls
+  428  source venv/bin/activate
+  429  ls
+  430  deactivate
+  431  ls
+  432  jupyter notebook
+  433  pip3
+  434  vi ./bashrc
+  435  pwd
+  436  cd 
+  437  ls
+  438  vi ./bashrc
+  439  vi /.bashrc
+  440  vi ~/.bashrc
+  441  ls
+  442  cd Desktop/my_files/
+  443  ls
+  444  ce personal/
+  445  ls
+  446  cd personal/
+  447  l
+  448  ls
+  449  cd for_springdale/
+  450  ls
+  451  cd MLshm/
+  452  l
+  453  ls
+  454  cd python_functions/
+  455  ls
+  456  vi KNN_formal_fitting
+  457  clear
+  458  cd 
+  459  ls
+  460  str2=$(id -un)
+  461  echo $str2
+  462  a='/home'
+  463  echo $a
+  464  b='/'$(id -un)
+  465  echo $b
+  466  c='/Desktop/my_files/my_bin'
+  467  echo $c
+  468  d=$a$b$c
+  469  echo $d
+  470  cd $d
+  471  ls
+  472  ab =$a$b
+  473  ab=$a$b
+  474  echo $ab
+  475  ab
+  476  $ab
+  477  binpath2
+  478  a='/home'
+  479  b='/'$(id -un)
+  480  ab = $a$b
+  481  binpath2
+  482  echo $final_dir
+  483  final_dir
+  484  final_dir=$ab$c
+  485  echo $final_dir
+  486  final_dir=$ab$c
+  487  echo $final_dir
+  488  echo $final
+  489  echo $ab
+  490  echo '$ab'
+  491  echo '$a'
+  492  ab
+  493  $ab
+  494  ls
+  495  echo $b
+  496  ab=$a$
+  497  echo $ab
+  498  final_dir=$a
+  499  echo $final_dir
+  500  echo $
+  501  echo $c
+  502  c='/Desktop/my_files/my_bin'
+  503  echo $ab
+  504  final_dir=$ab$c
+  505  echo $final_dir
+  506  binpath2
+  507  . binpath2
+  508  ls
+  509  ls iris_webinar/
+  510  ls
+  511  jupyter notebook 
+  512  clear
+  513  jp
+  514  clear
+  515  ls
+  516  cd Desktop/my_files/
+  517  ls
+  518  cd personal/
+  519  ls
+  520  cd for_springdale/
+  521  ls
+  522  cd MLshm
+  523  ls
+  524  jp 
+  525  jp
+  526  ls
+  527  jp
+  528  goo
+  529  clear
+  530  which python
+  531  which python2
+  532  ls
+  533  cd ..
+  534  cd 
+  535  ls
+  536  cd /usr
+  537  ls
+  538  cd bin
+  539  ls
+  540  cd ..
+  541  find bin/py
+  542  ls
+  543  cd bin/
+  544  ls
+  545  find ex
+  546  find ex*
+  547  find py*
+  548  ls
+  549  grep "sfsection"
+  550  grep 'sfsection' ./*/*
+  551  grep 'sfsection' /*/*
+  552  ls
+  553  cd seisflows/
+  554  ls
+  555  cd ..
+  556  ls
+  557  cd scripts/
+  558  ls
+  559  cd visualize/
+  560  ls
+  561  cp {sfplot sfsection} /home/jiazeh/specfem2d/ze_code_bk 
+  562  cp sfplot sfsection /home/jiazeh/specfem2d/ze_code_bk 
+  563  goo
+  564  . binpath
+  565  (firefox &)
+  566  goo
+  567  opemail
+  568  pwd
+  569  ls
+  570  cp binpath binpath2
+  571  vi binpath2
+  572  ls
+  573  rm binpath
+  574  mv binpath2 binpath
+  575  vi binpath 
+  576  rm binpath2
+  577  ls
+  578  vi l2d
+  579  cp l2d jp
+  580  vi jp
+  581  pip3
+  582  :
+  583  ls
+  584  clear
+  585  pip
+  586  clear
+  587  pip install --user ObsPy
+  588  id -un
+  589  hosename
+  590  hostname
+  591  pwd
+  592  echo 'id -un'
+  593  echo id -un
+  594  echo id-un
+  595  echo 'id -un'
+  596  id -un
+  597  echo 'which id -un'
+  598  echo "which id -un"
+  599  $USER
+  600  $USERNAME
+  601  id -un
+  602  ls
+  603  'id -un'
+  604  which python
+  605  which python2
+  606  echo "which python2"
+  607  echo 'which python2'
+  608  TR_STR = which python2
+  609  TR_STR = 'which python2'
+  610  TR_STR = $(which python2)
+  611  TR_STR=$(which python2)
+  612  TR_STR
+  613  TR_STR = 'which python2'
+  614  TR_STR='which python2'
+  615  TR_STR
+  616  which python2
+  617  echo 'which python2'
+  618  echo $'which python2'
+  619  echo $"which python2"
+  620  str=$(which python2)
+  621  str
+  622  echo 'str'
+  623  echo str
+  624  echo $str
+  625  ls
+  626  cd Desktop/my_files/
+  627  ls
+  628  cd personal/
+  629  ls
+  630  cd for_springdale/
+  631  ls
+  632  ls Linux
+  633  ls
+  634  clear
+  635  ls
+  636  cd ..
+  637  ls
+  638  cd ..
+  639  ls
+  640  cd Desktop/
+  641  ls
+  642  cd my_files/
+  643  ls
+  644  cd bash_practice/
+  645  ls
+  646  cd ..
+  647  ls
+  648  cd specfem2D/
+  649  ls
+  650  cd ..
+  651  ls
+  652  cd my_seisflow/
+  653  ls
+  654  cd seisflows-master/
+  655  ls
+  656  cd scripts/
+  657  ls
+  658  jp
+  659  clear
+  660  pip2
+  661  :
+  662  pip3
+  663  jp
+  664  ls
+  665  cd Desktop/my_files/
+  666  ls
+  667  cd py_mython
+  668  cd my_python/
+  669  ls
+  670  mkdir learnobspy
+  671  cd learnobspy/
+  672  ls
+  673  jp
+  674  clear
+  675  cd ..
+  676  ls
+  677  cd ..
+  678  ls
+  679   cd py2project
+  680  ls
+  681  source venv/bin/activate
+  682  jp
+  683  ls
+  684  source venv/bin/activate
+  685  jp
+  686  ls
+  687  jp
+  688  ls
+  689  pip
+  690  pip install --user jupyter
+  691  pip install jupyter
+  692  pip install ObsPy
+  693  jp
+  694  ls
+  695  mv Untitled.ipynb obspy_learn_z
+  696  ls
+  697  cp obspy_learn_z iris_webinar/
+  698  cd iris_webinar/
+  699  ls
+  700  jp obspy_learn_z 
+  701  ls
+  702  rm obspy_learn_z 
+  703  jp
+  704  cklear
+  705  ls
+  706  pwd
+  707  cd ..
+  708  ls
+  709  cd ..
+  710  ls
+  711  cd my_seisflow/
+  712  cd 
+  713  ls
+  714  cd -
+  715  ls
+  716  cd seisflows-master/
+  717  ls
+  718  cd scripts 
+  719  ls
+  720  pwd
+  721  ls
+  722  ls
+  723  cd ..
+  724  ls
+  725  cd ..
+  726  cd personal/
+  727  ls
+  728  cd for_springdale/
+  729  l
+  730  cd MLshm/
+  731  ls
+  732  jp
+  733  clear
+  734  cd Desktop/my_files/py2project/
+  735  ls
+  736  mkdir iris_webinar
+  737  ls
+  738  cd iris_webinar/
+  739  ls
+  740  l
+  741  ls
+  742  curl -k https://raw.githubusercontent.com/obspy/docs/master/notebooks/IRIS_Webinar/webinar.tar.gz |   tar xzvf -
+  743  ls
+  744  jp IRIS_Webinar.ipynb 
+  745  ls
+  746  which python
+  747  which python2
+  748  ls
+  749  pip
+  750  clar
+  751  clear
+  752  python2
+  753  conda
+  754  which conda
+  755  module avail
+  756  conda
+  757  which conda
+  758  which anaconda
+  759  which anaconda2
+  760  which anaconda3
+  761  anaconda2
+  762  anaconda3
+  763  ls
+  764  cd /usr/local
+  765  ls
+  766  cd anaconda2
+  767  ls
+  768  ls bin
+  769  cd ..
+  770  ls
+  771  ls anaconda2
+  772  cd anaconda2
+  773  ls
+  774  cd .
+  775  cd ..
+  776  cd -
+  777  ls
+  778  clear
+  779  ls
+  780  ls bin
+  781  anacoda
+  782  anaconda2
+  783  anaconda
+  784  conda
+  785  which conda
+  786  ls
+  787  cd ..
+  788  ls
+  789  cd bin
+  790  ls
+  791  cd ..
+  792  pwd
+  793  cd anaconda2
+  794  ls
+  795  pwd
+  796  cd bin
+  797  ls
+  798  anaconda
+  799  conda --version
+  800  conda
+  801  which conda 
+  802  vi ~/.bashrc
+  803  conda
+  804  clear
+  805  conda config --add channels conda-forge
+  806  conda create -n obspy python=2.7
+  807  conda activate obspy
+  808  vi ~/.bashrc
+  809  conda activate obspy
+  810  conda
+  811  conda activate obspy
+  812  vi ~/.bashrc
+  813  conda activate obspy
+  814  echo ". /usr/local/anaconda2/etc/profile.d/conda.sh" >> ~/.bashrc
+  815  vi ~/.bashrc
+  816  conda activate obspy
+  817  clear
+  818  ls
+  819  conda activate obspy
+  820  conda
+  821  conda activate obspy
+  822  ls
+  823  conda activate obspy
+  824  deactivate
+  825  source deactivate
+  826  conda deactivate obspy
+  827  conda deactivate
+  828  conda install obspy
+  829  ls
+  830  conda activate obspy
+  831  ls
+  832  deactivate 
+  833  conda deactivate 
+  834  git clone https://github.com/rmodrak/seisflows.git
+  835  vi ~/.bashrc
+  836  ls
+  837  make -j
+  838  cd ..
+  839  vi launch_specfem.sh 
+  840  ls
+  841  cd DATA/
+  842  ls
+  843  par
+  844  ls
+  845  pip install --user ObsPy
+  846  which pip
+  847  pip2
+  848  pip2 install --user ObsPy
+  849  ls
+  850   ls
+  851  python2
+  852  source activate obspy
+  853  obspy
+  854  pwd
+  855  conda
+  856  ls
+  857  conda
+  858  vi ~/.bashrc
+  859  cd /usr/
+  860  ls
+  861  cd local/
+  862  ls
+  863  cd anaconda2
+  864  cd ..
+  865  cd anaconda3
+  866  ls
+  867  cdcd ..
+  868  cd ..
+  869  cd anaconda2
+  870  ls
+  871  cd bin/
+  872  ls
+  873  vi ~/.bashrc
+  874  conda
+  875  clear
+  876  ls
+  877  cd seisflows/
+  878  ls
+  879  vi README.md 
+  880  conda activate obspy
+  881  ls scripts/
+  882  cd scripts/
+  883  ls
+  884  ./sfexamples 
+  885  ./configure FC=ifort --with-mpi
+  886  module avail
+  887  module list
+  888  . sp2d
+  889  . sp2D
+  890  cd -
+  891  . spenv
+  892  ls
+  893  ./sfrun 
+  894  source ~/.bashrc
+  895  ls 
+  896  cd ..
+  897  cd
+  898  ls
+  899  cd Desktop/
+  900  ls
+  901  cd my_files/
+  902  ls
+  903  cd 
+  904  ls
+  905  cd seisflows/
+  906  ls
+  907  cd tests/
+  908  cd
+  909  cd -
+  910  ls
+  911  ./run_test_system 
+  912  ls
+  913  /usr/local/anaconda2
+  914  cd /usr/local/anaconda2
+  915  ls
+  916  cd bin/
+  917  ls
+  918  conda
+  919  conda --version
+  920  ls
+  921  /usr/local/anaconda2
+  922  cd ..
+  923  ls
+  924  cd anaconda3
+  925  ls
+  926  cd bin/
+  927  l
+  928  ls
+  929  anaconda
+  930  --usr anaconda
+  931  pwd
+  932  cd /usr/local/anaconda2/bin
+  933  ls
+  934  conda
+  935  ls
+  936  which conda
+  937  ls
+  938  pwd
+  939  conda
+  940  . conda
+  941  which python2
+  942  python2 --version
+  943  goog
+  944  goo
+  945  pwd
+  946  conda activate opspy
+  947  conda 
+  948  conda activate opspy
+  949  conda activate obspy
+  950  cd seisflows/
+  951  ls
+  952  cd tests/
+  953  cd 
+  954  cd -
+  955  ls
+  956  ./run_test_system 
+  957  cd ..
+  958  ls
+  959  cd scripts/
+  960  ls
+  961  cd ..
+  962  ls
+  963  pwd
+  964  ./tests/run_test_system 
+  965  cd ..
+  966  cd -
+  967  ls
+  968  cd tests/
+  969  vi run_test_system 
+  970  ./configure
+  971  pwd
+  972  cd ..
+  973  pwd
+  974  nautilus
+  975  nautilus ./
+  976  nautilus .
+  977  nautilus /.
+  978  nautilus .
+  979  clear
+  980  ls
+  981  vi config.py 
+  982  pip2 numpy scipy 
+  983  pip2 install numpy scipy 
+  984  lsls
+  985  opemail
+  986  nautilus ./
+  987  nautilus .
+  988  . sp2D
+  989  ls
+  990  vi launch_specfem.sh 
+  991  cd ..
+  992  ls
+  993  cd seisflows/
+  994  pwd
+  995  ofori
+  996  mkdir model_init
+  997  cp ../specfem2d/DATA/proc000000_* model_init/
+  998  cd ../specfem2d/
+  999  vi DATA/Par_file 
+ 1000  ./bin/xmeshfem2D 
+ 1001  module list
+ 1002  ls
+ 1003  . sp2D
+ 1004  module list
+ 1005  ./bin/xmeshfem2D 
+ 1006  ./bin/xspecfem2D 
+ 1007  ofori
+ 1008  cd ../inversion_test/
+ 1009  mkdir model_true
+ 1010  cp ../specfem2d/DATA/proc000000_* ./model_true/
+ 1011  vi paths.py 
+ 1012  ssh etienneb@tigergpu
+ 1013  ls
+ 1014  mkdir mask
+ 1015  mkdir model_init
+ 1016  cd ../specfem2d/2d
+ 1017  cd ../specfem2d/
+ 1018  ls
+ 1019  vi DATA/Par_file 
+ 1020  ./bin/xmeshfem2D 
+ 1021  ./bin/xspecfem2D 
+ 1022  cp DATA/proc000000_* ../inversion_test/model_init/
+ 1023  cd ../inversion_test/
+ 1024  ls
+ 1025  ls model_init/
+ 1026  ls model_true/
+ 1027  cd ../specfem2d/
+ 1028  vi DATA/Par_file 
+ 1029* cd ../inversion_test/
+ 1030* cp model_init/proc000000_[xz].bin ./mask/5~
+ 1031  ifort cree_masque.f90 
+ 1032  ./a.out 
+ 1033  ls mask/
+ 1034  ssh etienneb@tigergpu
+ 1035  ls
+ 1036  ./plotvp ./mask/
+ 1037  vi plotvp
+ 1038  ./plotvp ./mask/
+ 1039  python2 ./plotvp ./mask/
+ 1040  conda activate obspy
+ 1041  python2 ./plotvp ./mask/
+ 1042  xdg-open vp.png 
+ 1043  python2 ./plotvp ./model_true/
+ 1044  xdg-open vp.png 
+ 1045  python2 ./plotvp ./model_init/
+ 1046  xdg-open vp.png 
+ 1047  cp ../specfem2d/DATA/Par_file ./specfem_data/
+ 1048  vi specfem_data/
+ 1049  vi specfem_data/Par_file
+ 1050  vi paths.py 
+ 1051  vi parameters.py 
+ 1052  vi ../seisflows/seisflows/solver/specfem
+ 1053* vi ../seisflows/seisflows/solver/
+ 1054  vi parameters.py 
+ 1055  ssh etienneb@tigergpu
+ 1056  mv ../specfem2d_new.py ../seisflows//seisflows/solver/
+ 1057  vi parameters.py 
+ 1058  cd ../specfem2d
+ 1059  make xcombine_sem
+ 1060  cd ../inversion_test/
+ 1061  sfclean
+ 1062  sfrun
+ 1063* 
+ 1064  ls
+ 1065  sfrun
+ 1066  history
+ 1067  cat history commands_ze/from_etienne 
+ 1068  cat $history commands_ze/from_etienne 
+ 1069  history > commands_ze/from_etienne 

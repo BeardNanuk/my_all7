@@ -1,0 +1,18 @@
+#!/bin/sh
+echo "create an excel file in the current directory"
+
+
+# oxford
+cp /usr/local/bin/QuickCreate/blankexcel.xlsx blankexcel.xlsx
+cygstart blankexcel.xlsx
+
+
+
+
+
+
+
+
+
+
+

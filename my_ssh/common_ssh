@@ -1,0 +1,471 @@
+#!/bin/bash
+
+# my common ssh command line summary/ only for specfem2d on cluster, not seisflows 
+
+## login to cpu node  
+(obspy) [jiazeh@paris ~]$ ssh -Y tigercpu
+#jiazeh@tigercpu's password: 
+
+
+## the fold with ssd drive 
+[jiazeh@tigercpu ~]$ cd /scratch/gpfs/jiazeh/
+
+## add the following things in ./bashrc under /home/jiazeh
+## change the default HOME variable value to ssd addrss 
+export HOME="/scratch/gpfs/jiazeh"
+cd $HOME
+##
+# load module on the node is OK, but a lot of times you need to load the modules again
+# previous to startign to run specfem2d, especially when switch from GPU to CPU mode, or vise versa
+######module load cudatoolkit/9.2 intel/16.0/64/16.0.4.258 openmpi/intel-16.0/1.10.2/64
+### for tigercup 
+module load openmpi/intel-16.0/1.10.2/64 intel/16.0/64/16.0.4.258
+
+# this is make seisflow (or python in general) will output messages before completing the job 
+export PYTHONUNBUFFERED=1
+
+ 
+## logout of tiger cpu or gpu, to make the bashrc changes take effects 
+[jiazeh@tigercpu jiazeh]$ logout
+Connection to tigercpu closed.
+
+## look at available modules 
+module avail 
+# then load the needed ones 
+# unload all module 
+module purge
+# previous to startign to run specfem2d, especially when switch from GPU to CPU mode, or vise versa
+module load cudatoolkit/9.2 intel/16.0/64/16.0.4.258 openmpi/intel-16.0/1.10.2/64
+# git pull specfem2d 
+git clone --recursive --branch devel https://github.com/geodynamics/specfem2d.git
+# copy the job submitter for tigercpu (equavalent to launch_specfem.sh)
+mv ../parallel ./
+# check again to see if all wantted modules have been loaded. 
+module list 
+#compile with mpi only (will be with cuda for gpu nodes later one)
+# clean the related files for old specfem2d installation 
+make realclean
+
+# make
+make -j
+# now xmeshfem2D and xspecfem2D are in the same folder of /bin
+
+
+### a bit more details on the parallel file 
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH -t 0:59:00
+#SBATCH --ntasks-per-node=4
+##SBATCH --gres=gpu:4
+
+####### my comments for above four lines are here, since # was used as well 
+## number of nodes 
+## time requested for this jobs. should not be any different when less than any hour 
+## number of tasks on one node 
+## only useful with gpu, when with cpu node do this: change the following 
+#SBATCH --gres=gpu:4
+##to 
+##SBATCH --gres=gpu:4
+
+
+################# for more than one node 
+(obspy) [jiazeh@tigercpu specfem2d]$ vi DATA/Par_file 
+ 19 # parameters concerning partitioning
+ 20 NPROC                           = 200            # number of esses
+(obspy) [jiazeh@tigercpu specfem2d]$ vi parallelgpu 
+  1 #!/bin/bash
+  2 #SBATCH --nodes=5
+  3 #SBATCH -t 0:41:00
+  4 #SBATCH --ntasks-per-node=40
+  5 ##SBATCH --gres=gpu:4
+
+
+
+
+cd $HOME/specfem2d/
+
+echo `pwd`
+module purge
+module load intel/16.0/64/16.0.4.258
+module load openmpi/intel-16.0/1.10.2/64
+module load cudatoolkit/9.2
+
+module list
+
+NPROC=4
+#rm outputmesher
+rm OUTPUT_FILES/*
+# creates and decomposes mesh
+echo
+echo "running mesher..."
+echo
+mpirun -n 1  ./bin/xmeshfem2D >> outputmesher
+
+rm outputsolver*
+# runs simulation
+echo
+echo "  running solver..."
+echo
+
+mpirun -np $NPROC ./bin/xspecfem2D >> outputsolver
+
+#mpirun -n $NPROC ./bin/xsmooth_sem 0.002 0.002 Qkappa ./DATA/ ./model T
+#mv ./model/proc000000_vp_smooth.bin ./model/proc000000_vp.bin 
+
+echo
+echo "see results in directory: OUTPUT_FILES/"
+echo
+echo "done"
+date
+
+ 
+### related to job submission or queue for information looking 
+[jiazeh@tigercpu specfem2d]$ vi parallel 
+[jiazeh@tigercpu specfem2d]$ slurmtop
+[jiazeh@tigercpu specfem2d]$ slurmtop -u jiazeh
+[jiazeh@tigercpu specfem2d]$ squeue -u jiazeh
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+[jiazeh@tigercpu specfem2d]$ scancel -u jiazeh
+[jiazeh@tigercpu specfem2d]$ vi parallel 
+### change NPROC = 4 to 40 in 'parallel' and also in 'Par_file'  
+## this was only for cpu 
+## for gpu, for example NPROC will means using for GPUs, and some unknown number of cpu by specfem2d 
+
+[jiazeh@tigercpu specfem2d]$ vi parallel 
+[jiazeh@tigercpu specfem2d]$ vi DATA/Par_file 
+# submit the job!!!!!!!!!!!!!!!!  
+[jiazeh@tigercpu specfem2d]$ sbatch parallel
+# all info about the submission of the jobs will be save in slurm-'foonumber'.out
+[jiazeh@tigercpu specfem2d]$ cat slurm-757633.out
+# so you'd better remove this file before submitting another job 
+
+## do not forget to recompile the specfem2d when doing that again when switching back from GPU mode 
+# since, for example, the pml layer open in Par_file would be available only for cpu specfem2d 
+
+
+### google why the following not working 
+[jiazeh@tigercpu specfem2d]$ display OUTPUT_FILES/forward_image0000800.jpg 
+'
+X11 connection rejected because of wrong authentication.
+display: unable to open X server  `localhost:64.0' @ error/display.c/DisplayImageCommand/431.
+
+
+####################### now gpu ################################ 
+## logout of tigercup, then enter tigergpu 
+[jiazeh@tigercpu specfem2d]$ logout
+Connection to tigercpu closed.
+(obspy) [jiazeh@paris ~]$ ssh -Y tigergpu
+## by the way, -Y suppose to enable some picture viewing mode 
+
+# recompile and remake on tigergpu 
+
+  95  module avail
+   96  module purge
+   97  module load
+   98  module load openmpi/intel-16.0/1.10.2/64 cudatoolkit/9.2 intel/16.0/64/16.0.4.258
+   99  ./configure FC=ifort --with-mpi --with-cuda=cuda8
+  100  make realclean
+  101  make -j
+## vi parallel
+
+#SBATCH --nodes=1
+#SBATCH -t 0:59:00
+#SBATCH --ntasks-per-node=4
+#SBATCH --gres=gpu:4
+
+# the number of tasks on each nodes need to be larger than or equals to the numbr of gpu you requested.
+# just ask the number of ntasks as at least four, and the number of gpus also four
+  
+## NPROC=4
+# this determine the number gpu used 
+
+## to submit jobs for gpu 
+[jiazeh@tigergpu specfem2d]$ sbatch parallelgpu
+
+## quick copy 
+scp ./filenames* jiazeh@tigergpu:/pwd(from gpu current folder)
+
+#### the reason xdg-open not working: 
+# .Xauthority is created when using ssh -Y in /home/jiazeh
+# but I changed the environmental variable $HOME=/scratch/gpfs/jiazeh as HOME
+# so when $HOME/.Xauthority is called, it not exist. 
+## solution: 
+in home directory : $ cd /scratch/gpfs/jiazeh
+$ ln -s /home/jiazeh/.Xauthority .Xauthority 
+# after linking, these to should appears the same! 
+
+
+########## dropbox related  ##########################
+
+https://www.dropbox.com/install
+
+64-bit:
+
+cd ~ && wget -O - "https://www.dropbox.com/download?plat=lnx.x86_64" | tar xzf -
+
+Next, run the Dropbox daemon from the newly created .dropbox-dist folder.
+
+~/.dropbox-dist/dropboxd
+
+
+
+
+
+
+
+
+
+
+####### login without keys (password)############
+### for local/private machine 
+l$
+### for remote/public machine 
+r$
+
+#open two windows, one private, the other public 
+## in home dir of l$ 
+# generate private and public keys, keep the (Enter file in which to save the key) and (Enter passphrase ) for empty 
+l$ ssh-keygen -t rsa -b 4096
+# results are in home/.ssh/
+id_rsa, id_rsa.pub, known_hosts 
+
+# create .ssh folder in the real home dir in the remote machine 
+r$ mkdir /home/jiazeh/.ssh
+
+# scp the id_rsa.pub file to this folder from local machine 
+l$ scp ~/.ssh/id_rsa.pub jiazeh@tigercpu:/scratch/gpfs/jiazeh/.ssh/uploaded_key.pub
+# create a file called authorized_keys
+r$ cat ~/.ssh/uploaded_key.pub >> /home/jiazeh/.ssh/authorized_keys
+# check authorized_keys looks alright
+r$ cat authorized_keys 
+# set access level to of the folder and files 
+r$ chmod 700 /home/jiazeh/.ssh/
+r$ chmod 600 /home/jiazeh/.ssh/*
+## close and reopen, should be OK
+
+######
+(obspy) jiazeh@farm:~/.ssh$ ssh -Y jiazeh@tigercpu.princeton.edu
+/home/jiazeh/.ssh/config: line 13: Bad configuration option: proxyjump
+/home/jiazeh/.ssh/config: line 16: Bad configuration option: proxyjump
+/home/jiazeh/.ssh/config: line 19: Bad configuration option: proxyjump
+/home/jiazeh/.ssh/config: line 22: Bad configuration option: proxyjump
+/home/jiazeh/.ssh/config: terminating, 4 bad configuration options
+
+####### no due
+1. Open up a new terminal window.
+
+2. Type 'mkdir ~/.ssh/sockets' and 'touch ~/.ssh/config'
+
+3. Copy and paste the following lines into '~/.ssh/config'
+
+4. chmod 600 ~/.ssh/config
+
+Host tigressgateway.princeton.edu
+    ControlMaster auto
+    ControlPersist yes
+    ControlPath ~/.ssh/sockets/%p-tigressgateway.princeton.edu-%r
+
+Host tigressgateway
+    HostName tigressgateway.princeton.edu
+    ControlMaster auto
+    ControlPersist yes
+    ControlPath ~/.ssh/sockets/%p-tigressgateway.princeton.edu-%r
+
+
+Host tigercpu.princeton.edu
+        ProxyJump jiazeh@tigressgateway.princeton.edu
+
+Host tigercpu
+        ProxyJump jiazeh@tigressgateway.princeton.edu
+
+
+Host tigergpu.princeton.edu
+        ProxyJump jiazeh@tigressgateway.princeton.edu
+
+Host tigergpu
+        ProxyJump jiazeh@tigressgateway.princeton.edu
+
+Host paris.princeton.edu
+        ProxyJump jiazeh@tigressgateway.princeton.edu
+
+Host paris
+        ProxyJump jiazeh@tigressgateway.princeton.edu
+
+
+###3
+Host tigercpu
+      HostName tigercpu.princeton.edu
+      ControlMaster auto
+      ControlPersist yes
+      ControlPath ~/.ssh/sockets/%p-tigercpu.princeton.edu-%r
+
+ Host tigercpu.princeton.edu
+      ControlMaster auto
+      ControlPersist yes
+      ControlPath ~/.ssh/sockets/%p-tigercpu.princeton.edu-%r
+
+
+Note: This example is for using tigercpu, but the exact same instructions can
+be used for other hosts (e.g. tigergpu) by using this template and adding more
+lines to '~/.ssh/config'.
+
+These lines will make sure that an ssh session is running in the background
+which means that you only have to use Duo authentication once when logging on
+to tigercpu.
+
+If you want to kill an existing ssh session use the command:
+
+ssh -O exit <YOUR_USERNAME>@tigercpu.princeton.edu
+
+Since this will kill the ssh session, you would have to use Duo next time you ssh
+to tigercpu.
+
+Let me know if you have any questions or if this is not working for you.
+
+
+#### how to use jupyter notebook on a remote machine 
+## the solution was provided by Uno on https://oncomputingwell.princeton.edu/2018/05/jupyter-on-the-cluster/#more-159
+# Step 1: open a ubuntu machine window, ssh to the remote machine: 
+jiazeh@p50:~$ . sshp
+Warning: No xauth data; using fake authentication data for X11 forwarding.
+Last login: Tue Nov  6 15:31:30 2018 from tigressgateway1.princeton.edu
+(obspy) [jiazeh@paris ~]$ 
+# Step 2: open a jupyter notebook session on the remote machine 
+(obspy) [jiazeh@paris ~]$ . playpy
+switch to the path and folder to python2  playground under venv environment
+open jupyter notebook
+[I 15:35:35.573 NotebookApp] The port 8888 is already in use, trying another port.
+[I 15:35:35.574 NotebookApp] The port 8889 is already in use, trying another port.
+[I 15:35:35.574 NotebookApp] The port 8890 is already in use, trying another port.
+[I 15:35:35.574 NotebookApp] The port 8891 is already in use, trying another port.
+[I 15:35:35.574 NotebookApp] The port 8892 is already in use, trying another port.
+[I 15:35:35.584 NotebookApp] Serving notebooks from local directory: /home/jiazeh/Desktop/my_files/py2project/pythonvenv_playground
+[I 15:35:35.584 NotebookApp] 0 active kernels
+[I 15:35:35.584 NotebookApp] The Jupyter Notebook is running at:
+[I 15:35:35.584 NotebookApp] http://localhost:8955/?token=3dedf0bedbafb69601ab843080e2a694e11bc89c39385105
+[I 15:35:35.584 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[C 15:35:35.585 NotebookApp]
+
+    Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8955/?token=3dedf0bedbafb69601ab843080e2a694e11bc89c39385105&token=3dedf0bedbafb69601ab843080e2a694e11bc89c39385105
+START /usr/bin/google-chrome-stable "http://localhost:8955/tree?token=42311562351bcc0b4e9a79d617048df99aa3b0529fed867f"
+[1:1:1106/153537.309814:ERROR:chrome_content_client.cc(363)] Failed to locate and load the component updated flash plugin.
+
+(process:9464): Gtk-WARNING **: Locale not supported by C library.
+        Using the fallback 'C' locale.
+Fontconfig warning: "/etc/fonts/fonts.conf", line 86: unknown element "blank"
+[I 15:35:39.707 NotebookApp] Accepting one-time-token-authenticated connection from ::1
+Created new window in existing browser session.
+# Step 3 run the following command on a separate terminal of your local machine: 
+# ssh -N -f -L localhost:8889:localhost:8889 <yourusername>@tigercpu.princeton.edu
+# replace '8889' with the local host of the current jupyter notebook session: 
+jiazeh@p50:~$ ssh -N -f -L localhost:8955:localhost:8955 jiazeh@paris.princeton.edu
+  
+# Step 4, copy the above link directly to your web browser: 
+# 332 [I 15:35:35.584 NotebookApp] http://localhost:8955/?token=3dedf0bedbafb69601ab843080e2a694e11bc89cq39385105
+http://localhost:8955/?token=3dedf0bedbafb69601ab843080e2a694e11bc89c39385105 --> google chrome
+# enjoy jp!! 
+
+ 
+
+
+
+
+####### 2D inversion on GPU
+# sfclean can be run on one node 
+# sfrun calls internal seisflows, where 
+
+#### in parameters 
+
+WORKFLOW='inversion'    # inversion, migration
+SOLVER='specfem2d_new'      # specfem2d, specfem3d
+SYSTEM='tiger_sm_gpu'   # serial, pbs, slurm - $ workflow updated by etienne # in /scratch/gpfs/jiazeh/seisflows/seisflows/system/tiger_sm_gpu.py # used to be 'multicore'
+OPTIMIZE='LBFGS'         # base, newton
+PREPROCESS='base'       # base
+POSTPROCESS='base'      # base
+#SCHEME='NLCG'
+#$ the line 'GPU_MODE = False' was removed 
+
+MISFIT='Waveform'
+MATERIALS='Acoustic'
+DENSITY='Constant'
+ATTENUATION='no' # this line was added by etienne 
+
+# WORKFLOW
+BEGIN=1                # first iteration
+END=200
+NREC=128
+NSRC=4                 # number of sources
+SAVEGRADIENT=1        # save gradient how often
+
+
+# PREPROCESSING
+FORMAT='su'   # data file format
+CHANNELS='p'            # data channels
+NORMALIZE=0             # normalize
+BANDPASS=0              # bandpass
+MUTE=0                  # mute direct arrival
+FREQLO=0.               # low frequency corner
+FREQHI=0.               # high frequency corner
+
+MUTECONST=0.            # mute constant
+MUTESLOPE=0.            # mute slope
+WITH_MPI= True
+
+# POSTPROCESSING
+SMOOTH=0
+SCALE=6.0e6             # scaling factor
+RATIO=0.92
+START=1
+
+# OPTIMIZATION
+PRECOND=None            # preconditioner type
+STEPMAX=15              # maximum trial steps
+STEPTHRESH=0.1          # step length safeguard
+STEPINIT=0.05
+
+
+NT=25000         # number of time steps
+DT=0.00000002         # time step
+F0=500000
+
+# SYSTEM
+NTASK=4               # must satisfy 1 <= NTASK <= NSRC
+NPROC=1                 # processors per task
+NTASKMAX=4            #$ this line was added by etienne, since the NPROCMAX was renamed to NTASKMAX in his version 
+NPROCMAX=4
+NGPU=4
+WALLTIME=1000 # walltime (unit: minute)  ##$ on cluster, this needs to be changed to some reasonable number 
+
+# 
+
+
+########### slurmp 
+
+## check your jobs
+squeue -u jiazeh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

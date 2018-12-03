@@ -1,0 +1,136 @@
+
+ **********************************************
+ *** Specfem 2-D Mesher - MPI version       ***
+ **********************************************
+
+ Running Git version of the code corresponding to commit 19a7785ee0f59aa95c161f322db3420e4888375b
+ dating From Date:   Fri Jun 22 17:18:12 2018 +0200
+
+ Reading the parameter file...
+
+ Title of the simulation: Test of SPECFEM2D with curved interfaces
+
+
+ Receiver lines:
+   Nb of line sets =            1
+
+   using existing STATIONS file 
+   file name is ./DATA/STATIONS
+   found          110  receivers
+
+ Materials:
+   Nb of solid, fluid or porous materials =            5
+
+ --------
+ Material #           1  isotropic
+ rho,cp,cs   =    1000.0000000000000        1500.0000000000000        0.0000000000000000     
+ Qkappa, Qmu =    10.000000000000000        10.000000000000000     
+ Material is fluid
+ --------
+ Material #           2  isotropic
+ rho,cp,cs   =    1000.0000000000000        1550.0000000000000        0.0000000000000000     
+ Qkappa, Qmu =    10.000000000000000        10.000000000000000     
+ Material is fluid
+ --------
+ Material #           3  isotropic
+ rho,cp,cs   =    1000.0000000000000        1530.0000000000000        0.0000000000000000     
+ Qkappa, Qmu =    10.000000000000000        10.000000000000000     
+ Material is fluid
+ --------
+ Material #           4  isotropic
+ rho,cp,cs   =    1000.0000000000000        1510.0000000000000        0.0000000000000000     
+ Qkappa, Qmu =    10.000000000000000        10.000000000000000     
+ Material is fluid
+ --------
+ Material #           5  isotropic
+ rho,cp,cs   =    1000.0000000000000        1480.0000000000000        0.0000000000000000     
+ Qkappa, Qmu =    10.000000000000000        10.000000000000000     
+ Material is fluid
+ --------
+
+ Mesh from internal meshing:
+
+ Reading interface data from file: ./DATA/./interfaces.dat                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+ Reading            2  points for interface            1
+ Reading            2  points for interface            2
+
+ Total number of layers in z direction =            1
+ There are          900  spectral elements along Z in layer            1
+
+ Total number of spectral elements along X =          900
+ Total number of spectral elements along Z =          900
+
+ Regions:
+   Nb of regions in the mesh =            1
+
+ ------
+ Region            1
+ IX from            1  to          900
+ IZ from            1  to          900
+ Material #            1  isotropic
+ Material is fluid
+ vp     =    1500.00000    
+ vs     =    0.00000000    
+ rho    =    1000.00000    
+ Poisson's ratio =   0.500000000    
+ QKappa =    10.0000000    
+ Qmu    =    10.0000000    
+ ------
+ Total number of spectral elements         =       810000
+
+
+ Parameter file successfully read 
+
+ The mesh contains       810000  elements
+
+ Control elements have            9  nodes
+
+ Source           1
+   Position xs, zs =   0.47499999999999998       0.47499999999999998     
+
+   Source type (1=force, 2=moment tensor, 3=Rayleigh wave, 4=plane incident P, 5=plane incident S):            1
+   Force source:
+   Angle of the source (deg) =    0.0000000000000000     
+   Multiplying factor  =    1000.0000000000000     
+
+   Time function type (1=Ricker, 2=First derivative, 3=Gaussian, 4=Dirac, 5=Heaviside, 8=Read from file, 9=burst):           1
+   Ricker wavelet (second-derivative):
+   Frequency, delay =    500000.00000000000        0.0000000000000000     
+
+ Reading interface data from file: ./DATA/./interfaces.dat
+
+ Mesh dimensions: 
+   Min and max value of X in the grid =    0.0000000000000000       0.75000000000000000     
+   Min and max value of Z in the grid =    0.0000000000000000       0.75000000000000000     
+
+
+ ************ Computing elements load ************
+ Number of elastic elements :           0
+ Number of acoustic elements :      810000
+ Number of viscoelastic elements :           0
+ Number of elastic PML elements :           0
+ Number of acoustic PML elements :           0
+ Number of viscoelastic PML elements :           0
+ *************************************************
+
+
+ Partitioning method: SCOTCH
+
+ nedges_coupled (acoustic/elastic)     =            0
+ nedges_coupled (acoustic/poroelastic) =            0
+ nedges_coupled (poroelastic/elastic)  =            0
+
+ slice            0  has number of spectral elements =      100970
+ slice            1  has number of spectral elements =      100971
+ slice            2  has number of spectral elements =      101499
+ slice            3  has number of spectral elements =      101499
+ slice            4  has number of spectral elements =      100872
+ slice            5  has number of spectral elements =      101014
+ slice            6  has number of spectral elements =      101808
+ slice            7  has number of spectral elements =      101367
+
+ Position (x,z) of the source =   0.47499999999999998       0.47499999999999998     
+
+
+ This will be a parallel simulation on            8  processor cores
+

@@ -1,0 +1,12 @@
+#!/bin/sh
+echo "Tex setup for LSRTM"
+cygstart /cygdrive/c/Program\ Files\ \(x86\)/Texmaker/texmaker.exe
+cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/elsarticle/elsarticle/doc/elsarticle-template
+#cygstart /cygdrive/d/dk_ze/D\ SHM
+cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/elsarticle/elsarticle/doc/elsarticle-template/multiFigures
+cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/\!DataBK2070811
+cygstart chrome "https://scholar-google-com.prox.lib.ncsu.edu/"
+cygstart firefox "http://www.thefreedictionary.com/serve"
+cygstart /cygdrive/c/Program\ Files/Tracker\ Software/PDF\ Viewer/PDFXCview.exe
+cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/elsarticle/elsarticle/doc/elsarticle-template/Unimybibfile20171017.bib
+#cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/SAGE\ LaTeX\ template/mybibfile_v2.bib

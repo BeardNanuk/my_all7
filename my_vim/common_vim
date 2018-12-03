@@ -1,0 +1,165 @@
+#!/bin/sh
+
+### navigation in RR  
+RR: up/down/left/right
+# move one word forward 
+w
+# move one word backward 
+b
+# to the end of the line 
+$
+# to the beginning of the line 
+0
+# to the top of the screen  
+H	
+# to the middle of the screen 
+M
+# to the bottom of the screen 
+L
+# to the next screen 
+cirl + f
+# to the previous screen
+ctrl + b 
+# to the end of the file 
+G
+# to any line,e.g.,ln 51 
+51G 
+# search within vim 
+:s/string		
+
+
+
+### inserting text 
+# enter the intert mode (II)
+i
+# to add a word after word, put the curser behind the last letter of the word
+# then click a to (move one courser down, then enter the insert mode)
+am
+# (when at the middle of a line), move to the beginning of the line and go II
+I
+# (when at the middle of a line), move to the end of the line and go II
+A
+# insert a new line below (no need to be at the end of the line)
+o
+# insert a new line above (captital o)
+O
+## comment a block 
+# turn on relative number mode
+RR: :set relativenumber
+RR: :66,70s/^/# 
+# turn off the first column colored 
+RR: :nohl
+# show line number 
+:set number 
+# turn off line number 
+:set nonumber 
+
+
+### delete text 
+#delete one letter under the curser 
+x
+#delete one letter to the left of the curser 
+X
+#delete n letters to the right (from the letter under the curser), e.g.,n =10
+10x
+#delete n letters to the left
+10X
+#delete one word (or the rest of the word from the curser's location)
+dw
+#delete the line part before the curser 
+d0
+#delete the line part after the curser 
+d$ or D
+#delete the entire line 
+dd
+#delete 7 line 
+7dd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### copy and paste 
+# copy a word 
+
+
+
+
+### repeatable input 
+#'.' register (contain by default) the last phrase you wrote (or did?) in the insert mode. 
+# when you are out of the insert mode (regular), type '.', you have those copy put on in the file 
+RR: .
+# when you are back in the insert mode you can still do the same thing by
+II: ctrl + r then click '.'
+# or equalvalently 
+II: ctrl + a 
+## this can be used to repeat many other things in II as well
+# for example, after delete a word using
+RR: dw
+# click '.' will keep delete a word with each stroke 
+RR: . 
+# for another example, after delete the entire line using 
+RR: dd 
+# click '.' will keep delete a line with each stroke 
+RR: . 
+# copy everything in a file to the clipboard of the system 
+RR: ggVG
+# then paste with the mid button of the mouse 
+cd
+
+
+### completion 
+# search and show a list of previous input 
+II: ctrl + p 
+
+# search and show a list of later input 
+II: ctrl + a 
+# complete a filename (I think the file needs to be in the current directory)
+II: ctrl + x  ctrl+ f
+# to complete a filename located in the folder one level up 
+# the following is done by type ../my_ then hit ^xp, it becomes 
+II: ../my_bin/
+# then type b then ^xp =>
+II: ../my_bin/b => ../my_bin/bashtry
+
+#(while my_bin and the current directory the vim file is in (foofolder), that foofolder and my_bin is in the same root directory )
+## grab some other lines without yanking it 
+# say want the rest of a line, located somewhere in the last paragraph 
+# you can start typing right away: 
+II: foo terms ready 
+# then type half of the starting word to copy to identify the word
+# ^x (ctrl x) then ^p, it should do auto completion of this  word 
+# then keep hold ^ click xp release ^ to grab the line above 
+II: foo terms ready needs to be in the current directory
+
+## grab some other lines without yanking it, looks like only working when the entire line is exactly the same 
+II: grab some ^xl (for this comment as an example)
+
+## complete the language-specfic 
+II:^xo
+
+## set search where to look for completion for vim
+
+
+## vim formatting 
+# add the following line to ~/.vimrc 
+set background=dark
+
+
+
+
+
+
+
+
+Mon Jun 11 17:03:06 UTC 2018

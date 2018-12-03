@@ -1,0 +1,32 @@
+#!/bin/bash
+#SBATCH --nodes=1
+#SBATCH -t 0:41:00
+#SBATCH --ntasks-per-node=4
+#SBATCH --gres=gpu:4
+
+### run and plot and copy - one click
+## created on: 
+## Jiaze He, jiazeh@princeton.edu
+
+
+#rm slurm*
+
+sfclean
+sfrun
+wait
+#. zbash_try
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

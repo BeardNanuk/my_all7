@@ -1,0 +1,23 @@
+#!/bin/bash
+
+## create a dummy Qkappa map, only whose dimensions will be usd 
+
+## creatd by Jiaze 
+## creatd on Sat Nov 24 17:59:23 EST 2018
+
+
+
+
+. ./zpara_headers
+
+
+foldername=$1
+filename2='vp'
+
+for k in `seq 0 7`;do
+   K="$(printf "%06d" $k)"
+   fromname=$(printf "${foldername}/proc${K}_${filename2}.bin") 
+   endname=$(printf "${foldername}/proc${K}_Qkappa.bin") 
+   eval cp $fromname $endname
+   #echo 'fromname', $dirname
+done

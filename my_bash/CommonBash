@@ -1,0 +1,487 @@
+#!/bin/bash
+
+If you would like to work in an isolated environment (which is strongly recom‐
+mended so you can work on different projects without having conflicting library ver‐
+sions), install virtualenv by running the following pip command:
+$ pip3 install --user --upgrade virtualenv
+Collecting virtualenv
+[...]
+Successfully installed virtualenv
+Now you can create an isolated Python environment by typing:
+$ cd $ML_PATH
+$ virtualenv env
+Using base prefix '[...]'
+New python executable in [...]/ml/env/bin/python3.5
+Also creating executable in [...]/ml/env/bin/python
+Installing setuptools, pip, wheel...done.
+Now every time you want to activate this environment, just open a terminal and type:
+$ cd $ML_PATH
+$ source env/bin/activate
+
+
+# iso 
+# multiple iso files can be unzipped seperated as well using the following commands
+sudo apt-get install p7zip-full
+7z x disk.iso
+
+
+##########
+
+
+echo "sbin"
+xdg-open /usr/local/sbin/ 
+cd /home/j2/Desktop/PythonTry/MLshm 
+google-chrome 'https://mail.google.com/mail/u/0/?tab=wm#inbox'
+
+# run a program 
+/usr/local/MATLAB/R2016b/bin/matlab
+
+#### common bash 
+
+sudo apt-get install unzip
+
+## zip a file 
+sudo apt-get install zip
+zip -r compressed_filename.zip foldername
+
+
+
+sudo apt-get update && sudo apt-get upgrade
+
+
+
+
+###### google cloud computing related 
+https://console.cloud.google.com/compute/instances?project=cosmic-sensor-177719
+
+
+
+
+
+### setup a GCP instance 
+Ubuntu 16.04 LTS or 17.10 - CUDA 8:
+
+#!/bin/bash
+echo "Checking for CUDA and installing."
+# Check for CUDA and try to install.
+if ! dpkg-query -W cuda-8-0; then
+  # The 16.04 installer works with 16.10.
+  curl -O https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+  dpkg -i ./cuda-repo-ubuntu1604_8.0.61-1_amd64.deb
+  apt-get update
+  apt-get install cuda-8-0 -y
+fi
+# Enable persistence mode
+nvidia-smi -pm 1
+
+
+
+### tensorflow installation 
+
+
+
+# pip_package location 
+./tensorflow/contrib/tpu/profiler/pip_package
+./tensorflow/tools/pip_package
+
+
+
+### bazel
+
+# installation 
+https://docs.bazel.build/versions/master/install-ubuntu.html
+
+# download installation files 
+https://github.com/bazelbuild/bazel/releases
+
+
+# after ./configure
+
+Bazel is now installed!
+Make sure you have "/usr/local/bin" in your path. You can also activate bash
+completion by adding the following line to your ~/.bashrc:
+  source /usr/local/lib/bazel/bin/bazel-complete.bash
+Use "fg" to return to nano.
+See http://bazel.build/docs/getting-started.html to start a new project!
+
+# bazel version 
+
+# delete bazel 
+sudo apt-get purge bazel
+
+
+
+##### 
+
+03:07 sudo apt-get update
+
+03:11 https://www.tensorflow.org/install/in...
+
+03:22 https://developer.nvidia.com/rdp/form...
+
+03:48 https://developer.nvidia.com/cudnn
+
+04:15 sudo apt-get install ipython
+
+04:22 sudo apt-get install python3-pip
+
+04:32 sudo pip3 install jupyter
+
+04:42 sudo jupyter notebook --ip 0.0.0.0 --port 8888 --allow-root
+
+05:35 https://www.scipy.org/install.html
+
+05:37 sudo pip3 install numpy scipy matplotlib ipython jupyter pandas sympy nose
+
+05:40 https://alliseesolutions.wordpress.co...
+
+05:45 sudo apt-get install openjdk-8-jdk git python-dev python3-dev python-numpy python3-numpy python-six python3-six build-essential python-pip python3-pip python-virtualenv swig python-wheel python3-wheel libcurl3-dev libcupti-dev
+
+05:55 tar -xzvf cudnn-8.0-linux-x64-v5.1.tgz
+
+06:02 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+
+06:04 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+
+06:07 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+
+06:12 nano ~/.bashrc
+
+06:17 add these lines:
+
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+
+export CUDA_HOME=/usr/local/cuda
+
+06:21 source ~/.bashrc
+
+06:27 echo "deb [arch=amd64] http://storage.googleapis.com/bazel-apt stable jdk1.8" | sudo tee /etc/apt/sources.list.d/bazel.list
+
+06:29 curl https://bazel.build/bazel-release.pub... | sudo apt-key add -
+
+06:31 sudo apt-get update
+
+06:33 sudo apt-get install bazel
+
+06:35 sudo apt-get upgrade bazel
+
+06:38 git clone https://github.com/tensorflow/tensorflow
+
+06:41 cd ~/tensorflow
+
+06:43 git checkout r1.0
+
+06:47 ./configure
+
+06:59 /usr/bin/python3.5
+
+(press enter until you get to "Please input the desired Python library path to use.")
+
+07:11 /usr/local/lib/python3.5/dist-packages
+
+(press enter once, then you should be at "Do you wish to build TensorFlow with CUDA support?" to which you can answer "y")
+
+07:16 y
+
+07:24 3.7
+
+07:30 bazel build --config=opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
+
+07:35 bazel-bin/tensorflow/tools/pip_package/build_pip_package /tmp/tensorflow_pkg
+
+07:41 sudo pip3 install /tmp/tensorflow_pkg/tensorflow[PRESS TAB TO COMPLETE FILENAME]
+
+(Now quit the SSH window and come back)
+
+07:49 python3
+
+07:50 import tensorflow as tf
+
+07:54 sess = tf.InteractiveSession()
+
+07:58 sess.close()
+
+(ctrl+D quits python)
+
+08:01 git clone https://github.com/llSourcell/How_to_...
+
+08:04 sudo jupyter notebook --ip 0.0.0.0 --port 8888 --allow-root
+
+08:26 sudo pip3 install pillow
+
+
+
+## python virtual environment setup 
+
+mkdir py2project
+
+cd py2project/
+
+virtualenv -p python2 venv
+
+
+
+#open (what needs to be done each time)
+source venv/bin/activate
+
+# pip install -U numpy scipy scikit-learn
+pip install -U numpy scipy scikit-learn pandas 
+
+# install jupyter notebook with specific version 
+(venv) $ pip install ipykernel
+(venv) $ ipython kernel install --user --name=projectname
+
+
+
+# close
+deactivate 
+
+virtualenv -p python3 venv
+
+# install jupyter notebook on springdale 
+
+# on springdale, ask andrew to install pip/pip3/virtualenv
+# once installed, you can do the following to enable pip3  
+source /opt/rh/rh-python36/enable 
+# it seems pip can be used directly 
+
+# install jupyter notebook using pip3 
+pip3 install --user jupyter
+# then give jupyter notebook a python 2 kernel 
+pip install --user jupyter 
+
+#Then active the virtualvenv in the same way as above 
+## python virtual environment setup 
+
+mkdir py2project
+
+cd py2project/
+
+virtualenv -p python2 venv
+#open (what needs to be done each time)
+source venv/bin/activate
+# close 
+deactivate
+
+# installing virtualenv using python3 
+virtualenv -p python3 venv 
+# open 
+source venv/bin/activate 
+# close 
+deactivate
+
+# install ObSpy
+pip install --user ObsPy
+
+# correct way to install anaconda 2/3 
+# after Andrew did it. need to add /usr/local/anaconda2/bin to ~/.bashrc 
+# then close/reload the terminal. conda will be working!
+
+# use conda to install obspy
+$ conda config --add channels conda-forge
+$ conda create -n obspy python=2.7
+# note that do the following line, do not add path for conda in ~/.bashrc
+$ conda activate obspy
+# close obspy
+$ conda deactivate
+
+############ set environment setup
+## default $HOME is at the following 
+cd /home/jiazeh
+## but we want to change it to another place has SSD
+# open the bashrc file
+vi ~/.bashrc
+# change HOME varibale's default value by adding the following line to ./bashrc in /home/jiazeh
+export HOME="/scratch/gpfs/jiazeh"
+# by the way, in bash '~' meams $HOME
+
+
+
+
+
+#!/bin/sh
+
+echo "switch to the path and folder to my common bin"
+
+a='/home'
+b='/'$(id -un)
+ab=$a$b
+c='/Desktop/my_files/my_bin'
+
+final_dir=$ab$c
+
+cd $final_dir
+
+
+# open a folder GUI from bash 
+nautilus .
+
+
+### copy and paste 
+mv gittest/* /home/jiazeh/Desktop/my_files/my_github
+
+
+
+## a quick way of copying files 
+
+Using Bash, I would just visit the directories:
+
+$ cd /path/to/source/directory
+$ cd /path/to/destination/directory
+
+Then, I would use the shortcut ~-, which points to the previous directory:
+
+$ cp -v ~-/file1.txt .
+$ cp -v ~-/file2.txt .
+$ cp -v ~-/file3.txt .
+
+If one wants to visit directories in reverse order, then:
+
+$ cp -v fileA.txt ~-
+$ cp -v fileB.txt ~-
+$ cp -v fileC.txt ~-
+
+### delete related 
+# delete write-protected files
+rm -fr my*  
+
+
+
+### search related 
+#add date and time to the end of a file 
+$ date >> common_vim
+
+# connect to tiger clustr 
+ssh etienneb@tigergpu
+ 
+# search recursively for files for all subfolders in the current dir
+find . -name 'path*'
+# case insensitive search 
+find . -iname 'path*'
+
+
+# output the folders and files in a tree format 
+find ./ -type d -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
+
+# list all files in full path under current_dir 
+ls -lrt -d -1 $PWD/{*,.*} 
+
+# how to find if something exits
+grep 'gridfile.gnu' ./src/*/*
+
+# find a word in a file with line number	
+grep -n "work" filename.txt
+# find a word that the beginning of line in a file with linue number 
+grep -n ^"word" filename.txt 
+# find a word that the end of line in a file with linue number 
+grep -n "word"$ filename.txt 
+# count how many occurances you found 
+grep -n 'word' let_vim_do_the_typing  -c
+# count how many occurances you foundi (when with output already)
+$ !! -c 
+# general search for known number of charecters 
+grep -n 'wo..' let_vim_do_the_typing
+# start with either charecter a or b 
+grep -n ^'[cs]' let_vim_do_the_typing
+# find all lines containing all files 
+grep -nr 'mkdir' ./*
+
+### sed 
+## substitute 
+# substittue License with Linux,  then save to a new file (first occurance of each line)
+$ sed 's/License/Linux' GNULicense.txt > text.txt 
+# substittue globally License with Linux,  then save to a new file (all occurances of each line)
+$ sed 's/License/Linux/g' GNULicense.txt > text.txt
+# quick test of replacing the word 'day' with 'night', given the word 'Sunday'. 
+$ echo 'Sunday' | sed 's/day/night/'
+# find all the double or four or ... digits number 
+grep -n '\([0-9]\)\([0-9]\)' let_vim_do_the_typing
+# reverse all the double digit number 
+sed 's_\([0-9]\)\([0-9]\)_\2\1_g' let_vim_do_the_typing -> ztext.txt
+# delete all the numbers, starting from the second digit each line 
+sed 's/[0-9]//2g' let_vim_do_the_typing -> ztext.txt
+#
+
+#search a string within some line ranges, then extract the string 
+sed -n '26,28{/NSTEP/=;p}' specfem_data/Par_file | paste - -
+
+## get the number, in a range of lines, after a specfic text 
+# in Par_file
+ 26 # time step parameters
+ 27 # total number of time steps
+ 28 NSTEP                           =1100
+ 29 # duration of a time step (see section "How to choose the time step" of the manual for how to do this)
+
+# look what sed does! 
+$ sed -n 26,28p specfem_data/Par_file | grep 'NSTEP' | cut -d\= -f2
+$ 1100
+
+## delete the line part after '#'
+Nevent=$(sed -n 17,19p ./parameters.py | grep 'NSRC' | cut -d\= -f2 | sed 's/\#.*//')
+
+
+### file creation - heads 
+## python 
+#!/usr/bin/env python
+## bash
+#!/bin/bash
+
+### scripting 
+
+## name handles; string ..
+# formatted numbering and string
+Nit=4 
+ztemp=$(printf "tin%04d" $Nit)
+# two variables in a string for filename 
+
+
+
+# kill firefox 
+$ pkill -f firefox
+# kill folders 
+$ pkill nautilus 
+$ nautilus -q
+
+
+############### bash programming 
+
+### if 
+## check if a type of file exist 
+count=`ls -1 ./output/*.png 2>/dev/null | wc -l`
+ 
+if [ $count -eq 0 ]
+then
+        echo 'nothing'
+   else
+        echo $count
+        rm ./output/*.png
+fi
+## check if a directory exist,
+LINK_OR_DIR=yyoutput
+ 
+if [ -d "$LINK_OR_DIR" ]; then
+    echo 'nothing'
+  else
+    echo 'make a folder'
+    mkdir "$LINK_OR_DIR"
+fi
+
+##
+
+#### data format 
+## convert float to integer
+(obspy) [jiazeh@paris specfem2d]$ echo $f0
+100000.0
+(obspy) [jiazeh@paris specfem2d]$ intf0=${f0%.*}
+(obspy) [jiazeh@paris specfem2d]$ echo $f0
+100000.0
+(obspy) [jiazeh@paris specfem2d]$ echo $intf0
+100000
+
+
+
+
+
+
+
+## install nont 

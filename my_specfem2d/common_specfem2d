@@ -1,0 +1,481 @@
+#! /user/bin/bash
+
+website: 
+\bash
+
+https://geodynamics.org/cig/software/specfem2d/
+
+#Current Stable Release
+#To obtain the latest stable release of the code, use the following git command:
+
+git clone --recursive https://github.com/geodynamics/specfem2d.git
+
+# then change to the spcfem2d diretorary 
+. sp2D
+
+#module available on this local machine
+module avail
+#module currently loaded in this terminal 
+module list 
+#load a module 
+module load MODULE
+#load openmpi
+module load openmpi/intel-18.0/3.0.0/64
+#load intel mpi
+module load intel/18.0/64/18.0.2.199
+#my quick way to load the above two moduels 
+. spenv
+#unload all modules 
+module purge
+
+
+
+
+l
+# to generate a Makefile for installation later 
+# many flags will be automatically generated because when FC = ifort is seleted
+./configure FC=ifort --with-mpi
+# make realclean
+make realclean
+
+# install specfem2D in parallel 
+make -j
+make xcombine_sem
+#at this point, the specfem supposed to be installed.
+
+# To check if specfem2D exactuatable is already there in /bin
+ls bin
+#(xspecfem2D and xmeshfem2D supposed to be already in it)
+
+
+# to compile on springdale with gfortran 
+./configure --with-mpi
+
+
+# to compile on Ubuntu machine 
+./configure FC=gfortran CC=gcc MPIFC=mpif90 MPI_INC=/usr/include/mpich
+# for solving below errors 
+## --- ##
+## MPI ##
+## --- ##
+gfortran: error: unrecognized command line option '-showme:incdirs'
+checking mpi.h usability... no
+checking mpi.h presence... no
+checking for mpi.h... no
+configure: error: MPI header not found; try setting MPI_INC.
+
+
+########## run specfem
+## input (Par_file for all parameter setup,SOURCE is the source function)
+vi DATA/Par_file
+# set the number of processors, for meshing?
+# parameters concerning partitioning
+NPROC                           = 5              # number of processes
+# using mpi to run with the multiple  processors
+mpirun -n 4 ./bin/xspecfem2D
+
+########### example 1 
+azeh@paris specfem2d]$ vi DATA/Par_file 
+[jiazeh@paris specfem2d]$ vi EXAMPLES/simple_topography_and_also_a_simple_fluid_layer/DATA/
+interfaces_simple_topo_curved.dat  interfaces_simple_topo_flat.dat    Par_file                           SOURCE
+[jiazeh@paris specfem2d]$ vi EXAMPLES/simple_topography_and_also_a_simple_fluid_layer/DATA/interfaces_simple_topo_curved.dat 
+[jiazeh@paris specfem2d]$ vi DATA/Par_file 
+[jiazeh@paris specfem2d]$ vi EXAMPLES/simple_topography_and_also_a_simple_fluid_layer/DATA/interfaces_simple_topo_curved.dat 
+[jiazeh@paris specfem2d]$ vi DATA/Par_file 
+[jiazeh@paris specfem2d]$ ./bin/xmeshfem2D 
+
+
+
+#Etienne:Launch_specfem.sh creation 
+#!/bin/sh
+
+
+rm output*
+
+./bin/xmeshfem2D >> output_mesher
+
+NPROC=4
+
+mpirun -n $NPROC ./bin/xspecfem2D >> output_solver
+
+## how to use this thing
+# make it excutable 
+chmod u+x launch_specfem.sh
+#run it 
+./launch_specfem.sh
+#my quick way of launching 'launch_spefem.sh'
+#(after switch folder using .sp2D, and then load modules using .spenv)
+l2d
+
+# display the output for mesher 
+cat output_mesher
+# display the output for solver
+cat output_solver
+  
+# how to find if something exits
+grep 'gridfile.gnu' ./src/*/*
+
+################### understanding ##################
+
+
+
+#### source setup 
+#-----------------------------------------------------------------------------
+#
+# sources
+#
+#-----------------------------------------------------------------------------
+
+# source parameters
+NSOURCES                        = 1              # number of sources (source information is then read from the DATA/SOURCE file)
+force_normal_to_surface         = .false.        # angleforce normal to surface (external mesh and curve file needed)
+## the real source file is located at: 
+DATA/SOURCE
+
+#open a folder in gui when in command line
+nautilus /foopath
+
+# remove fils and subfolders without delete the root folder
+rm -rf del_content/*
+
+### output mesh files of proc0000*(x,z,vp)[in Parfile]
+56:SAVE_MODEL                      = binary
+
+##  
+
+#-----------------------------------------------------------------------------
+#
+# receivers
+#
+#-----------------------------------------------------------------------------
+
+# receiver set parameters for recording stations (i.e. recording points)
+seismotype                      = 1              # record 1=displ 2=veloc 3=accel 4=pressure 5=curl of displ 6=the fluid potential
+
+# subsampling of the seismograms to create smaller files (but less accurately sampled in time)
+subsamp_seismos                 = 1
+
+# so far, this option can only be used if all the receivers are in acoustic elements
+USE_TRICK_FOR_BETTER_PRESSURE   = .true.
+#!!!! this is only work if seismotype is 4!!!!
+(obspy) jiazeh@farm:~/specfem2d/src/specfem2D$ vi compute_pressure.f90 
+547   else if (ispec_is_acoustic(ispec)) then
+548     ! acoustic element
+549 
+550     if (USE_TRICK_FOR_BETTER_PRESSURE) then
+551       ! use a trick to increase accuracy of pressure seismograms in fluid (a    coustic) elements:
+552       ! use the second derivative of the source for the source time function     instead of the source itself,
+553       ! and then record -potential_acoustic() as pressure seismograms instea    d of -potential_dot_dot_acoustic();
+554       ! this is mathematically equivalent, but numerically significantly mor    e accurate because in the explicit
+555       ! Newmark time scheme acceleration is accurate at zeroth order while d    isplacement is accurate at second order,
+556       ! thus in fluid elements potential_dot_dot_acoustic() is accurate at z    eroth order while potential_acoustic()
+557       ! is accurate at second order and thus contains significantly less num    erical noise.
+558       ! compute pressure on the fluid/porous medium edge
+559       do j = 1,NGLLZ
+560         do i = 1,NGLLX
+561           iglob = ibool(i,j,ispec)
+562           ! store pressure
+563           pressure_element(i,j) = - potential_acoustic(iglob)
+564         enddo
+565       enddo
+566     else
+567       do j = 1,NGLLZ
+568         do i = 1,NGLLX
+569           iglob = ibool(i,j,ispec)
+570           ! store pressure
+571           pressure_element(i,j) = - potential_dot_dot_acoustic(iglob)
+572         enddo
+573       enddo
+574     endif
+575   endif ! end of test if acoustic or elastic element
+
+
+
+########## number of medium to include in Par_file
+277:nbregions                       = 1 
+
+
+# output vect0000005
+#### for PostScript snapshots ####
+output_postscript_snapshot      = .false.         # output Postscript snapshot of the results every NSTEP=1090
+
+# output AA.S000000.PRE.semp  AA.S000017.PRE.semp 
+SU_FORMAT                       = .false.        # output single precision binary seismograms in Seismic Unix format (adjoint traces will be read in the same format)
+# Up_file_single.su or Up_file_double.su depends on 
+# seismogram formats
+save_ASCII_seismograms          = .true.         # save seismograms in ASCII format or not
+##! I think the above only happen when SU_FORMAT turn to false
+save_binary_seismograms_single  = .false.         # save seismograms in single precision binary format or not (can be used jointly with ASCII above to save both)
+save_binary_seismograms_double  = .false.        # save seismograms in double precision binary format or not (can be used jointly with both flags above to save all)
+
+
+################################### SOURCE code of specfem2d ############## 
+#
+Low-dissipation and low-dispersion Runge–Kutta (LDDRK)
+
+
+############## where kernels are saved, 
+(obspy) jiazeh@farm:~/specfem2d/src/specfem2D$ vi save_adjoint_kernels.f90 
+
+
+
+
+
+
+
+
+############# common errors ##################
+
+./launch_specfem.sh: line 10: 13884 Segmentation fault      (core dumped) mpirun -n $NPROC /home/jiazeh/specfem2d/bin/xspecfem2D >> solverz
+# default error, no problem. 
+
+opening file failed, please check your file path and run-directory.
+ error opening Par_file
+ Error detected, aborting MPI... proc            0
+forrtl: No such file or directory
+forrtl: severe (29): file not found, unit 30, file /home/jiazeh/specfem2d/bin/./OUTPUT_FILES//error_message000000.txt
+Image              PC                Routine            Line        Source             
+xmeshfem2D         000000000045DE6E  for__io_return        Unknown  Unknown
+xmeshfem2D         0000000000475075  for_open              Unknown  Unknown
+xmeshfem2D         0000000000440168  Unknown               Unknown  Unknown
+xmeshfem2D         000000000043FF69  Unknown               Unknown  Unknown
+xmeshfem2D         0000000000441355  Unknown               Unknown  Unknown
+xmeshfem2D         000000000043B749  Unknown               Unknown  Unknown
+xmeshfem2D         0000000000409C9E  Unknown               Unknown  Unknown
+libc-2.17.so       00007FDEBB4313D5  __libc_start_main     Unknown  Unknown
+xmeshfem2D         0000000000409BA9  Unknown               Unknown  Unknown
+# need to create OUTPUT folder manully 
+
+######## need to run 
+/home/jiazeh/specfem2d/bin/xmeshfem2D >> mesherz 
+####### each time before run 
+NPROC=4
+
+mpirun -n $NPROC /home/jiazeh/specfem2d/bin/xspecfem2D >> solverz
+
+### the detailed errors are in mesherz and solverz
+
+### Parfile could have 44444444444444... check always
+ **********************************************
+ *** Specfem 2-D Mesher - MPI version       ***
+ **********************************************
+ 
+ Running Git version of the code corresponding to 
+ commit 127ce505f597868b4baed17b9b9da9271abf980d
+ dating From Date:   Fri Jun 1 11:27:20 2018 -0400
+ 
+ Reading the parameter file...
+
+### debugging the source time function 
+
+
+vi src/specfem2D/prepare_source_time_function.f90
+
+###### here is the error
+   264  Error detected, aborting MPI... proc            0
+   265  Error, program ended in exit_MPI
+
+### look at: vi /home/jiazeh/inversion_test/scratch/solver/000000/solver.log 
+   255  Parameter file successfully read
+   256 
+   257  The mesh contains         6400  elements
+   258 
+   259  Control elements have            9  nodes
+   260 
+   261  Error invalid num_sources :           1
+   262  NSOURCES :          32
+   263  Error: Total number of sources in DATA/SOURCE is different from that declared in the Par_file, please check...
+   264  Error detected, aborting MPI... proc            0
+   265  Error, program ended in exit_MPI
+   266  Error detected, aborting MPI... proc            0
+
+######################### 
+### after sfrun 
+Traceback (most recent call last):
+  File "/scratch/gpfs/jiazeh/seisflows/scripts/sfrun", line 44, in <module>
+    system.submit(workflow)
+  File "/scratch/gpfs/jiazeh/seisflows/seisflows/system/serial.py", line 84, in submit
+    workflow.main()
+  File "/scratch/gpfs/jiazeh/seisflows/seisflows/workflow/inversion.py", line 120, in main
+    self.evaluate_gradient()
+  File "/scratch/gpfs/jiazeh/seisflows/seisflows/workflow/inversion.py", line 228, in evaluate_gradient
+    self.write_gradient(path=PATH.GRAD, suffix='new')
+  File "/scratch/gpfs/jiazeh/seisflows/seisflows/workflow/inversion.py", line 276, in write_gradient
+    postprocess.write_gradient(path,optimize.iter)
+  File "/scratch/gpfs/jiazeh/seisflows/seisflows/postprocess/base.py", line 69, in write_gradient
+    parameters=solver.parameters)
+  File "/scratch/gpfs/jiazeh/seisflows/seisflows/system/multicore.py", line 91, in run
+    func(**kwargs)
+  File "/scratch/gpfs/jiazeh/seisflows/seisflows/postprocess/base.py", line 97, in process_kernels
+    raise ExceptionTraceback (most recent call last):
+  File "/scratch/gpfs/jiazeh/seisflows/scripts/sfrun", line 44, in <module>
+    system.submit(workflow)
+  File "/scratch/gpfs/jiazeh/seisflows/seisflows/system/serial.py", line 84, in submit
+    workflow.main()
+  File "/scratch/gpfs/jiazeh/seisflows/seisflows/workflow/inversion.py", line 120, in main
+    self.evaluate_gradient()
+  File "/scratch/gpfs/jiazeh/seisflows/seisflows/workflow/inversion.py", line 228, in evaluate_gradient
+    self.write_gradient(path=PATH.GRAD, suffix='new')
+  File "/scratch/gpfs/jiazeh/seisflows/seisflows/workflow/inversion.py", line 276, in write_gradient
+    postprocess.write_gradient(path,optimize.iter)
+  File "/scratch/gpfs/jiazeh/seisflows/seisflows/postprocess/base.py", line 69, in write_gradient
+    parameters=solver.parameters)
+  File "/scratch/gpfs/jiazeh/seisflows/seisflows/system/multicore.py", line 91, in run
+    func(**kwargs)
+  File "/scratch/gpfs/jiazeh/seisflows/seisflows/postprocess/base.py", line 97, in process_kernels
+    raise Exception
+
+### in /scratch/gpfs/jiazeh/inversion_test/scratch/solver/000000/solver.log
+--------------------------------------------------------------------------
+It looks like orte_init failed for some reason; your parallel process is
+likely to abort.  There are many reasons that a parallel process can
+fail during orte_init; some of which are due to configuration or
+environment problems.  This failure appears to be an internal failure;
+here s some additional information (which may only be relevant to an
+Open MPI developer):
+
+  PMI2_Job_GetId failed failed
+  --> Returned value (null) (14) instead of ORTE_SUCCESS
+--------------------------------------------------------------------------
+
+### solution 
+according to James specfem2d needs to be compiled without mpi 
+## in specfem2d/
+make realclean 
+# run 
+ ./configure FC=ifort 
+# or  run 
+./configure FC=gfortran 
+## then run (make -j may not working) 
+make all 
+
+
+################### using cluster specfem2d on paris - failed 
+load ifort module 
+make realclean
+./configure FC=ifort
+make all 
+
+
+
+####################### if internal mesher does not generate 
+     639  Mesh dimensions:
+     640    Xmin,Xmax of the whole mesh =    0.0000000000000000        2.5600000000000005E-002
+     641    Zmin,Zmax of the whole mesh =    0.0000000000000000        2.5600000000000008E-002
+     642 
+     643  Assigning an external velocity and density model
+     644    model: binary
+     645    reading external files: DATA/proc*****_rho.bin, .._vp.bin, .._vs.bin
+     646  Error opening DATA/proc*****_rho.bin file.
+     647  Error detected, aborting MPI... proc            0
+     648  Error, program ended in exit_MPI
+     649  Error detected, aborting MPI... proc            0
+     650  Error, program ended in exit_MPI
+     651  Error detected, aborting MPI... proc            0
+
+### solution 
+## in DATA/Par_file	
+
+ 47 # available models
+ 48 #   default: define model using nbmodels below
+ 49 #   ascii: read model from ascii database file
+ 50 #   binary: read model from binary databse file
+ 51 #   external: define model using define_external_model subroutine
+ 52 #   legacy: read model from model_velocity.dat_input
+ 53 MODEL                           = default
+ 54 
+ 55 # Output the model with the requested type, does not save if turn to default
+ 56 SAVE_MODEL                      = binary
+
+
+####################### errors
+i 72     !if (ier /= 0) call exit_MPI(myrank, 'error allocating save model arrays')
+## after running, allocating arrays not working
+just comment this out
+
+###################### too large value
+
+2735  Creating color image of size          646  x          678  for time step          100
+2736  drawing scalar image of the forward wavefield pressure...
+2737  Color image maximum amplitude =    125276889546752.00
+2738  Color image created
+
+############### blow up 
+
+  2928  Creating color image of size          646  x          678  for time step                  90
+  2929  drawing scalar image of the forward wavefield pressure...
+  2930  Color image maximum amplitude =    2.7378654862450821E+030
+  2931  Warning: failed creating color image, maximum value of amplitude in image color is        invalid
+  2932  amplitude max =    2.7378654862450821E+030  with threshold at    1.0000000000000001       E+025
+  2933  Please check your simulation setup...
+  2934  code became unstable and blew up (image_color_data)
+  2935  Error detected, aborting MPI... proc            0
+  2936  Error, program ended in exit_MPI
+  2937  Error detected, aborting MPI... proc            0
+
+##### cause 
+DT too large - cfl failed or source input amplification factor too large
+
+
+### solution 
+
+#################### external surface file, does not matter, but need to have a zero in it 
+
+error reading material parameters line
+
+
+## for external mesher, 
+
+the 
+
+########### in vsolver
+
+ Creating color image of size          408  x          428  for time step 
+           5
+ drawing scalar image of the forward wavefield pressure...
+ Color image maximum amplitude =    739.060546875000     
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 15854 on node tiger-h23c1n2 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
+
+########### in slurm 
+
+11   running solver...
+ 12 
+ 13 forrtl: error (65): floating invalid
+ 14 Image              PC                Routine            Line        Source
+ 15 xspecfem2D         000000000071E94D  Unknown               Unknown  Unknown
+ 16 xspecfem2D         000000000071C7E7  Unknown               Unknown  Unknown
+ 17 xspecfem2D         00000000006C7434  Unknown               Unknown  Unknown
+ 18 xspecfem2D         00000000006C7246  Unknown               Unknown  Unknown
+ 19 xspecfem2D         000000000066B596  Unknown               Unknown  Unknown
+ 20 xspecfem2D         000000000066F8E7  Unknown               Unknown  Unknown
+ 21 Unknown            00007F3E06AC8680  Unknown               Unknown  Unknown
+ 22 xspecfem2D         00000000004B3568  Unknown               Unknown  Unknown
+ 23 xspecfem2D         0000000000615A53  Unknown               Unknown  Unknown
+ 24 xspecfem2D         000000000060E27D  Unknown               Unknown  Unknown
+ 25 xspecfem2D         00000000004F4F15  Unknown               Unknown  Unknown
+ 26 xspecfem2D         00000000005E2D4B  Unknown               Unknown  Unknown
+ 27 xspecfem2D         000000000040969E  Unknown               Unknown  Unknown
+ 28 libc.so.6          00007F3E0670E3D5  Unknown               Unknown  Unknown
+ 29 xspecfem2D         00000000004095A9  Unknown               Unknown  Unknown
+ 30 running solver - done
+### causes: floating invalid is the spacing
+### solution, reduce dt 
+
+######### in slurm - floating overflow
+  running solver...
+
+forrtl: error (72): floating overflow
+Image              PC                Routine            Line        Source             
+xspecfem2D         000000000071E92D  Unknown               Unknown  Unknown
+xspecfem2D         000000000071C7C7  Unknown               Unknown  Unknown
+xspecfem2D         00000000006C7414  Unknown               Unknown  Unknown
+
+### reduce dt 
+
+
+
+
+ 
+

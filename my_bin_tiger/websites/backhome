@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "go back home on Google map"
+
+#(firefox &)
+#. /usr/bin/firefox
+firefox https://www.google.com/maps/dir/LOT+21,+Princeton,+NJ+08540,+USA/510+Ravens+Crest+Dr,+Plainsboro+Township,+NJ+08536,+USA/@40.327218,-74.6180338,14z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x89c3e6dbe3623e13:0xb55050a37f365b2d!2m2!1d-74.6457157!2d40.3447384!1m5!1m1!1s0x89c3ddd3cd546143:0xac73abacd8ffff44!2m2!1d-74.5514362!2d40.3255268!3e0
+

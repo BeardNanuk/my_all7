@@ -1,0 +1,21 @@
+# python ralted 
+/home/j2/gittest/MyPython/CommonPythonPandas.txt
+/home/j2/gittest/MyPython/CommonPythonPandasExamples
+
+#github
+/home/j2/gittest
+
+
+## maching learning
+#Sundog + deep learning
+/home/j2/Desktop/PythonTry/DataScience-Python3
+/home/j2/Desktop/PythonTry/Untitled Folder
+
+
+#Tensor Board
+#run the following in the terminal 
+ls -l tf_logs/run*
+tensorboard --logdir tf_logs/
+#then open address in the browser 
+http://0.0.0.0:6006
+

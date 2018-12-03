@@ -1,0 +1,13 @@
+#!/bin/bash
+
+## copy all my code to my_all then update github 
+
+cp -rf ../my_* . 
+
+wait
+
+git add .
+git commit -m "1st commit"
+#git push -u github master
+git push origin master
+

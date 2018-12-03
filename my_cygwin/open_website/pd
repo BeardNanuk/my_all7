@@ -1,0 +1,23 @@
+#!/bin/sh
+echo "open a few websites for postdoc position"
+
+
+# oxford
+cygstart "http://www.eng.ox.ac.uk/jobs/home"
+cygstart "https://jobs.sciencecareers.org/searchjobs/?Keywords=imaging&radialtown=&LocationId=&RadialLocation=20&NearFacetsShown=true&CountryCode="
+cygstart "https://jobs.sciencecareers.org/searchjobs/?Keywords=ultrasound+&radialtown=&LocationId=&RadialLocation=20&NearFacetsShown=true&CountryCode="
+cygstart "https://jobs.sciencecareers.org/searchjobs/?Keywords=geophysics&radialtown=&LocationId=&RadialLocation=20&NearFacetsShown=true&CountryCode="
+cygstart "https://jobs.sciencecareers.org/searchjobs/?keywords=geophysics&countrycode=US"
+cygstart "https://jobs.sciencecareers.org/searchjobs/?keywords=machine+learning%2c+imaging&countrycode=US"
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "open my common_bash file"
+
+vi $HOME/Desktop/my_files/my_vim/common_vim

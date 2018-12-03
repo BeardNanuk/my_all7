@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "copy zauto_result* file"
+
+#cp $HOME/Desktop/my_files/my_bin/QuickCreate/pptinfo2.odp .
+cp $HOME/inversion_test/output/zauto_result* .

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "copy ppti file with 2 slots"
+
+cp $HOME/Desktop/my_files/my_bin/QuickCreate/pptinfo_2slots.odp .
+

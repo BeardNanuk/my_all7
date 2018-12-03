@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# copy the important but limited number of i/o files of inversion_test to someplaces 
+
+#created on Thu Nov  1 18:31:56 UTC 2018 
+#created by Jiaze HE  
+
+. zpara_headers
+
+
+#!!!!!!!!!!!! be really careful about the destination 
+final_dir="$HOME/Desktop/d/elastic_trial"
+
+final_foldername=$(printf "${final_dir}/${foldername}")
+#final_foldername=$(printf "${final_dir}/f0_${intf0}")
+echo 'final_foldername='$final_foldername
+
+
+final_stf_filename=$(printf "${final_dir}/stf_${foldername}")
+#final_stf_filename=$(printf "${final_dir}/stf_f0_${intf0}")
+
+echo 'final_stf_filename='$final_stf_filename
+
+
+#final_seis_filename=$(printf "${final_dir}/seis_${foldername}.png")
+#eval cp "$HOME/specfem2d/OUTPUT_FILES/plot_source_time_function.txt" $final_dir
+
+rm -rf bk_small
+mkdir bk_small
+
+
+#final_dir="bk_small"
+dfolder='bk_small'
+
+
+temp_full="$dfolder/specfem_data"
+mkdir -p $temp_full && eval cp -r specfem_data/* $temp_full
+temp_full="$dfolder/output"
+mkdir -p $temp_full && eval cp -r output/v* $temp_full && eval cp -r output/z* $temp_full
+temp_full="$dfolder/model_init"
+mkdir -p $temp_full && eval cp -r model_init/* $temp_full
+temp_full="$dfolder/model_true"
+mkdir -p $temp_full && eval cp -r model_true/* $temp_full
+temp_full="$dfolder/mask"
+mkdir -p $temp_full && eval cp -r mask/* $temp_full
+cp z* c* p* output.optim $dfolder
+
+
+#vi $final_dir/zreadme.txt && 
+echo $PWD > $dfolder/zreadme.txt
+today=`date +%Y-%m-%d.%H:%M:%S` # or whatever pattern you desire
+echo $today >> $dfolder/zreadme.txt
+rm -rf $final_foldername
+eval mv $dfolder $final_foldername
+
+## an option to generate the renamed stf for src inversion 
+#eval mv "$final_foldername/OUTPUT_FILES/plot_source_time_function.txt" $final_stf_filename
+#eval mv "$final_foldername/obf/output/p_src01_delay.png" $final_seis_filename
+
+
+#eval mv "$final_foldername/obf/output/p_src01_delay.png" "$final_stf_filename/$foldername"
+
+
+#cp2temp 'DATA/Par_file'
+#cp2temp 'DATA/Par_file'
+

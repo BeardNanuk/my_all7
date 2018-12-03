@@ -1,0 +1,149 @@
+Sub Export()
+
+ActiveWindow.Selection.SlideRange(1).Export
+"D:\dk_ze\Arno\k1.jpg","JPG",4000,3000
+
+End Sub
+
+
+Sub ExportSlides() 
+  For i = 1 To ActiveWindow.Selection.SlideRange.Count 
+    Dim fileName As String 
+    If (i > 10) Then 
+      fileName = “C:\PowerPoint Export\Slide” & i & “.png” 
+    Else 
+      fileName = “C:\PowerPoint Export\Slide0” & i & “.png” 
+    End If 
+    ActiveWindow.Selection.SlideRange(i).Export fileName, “PNG”, 1280, 720 
+  Next 
+End Sub
+
+fileName = "D:\dk_ze\Arno\PtoP.png"
+ActiveWindow.Selection.SlideRange(i).Export fileName, “PNG”, 1280, 720 
+
+
+Sub Export()
+
+fileName = "D:\dk_ze\Arno\PtoP.png"
+ActiveWindow.Selection.SlideRange(i).Export fileName, "PNG", 1280, 720
+
+End Sub
+
+%%% good 
+Sub Export()
+
+FileName = "D:\dk_ze\Arno\PtoP.png"
+ActiveWindow.Selection.SlideRange(1).Export FileName, "PNG", 1280, 720
+
+End Sub
+%%%%%%%%%%%
+
+
+https://answers.microsoft.com/en-us/office/forum/office_2010-powerpoint/resizing-and-positining-charts-on-a-power-point/f9720b6e-2e50-4719-a5d2-ca5408a02db3
+
+
+Sub PDF_Export()
+
+
+'ActiveWindow.Selection.SlideRange(1).Export FileName, "PNG", 1280, 720
+
+CurrentFolder = ActivePresentation.Path & "\"
+FileName = "PtoP"
+ActivePresentation.ExportAsFixedFormat CurrentFolder & FileName & ".pdf"
+
+
+End Sub
+
+
+%%%%%%%%%%%%%%
+
+Sub Generate_PDF_Cert()
+'This function saves the last slide as a PDF file with a time stamp and the users name who completed the induction.
+
+timestamp = Now()
+
+Dim PR As PrintRange
+Dim lngLast As Long
+Dim savePath As String
+Dim PrintPDF As Integer
+
+
+'Location of saved file
+'savePath = Environ("USERPROFILE") & "\Desktop\Induction\Certificates\" & Format(timestamp, "yyyymmdd-hhnn") & "_" & FirstNameX & "_" & LastNameX & ".pdf"
+savePath = "D:\dk_ze\Arno\" & Format(timestamp, "yyyymmdd-hhnn") & "_" & FirstNameX & "_" & LastNameX & ".pdf"
+
+
+lngLast = ActivePresentation.Slides.Count
+
+With ActivePresentation.PrintOptions
+    .Ranges.ClearAll ' always do this
+    Set PR = .Ranges.Add(Start:=lngLast, End:=lngLast)
+End With
+
+ActivePresentation.ExportAsFixedFormat _
+Path:=savePath, _
+FixedFormatType:=ppFixedFormatTypePDF, _
+PrintRange:=PR, _
+Intent:=ppFixedFormatIntentScreen, _
+FrameSlides:=msoTrue, _
+RangeType:=ppPrintSlideRange
+
+'Prompt user of file location and option to print.
+PrintPDF = MsgBox("A PDF file of this certificate has been saved to: " & vbCrLf & savePath & vbCrLf & vbCrLf & "Would you like to print a copy also?", vbYesNo, "PDF File Created")
+If PrintPDF = 6 Then Call Print_Active_Slide
+
+
+End Sub
+
+
+
+
+Sub Print_Active_Slide()
+' This code determines what slide is currently visible in the
+' slide show and then it clears the print range and prints out the
+' current slide.
+
+
+' Declare lSldNum as a long integer.
+Dim lSldNum As Long
+
+' Assign lSldNum to the current slide number.
+lSldNum = SlideShowWindows(1).View.Slide.SlideNumber
+
+' Set the print options for the active presentation.
+With ActivePresentation.PrintOptions
+
+' Set RangeType to print a slide range.
+ .RangeType = ppPrintSlideRange
+
+ ' Delete old print range settings.
+ .Ranges.ClearAll
+
+ ' Set Ranges to the new range for the current slide.
+ .Ranges.Add lSldNum, lSldNum
+End With
+
+' Using the current print settings print the slide to the default
+' printer.
+ActivePresentation.PrintOut
+
+MsgBox "The file has been sent to the default printer", vbOKOnly, "Print Job Sent"
+
+End Sub
+
+
+
+
+
+Sub Setprint()
+
+    With ActivePresentation
+    
+        With .PrintOptions
+            .HighQuality = msoCTrue
+            
+         
+End Sub
+
+
+C:\cygwin64\usr\local\bin\QuickCreate

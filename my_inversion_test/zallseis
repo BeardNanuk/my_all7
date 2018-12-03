@@ -1,0 +1,28 @@
+#!/bin/bash
+
+### run and plot and copy - one click
+## created on: 
+## Jiaze He, jiazeh@princeton.edu
+
+
+
+sfclean
+sfrun
+wait
+. zbash_try
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+#!/bin/bash 
+
+dirname=./output/model_0001
+filenames2=_vp
+fullp=$dirname/proc000000$filenames2.bin
+echo $fullp
+#vi $fullp	
+
+./zplotbin $dirname vp
+
+

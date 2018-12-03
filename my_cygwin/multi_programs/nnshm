@@ -1,0 +1,8 @@
+#!/bin/sh
+echo "ML in shm for myself"
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/Machine_Learning/DataSciencePython/DataScience/DataScience-Python3
+cygstart chrome "http://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html"
+cygstart /cygdrive/d/dk_ze/Machine_Learning_in_SHM/MySelf/NNtryout
+#cygstart /cygdrive/d/dk_ze/IamAProgrammer/Machine_Learning/DataSciencePython/DataScience/DataScience-Python3
+cygstart jupyter notebook
+

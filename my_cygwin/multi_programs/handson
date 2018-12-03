@@ -1,0 +1,11 @@
+#!/bin/sh
+echo "handson tensorflow"
+
+ 
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/Machine_Learning/DataSciencePython/DataScience/DataScience-Python3
+
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/Machine_Learning/Hands_On_Machine_Learning_with_Scikit_Learn_and_TensorFlow
+
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/Machine_Learning/Hands_On_Machine_Learning_with_Scikit_Learn_and_TensorFlow/Hands_On_Machine_Learning_with_Scikit_Learn_and_TensorFlow.pdf
+
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/Machine_Learning/Hands_On_Machine_Learning_with_Scikit_Learn_and_TensorFlow/handson-ml-master/handson-ml-master

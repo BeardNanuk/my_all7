@@ -1,0 +1,11 @@
+#/usr/bin/gnuplot
+
+set logscale y
+set tics font ", 13"
+set title "Evolution of cost function over iterations"
+set title font ", 15"
+plot "./output.stats/misfit" with lines 
+set term png 
+set output "cost_function.png"
+replot
+set term x11

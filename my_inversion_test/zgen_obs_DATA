@@ -1,0 +1,43 @@
+#!/bin/bash
+
+### copy synthetic/experimental data for seisflows to run inverion 
+
+# created on Thu Nov  1 21:09:39 UTC 2018
+# created by Jiaze He
+
+# revised on Fri Nov  2 18:11:23 UTC 2018
+# add readme.txt to destination folder
+
+# the folder to copy observed data from...
+from_dir="$HOME/data_bk/inversion_test_data/src_demo/fwdelayedricker_f0500kHz_womask_f0_nx_D_T4d_8_NSTEP1300"
+# the inversion_test folder to hold the data
+to_dir="$HOME/inversion_test/DATA"
+# forcefully remove and recreate the folder 
+rm -rf $to_dir
+mkdir $to_dir
+# number of events, not source number for each forward modeling
+NSRC=`grep ^NSRC $from_dir/parameters.py | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '`
+
+## copy those data !! 
+for i in `seq 0 $(($NSRC-1))`;do
+    # number of sources in six-digit format 
+    K="$(printf "%06d" $i)"
+    # the files to be copied in terms of local paths
+    obs_sus="/scratch/solver/$K/traces/obs/*"
+    # the files to be copied in terms of absolute paths
+    fromfull_sus="$from_dir$obs_sus"
+    # the individual folder to hold the files
+    tofull="$to_dir/$K"
+    mkdir -p $tofull
+    echo 'fromfull_sus' $fromfull_sus
+    eval cp -r $fromfull_sus $tofull
+done
+
+#vi $final_dir/zreadme.txt && 
+echo $from_dir > $to_dir/zreadme.txt
+today=`date +%Y-%m-%d.%H:%M:%S` # or whatever pattern you desire
+echo $today >> $to_dir/zreadme.txt
+#eval mv $dfolder $final_foldername
+
+
+

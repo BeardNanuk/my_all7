@@ -1,0 +1,414 @@
+#! /user/bin/bash
+
+# created on Thu Oct  4 15:39:21 UTC 2018
+# created by Jiaze He 
+
+## the common experience for meshing for specfem 
+
+### first session with Hom 
+create surface rectangle width 100 height 100 zplane
+surface 1  size 1
+surface 1  size 10
+surface 1  size 10
+surface 1  size 10
+mesh surface 1
+surface 1  size 10
+imprint all
+compress all
+merge all
+save as "/home/hgharti/meshes/jason/rectangle.cub" overwrite
+graphics triad off
+undo group begin
+label node Off
+display
+undo group end
+undo group begin
+label hex Off
+display
+undo group end
+set duplicate block elements off
+block 1 surface 1
+Sideset 1 curve 4 3 2
+sideset 1 name 'absorbing_boundary'
+Sideset 2 curve 1
+sideset 2 name 'free_boundary'
+Sideset 3 edge 102 121 140  wrt face 33 43 53
+sideset 3 name 'force_boundary'
+merge all
+compress all
+save as "/home/hgharti/meshes/jason/rectangle.cub" overwrite
+draw Block 1
+draw Sideset 1
+save as "/home/hgharti/meshes/jason/rectangle.cub" overwrite
+undo group begin
+set large exodus file on
+export mesh "/home/hgharti/meshes/jason/rectangle.e" dimension 3 overwrite
+undo group end
+block all element type quad4
+save as "/home/hgharti/meshes/jason/rectangle.cub" overwrite
+save as "/home/hgharti/meshes/jason/rectangle.cub" overwrite
+undo group begin
+set large exodus file on
+export mesh "/home/hgharti/meshes/jason/rectangle.e" dimension 3 overwrite
+undo group end
+
+
+
+#### second session with Hom (done by myself)
+
+CUBIT> brick x 0.04 y 0.04 
+Successfully created brick volume 1 
+Journaled Command: brick x 0.04 y 0.04
+
+  Current entity is Surface 1.
+  Current entity is Surface 1.
+CUBIT> surface 1  size 0.004
+Journaled Command: surface 1 size 0.004
+
+  Current entity is Surface 1.
+  Current entity is Surface 1.
+  Current entity is Surface 1.
+CUBIT> surface 1  size auto factor 5
+Auto-sizing requested with sizing factor of 5.000000
+Journaled Command: surface 1 size auto factor 5
+
+CUBIT> 
+CUBIT> mesh surface 1 
+Matching intervals successful.
+Meshing Surface 1 (Surface 1)
+Generated 100 faces for Surface 1 (Surface 1).
+Surface 1 (Surface 1) meshing completed using scheme: map
+
+Meshing time: 0.010000 
+Journaled Command: mesh surface 1
+
+  Current entity is Surface 1.
+Journaled Command: delete mesh surface 1 propagate
+
+CUBIT> mesh surface 1 
+Meshing Surface 1 (Surface 1)
+Generated 100 faces for Surface 1 (Surface 1).
+Surface 1 (Surface 1) meshing completed using scheme: map
+
+Meshing time: 0.010000 
+Journaled Command: mesh surface 1
+
+  Current entity is Surface 1.
+CUBIT> set duplicate block elements off
+Setting duplicate block elements to OFF.
+Journaled Command: set duplicate block elements off
+
+CUBIT> 
+CUBIT> block 1 surface 1  
+Added Surface 1 to Block 1
+Journaled Command: block 1 surface 1
+
+  Current entity is Curve 2.
+  Current entity is Curve 2.
+CUBIT> 
+CUBIT> Sideset 1 curve 2  
+Added Curve 2 to SideSet 1
+Journaled Command: sideset 1 curve 2
+
+CUBIT> sideset 1 name 'free_boundary'
+Journaled Command: sideset 1 name "free_boundary"
+
+  Current entity is Curve 3.
+  Current entity is Curve 4.
+  Current entity is Curve 3.
+  Current entity is Curve 4.
+  Current entity is Curve 1.
+CUBIT> 
+CUBIT> Sideset 2 curve 3 4 1  
+Added Curve 3 to SideSet 2
+Added Curve 4 to SideSet 2
+Added Curve 1 to SideSet 2
+Journaled Command: sideset 2 curve 3 4 1
+
+CUBIT> sideset 2 name 'abs'
+Journaled Command: sideset 2 name "abs"
+
+CUBIT> sideset 2 name 'absorbing_boundary'
+Journaled Command: sideset 2 name "absorbing_boundary"
+
+  Current entity is Edge 312.
+  Current entity is Edge 310.
+  Current entity is Edge 312.
+  Current entity is Edge 308.
+  Current entity is Face 127.
+  Current entity is Face 126.
+  Current entity is Face 125.
+CUBIT> 
+CUBIT> Sideset 3 edge 310 312 308  wrt face 127 126 125 
+Journaled Command: sideset 3 edge 310 312 308 wrt face 127 126 125
+
+CUBIT> sideset 3 name 'acoustic_forcing_boundary'
+Journaled Command: sideset 3 name "acoustic_forcing_boundary"
+
+CUBIT> save as "/home/jiazeh/rectangular_mesh_try/rect_v3.cub" overwrite
+
+Exported:   1 Volume
+
+
+Successfully saved CUBIT file '/home/jiazeh/rectangular_mesh_try/rect_v3.cub'
+Journaled Command: save as "/home/jiazeh/rectangular_mesh_try/rect_v3.cub" overwrite
+
+CUBIT> imprint all
+WARNING: Need more than 1 body or volume to imprint.
+ERROR: IMPRINT operation failed
+CUBIT> compress all
+Journaled Command: compress all
+
+CUBIT> merge all
+WARNING: Need more than 1 volume to merge anything
+Merging all geometry failed
+CUBIT> 
+CUBIT> 
+CUBIT> set large exodus file on
+Journaled Command: set large exodus file on
+
+CUBIT> export mesh "/home/jiazeh/rectangular_mesh_try/rect_v3.e" dimension 3 overwrite
+
+Using ExodusII API version 4.98 and DB version 4.98 to export "/home/jiazeh/rectangular_mesh_try/rect_v3.e".
+
+
+Executive Exodus summary:
+  Number of dimensions     = 3
+  Number of element blocks = 1
+  Number of sidesets       = 3
+  Number of nodesets       = 0
+  Number of bc sets        = 1
+  Number of elements       = 100
+  Number of nodes          = 121
+
+Finished writing /home/jiazeh/rectangular_mesh_try/rect_v3.e
+Journaled Command: export mesh "/home/jiazeh/rectangular_mesh_try/rect_v3.e" dimension 3 overwrite
+
+CUBIT> block all element type quad4
+Journaled Command: block all element type QUAD4
+
+CUBIT> block all element type quad4
+Journaled Command: block all element type QUAD4
+
+CUBIT> save as "/home/jiazeh/rectangular_mesh_try/rect_v3.cub" overwrite
+
+Exported:   1 Volume
+
+
+Successfully saved CUBIT file '/home/jiazeh/rectangular_mesh_try/rect_v3.cub'
+Journaled Command: save as "/home/jiazeh/rectangular_mesh_try/rect_v3.cub" overwrite
+
+CUBIT> 
+CUBIT> 
+CUBIT> 
+CUBIT> set large exodus file on
+Journaled Command: set large exodus file on
+
+CUBIT> export mesh "/home/jiazeh/rectangular_mesh_try/rect_v3.e" dimension 3 overwrite
+
+Using ExodusII API version 4.98 and DB version 4.98 to export "/home/jiazeh/rectangular_mesh_try/rect_v3.e".
+
+
+Executive Exodus summary:
+  Number of dimensions     = 3
+  Number of element blocks = 1
+  Number of sidesets       = 3
+  Number of nodesets       = 0
+  Number of bc sets        = 1
+  Number of elements       = 100
+  Number of nodes          = 121
+
+Finished writing /home/jiazeh/rectangular_mesh_try/rect_v3.e
+Journaled Command: export mesh "/home/jiazeh/rectangular_mesh_try/rect_v3.e" dimension 3 overwrite
+
+CUBIT>  
+
+#### second session with Hom (done by myself)
+
+# pure command 
+
+brick x 0.04 y 0.04 
+surface 1  size 0.004
+surface 1  size auto factor 5
+mesh surface 1 
+mesh surface 1 
+set duplicate block elements off
+block 1 surface 1  
+Sideset 1 curve 2  
+sideset 1 name 'free_boundary'
+Sideset 2 curve 3 4 1  
+sideset 2 name 'abs'
+sideset 2 name 'absorbing_boundary'
+Sideset 3 edge 310 312 308  wrt face 127 126 125 
+sideset 3 name 'acoustic_forcing_boundary'
+save as "/home/jiazeh/rectangular_mesh_try/rect_v3.cub" overwrite
+imprint all
+compress all
+merge all
+set large exodus file on
+export mesh "/home/jiazeh/rectangular_mesh_try/rect_v3.e" dimension 3 overwrite
+block all element type quad4
+block all element type quad4
+save as "/home/jiazeh/rectangular_mesh_try/rect_v3.cub" overwrite
+set large exodus file on
+export mesh "/home/jiazeh/rectangular_mesh_try/rect_v3.e" dimension 3 overwrite
+
+######### my step by step record 
+
+### 1. access cubit on clover  
+# get into clover 
+$ ssh -Y jiazeh@clover 
+# start the cubit from clover 
+$ claro & 
+
+### 2. create the geometry 
+
+## 2.1 from the list of things to create, keep the default 'Brick'
+## set Mode to Geometry 
+## set Entity to Volumn 
+## set Action to Create
+
+# Brick Dimensions (set to the real one, less confusions )
+# X(width) to 0.04
+# Y(height) to 0.04
+# Z(depth) to 'blank'
+# click 'Apply'
+
+green rectangular shows up 
+CUBIT> brick x 0.04 y 0.04 
+Successfully created brick volume 1 
+Journaled Command: brick x 0.04 y 0.04
+
+
+### 3 meshing 
+
+## 3.1 mesh it! 
+## set Mode to Meshing
+## set Entity to Volume 
+## set Action to Intervals 
+
+#click the main block - select volumn3s should have '1' in the blank
+# the following dropdown list should be switch from 'Auto' to 'Approximate Size' - 0.0002
+# click Apply and Mesh -
+now should you have the mesh 
+
+### 3.5 assign block type   
+## set Mode to Materials and BCs  
+## set Entity to Blocks 
+#  keep the dropdown list as 'add' 
+# click the main object -  Block ID as '1'
+## set Seelct to "Surfaces" 
+## The ID(s) should be '1' automatically 
+
+### 4. assign element types 
+## set Mode to Materials and BCs 
+## set Entity to Blocks 
+# change the dropdown list from 'add' to 'Element Type'
+# put 'all' in Block ID 
+## set Select to 'Surfaces'
+## set Surfaces to 'Quad4'
+# click apply 
+now you should have the desired element type
+
+### 5. add boundary  
+## set Mode to Materials and BCs 
+## set Entity to Sidesets 
+#  keep the dropdown list as 'add' 
+## 5.1 add free_boundary
+# click of the blank in SideSet ID as default ('1')
+## set Seelct to "Curve" 
+# click the blank of ID(s), then cirl + clicking the the boundaries to be free
+# click Apply, Slideset 1 is set 
+### 5.2 add absorbing_boundary
+# click of the blank in SideSet ID as default ('2')
+## set Seelct to "Curve" 
+# click the blank of ID(s), then cirl + clicking the the boundaries to be abs 
+# click Apply, Slideset 2 is set 
+# rename it to absorbing_boundary (on the left window)   
+## 5.3 add transducer interface 
+# click of the blank in SideSet ID as default ('3')
+## set Seelct to "Edge" 
+# click the blank of ID(s), then cirl + clicking the the boundaries to be transducer face 
+# click With Respect To, click wrt Face - then click the faces containing the edges 
+# click Apply, Slideset 3 is set 
+# rename it to acoustic_forcing_boundary (on the left window)   
+
+### 6. save as cub 
+save as a .cub file
+
+### 7. output the mesh files
+imprint all
+compress all
+merge all
+Export as a Exodus file - select 3d and Use Large File Format
+
+### 8. download Homs's meshing script 
+[jiazeh@clover lsoft]$ rm -rf MeshAssist/
+[jiazeh@clover lsoft]$ git clone --recursive --branch devel https://github.com/homnath/MeshAssist.git
+
+[jiazeh@clover lsoft]$ cd MeshAssist/
+[jiazeh@clover MeshAssist]$ make all
+
+### 9. use it 
+[jiazeh@clover ~]$ cd rectangular_mesh_try/
+[jiazeh@clover rectangular_mesh_try]$ ls
+rect_v1.cub  rect_v2.cub  rect_v2.e  rect_v3.cub  rect_v3.e
+[jiazeh@clover rectangular_mesh_try]$ ~/lsoft/MeshAssist/bin/exodus2specfem2d rect_v3.e -bin=1 -head=1
+input file: rect_v3.e
+fac: 1.000000
+isbin: 1
+isorder: 0
+ishead: 1
+--------------------------------
+converting binary to ascii...complete!
+reading dimensions...complete!
+ geometry dimension: 3
+ number of nodes: 121
+ number of elements: 100
+ number of blocks: 1
+ number of sidesets: 3
+storing connectivity and writing material IDs...complete!
+reading x coordinates...complete!
+reading y coordinates...complete!
+reading z coordinates...complete!
+writing coordinates...complete!
+connectivity order: preserve!
+saving connectivity...complete!
+writing boundary files...complete!
+ number of side sets written: 3
+--------------------------------
+### 10. check the mesh
+[jiazeh@clover rectangular_mesh_try]$ ~/lsoft/MeshAssist/bin/exodus2specfem2d rect_v3.e -bin=1 -head=1 -order=1
+input file: rect_v3.e
+fac: 1.000000
+isbin: 1
+isorder: 1
+ishead: 1
+--------------------------------
+converting binary to ascii...complete!
+reading dimensions...complete!
+ geometry dimension: 3
+ number of nodes: 121
+ number of elements: 100
+ number of blocks: 1
+ number of sidesets: 3
+storing connectivity and writing material IDs...complete!
+reading x coordinates...complete!
+reading y coordinates...complete!
+reading z coordinates...complete!
+writing coordinates...complete!
+connectivity order: check for clockwise ordering!
+saving connectivity...complete!
+clockwise-ordered elements: 0
+anticlockwise-ordered elements: 100
+writing boundary files...complete!
+ number of side sets written: 3
+--------------------------------
+
+## if added ~/lsoft/MeshAssist/bin/ to PATH, call exodus2specfem2d directly would be fine
+$ 
+
+
+
+
+

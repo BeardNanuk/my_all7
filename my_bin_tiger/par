@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "open the file for specfem2D parameters"
+echo "use only in the folder of specfem2D"
+vi /home/jiazeh/specfem2d/DATA/Par_file

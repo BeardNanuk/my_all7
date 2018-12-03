@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# array shape 1 for 4linear arrays; 2 for ring 
+flag_shape=2
+
+if [ $flag_shape -eq 1 ]
+then 
+	echo 'hey'
+        ifort cree_masque.f90 -o cree_masque_exe
+        #gfortran cree_masque.f90 -o cree_masque_exe
+        ./cree_masque_exe
+        ./plotvp mask/
+        xdg-open vp.png
+else
+        ifort cree_masque_ring.f90 -o cree_masque_try_exe
+        #gfortran cree_masque_ring.f90 -o cree_masque_try_exe
+        ./cree_masque_try_exe
+        ./plotvp mask/
+        xdg-open vp.png
+
+fi
+
+#gfortran cree_masque_ring.f90 -o cree_masque_try_exe
+#./cree_masque_try_exe
+

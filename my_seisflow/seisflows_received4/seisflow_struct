@@ -1,0 +1,50 @@
+___;g;s;____|; |;g'
+|____
+|____.git
+| |____refs
+| | |____heads
+| | |____tags
+| | |____remotes
+| | | |____origin
+| |____branches
+| |____hooks
+| |____info
+| |____objects
+| | |____pack
+| | |____info
+| |____logs
+| | |____refs
+| | | |____remotes
+| | | | |____origin
+| | | |____heads
+|____docs
+| |____ref
+| |____usage
+|____scripts
+| |____visualize
+| | |____specfem2d
+|____seisflows
+| |____optimize
+| |____plugins
+| | |____line_search
+| | |____optimize
+| | |____preconds
+| | |____solver
+| | | |____specfem2d
+| | |____solver_io
+| |____postprocess
+| |____preprocess
+| |____solver
+| |____system
+| | |____wrappers
+| |____tools
+| |____workflow
+|____tests
+| |____setup
+| | |____test_optimize
+| | | |____problems
+| | |____test_preprocess
+| | |____test_system
+| | |____test_tools
+|____model_init
+

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "copy ppti file"
+
+cp $HOME/Desktop/my_files/my_bin/QuickCreate/pptinfo2.odp .
+

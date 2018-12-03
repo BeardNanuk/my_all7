@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Things to run after cluster running
+# seismo generation, signal in txt, signal in numpy, for signal comparison
+
+# revised on Tue Oct 16 20:14:21 UTC 2018
+# created by Jiaze He
+
+        Xint=1.0
+        Yint=1000.0
+        Clip_percent=90
+
+#./savesismo ./OUTPUT_FILES/Up_file_single.su -save=./OUTPUT_FILES/seismo.png -c=$Clip_percent -xint=$Xint -yint=$Yint > /dev/null &
+
+#cp DATA/Uexp.txt OUTPUT_FILES/Uexp.txt
+
+. zall_plot_su
+#. zsu_copy_source
+
+python zconvert_su_to_mat
+python zsavesismo
+
+. zsu_copy_source
+#. zcopy_files
+#. zcluster_copy
+
+
+
+
+
+
+
+
+

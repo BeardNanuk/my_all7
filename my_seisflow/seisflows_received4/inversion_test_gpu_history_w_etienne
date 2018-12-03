@@ -1,0 +1,1000 @@
+   65  ls
+   66  clear
+   67  ls
+   68  cd ..
+   69  ls
+   70  mkdir specfem2d_bk_20180629
+   71  cd specfem2d_bk_20180629/
+   72  ls
+   73  pwd
+   74  ls
+   75  pwd
+   76  cd ..
+   77  ls
+   78  pwd
+   79  ls
+   80  cd 
+   81  ls
+   82  cd data_bk/
+   83  ls
+   84  cd specfem2d_data/
+   85  ls
+   86  cd noutput_intf0_500000_nx900_D_T2d_8_NSTEP25000/
+   87  ls
+   88  clear
+   89  ls
+   90  pwd
+   91  . sp2d
+   92  cd ..
+   93  . my_files
+   94  . inversion_test
+   95  ls
+   96  cd ..
+   97  ls
+   98  cd ..
+   99  ls
+  100  cd specfem2d/
+  101  ls
+  102  vi parallelgpu 
+  103  clear
+  104  ls
+  105  rm slurm-8018*
+  106  ls
+  107  clear
+  108  rm -r OUTPUT_FILES/*
+  109  ls
+  110  ls OUTPUT_FILES/
+  111  clear
+  112  ls
+  113  sbatch parallelgpu 
+  114  ls
+  115  cat slurm-803142.out 
+  116  clear
+  117  . inversion_test
+  118  vi /home/jiazeh/.bashrc
+  119  cd ..
+  120  ls
+  121  d Desktop/
+  122  ls
+  123  cd Desktop/
+  124  ls
+  125  cd my_files/
+  126  ls
+  127  cd my_bin/
+  128  ls
+  129  cd folders/
+  130  ls
+  131  vi ./binpath 
+  132  pwd
+  133  echo $PATH
+  134  source /home/jiazeh/.bashrc
+  135  . inversion_test
+  136  ls
+  137  clear
+  138  . sp2d
+  139  ls
+  140  vi parallelgpu 
+  141  sbatch parallelgpu 
+  142  ls
+  143  cat slurm-803179.out 
+  144  clear
+  145  ls
+  146  rm slurm-8031*
+  147  ls
+  148  vi parallelgpu 
+  149  clear
+  150  ls
+  151  vi parallelgpu 
+  152  clear
+  153  ls
+  154  vi DATA/Par_file 
+  155  sbatch parallelgpu 
+  156  ls
+  157  cat slurm-803194.out 
+  158  vi DATA/Par_file 
+  159  ls
+  160  vi slurm-803194.out 
+  161  vi parallelgpu 
+  162  scp -r $foldname_for_results_saving $path_remote
+  163  scp -r ${foldname_for_results_saving} ${path_remote}
+  164  echo ${foldname_for_results_saving}
+  165  vi parallelgpu 
+  166  clear
+  167  ls
+  168  sbatch parallelgpu 
+  169  vi DATA/Par_file 
+  170  clear
+  171  ls
+  172  cat slurm-803216.out 
+  173  clear
+  174  rm slurm-803*
+  175  vi parallelgpu 
+  176  clear
+  177  ls
+  178  sbatch parallelgpu 
+  179  ls
+  180  cat slurm-803221.out 
+  181  ssh -Y jiazeh@paris
+  182  vi parallelgpu 
+  183  clear
+  184  ls
+  185  vi zquicktemp 
+  186  vi parallelgpu 
+  187  vi zquicktemp 
+  188  vi parallelgpu 
+  189  vi zquicktemp 
+  190  . zquicktemp
+  191  ls
+  192  vi parallelgpu 
+  193  cp zquicktemp zcluster_copy
+  194  vi zcluster_copy 
+  195  vi wrap_parallelgpu
+  196  clear
+  197  ls
+  198  chmod u+x wrap_parallelgpu 
+  199  ls
+  200  ./wrap_parallelgpu 
+  201  vi parallelgpu 
+  202  vi zcluster_copy 
+  203  . wrap_parallelgpu 
+  204  vi zcluster_copy 
+  205  . wrap_parallelgpu 
+  206  ls
+  207  pwd
+  208  ls
+  209  vi zcluster_copy 
+  210  chmod u+x zcluster_copy 
+  211  ls
+  212  . wrap_parallelgpu 
+  213  vi parallelgpu 
+  214  clear
+  215  ls
+  216  rm slurm-803*
+  217  ls
+  218  clear
+  219  ls
+  220  sbatch parallelgpu 
+  221  ls
+  222  cat slurm-803243.out 
+  223  clear
+  224  vi zcluster_copy 
+  225  . zcluster_copy 
+  226  vi DATA/Par_file 
+  227  . wrap_parallelgpu 
+  228  cd DATA/
+  229  ls
+  230  cp -r ./* 
+  231  cp -r ./* /scratch/gpfs/jiazeh/data_bk/specfem2d_data/specfem2d_DATA_bk20180629
+  232  rm -r ./*
+  233  ls
+  234  pwd
+  235  ls
+  236  logout
+  237  clear
+  238  ls
+  239  cd inversion_test/
+  240  ls
+  241  cd model_
+  242  cd model_init
+  243  ls
+  244  cd ..
+  245  clear
+  246  vi parameters.py
+  247  vi paths.py
+  248  ls
+  249  cd ..
+  250  ls
+  251  cd specfem2d/
+  252  ls
+  253  vi parallelgpu 
+  254  clear
+  255  ls
+  256  clear
+  257  ls
+  258  vi parallelgpu 
+  259  clear
+  260  ls
+  261  vi parallelgpu 
+  262  sbatch parallelgpu 
+  263  ls
+  264  cat slurm-801821.out 
+  265  cp -r ./* /scratch/gpfs/jiazeh/data_bk/specfem2d_data/specfem2d_bk_20180629
+  266  clear
+  267  cd DATA/
+  268  ls
+  269  vi Par_file 
+  270  rm ./*
+  271  ls
+  272  scp jiazeh@paris:/home/jiazeh/specfem2d/DATA/Par_file .
+  273  scp jiazeh@paris:/home/jiazeh/specfem2d/DATA/SOURCE .
+  274  scp jiazeh@paris:/home/jiazeh/specfem2d/DATA/STATIONS .
+  275  ls
+  276  cd ..
+  277  ls
+  278  vi parallelgpu 
+  279  sbatch parallelgpu 
+  280  ls
+  281  clear
+  282  ls
+  283  slurmtop -u jiazeh
+  284  ls
+  285  clear
+  286  ls
+  287  ls OUTPUT_FILES/
+  288  vi OUTPUT_FILES/error_message00000
+  289  vi OUTPUT_FILES/error_message000000.txt 
+  290  vi parallelgpu 
+  291  vi DATA/Par_file 
+  292  sbatch parallelgpu 
+  293  ls
+  294  clear
+  295  ls
+  296  slurmtop
+  297  slurmtop -u jiazeh
+  298  ls
+  299  cat qmeshergpu 
+  300  :
+  301  clear
+  302  ls
+  303  cat vsolvergpu 
+  304  clear
+  305  slurmtop -u jiazeh
+  306  ls
+  307  vi qmeshergpu 
+  308  ls DATA/
+  309  history 
+  310  clear
+  311  scp jiazeh@paris:/home/jiazeh/specfem2d/DATA/interfaces.dat .
+  312  sbatch parallelgpu 
+  313  slurmtop -u jiazeh
+  314  ls
+  315  slurmtop -u jiazeh
+  316  ls
+  317  vi qmeshergpu 
+  318  vi vsolvergpu 
+  319  vi parallelgpu 
+  320  ls
+  321  sbatch parallelgpu 
+  322  ls
+  323  cat slurm-801877.out 
+  324  ls
+  325  ls OUTPUT_FILES/
+  326  cat slurm-801877.out 
+  327  :q
+  328  vi OUTPUT_FILES/error_message000000.txt 
+  329  clear
+  330  ls
+  331  vi parallelgpu 
+  332  vi zquicktemp
+  333  sbatch zquicktemp 
+  334  ls
+  335  vi slurm-801880.out 
+  336  vi qmeshergpu 
+  337  ls DATA/
+  338  vi history
+  339  history
+  340  ls
+  341  mv interfaces.dat DATA/
+  342  l
+  343  ls
+  344  ls DATA/
+  345  sbatch parallelgpu 
+  346  ls
+  347  cat slurm-801881
+  348  cat slurm-801881.out \
+  349  cat slurm-801881.out 
+  350  ls OUTPUT_FILES/
+  351  ofori
+  352  l
+  353  ls DATA/
+  354  ls OUTPUT_FILES/
+  355  vi slurm-801881.out 
+  356  ls
+  357  vi parallelgpu 
+  358  clear
+  359  ls
+  360  vi parallelgpu 
+  361  history
+  362  scp -r ./* jiazeh@paris:/home/jiazeh/data_bk/specfem2d_tiger_data
+  363  slurmtop
+  364  ls
+  365  ls bin/
+  366  cd bin/
+  367  pwd
+  368  ls
+  369  cd ..
+  370  vi /home/jiazeh/.bashrc 
+  371  cp
+  372  clear
+  373  ls
+  374  vi slurm-803142.out 
+  375  vi parallelgpu 
+  376  clear
+  377  ls
+  378  vi DATA/Par_file 
+  379  sbatch parallelgpu 
+  380  vi slurm-803175.out 
+  381  sbatch parallelgpu 
+  382  ls
+  383  vi slurm-803185.out 
+  384  f0=$(sed -n 1,15p DATA/SOURCE | grep 'f0' | cut -d\= -f2 | tr -d '[:space:]')
+  385  intf0=${f0%.*}
+  386  echo 'intf0 ='$intf0
+  387  #nx=$(sed -n 266,268p DATA/Par_fie | grep 'nx' | cut -d\= -f2 | tr -d '[:space:]')
+  388  nx=`grep ^nx DATA/Par_file | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '`
+  389  echo 'nx ='$nx
+  390  D_T=`grep ^DT DATA/Par_file | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '| sed 's/-/\_/g'`
+  391  echo 'D_T ='$D_T
+  392  NSTEP=$(sed -n 26,28p DATA/Par_file | grep 'NSTEP' | cut -d\= -f2 | tr -d '[:space:]')
+  393  echo 'NSTEP ='$NSTEP
+  394  foldname_for_results_saving=$(printf "$HOME/data_bk/specfem2d_data/noutput_intf0_${intf0}_nx${nx}_D_T${D_T}_NSTEP${NSTEP}")
+  395  echo 'bk path is '$foldname_for_results_saving
+  396  path_remote=$(printf "jiazeh@paris:/home/jiazeh/data_bk/specfem2d_tiger_data")
+  397  echo $path_remote
+  398  scp -r $foldname_for_results_saving $path_remote
+  399  clear
+  400  ../specfem2d/
+  401  cd 
+  402  ls
+  403  cd data_bk/
+  404  ls
+  405  cd specfem2d_data/
+  406  ls
+  407  scp -r ${foldname_for_results_saving} ${path_remote}
+  408  scp -qr ${foldname_for_results_saving} ${path_remote}
+  409  ls
+  410  cp -r noutput_intf0_500000_nx900_D_T2d_8_NSTEP400/* /scratch/gpfs/jiazeh/specfem2d 
+  411  clear
+  412  pwd
+  413  cd ..
+  414  ls
+  415  cd specfem2d_data/
+  416  ls
+  417  cd code_bk/
+  418  ls
+  419  cd ..
+  420  cd specfem2d_bk_20180629/
+  421  ls
+  422  cd ..
+  423  clear
+  424  mkdir specfem2d_DATA_bk20180629
+  425  ls
+  426  cd specfem2d_DATA_bk20180629/
+  427  pw
+  428  pwd
+  429  ls
+  430  logout
+  431  clear
+  432  . sp2d
+  433  ls
+  434  ls OUTPUT_FILES/
+  435  cd 
+  436  cd -
+  437  clear
+  438  ls
+  439  cat slurm-803142.out 
+  440  ls
+  441  cat slurm-803175.out 
+  442  clear
+  443  ls
+  444  vi parallelgpu 
+  445  slurm-top -u jiazeh
+  446  slurmtop -u jiazeh
+  447  scancel -u 803194
+  448  slurmtop -u jiazeh
+  449  scancel -u slurm-803194
+  450  scancel slurm-803194
+  451  scancel 803194
+  452  slurmtop -u jiazeh
+  453  scancel -u jiazeh 
+  454  slurmtop -u jiazeh
+  455  scancel -u jiazeh 
+  456  slurmtop -u jiazeh
+  457  ls
+  458  slurmtop -u jiazeh
+  459  scancel 803194
+  460  slurmtop -u jiazeh
+  461  clear
+  462  slurmtop -u jiazeh
+  463  logout
+  464  ls
+  465  . sp2d
+  466  ls
+  467  cd ..
+  468  clear
+  469  . inversion_test
+  470  ls
+  471  vi launch_specfem_tigergpu.sh 
+  472  vi specfem_data/Par_file
+  473  vi launch_specfem_tigergpu.sh 
+  474  vi parameters.py
+  475  sbatch launch_specfem_tigergpu.sh 
+  476  slurmtop
+  477  slurmtop -u jiazeh
+  478  squeue -u jiazeh
+  479  . sp2d
+  480  ls
+  481  history
+  482  history > etienne_tiger_commandline_history.txt
+  483  ls
+  484  mv etienne_tiger_commandline_history.txt /scratch/gpfs/jiazeh/data_bk/specfem2d_data
+  485  clear
+  486  pwd
+  487  . inversion_test
+  488  ls
+  489  vi slurm-801801.out 
+  490  vi specfem_data/Par_file
+  491  vi parameters.py
+  492  vi paths.py
+  493  vi launch_specfem_tigergpu.sh 
+  494  vi zallseis 
+  495  vi launch_specfem_tigergpu.sh 
+  496  vi zallseis 
+  497  vi parameters.py
+  498  vi specfem_data/Par_file
+  499  vi zallseis 
+  500  ls
+  501  sbatch zallseis 
+  502  ls
+  503  vi zallseis 
+  504  cat slurm-801856.out 
+  505  clear
+  506  ls
+  507  vi zallseis 
+  508  sbatch zallseis 
+  509  ls
+  510  vi mesherz 
+  511  rm mesherz 
+  512  vi solverz 
+  513  rm solverz 
+  514  vi zallseis 
+  515  sbatch zallseis 
+  516  ls
+  517  cat slurm-801869.out 
+  518  ls
+  519  clear
+  520  ls
+  521  vi output.stats/
+  522  ls specfem_data/
+  523  clear
+  524  ls
+  525  cat slurm-801869.out 
+  526  clear
+  527  ls
+  528  cat slurm-801869.out 
+  529  :q
+  530  vi paths.py
+  531  clear
+  532  ls
+  533  vi slurm-801869.out 
+  534  sbatch zallseis 
+  535  ls
+  536  vi slurm-803188.out 
+  537  vi zallseis 
+  538  ls
+  539  vi slurm-803188.out 
+  540  clear
+  541  l
+  542  ls
+  543  ls output
+  544  vi specfem_data/Par_file
+  545  cd specfem_data/
+  546  ls
+  547  cp Par_file /scratch/gpfs/jiazeh/specfem2d/DATA
+  548  ls
+  549  clear
+  550  logout
+  551  clear
+  552  logout
+  553  lear
+  554  clear
+  555  . sp2d
+  556  clear
+  557  ls
+  558  1ogout
+  559  clear
+  560  logout
+  561  clear
+  562  ls
+  563  sp2d
+  564  . sp2d
+  565  clear
+  566  ls
+  567  clear
+  568  ls
+  569  clear
+  570  ls
+  571  cd 
+  572  cd -
+  573  cd ..
+  574  ls
+  575  cd Desktop/
+  576  ls
+  577  cd my_files/
+  578  ls
+  579  cd ..
+  580  ls
+  581  mkdir working_folder_gpu
+  582  cd working_folder_gpu/
+  583  pwd
+  584  mkdir python_related
+  585  cd python_related/
+  586  pwd
+  587  clear
+  588  ls
+  589  jp
+  590  python create_source_rec_Jason_v2.py 
+  591  clear
+  592  pwd
+  593  ls
+  594  vi create_source_rec_Jason_v2.py 
+  595  python create_source_rec_Jason_v2.py 
+  596  pw
+  597  clear
+  598  ls
+  599  python create_source_rec_Jason_v2.py 
+  600  pw
+  601  pwd
+  602  clear
+  603  logout
+  604  clear
+  605  cd $HOME/working_folder_gpu/python_related
+  606  cd ~/Desktop/working_folder_gpu/python_related/
+  607  pwd
+  608  ls
+  609  clear
+  610  ls
+  611  cd specfem2d/
+  612  ls
+  613  cd DATA/
+  614  pwd
+  615  ls
+  616  clear
+  617  ls
+  618  cd specfem2d/
+  619  ls
+  620  scp DATA/Par_file .
+  621  pwd
+  622  cd DATA/
+  623  pwd
+  624  clear
+  625  cd inversion_test/
+  626  ls
+  627  vi qparllelgpu_inv 
+  628  . qparllelgpu_inv 
+  629  module avail 
+  630  conda
+  631  clear
+  632  ls
+  633  vi /home/jiazeh/.bashrc
+  634  module avail
+  635  module load anaconda3/5.0.1 
+  636  ls
+  637  module list
+  638  conda
+  639  conda install certifi
+  640  sfclean
+  641  sfrun
+  642  which python 
+  643  sbatch sfrun
+  644  vi wrap_parallelgpu 
+  645  vi qparllelgpu_inv 
+  646  sbatch qparllelgpu_inv 
+  647  ls
+  648  cat slurm-830260.out 
+  649  vi /home/jiazeh/.bashrc
+  650  vi paths.py
+  651  vi /home/jiazeh/.bashrc 
+  652  source /home/jiazeh/.bashrc
+  653  cd /home/jiazeh/
+  654  ls
+  655  ls -la
+  656  vi .bashrc 
+  657  source /home/jiazeh/.bashrc
+  658  clear
+  659  ls
+  660  cd seisflows/
+  661  . tests/run_test_system 
+  662  . run_test_optimize 
+  663  cd ..
+  664  ls
+  665  cd scripts/
+  666  ls
+  667  vi sfrun 
+  668  cd /scratch/gpfs/jiazeh/seisflows/seisflows/system/
+  669  ls
+  670  vi tiger_sm_gpu.py
+  671  logout
+  672  clear
+  673  ls
+  674  cd inversion_test/
+  675  ls
+  676  sfclean
+  677  vi qparllelgpu_inv 
+  678  . qparllelgpu_inv 
+  679  vi parameters.py
+  680  logout
+  681  clear
+  682  ls
+  683  cd specfem2d/
+  684  ls
+  685  vi DATA/Par_file 
+  686  clear
+  687  cd DATA/
+  688  ls
+  689  mkdir stations_sources_ustc
+  690  cd stations_sources_ustc/
+  691  ls
+  692  pwd
+  693  ls
+  694  cd * ../
+  695  cp * ../
+  696  cd ..
+  697  ls
+  698  cd ..
+  699  clear
+  700  ls
+  701  vi DATA/Par_file 
+  702  vi parallelgpu 
+  703  vi DATA/Par_file 
+  704  vi parallelgpu 
+  705  sbatch parallelgpu 
+  706  clear
+  707  vi wrap_parallelgpu 
+  708  sbatch wrap_parallelgpu 
+  709  vi parallelgpu 
+  710  vi wrap_parallelgpu 
+  711  vi parallelgpu 
+  712  vi wrap_parallelgpu 
+  713  sbatch parallelgpu | . zcluster_copy 
+  714  clear
+  715  . wrap_parallelgpu 
+  716  vi slurm-825307.out 
+  717  vi qmeshergpu 
+  718  vi parallelgpu 
+  719  ls
+  720  clear
+  721  . wrap_parallelgpu 
+  722  vi vsolvergpu 
+  723  vi qmeshergpu 
+  724  vi DATA/Par_file 
+  725  vi parallelgpu 
+  726  sbatch parallelgpu 
+  727  vi qmeshergpu 
+  728  cd DATA
+  729  ls
+  730  pwd
+  731  ls
+  732  cd ..
+  733  clear
+  734  ls
+  735  rm slurm-8*
+  736  clear
+  737  . wrap_parallelgpu 
+  738  vi DATA/Par_file 
+  739  cd DATA/
+  740  ls
+  741  rm Par_file 
+  742  ls
+  743  cd ..
+  744  . wrap_parallelgpu 
+  745  vi DATA/Par_file 
+  746  . wrap_parallelgpu 
+  747  vi DATA/Par_file 
+  748  . wrap_parallelgpu 
+  749  vi DATA/Par_file 
+  750  . wrap_parallelgpu 
+  751  vi DATA/Par_file 
+  752  ls
+  753  vi zcluster_copy 
+  754  clear
+  755  ls
+  756  vi parallelgpu 
+  757  vi parallelgpu `
+  758  vi parallelgpu 
+  759  . wrap_parallelgpu 
+  760  ls OUTPUT_FILES/
+  761  vi wrap_parallelgpu 
+  762  . wrap_parallelgpu 
+  763  clear
+  764  vi DATA/Par_file 
+  765  . wrap_parallelgpu 
+  766  vi qmeshergpu 
+  767  vi vsolvergpu 
+  768  ls OUTPUT_FILES/
+  769  vi parallelgpu 
+  770  ls
+  771  pwd
+  772  clear
+  773  vi parallelgpu 
+  774  pwd
+  775  clear
+  776  vi qmeshergpu 
+  777  vi parallelgpu 
+  778  clear
+  779  . wrap_parallelgpu 
+  780  ls OUTPUT_FILES/
+  781  ls
+  782  vi zcluster_copy 
+  783  ls OUTPUT_FILES/
+  784  vi zcluster_copy 
+  785  . wrap_parallelgpu 
+  786  ls OUTPUT_FILES/
+  787  vi zcluster_copy 
+  788  . wrap_parallelgpu 
+  789  vi zcluster_copy 
+  790  vi wrap_parallelgpu 
+  791  sbatch parallelgpu 
+  792  ls
+  793  rm slurm-82*
+  794  clear
+  795  sbatch parallelgpu 
+  796  ls OUTPUT_FILES/
+  797  . zcluster_copy 
+  798  vi odisplay100
+  799  chmod u+x odisplay100 
+  800  clear
+  801  . wrap_parallelgpu 
+  802  vi wrap_parallelgpu 
+  803  . wrap_parallelgpu 
+  804  vi wrap_parallelgpu 
+  805  . wrap_parallelgpu 
+  806  clear
+  807  ls
+  808  clear
+  809  ls
+  810  vi wrap_parallelgpu 
+  811  . wrap_parallelgpu 
+  812  vi wrap_parallelgpu 
+  813  vi parallelgpu 
+  814  clear
+  815  ls
+  816  vi odisplay100 
+  817  ls
+  818  rm slurm-8267&
+  819  rm slurm-8267*
+  820  ls
+  821  . wrap_parallelgpu 
+  822  vi parallelgpu 
+  823  ls
+  824  . wrap_parallelgpu 
+  825  . zcluster_copy 
+  826  vi odisplay100 
+  827  vi DATA/Par_file 
+  828  . wrap_parallelgpu 
+  829  . zcluster_copy 
+  830  vi DATA/Par_file 
+  831  clear
+  832  vi launch_specfem.sh 
+  833  vi DATA/Par_file 
+  834  vi parallelgpu 
+  835  vi DATA/Par_file 
+  836  . wrap_parallelgpu 
+  837  rm DATA/Par_file 
+  838  pwd
+  839  vi Par_file 
+  840  rm DATA/Par_file 
+  841  vi Par_file 
+  842  rm DATA/Par_file 
+  843  vi Par_file 
+  844  ls
+  845  rm DATA/Par_file 
+  846  ls DATA/
+  847  vi DATA/Par_file 
+  848  ls
+  849  vi Par_file 
+  850  rm Par_file 
+  851  rm DATA/Par_file 
+  852  cd DATA/
+  853  pwd
+  854  ls
+  855  vi Par_file 
+  856  ls
+  857  cd ..
+  858  vi parallelgpu 
+  859  . wrap_parallelgpu 
+  860  vi DATA/Par_file 
+  861  vi parallelgpu 
+  862  vi qmeshergpu 
+  863  vi DATA/Par_file 
+  864  vi DATA/interfaces.dat 
+  865  vi qmeshergpu 
+  866  vi vsolvergpu 
+  867  vi DATA/Par_file 
+  868  . wrap_parallelgpu 
+  869  . zcluster_copy 
+  870  ls
+  871  pw
+  872  pwd
+  873  vi DATA/Par_file 
+  874  . wrap_parallelgpu 
+  875  . zcluster_copy 
+  876  . inversion_test
+  877  ls
+  878  vi parameters.py
+  879  clear
+  880  vi parameters.py
+  881  ls
+  882  cp ./* /scratch/gpfs/jiazeh/data_bk/inversion_test_data/bk_before_messing_with_gpu
+  883  cp -r ./* /scratch/gpfs/jiazeh/data_bk/inversion_test_data/bk_before_messing_with_gpu
+  884  clear
+  885  vi parameters.py
+  886  ls
+  887  vi parameters.py
+  888  vi specfem_data/Par_file
+  889  cd specfem_data/
+  890  ls
+  891  mkdir 20180702_default
+  892  vi ../../seisflows/seisflows/solver/base.py
+  893  vi ../../seisflows/seisflows/solver/specfem2d_new
+  894  vi ../../seisflows/seisflows/solver/specfem2d_new.py
+  895  ls
+  896  mv av* 20180702_default/
+  897  mv Pa* 20180702_default/
+  898  mv S* 20180702_default/
+  899  clear
+  900  ls
+  901  cd 20180702_default/
+  902  ls
+  903  cd ..
+  904  ls
+  905  cd ..
+  906  ls
+  907  clear
+  908  ls
+  909  vi parameters.py
+  910  cd specfem_data/
+  911  ls
+  912  pwd
+  913  ls
+  914  cd ..
+  915  ls
+  916  cd specfem_data/
+  917  ls
+  918  mv interfaces.dat 20180702_default/
+  919  ls
+  920  ls 20180702_default/
+  921  clear
+  922  cd ..
+  923  ls
+  924  vi launch_specfem_tigergpu.sh 
+  925  pwd
+  926  clear
+  927  ls
+  928  cp parallelgpu qparllelgpu_inv
+  929  vi qparllelgpu_inv 
+  930  sbatch qparllelgpu_inv 
+  931  LS
+  932  ls
+  933  clear
+  934  logout
+  935  cd inversion_test
+  936  ls
+  937  vi parameters.py
+  938  vi /home/jiazeh/.bashrc
+  939  source activate obspy
+  940  module list
+  941  vi /home/jiazeh/.bashrc
+  942  module avail
+  943  module load anaconda
+  944  module list
+  945  python --version
+  946  sfclean
+  947  sfrun
+  948  sfclean
+  949  sfrun
+  950  vi parameters.py
+  951  sfclean
+  952  sfrun
+  953  ls
+  954  cat output.log 
+  955  vi parameters.py
+  956  sfclean
+  957  sfrun
+  958  ls\
+  959  ls
+  960  cat out.l
+  961  cat output.log 
+  962  rm slurm-8*
+  963  cat output.log 
+  964  sfclean
+  965  sfrun
+  966  cat output.log 
+  967  rm out
+  968  rm outbin 
+  969  sfclean
+  970  sfrun
+  971  vi parameters.py
+  972  sfclean
+  973  sfrun
+  974  cat output.log 
+  975  ls\
+  976  ls
+  977  cat output.log 
+  978  cp model_init/proc000000_vp.bin model_init/proc000000_Qkappa.bin
+  979  cp model_init/proc000000_vp.bin model_true/proc000000_Qkappa.bin
+  980  sfclean
+  981  sfrun
+  982  ls model_init/
+  983  cat output.log 
+  984  squeue -u jiazeh
+  985  slurmtop -u jiazeh
+  986  sfclean
+  987  sfrun
+  988  cat output.log 
+  989  vi paths.py
+  990  cat output.log 
+  991  vi parameters.py
+  992  sfclean
+  993  sfrun
+  994  cat output.log 
+  995  ls ~
+  996  cat output.log 
+  997  logout
+  998  vi /home/jiazeh/.bashrc
+  999  logout
+ 1000  git clone --recursive --branch devel https://github.com/geodynamics/specfem3d.git
+ 1001  cd specfem3d
+ 1002  module
+ 1003  module list
+ 1004  ./configure FC=ifort --with-cuda=cuda8
+ 1005  make -j
+ 1006  ls
+ 1007  ls DATA/
+ 1008  rm -rf DATA/
+ 1009  ls DATA/
+ 1010  cat DATA/FORCESOLUTION 
+ 1011  cat DATA/CMTSOLUTION 
+ 1012  cat DATA/FORCESOLUTION 
+ 1013  vi DATA/FORCESOLUTION 
+ 1014  vi DATA/Par_file 
+ 1015  vi src/specfem3D/write_movie_output.F90 
+ 1016  vi DATA/Par_file 
+ 1017  vi DATA/meshfem3D_files/Mesh_Par_file 
+ 1018  vi DATA/meshfem3D_files/interfaces.dat 
+ 1019  vi DATA/meshfem3D_files/interface1.dat 
+ 1020  vi DATA/FORCESOLUTION 
+ 1021  vi DATA/Par_file 
+ 1022  vi DATA/FORCESOLUTION 
+ 1023  vi DATA/STATIONS
+ 1024  cp ../specfem2d/parallelgpu ./
+ 1025  vi parallelgpu 
+ 1026  sbatch parallelgpu 
+ 1027  ls
+ 1028  cat slurm-833765.out 
+ 1029  ls OUTPUT_FILES/
+ 1030  vi parallelgpu 
+ 1031  cat qmeshergpu 
+ 1032  cat OUTPUT_FILES/output_meshfem3D.txt 
+ 1033  cat qmeshergpu 
+ 1034  cat qgenerate_database_gpu 
+ 1035  cat OUTPUT_FILES/output_generate_databases.txt 
+ 1036  ls OUTPUT_FILES/DATABASES_MPI/
+ 1037  cat OUTPUT_FILES/output_generate_databases.txt 
+ 1038  ls OUTPUT_FILES/DATABASES_MPI/
+ 1039  cat OUTPUT_FILES/output_generate_databases.txt 
+ 1040  ls OUTPUT_FILES/
+ 1041  cat OUTPUT_FILES/output_generate_databases.txt 
+ 1042  cat OUTPUT_FILES/output_solver.txt 
+ 1043* cat OUTPUT_FILES/
+ 1044  cat OUTPUT_FILES/output_solver.txt 
+ 1045  cat slurm-833765.out 
+ 1046  cat OUTPUT_FILES/output_solver.txt 
+ 1047  ls
+ 1048  cat vsolvergpu 
+ 1049  cat OUTPUT_FILES/output_generate_databases.txt 
+ 1050  vi src/generate_databases/calc_jacobian.f90 
+ 1051  make -j
+ 1052  rm slurm-833765.out 
+ 1053  sbatch parallelgpu 
+ 1054  cat slurm-833766.out 
+ 1055  cat OUTPUT_FILES/output_generate_databases.txt 
+ 1056  cat OUTPUT_FILES/output_solver.txt 
+ 1057  cp ../inversion_test/sfsection ./
+ 1058  ls OUTPUT_FILES/
+ 1059  gnuplot
+ 1060  cat OUTPUT_FILES/AA.0.FXX.semv
+ 1061  ls OUTPUT_FILES/
+ 1062  ls OUTPUT_FILES/DATABASES_MPI/
+ 1063  history
+ 1064  history > inversion_test_gpu_history_w_etienne

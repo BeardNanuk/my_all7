@@ -1,0 +1,15 @@
+#!/bin/sh
+echo "open google calendar of jiazehe@gmail.com"
+#cygstart /cygdrive/c/Program\ Files\ \(x86\)/Texmaker/texmaker.exe
+#cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/SAGE\ LaTeX\ template
+#cygstart /cygdrive/d/dk_ze/MUSIC_Laser_composites/C_17_aileron_paper/!PaperReviewReferences
+#cygstart /cygdrive/d/dk_ze/D\ SHM
+#cygstart "https://scholar-google-com.prox.lib.ncsu.edu/"
+#cygstart /cygdrive/c/Program\ Files\ \(x86\)/Notepad++/Notepad++.exe
+#cygstart /cygdrive/c/Program\ Files/Tracker\ Software/PDF\ Viewer/PDFXCview.exe
+#cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/SAGE\ LaTeX\ template/mybibfile_v2.bib
+
+cygstart "https://calendar.google.com/calendar/b/1/r?tab=mc"
+#cygstart "https://mail.google.com/mail/u/1/#inbox"
+#cygstart "https://webmail.nianet.org/owa/#path=/mail"
+

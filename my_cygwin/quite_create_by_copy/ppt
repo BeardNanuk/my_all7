@@ -1,0 +1,18 @@
+#!/bin/sh
+echo "create a PPT file in the current directory"
+
+
+# oxford
+cp /usr/local/bin/QuickCreate/blankppt.pptx blankppt.pptx
+cygstart blankppt.pptx
+
+
+
+
+
+
+
+
+
+
+

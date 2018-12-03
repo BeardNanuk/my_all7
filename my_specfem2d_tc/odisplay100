@@ -1,0 +1,11 @@
+#!/bin/sh
+
+echo "open a image of forward wavefield"
+
+xdg-open ./OUTPUT_FILES/forward_image0000100.jpg
+#cd /home/jiazeh/specfem2d
+
+
+
+
+

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "switch to the path fwi related papers collected after princeton"
+
+final_dir="$HOME/Dropbox\ \(Princeton\)/Sync/princeton/Medical_FWI_research_mine/papers"
+
+eval cd $final_dir
+
+
+#cd /home/jiazeh/Desktop/my_files/my_bin

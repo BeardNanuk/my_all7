@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "switch to the path and folder to my common seisflows"
+
+final_dir=$HOME/Desktop/my_files/my_seisflows
+
+cd $final_dir
+
+
+#cd /home/jiazeh/Desktop/my_files/my_bin

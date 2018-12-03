@@ -1,0 +1,18 @@
+#!/bin/sh
+echo "create a word file with a paper size of 11*17 in the current directory"
+
+
+# oxford
+cp /usr/local/bin/QuickCreate/blankdoc17.docx blankdoc117.docx
+cygstart blankdoc117.docx
+
+
+
+
+
+
+
+
+
+
+

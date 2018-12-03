@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "open funding folder"
+
+cygstart /cygdrive/d/dk_ze/NIA/\!NIA_proposals
+#cygstart /cygdrive/d/dk_ze/NIA/\!NIA_proposals

@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "open chrome chrome-remote-desktop"
+ 
+cygstart chrome "https://chrome.google.com/webstore/detail/chrome-remote-desktop/gbchcmhmhahfdphkhkmpfmihenigjmpp?hl=en"
+ 

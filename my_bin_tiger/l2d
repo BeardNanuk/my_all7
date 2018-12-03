@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo "run xmeshfem2D and xspecfem2D using sh  "
+
+./launch_specfem.sh

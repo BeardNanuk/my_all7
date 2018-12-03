@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cp -r ./* /mnt/c/Users/Administrator1/Dropbox\ \(Princeton\)/Sync/princeton/quick_transfer/
+
+
+

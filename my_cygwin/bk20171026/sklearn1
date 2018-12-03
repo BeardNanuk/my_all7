@@ -1,0 +1,19 @@
+#!/bin/sh
+echo "sk learn things"
+cygstart /cygdrive/c/Program\ Files/JetBrains/PyCharm\ Community\ Edition\ 2017\.1\.1/bin/pycharm64.exe
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/Python
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/Python/scikit-learnMLfromDataSchool.docx
+cygstart "https://www.youtube.com/watch?v=3ZWuPVWq7p4&index=5&list=PL5-da3qGB5ICeMbQuqbbCOQWcS6OYBr5A#t=551.634096/"
+cygstart /cygdrive/c/ProgramData/Anaconda3/Scripts/anaconda-navigator.exe
+#jupyter notebook
+
+
+
+
+#cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/SAGE\ LaTeX\ template
+#cygstart /cygdrive/d/dk_ze/MUSIC_Laser_composites/C_17_aileron_paper/!PaperReviewReferences
+#cygstart /cygdrive/d/dk_ze/D\ SHM
+#cygstart "https://scholar-google-com.prox.lib.ncsu.edu/"
+#cygstart /cygdrive/c/Program\ Files\ \(x86\)/Notepad++/Notepad++.exe
+#cygstart /cygdrive/c/Program\ Files/Tracker\ Software/PDF\ Viewer/PDFXCview.exe
+#cygstart /cygdrive/d/dk_ze/Multiple_Mode_damage_imaging/Ultrasonics/Latex_related/SAGE\ LaTeX\ template/mybibfile_v2.bib

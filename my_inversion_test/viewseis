@@ -1,0 +1,10 @@
+#!/bin/bash
+
+## a quick way to view the vp map in the output folder 
+## creation time: Mon Jun 18 19:15:02 UTC 2018 
+## revise time: 
+
+
+xdg-open ./output/traces/syn_event_000001.png
+
+#Mon Jun 18 19:15:02 UTC 2018

@@ -1,0 +1,1475 @@
+#! /user/bin/python
+%matplotlib inline
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+##### &&& numpy  #########################################################################
+# quickly generate a numpy array
+a = [[1, 2, 3], [4, 5, 6]]
+nd_a = np.array(a)
+# 
+y = np.arange(35).reshape(5,7)
+
+###slicing (numpy array, not pandas)
+y[1:5:2,::3]
+#second dimension 
+len(nd_a[1,:])
+# lengths in all dimensions
+ nd_a.shape
+# slicing in selected arange
+yarange = np.arange(0, len(nd_a[1,:]), 2)
+nd_a[0,yarange]
+Out: array([ 1,  3, 12])
+#
+
+
+x = [1, 2, 3, 4, 5, 6]
+x.extend([7,8])
+x.append(9)
+z.sort(reverse=True)
+
+
+incomes = np.random.normal(27000, 15000, 10000)
+ages = np.random.randint(18, high=90, size=500)
+np.mean(incomes)
+np.median(incomes)
+s = np.std(data)
+import scipy.stats as sp
+# skew and kurtosis
+sp.skew(vals) # third and fourth
+sp.kurtosis(vals) #
+
+
+values = np.random.uniform(-10.0, 10.0, 100000)
+
+
+# numpy max min 
+def min_max(row):
+    data = row[['POPESTIMATE2010',
+                'POPESTIMATE2011',
+                'POPESTIMATE2012',
+                'POPESTIMATE2013',
+                'POPESTIMATE2014',
+                'POPESTIMATE2015']]
+    row['max'] = np.max(data)
+    row['min'] = np.min(data)
+    return row
+df.apply(min_max, axis=1)
+
+# numpy normalization
+movieProperties = ratings.groupby('movie_id').agg({'rating': [np.size, np.mean]})
+movieNumRatings = pd.DataFrame(movieProperties['rating']['size'])
+movieNormalizedNumRatings = movieNumRatings.apply(lambda x: (x - np.min(x)) / (np.max(x) - np.min(x)))
+
+
+
+plt.plot(x, expon.pdf(x))
+
+
+## random distribution 
+from numpy import random
+random.seed(0)
+
+totals = {20:0, 30:0, 40:0, 50:0, 60:0, 70:0}
+purchases = {20:0, 30:0, 40:0, 50:0, 60:0, 70:0}
+totalPurchases = 0
+for _ in range(100000):
+    ageDecade = random.choice([20, 30, 40, 50, 60, 70])
+    purchaseProbability = float(ageDecade) / 100.0
+    totals[ageDecade] += 1
+    if (random.random() < purchaseProbability):
+        totalPurchases += 1
+        purchases[ageDecade] += 1
+####################################################################### numpy  #####
+
+
+##### &&& MatPlotLib Basics ############################################################ 
+
+
+plt.plot(x, norm.pdf(x))
+plt.plot(x, norm.pdf(x, 1.0, 0.5))
+plt.savefig('C:\\Users\\Frank\\MyPlot.png', format='png')
+
+from scipy.stats import binom
+import matplotlib.pyplot as plt
+
+#Adjust the Axes
+axes = plt.axes()
+axes.set_xlim([-5, 5])
+axes.set_ylim([0, 1.0])
+axes.set_xticks([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5])
+axes.set_yticks([0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0])
+#Add a grid
+axes.grid()
+#change line types and colors
+plt.plot(x, norm.pdf(x), 'b-')
+plt.plot(x, norm.pdf(x, 1.0, 0.5), 'r:')
+# legend 
+plt.legend(['Sneetches', 'Gacks'], loc=4) # 4 lower right handside corner
+plt.show()
+
+# pie 
+# Remove XKCD mode:
+plt.rcdefaults()
+
+values = [12, 55, 4, 32, 14]
+colors = ['r', 'g', 'b', 'c', 'm']
+explode = [0, 0, 0.2, 0, 0]
+labels = ['India', 'United States', 'Russia', 'China', 'Europe']
+plt.pie(values, colors= colors, labels=labels, explode = explode)
+plt.title('Student Locations')
+plt.show()
+
+
+# bar chart 
+values = [12, 55, 4, 32, 14]
+colors = ['r', 'g', 'b', 'c', 'm']
+plt.bar(range(0,5), values, color= colors)
+plt.show()
+
+# histogram  
+plt.hist(values, 50)
+plt.show()
+
+
+# commic style 
+plt.xkcd()
+
+fig = plt.figure()
+ax = fig.add_subplot(1, 1, 1)
+ax.spines['right'].set_color('none')
+ax.spines['top'].set_color('none')
+plt.xticks([])
+plt.yticks([])
+ax.set_ylim([-30, 10])
+
+data = np.ones(100)
+data[70:] -= np.arange(30)
+
+plt.annotate(
+    'THE DAY I REALIZED\nI COULD COOK BACON\nWHENEVER I WANTED',
+    xy=(70, 1), arrowprops=dict(arrowstyle='->'), xytext=(15, -10))
+
+plt.plot(data)
+
+plt.xlabel('time')
+plt.ylabel('my overall health')
+
+
+from pylab import randn
+
+X = randn(500)
+Y = randn(500)
+plt.scatter(X,Y)
+plt.show()
+
+# title and label
+import matplotlib.pyplot as plt
+
+def display_sample(num):
+    #Print the one-hot array of this sample's label 
+    print(train_labels[num])  
+    #Print the label converted back to a number
+    label = train_labels[num].argmax(axis=0)
+    #Reshape the 768 values to a 28x28 image
+    image = train_images[num].reshape([28,28])
+    plt.title('Sample: %d  Label: %d' % (num, label))
+    plt.imshow(image, cmap=plt.get_cmap('gray_r'))
+    plt.show()
+    
+display_sample(1234)
+
+# text includes roman 
+import numpy as np
+
+sample_data.plot(kind='scatter', x="GDP per capita", y='Life satisfaction', figsize=(5,3))
+plt.axis([0, 60000, 0, 10])
+X=np.linspace(0, 60000, 1000)
+plt.plot(X, 2*X/100000, "r")
+plt.text(40000, 2.7, r"$\theta_0 = 0$", fontsize=14, color="r")
+plt.text(40000, 1.8, r"$\theta_1 = 2 \times 10^{-5}$", fontsize=14, color="r")
+save_fig('tweaking_model_params_plot')
+plt.show()
+
+#
+
+
+
+
+
+## Binomial Probability Mass Function
+n, p = 10, 0.5
+x = np.arange(0, 10, 0.001)
+plt.plot(x, binom.pmf(x, n, p))
+
+## knowledge of the average 
+plt.plot(x, poisson.pmf(x, mu))
+
+# Percentiles
+np.percentile(vals, 50) # percentile of mediem 
+
+
+
+# Dictionaries
+# Like a map or hash table in other languages
+captains = {}
+captains["Enterprise"] = "Kirk"
+captains["Enterprise D"] = "Picard"
+captains["Deep Space Nine"] = "Sisko"
+captains["Voyager"] = "Janeway"
+
+print(captains["Voyager"])
+print(captains.get("Enterprise"))
+print(DoSomething(lambda x: x * x * x, 3))
+if 1 is 3:
+    print("How did that happen?")
+elif 1 > 3:
+    print("Yikes")
+else:
+    print("All is well with the world")
+
+for x in range(10):
+    if (x is 1):
+        continue
+    if (x > 5):
+        break
+    print(x)
+
+x = 0
+while (x < 10):
+    print(x)
+    x += 1
+# convert value to color/ figure size 
+# And we'll visualize it:
+plt.figure(figsize=(8, 6))
+plt.scatter(data[:,0], data[:,1], c=model.labels_.astype(float))
+plt.show()
+
+# save it to a file
+plt.plot(x, norm.pdf(x))
+plt.plot(x, norm.pdf(x, 1.0, 0.5))
+plt.savefig('C:\\Users\\Frank\\MyPlot.png', format='png')
+
+# axis setup 
+
+fig = plt.figure(figsize=(FIGSIZE_X,FIGSIZE_y))
+ax = fig.add_subplot(1, 1, 1)
+
+
+#plt.plot(data[:,0],'-')
+plt.plot(data[:,0], data[:,1],'r-',linewidth=LINE_WITDH_SOLID)
+#plt.xlabel(LABEL_X,fontsize=FONTSIZE_LABEL)
+#plt.ylabel(LABEL_Y,fontsize=FONTSIZE_LABEL)
+
+
+ax.set_xlabel(LABEL_X,fontsize=FONTSIZE_LABEL)
+ax.set_ylabel(LABEL_Y,fontsize=FONTSIZE_LABEL)
+
+#ax.yaxis.get_offset_text().set_fontsize(60)
+#ax.xaxis.get_major_ticks.label.set_fontsize(60)
+ax.tick_ms(direction='out', length=6, width=2, colors='r',
+               grid_color='r', grid_alpha=0.5)
+
+
+plt.savefig('AA.S000003.png', format='png')
+plt.show()
+
+
+### subplot overlap - a few signal plots
+fig = plt.figure()
+ 
+for i in range(num_rec):
+    col_num = mat_rec_plot[i]
+    if (flag_exp_data is 1): 
+        titlename = 'add delay steps %d source: %d receiver: %d ' % (time_delay,act_to_plot,col_num)
+    else:
+        titlename = 'source: %d receiver: %d ' % (act_to_plot,col_num)
+    #fig, ax = plt.subplot(num_rec, 1, i+1)
+    ax = fig.add_subplot(num_rec, 1, i+1)
+    if flag_seismotype != 4:
+       ax.plot(t_cut[time_step_star:time_step_comp], Ux_data[time_step_star:time_step_comp,col_num], 'b-',label='Ux')
+       ax.plot(t_cut[time_step_star:time_step_comp], Uz_data[time_step_star:time_step_comp,col_num], 'g-',label='Uz')
+    ax.plot(t_cut[time_step_star:time_step_comp], Un_data[time_step_star:time_step_comp,col_num], 'm-',label='U_')
+    if (flag_exp_data is 1): 
+        ax.plot(t_cut[time_step_star-time_delay:time_step_comp-time_delay], amp_factor*Ue_data[time_step_star:time_step_comp,col_num], 'r-',label='Ue')
+    ax.hold(True)
+    fig.tight_layout()    
+    ax.set_title(titlename)
+    ax.legend()
+
+
+if flag_seismotype == 1:
+   u_receives_signals_fn = 'obf/output/disp_src%02d_delay.png' % (act_to_plot)    
+elif flag_seismotype == 2:  
+   u_receives_signals_fn = 'obf/output/vp_src%02d_delay.png' % (act_to_plot)    
+elif flag_seismotype == 3:  
+   u_receives_signals_fn = 'obf/output/ac_src%02d_delay.png' % (act_to_plot)    
+else: 
+   u_receives_signals_fn = 'obf/output/p_src%02d_delay.png' % (act_to_plot)    
+
+fig.savefig(u_receives_signals_fn,format='png', dpi=1000)
+
+###### jupyter notebook, output figure not complete: 
+bbox_inches='tight'
+ax4.plot(xf_Newobs[freq_step_starNew:freq_step_endNew]/1000,np.abs(yf_traceNew_detrend_filteredobs[freq_step_starNew:freq_step_endNew]),'-b')
+ax4.set_title('observed w resampling detrend filtered - zoom-in ' + str(obs_name) + ' trace  ' + str(trace_num) + '- absolute_value')
+ax4.set_xlabel('frequency (kHz)')
+
+
+plt.tight_layout(rect=[0, 0, 1.5, 2])
+u_receives_signals_fn = 'obf/output/csic/src01_rec%02d_spectrum.png' % (trace_num)
+plt.savefig(u_receives_signals_fn,format='png', dpi=200, bbox_inches='tight')
+fig.show()
+
+%reset -f 
+%run -i /home/j2/Desktop/PythonTry/MLshm/python_functions/poly_formal_import
+
+###### commond greeks
+plt.xlabel(r'time ($\mu s$)')
+
+
+############################################################ MatPlotLib Basics #####
+
+
+
+
+##### &&& scipy ######################################################################## 
+
+
+### linear regression 
+%matplotlib inline
+import numpy as np
+from pylab import *
+
+pageSpeeds = np.random.normal(3.0, 1.0, 1000)
+purchaseAmount = 100 - (pageSpeeds + np.random.normal(0, 0.1, 1000)) * 3
+
+scatter(pageSpeeds, purchaseAmount)
+
+from scipy import stats
+slope, intercept, r_value, p_value, std_err = stats.linregress(pageSpeeds, purchaseAmount)
+# r_value
+r_value ** 2
+
+### plot predicted model  
+import matplotlib.pyplot as plt
+
+def predict(x):
+    return slope * x + intercept
+
+fitLine = predict(pageSpeeds)
+
+plt.scatter(pageSpeeds, purchaseAmount)
+plt.plot(pageSpeeds, fitLine, c='r')
+plt.show()
+
+### polynominal regression
+
+%matplotlib inline
+from pylab import *
+import numpy as np
+
+np.random.seed(2) # fixed random 
+pageSpeeds = np.random.normal(3.0, 1.0, 1000)
+purchaseAmount = np.random.normal(50.0, 10.0, 1000) / pageSpeeds
+
+scatter(pageSpeeds, purchaseAmount)
+
+x = np.array(pageSpeeds)
+y = np.array(purchaseAmount)
+
+p4 = np.poly1d(np.polyfit(x, y, 4))
+
+##
+import matplotlib.pyplot as plt
+
+xp = np.linspace(0, 7, 100)
+plt.scatter(x, y)
+plt.plot(xp, p4(xp), c='r')
+plt.show()
+##
+from sklearn.metrics import r2_score
+
+r2 = r2_score(y, p4(x))
+
+print(r2)
+##
+
+
+## scales and 
+
+import statsmodels.api as sm
+from sklearn.preprocessing import StandardScaler
+scale = StandardScaler()
+
+X = df[['Mileage', 'Cylinder', 'Doors']]
+y = df['Price']
+
+X[['Mileage', 'Cylinder', 'Doors']] = scale.fit_transform(X[['Mileage', 'Cylinder', 'Doors']].as_matrix())
+# as matrix 
+
+print (X)
+
+est = sm.OLS(y, X).fit()
+
+est.summary()
+
+## spatial distance 
+
+from scipy import spatial
+
+def ComputeDistance(a, b):
+    genresA = a[1]
+    genresB = b[1]
+    genreDistance = spatial.distance.cosine(genresA, genresB)
+    popularityA = a[2]
+    popularityB = b[2]
+    popularityDistance = abs(popularityA - popularityB)
+    return genreDistance + popularityDistance
+    
+ComputeDistance(movieDict[2], movieDict[4])
+
+
+
+
+
+######################################################################## scipy #####
+ 
+
+##### &&& pandas #######################################################################           
+
+
+# indexing and selecting data 
+https://pandas.pydata.org/pandas-docs/stable/indexing.html
+
+
+##############  loading data ##########
+xls_file = pd.ExcelFile('Energy Indicators.xls')
+energy = xls_file.parse(skiprows=17,skip_footer=(38))
+
+
+df = pd.DataFrame([{'Name': 'Chris', 'Item Purchased': 'Sponge', 'Cost': 22.50},
+                   {'Name': 'Kevyn', 'Item Purchased': 'Kitty Litter', 'Cost': 2.50},
+                   {'Name': 'Filip', 'Item Purchased': 'Spoon', 'Cost': 5.00}],
+                  index=['Store 1', 'Store 1', 'Store 2'])
+
+df = pd.read_csv('census.csv')
+GDP = pd.read_csv('world_bank.csv',skiprows=4)
+
+ScimEn = pd.read_excel(io='scimagojr-3.xlsx')
+ScimEn2 = ScimEn[:15]
+
+# 
+gdp_per_capita = pd.read_csv(datapath+"gdp_per_capita.csv", thousands=',', delimiter='\t',
+                             encoding='latin1', na_values="n/a")
+gdp_per_capita.rename(columns={"2015": "GDP per capita"}, inplace=True)
+gdp_per_capita.set_index("Country", inplace=True)
+
+
+### reading data, restrip and split.  
+0   50  5   881250949
+0   172 5   881250949
+##
+movieDict = {} 
+with open(r'/home/j2/Desktop/PythonTry/DataScience-Python3/ml-100k/u.item','r',encoding="ISO-8859-1") as f:
+    temp = ''
+    for line in f:
+        #line.decode("ISO-8859-1")
+        fields = line.rstrip('\n').split('|')
+        movieID = int(fields[0])
+        name = #fields[1]
+        genres = fields[5:25]
+        genres = map(int, genres)
+        movieDict[movieID] = (name, np.array(list(genres)), movieNormalizedNumRatings.loc[movieID].get('size'), movieProperties.loc[movieID].rating.get('mean'))
+
+
+## replace the question mark ? 
+voting_data = pd.read_csv('house-votes-84.data.txt', na_values=['?'], 
+                          names = feature_names)
+
+### read dat / read txt 
+
+RecPos_fn = 'DATA/RecPos_fn_000000.dat'
+RecPos = pd.read_csv(RecPos_fn,header=None)
+RecPosValues=(RecPos.values/0.1).transpose()
+print(RecPosValues.shape)
+
+
+
+#### with seperation 
+movieDict = {}
+with open(r'D:\dk_ze\IamAProgrammer\Machine_Learning\DataSciencePython\DataScience\DataScience-Python3\ml-100k/u.item', 'r', encoding="ISO-8859-1") as f:
+    temp = ''
+    for line in f:
+        #line.decode("ISO-8859-1")
+        fields = line.rstrip('\n').split('|')
+        movieID = int(fields[0])
+        name = fields[1]
+        genres = fields[5:25]
+        genres = map(int, genres)
+        movieDict[movieID] = (name, np.array(list(genres)), movieNormalizedNumRatings.loc[movieID].get('size'), movieProperties.loc[movieID].rating.get('mean'))
+
+### display the empty data 
+masses_data.loc[(masses_data['age'].isnull()) |
+              (masses_data['shape'].isnull()) |
+              (masses_data['margin'].isnull()) |
+              (masses_data['density'].isnull())]
+
+### convert data frame to numpy array 
+
+all_features = masses_data[['age', 'shape',
+                             'margin', 'density']].values
+
+
+all_classes = masses_data['severity'].values
+
+feature_names = ['age', 'shape', 'margin', 'density']
+
+all_features
+
+
+
+
+
+
+######### distance between two logical arrays 
+
+from scipy import spatial
+
+def ComputeDistance(a, b):
+    genresA = a[1]
+    genresB = b[1]
+    genreDistance = spatial.distance.cosine(genresA, genresB)
+    popularityA = a[2]
+    popularityB = b[2]
+    popularityDistance = abs(popularityA - popularityB)
+    return genreDistance + popularityDistance
+    
+ComputeDistance(movieDict[2], movieDict[4])
+
+
+
+
+
+
+############## operations between multiple data frames ##############
+
+part1 = pd.merge(energytry2,GDP4,how='left',left_on = 'Country', right_on='Country Name')
+part1.drop('Country Name',axis=1, inplace=True)
+part2 = pd.merge(ScimEn2,part1,how='inner', left_on = 'Country', right_on = 'Country')
+pd.merge(staff_df, student_df, how='outer', left_index=True, right_index=True)
+
+# merge data frame with a column 
+df = movieStats[popularMovies].join(pd.DataFrame(similarMovies, columns=['similarity']))
+
+############## import packages #######################################################
+import pandas as pd
+import numpy as np
+
+
+# create an empty panda series 
+
+
+############# index related  ############# 
+
+
+# change a column name to the index of the df 
+staff_df = staff_df.set_index('Name')
+df = df.set_index('STNAME')
+
+movieRatings = ratings.pivot_table(index=['user_id'],columns=['title'],values='rating')
+movieRatings.head()
+
+# reset index 
+df = df.reset_index(drop=True)
+
+# reset columns to the required
+energytry.columns=['Country', 'Energy Supply', 'Energy Supply per Capita', '% Renewable']
+# slicing columns
+GDP4 = GDP3[['Country Name','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015']]
+    
+
+#get one column
+ df1.loc['a']
+# one value 
+cyprus_gdp_per_capita = gdp_per_capita.loc["Cyprus"]["GDP per capita"] # [row name][col name]
+
+# slice columns 
+df1 = df[['a','b']]
+#select multiples row with its name,and three columns. 
+df1.loc['d':, 'A':'C']
+# multiple columns and a row
+full_country_stats[["GDP per capita", 'Life satisfaction']].loc["United States"]
+# multiple columns and most of the rows
+remove_indices = [0, 1, 6, 8, 33, 34, 35]
+keep_indices = list(set(range(36)) - set(remove_indices))
+sample_data = full_country_stats[["GDP per capita", 'Life satisfaction']].iloc[keep_indices]
+
+
+
+# boolean array
+df1.loc['a'] > 0
+df1.loc[:, df1.loc['a'] > 0]
+df1.loc[lambda df: df.A > 0, :]
+df1.A.loc[lambda s: s > 0]
+CountryPopVariation = census_df[census_df['SUMLEV'] == 50][[6,9,10,11,12,13,14]]
+final.loc[avgGDP.index[5],'2015']-final.loc[avgGDP.index[5],'2006']
+# index with bool selection 
+df = df[df['SUMLEV']==50]
+userRatings4 = userRatings3[userRatings3['RatingSum'] < Pec90]
+
+
+
+##### operation with columns #####  
+Top15['PopEst'] = Top15['Energy Supply'] / Top15['Energy Supply per Capita']
+# Correlation 
+corrNum = Top15['Citable docs per Capita'].corr(Top15['Energy Supply per Capita'])
+corrMatrix2 = userRatings4.corr(method='pearson', min_periods=100)
+
+# Correlation 2nd way
+starWarsRatings = movieRatings['Star Wars (1977)']
+similarMovies = movieRatings.corrwith(starWarsRatings)
+similarMovies = similarMovies.dropna()
+df = pd.DataFrame(similarMovies)
+df.head(10)
+
+
+# Use dictionary 
+Top15['continent'] = '1'
+
+for i in range(0,15):
+    #print(ContinentDict[Top15['Country'][i]])
+    Top15['continent'][i] = ContinentDict[Top15['Country'][i]]
+
+# add one column to the end
+userRatings3['RatingSum'] = userRatings.sum(axis=1)
+
+
+# connect multiple columns? 
+listC = pd.concat([ContinentTemp,ContinentTempSum,ContinentTempMean,ContinentTempStd],axis=1)
+
+
+
+
+# drop columns 
+energytry = energytry.drop(['Unnamed: 0','Unnamed: 1'],1)
+#
+filteredSims = simCandidates.drop(myRatings.index)
+
+# drop rows 
+GDP.drop(GDP.index[:4],axis=0, inplace=True)
+
+
+
+# replace 
+.replace('...',np.NaN).apply(pd.to_numeric) # replace certain things with NaN 
+energytry2['Country'].replace(regex=True,inplace=True,to_replace=r'\d',value=r'')
+energytry2['Country'].replace(regex=True,inplace=True,to_replace=r' \(.*\)',value=r'')
+energytry2['Country']=energytry2['Country'].replace({"Republic of Korea": "South Korea", "United States of America": "United States"}) 
+ # check if replacement works 
+energytry2[(energytry2['Country']=='South Korea') | (energytry2['Country']=='United Kingdom') | (energytry2['Country']=='United States')| (energytry2['Country']=='Hong Kong')]
+energytry2['Energy Supply'].replace('...',np.NaN).apply(pd.to_numeric)
+# Use Regular Expression to remove numbers and parenthesis(and the content inside) in country names. \d stands for digits. 
+# Remember to add a whitespace before the first escape before ()....couldn't find Bolivia otherwise. Struggled for a long time for this!
+
+# change Y to 1 
+d = {'Y': 1, 'N': 0}
+df['Hired'] = df['Hired'].map(d)
+df['Employed?'] = df['Employed?'].map(d)
+
+# sorting and order 
+similarMovies.sort_values(ascending=False)
+# sorting and order with conditions and ranges
+popularMovies = movieStats['rating']['size'] >= 100
+movieStats[popularMovies].sort_values([('rating', 'mean')], ascending=False)[:15]
+#  operator
+import operator
+distances.sort(key=operator.itemgetter(1))
+
+
+   
+#################### Grouping 
+
+def fun(item):
+    if item[0]<'M':
+        return 0
+    if item[0]<'Q':
+        return 1
+    return 2
+
+for group, frame in df.groupby(fun):
+    print('There are ' + str(len(frame)) + ' records in group ' + str(group) + ' for processing.')
+
+
+# Calculations, max min mean median 
+df.pivot_table(values='(kW)', index='YEAR', columns='Make', aggfunc=np.mean)
+df.pivot_table(values='(kW)', index='YEAR', columns='Make', aggfunc=[np.mean,np.min], margins=True)
+
+movieProperties = ratings.groupby('movie_id').agg({'rating': [np.size, np.mean]})
+
+
+
+df.diff()
+# compare with the above number
+df.resample('M').mean()
+# mean(column) 
+avgGDP = final[['2006','2007','2008','2009','2010','2011','2012','2013','2014','2015']].mean(axis=1).sort_values(ascending=False)
+(final['% Renewable'].idxmax(),final.loc[final['% Renewable'].idxmax(),'% Renewable'])
+    ContinentTemp = Top15.groupby('continent').count()['Country']
+    ContinentTempStd = Top15.groupby('continent').std()['PopEst']
+
+movieStats = ratings.groupby('title').agg({'rating': [np.size, np.mean]})
+movieStats.head()
+
+    for i in range(0,15):
+        #print(ContinentDict[Top15['Country'][i]])
+        Top15['Continent'][i] = ContinentDict[Top15['Country'][i]]
+    
+    Top15['bins'] = pd.cut(Top15['% Renewable'], 5)
+    
+    return Top15.groupby(['Continent','bins']).size()
+
+
+# sum value 
+simCandidates = simCandidates.groupby(simCandidates.index).sum()
+
+# Data frame dimensions 
+GDP2.shape
+
+
+#### more math functions in Pandas
+# correlation matrix using Pandas
+corrMatrix = userRatings.corr()
+corrMatrix = userRatings.corr(method='pearson', min_periods=100)
+
+
+
+####################################################################### pandas ##### 
+
+### PCA 
+from sklearn.datasets import load_iris
+from sklearn.decomposition import PCA
+import pylab as pl
+from itertools import cycle
+
+iris = load_iris()
+
+numSamples, numFeatures = iris.data.shape
+print(numSamples)
+print(numFeatures)
+print(list(iris.target_names))
+
+X = iris.data
+pca = PCA(n_components=2, whiten=True).fit(X)
+X_pca = pca.transform(X)
+
+
+
+
+
+
+##### &&& sklearn #######################################################################
+
+
+## Normalization 
+from sklearn import preprocessing
+
+scaler = preprocessing.StandardScaler()
+all_features_scaled = scaler.fit_transform(all_features)
+all_features_scaled
+
+
+
+
+
+############## Multivariate Regression
+import statsmodels.api as sm
+from sklearn.preprocessing import StandardScaler
+scale = StandardScaler()
+
+X = df[['Mileage', 'Cylinder', 'Doors']]
+y = df['Price']
+
+X[['Mileage', 'Cylinder', 'Doors']] = scale.fit_transform(X[['Mileage', 'Cylinder', 'Doors']].as_matrix())
+
+print (X)
+
+est = sm.OLS(y, X).fit()
+
+est.summary()
+
+
+############## PCA 
+from sklearn.datasets import load_iris
+from sklearn.decomposition import PCA
+import pylab as pl
+from itertools import cycle
+
+iris = load_iris()
+
+numSamples, numFeatures = iris.data.shape
+print(numSamples)
+print(numFeatures)
+print(list(iris.target_names))
+
+
+
+X = iris.data
+pca = PCA(n_components=2, whiten=True).fit(X)
+X_pca = pca.transform(X) # PCA transform
+
+print(pca.components_)
+
+print(pca.explained_variance_ratio_)
+print(sum(pca.explained_variance_ratio_))
+
+
+%matplotlib inline
+from pylab import *
+
+colors = cycle('rgb')
+target_ids = range(len(iris.target_names))
+pl.figure()
+for i, c, label in zip(target_ids, colors, iris.target_names):
+    pl.scatter(X_pca[iris.target == i, 0], X_pca[iris.target == i, 1],
+        c=c, label=label)
+pl.legend()
+pl.show()
+
+################ Kmeans clustering 
+
+%matplotlib inline
+
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+from sklearn.preprocessing import scale
+from numpy import random, float
+
+data = createClusteredData(100, 5)
+model = KMeans(n_clusters=5)
+# Note I'm scaling the data to normalize it! Important for good results.
+model = model.fit(scale(data))
+# We can look at the clusters each data point was assigned to
+print(model.labels_)
+# And we'll visualize it:
+plt.figure(figsize=(8, 6))
+plt.scatter(data[:,0], data[:,1], c=model.labels_.astype(float))
+plt.show()
+
+############## naive bayes 
+
+import os
+import io
+import numpy
+from pandas import DataFrame
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+
+def readFiles(path):
+    for root, dirnames, filenames in os.walk(path):
+        for filename in filenames:
+            path = os.path.join(root, filename)
+
+            inBody = False
+            lines = []
+            f = io.open(path, 'r', encoding='latin1')
+            for line in f:
+                if inBody:
+                    lines.append(line)
+                elif line == '\n':
+                    inBody = True
+            f.close()
+            message = '\n'.join(lines)
+            yield path, message
+
+
+def dataFrameFromDirectory(path, classification):
+    rows = []
+    index = []
+    for filename, message in readFiles(path):
+        rows.append({'message': message, 'class': classification})
+        index.append(filename)
+
+    return DataFrame(rows, index=index)
+
+data = DataFrame({'message': [], 'class': []})
+
+data = data.append(dataFrameFromDirectory('e:/sundog-consult/Udemy/DataScience/emails/spam', 'spam'))
+data = data.append(dataFrameFromDirectory('e:/sundog-consult/Udemy/DataScience/emails/ham', 'ham'))
+
+# split up each message into its list of word
+vectorizer = CountVectorizer()
+counts = vectorizer.fit_transform(data['message'].values)
+
+classifier = MultinomialNB()
+targets = data['class'].values
+classifier.fit(counts, targets)
+# test 
+examples = ['Free Viagra now!!!', "Hi Bob, how about a game of golf tomorrow?"]
+example_counts = vectorizer.transform(examples)
+predictions = classifier.predict(example_counts)
+predictions
+
+
+########## cross-validation and train test split ############# 
+import numpy as np
+from sklearn.model_selection import cross_val_score, train_test_split
+from sklearn import datasets
+from sklearn import svm
+
+iris = datasets.load_iris()
+# Split the iris data into train/test data sets with 40% reserved for testing
+X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.4, random_state=0)
+
+# Build an SVC model for predicting iris classifications using training data
+clf = svm.SVC(kernel='linear', C=1).fit(X_train, y_train)
+
+# Now measure its performance with the test data
+clf.score(X_test, y_test)   
+
+##### K-Fold cross validation implementation 
+# We give cross_val_score a model, the entire data set and its "real" values, and the number of folds:
+scores = cross_val_score(clf, iris.data, iris.target, cv=5)
+
+# Print the accuracy for each fold:
+print(scores)
+
+# And the mean accuracy of all 5 folds:
+print(scores.mean())
+
+
+
+
+# Split the iris data into train/test data sets with 40% reserved for testing
+X_train, X_test, y_train, y_test = train_test_split(iris.data, iris.target, test_size=0.4, random_state=0)
+
+# Build an SVC model for predicting iris classifications using training data
+clf = svm.SVC(kernel='linear', C=1).fit(X_train, y_train)
+
+# Now measure its performance with the test data
+clf.score(X_test, y_test)   
+
+# poly kernel 
+# Build an SVC model for predicting iris classifications using training data
+clf = svm.SVC(kernel='poly', C=1).fit(X_train, y_train)
+# Now measure its performance with the test data
+clf.score(X_test, y_test)  
+
+##########################cross-validation and train test split ### 
+
+####################################################################### sklearn ##### 
+
+
+
+
+
+
+
+
+
+
+##### &&& tensorflow #######################################################################
+
+# inital test
+import tensorflow as tf
+
+a = tf.Variable(1, name="a")
+b = tf.Variable(2, name="b")
+f = a + b
+
+init = tf.global_variables_initializer()
+with tf.Session() as s:
+    init.run()
+    print( f.eval() )
+
+
+########## 0-9  classification 
+
+
+import tensorflow as tf
+from tensorflow.examples.tutorials.mnist import input_data
+
+sess = tf.InteractiveSession()
+
+mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+
+# visualisation 
+import matplotlib.pyplot as plt
+
+def display_sample(num):
+    #Print the one-hot array of this sample's label 
+    print(mnist.train.labels[num])  
+    #Print the label converted back to a number
+    label = mnist.train.labels[num].argmax(axis=0)
+    #Reshape the 768 values to a 28x28 image
+    image = mnist.train.images[num].reshape([28,28])
+    plt.title('Sample: %d  Label: %d' % (num, label))
+    plt.imshow(image, cmap=plt.get_cmap('gray_r'))
+    plt.show()
+    
+display_sample(1234)
+
+
+
+####################################################################### tensorflow ##### 
+
+
+
+
+##### &&& keras #######################################################################
+
+############# neural network
+from keras.layers import Dense, Dropout
+from keras.models import Sequential
+from sklearn.model_selection import cross_val_score
+
+def create_model():
+    model = Sequential()
+    #16 feature inputs (votes) going into an 32-unit layer 
+    model.add(Dense(32, input_dim=16, kernel_initializer='normal', activation='relu'))
+    # Another hidden layer of 16 units
+    model.add(Dense(16, kernel_initializer='normal', activation='relu'))
+    # Output layer with a binary classification (Democrat or Republican political party)
+    model.add(Dense(1, kernel_initializer='normal', activation='sigmoid'))
+    # Compile model
+    model.compile(loss='binary_crossentropy', optimizer='rmsprop', metrics=['accuracy'])
+    return model
+
+from keras.wrappers.scikit_learn import KerasClassifier
+
+# Wrap our Keras model in an estimator compatible with scikit_learn
+estimator = KerasClassifier(build_fn=create_model, nb_epoch=100, verbose=0)
+# Now we can use scikit_learn's cross_val_score to evaluate this model identically to the others
+cv_scores = cross_val_score(estimator, all_features, all_classes, cv=10)
+cv_scores.mean()
+
+
+############## CNN as an example ################
+import keras
+from keras.datasets import mnist
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Conv2D, MaxPooling2D, Flatten
+from keras.optimizers import RMSprop
+
+# load the mnist data 
+(mnist_train_images, mnist_train_labels), (mnist_test_images, mnist_test_labels) = mnist.load_data()
+
+
+from keras import backend as K
+
+if K.image_data_format() == 'channels_first':
+    train_images = mnist_train_images.reshape(mnist_train_images.shape[0], 1, 28, 28)
+    test_images = mnist_test_images.reshape(mnist_test_images.shape[0], 1, 28, 28)
+    input_shape = (1, 28, 28)
+else:
+    train_images = mnist_train_images.reshape(mnist_train_images.shape[0], 28, 28, 1)
+    test_images = mnist_test_images.reshape(mnist_test_images.shape[0], 28, 28, 1)
+    input_shape = (28, 28, 1)
+    
+train_images = train_images.astype('float32')
+test_images = test_images.astype('float32')
+# value normalization 
+train_images /= 255
+test_images /= 255
+# convert to one-hot format
+train_labels = keras.utils.to_categorical(mnist_train_labels, 10)
+test_labels = keras.utils.to_categorical(mnist_test_labels, 10)
+# 
+
+
+# math related in Keras # building model
+model = Sequential()
+model.add(Conv2D(32, kernel_size=(3, 3),
+                 activation='relu',
+                 input_shape=input_shape))
+# 64 3x3 kernels
+model.add(Conv2D(64, (3, 3), activation='relu'))
+# Reduce by taking the max of each 2x2 block
+model.add(MaxPooling2D(pool_size=(2, 2)))
+# Dropout to avoid overfitting
+model.add(Dropout(0.25))
+# Flatten the results to one dimension for passing into our final layer
+model.add(Flatten())
+# A hidden layer to learn with
+model.add(Dense(128, activation='relu'))
+# Another dropout
+model.add(Dropout(0.5))
+# Final categorization from 0-9 with softmax
+model.add(Dense(10, activation='softmax'))
+
+# description 
+model.summary()
+
+# compile 
+model.compile(loss='categorical_crossentropy',
+              optimizer='adam',
+              metrics=['accuracy'])
+
+# fitting
+history = model.fit(train_images, train_labels,
+                    batch_size=32,
+                    epochs=10,
+                    verbose=2,
+                    validation_data=(test_images, test_labels))              
+
+score = model.evaluate(test_images, test_labels, verbose=0)
+print('Test loss:', score[0])
+print('Test accuracy:', score[1])
+
+
+
+############## RNN as an example ################
+
+from keras.preprocessing import sequence
+from keras.models import Sequential
+from keras.layers import Dense, Embedding
+from keras.layers import LSTM
+from keras.datasets import imdb # imdb dataset 
+
+print('Loading data...')
+(x_train, y_train), (x_test, y_test) = imdb.load_data(num_words=20000)
+
+# limit and pad the lenth of an array 
+x_train = sequence.pad_sequences(x_train, maxlen=80)
+x_test = sequence.pad_sequences(x_test, maxlen=80)
+
+# model building
+model = Sequential()
+model.add(Embedding(20000, 128))
+model.add(LSTM(128, dropout=0.2, recurrent_dropout=0.2))
+model.add(Dense(1, activation='sigmoid'))
+
+# complie 
+model.compile(loss='binary_crossentropy',
+              optimizer='adam',
+              metrics=['accuracy'])
+
+# fitting 
+model.fit(x_train, y_train,
+          batch_size=32,
+          epochs=15,
+          verbose=2,
+          validation_data=(x_test, y_test))
+
+# evaluation 
+score, acc = model.evaluate(x_test, y_test,
+                            batch_size=32,
+                            verbose=2)
+print('Test score:', score)
+print('Test accuracy:', acc)
+
+
+
+
+####################################################################### keras ##### 
+
+
+
+
+
+
+
+
+
+##### &&& python general #######################################################################
+
+# data type 
+type(Y)
+
+
+    image = mnist.train.images[num].reshape([28,28])
+#append
+simCandidates = simCandidates.append(sims)
+
+# Dealing with Outliers
+def reject_outliers(data):
+    u = np.median(data)
+    s = np.std(data)
+    filtered = [e for e in data if (u - 2 * s < e < u + 2 * s)]
+    return filtered
+
+filtered = reject_outliers(incomes)
+
+plt.hist(filtered, 50)
+plt.show()
+
+
+### zip 
+### The zip() function returns an iterator of tuples based on the iterable object.
+%matplotlib inline
+from pylab import *
+
+colors = cycle('rgb')
+target_ids = range(len(iris.target_names))
+pl.figure()
+for i, c, label in zip(target_ids, colors, iris.target_names):
+    pl.scatter(X_pca[iris.target == i, 0], X_pca[iris.target == i, 1],
+        c=c, label=label)
+pl.legend()
+pl.show()
+
+
+### load and save data 
+## save as mat, txt, numpy 
+for f in sensor_array_su.filenamelist:
+    fhead=(f[len(INPUT_path)+1:len(INPUT_path)+3])
+    print(fhead)
+    #relativefiles = './' + OUTPUT_FILES_path + '/' + fhead
+    stream = read(f,format='SU', byteorder='<')
+    #sismo_png_fn = './' + OUTPUT_FILES_path + '/' + fhead + '_seismo.png'
+    #./savesismo f -save= sismo_png_fn -c=100 -xint=2 -yint=1000 -c=90 > /dev/null &
+    ###matfile = './' + OUTPUT_FILES_path + '/' + fhead + '.mat'
+    ###txtfile = './' + OUTPUT_FILES_path + '/' + fhead + '.txt'
+    
+        # convert stream to image array
+    data = _convert_to_array(stream)
+    adict = {}
+    adict[f[:2]] = data
+    #adict['pkt_np_array'] = data
+    adict['whatever'] = 1
+
+    ###sio.savemat(matfile,adict)
+    ###np.savetxt(txtfile, data, fmt='%20.19f')   # X is an array
+    
+    npfile = './' + OUTPUT_FILES_path + '/' + fhead 
+    
+    if fhead=='Ux':
+        print('is'+fhead)
+        Ux_data = np.asarray(data)
+        print('shape of Ux_data:', Ux_data.shape)
+        np.save(npfile,Ux_data)
+    elif fhead=='Uz':
+        print('is'+fhead)
+        Uz_data = np.asarray(data)
+        print('shape of Uz_data:', Uz_data.shape)
+        np.save(npfile,Uz_data)
+
+### if multiple not equal to 
+if flag_seismotype not in (4,6):
+
+### load mat data over -v7.3
+with h5py.File('obf/lpara.mat', 'r') as file:
+   a = list(file['para']) # matrix filename is para 
+
+### load mat data over -v7.3 
+## save a struct file in matlab to .mat file 
+para2.aa = 1;
+para2.bb = 2;
+para2.cc = 3;
+para2.dd = 4;
+
+save('para2.mat','para2','-v7.3')
+## in jupyter notebook 
+import h5py
+### load mat data over -v7.3
+with h5py.File('obf/input/para2.mat', 'r') as file:
+    mystation_para = list(file['para2']) # matrix filename is para 
+mystation_para
+
+
+
+
+### load mat data - a regular way 
+from scipy.io import loadmat
+matfile2=loadmat('obf/input/Fan01_SRC08_mat.mat')
+npfrom_matfile2 = matfile2['fan_beam_scan_full']
+type(npfrom_matfile2)
+
+
+
+
+
+
+
+### copy file 
+#copyfilelist
+from shutil import copyfile
+copyfilelist = glob.glob('obf/output/' + "U*.npy")
+INPUT_path = 'obf/input/'
+for f in copyfilelist:
+    fhead=(f[len(INPUT_path)+1:len(INPUT_path)+7])
+    dst = 'obf/input/' + fhead
+    copyfile(f,dst)
+    
+### input from bash to python 
+  3 import os
+  4 print("The python script has been invoked successfully")
+  5 print(os.environ['flag_seismotype'])
+
+
+####################################################################### general python ##### 
+
+
+
+
+##### &&& jupyter notebook #######################################################################
+
+### call python function in jupyter notebook
+%reset -f 
+%run -i /home/j2/Desktop/PythonTry/MLshm/python_functions/poly_formal_import
+
+
+### not output for a cell
+%%capture
+
+#######################################################################jupyter notebook #####
+
+###system related
+
+#print python version 
+import sys
+print(sys.version) 
+
+# filename and input argument name 
+
+#!/usr/bin/env python
+# this is a quick test platform for python program
+import sys
+print(sys.argv[0])
+print(sys.argv[1])
+# call the above function in bash (try2 is regarded as input string, argv[0] is the python filename)
+(obspy) [jiazeh@paris playground_python]$ python quicktry_python try2
+quicktry_python
+try2
+
+# print current directory 
+import os
+print(os.getcwd())
+# change current directory 
+os.chdir('foo/path/')
+# make dirs 
+os.makedirs('foo/path/folder2')
+# remove dirs
+os.removedirs('foo/path/folder2')
+# rename 
+os.rename('oldfilename.txt','newfilename.txt')
+#
+
+
+
+
+
+
+
+    image = mnist.train.images[num].reshape([28,28])
+
+
+
+
+
+
+##### &&& math related #######################################################################
+
+####################################################################### math related ##### 
+
+
+### demean and covariance   
+%matplotlib inline
+
+import numpy as np
+from pylab import *
+
+def de_mean(x):
+    xmean = mean(x)
+    return [xi - xmean for xi in x]
+
+def covariance(x, y):
+    n = len(x)
+    return dot(de_mean(x), de_mean(y)) / (n-1)
+
+pageSpeeds = np.random.normal(3.0, 1.0, 1000)
+purchaseAmount = np.random.normal(50.0, 10.0, 1000)
+
+scatter(pageSpeeds, purchaseAmount)
+
+covariance (pageSpeeds, purchaseAmount)
+
+
+### correlation 
+def correlation(x, y):
+    stddevx = x.std()
+    stddevy = y.std()
+    return covariance(x,y) / stddevx / stddevy  #In real life you'd check for divide by zero here
+
+correlation(pageSpeeds, purchaseAmount)
+
+np.corrcoef(pageSpeeds, purchaseAmount)
+
+### Gaussian 
+from scipy.stats import norm
+import matplotlib.pyplot as plt
+
+x = np.arange(-3, 3, 0.001)
+plt.plot(x, norm.pdf(x))
+
+
+### Exponential PDF 
+from scipy.stats import expon
+
+x = np.arange(0, 10, 0.001)
+plt.plot(x, expon.pdf(x))
+
+### Binomial Probability Mass Function
+from scipy.stats import binom
+
+n, p = 10, 0.5
+x = np.arange(0, 10, 0.001)
+plt.plot(x, binom.pmf(x, n, p))
+
+### Poisson Probability Mass Function
+
+from scipy.stats import poisson
+import matplotlib.pyplot as plt
+
+mu = 500
+x = np.arange(400, 600, 0.5)
+plt.plot(x, poisson.pmf(x, mu))
+
+### next power of 2
+import math as M
+from future.utils import native
+def next_pow_2(i):
+    """
+    Find the next power of two
+
+    >>> int(next_pow_2(5))
+    8
+    >>> int(next_pow_2(250))
+    256
+    """
+    # do not use NumPy here, math is much faster for single values
+    buf = M.ceil(M.log(i) / M.log(2))
+    return native(int(M.pow(2, buf)))
+
+
+
+### round - integer
+df_new_round = int(round(fs_new/nfft))
+print(df_new_round)
+
+
+
+##### &&& pandas #######################################################################
+
+####################################################################### pandas ##### 
+
+
+
+############# timestamp 
+pd.Timestamp('9/1/2016 10:05AM')
+pd.Period('1/2016')
+pd.Period('3/5/2016')
+
+
+d1 = ['2 June 2013', 'Aug 29, 2014', '2015-06-26', '7/12/16']
+ts3 = pd.DataFrame(np.random.randint(10, 100, (4,2)), index=d1, columns=list('ab'))
+ts3.index = pd.to_datetime(ts3.index)
+
+
+
+######################## common errors ################33
+### when module loading not working, restart kernels in jupyter notebook
+
+

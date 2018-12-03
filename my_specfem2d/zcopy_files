@@ -1,0 +1,46 @@
+#!/bin/bash
+
+## bk to the $HOME/data_bk/specfem2d_data on this machine  
+
+# revised on Tue Oct 16 20:14:21 UTC 2018
+# created by Jiaze He
+
+
+#f0=$(sed -n 1,15p DATA/SOURCE | grep 'f0' | cut -d\= -f2 | tr -d '[:space:]')
+#
+#intf0=${f0%.*}
+#echo 'intf0 ='$intf0
+#
+##nx=$(sed -n 266,268p DATA/Par_fie | grep 'nx' | cut -d\= -f2 | tr -d '[:space:]')
+#nx=`grep ^nx DATA/Par_file | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '`
+#echo 'nx ='$nx
+#
+#D_T=`grep ^DT DATA/Par_file | cut -d = -f 2 | cut -d \# -f 1 | tr -d ' '| sed 's/-/\_/g'`
+#echo 'D_T ='$D_T
+#
+#NSTEP=$(sed -n 26,28p DATA/Par_file | grep 'NSTEP' | cut -d\= -f2 | tr -d '[:space:]')
+#echo 'NSTEP ='$NSTEP
+
+
+. zpara_headers
+
+
+foldname_for_results_saving=$(printf "$HOME/data_bk/specfem2d_data/noutput_intf0_${intf0}_nx${nx}_D_T${D_T}_NSTEP${NSTEP}")
+echo 'bk path is '$foldname_for_results_saving
+
+        if [ -d "$foldname_for_results_saving" ]; then
+        echo 'delete the folder'
+        rm -r "$foldname_for_results_saving"
+        else
+        echo 'make a folder'
+        mkdir "$foldname_for_results_saving"
+        fi
+
+
+        wait
+        cp -r ./* "$foldname_for_results_saving"/
+        wait
+        #cp -r OUTPUT_FILES "$foldname_for_results_saving"/ &
+        #cp -r DATA "$foldname_for_results_saving"/ &
+
+echo "copying files has been completed"

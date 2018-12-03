@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "open droptask in firefox"
+
+firefox "https://app.droptask.com/projects/5768acbc-979a-4e51-b1ec-5a1767661c1f"
+
+#cd /home/jiazeh/Desktop/my_files/my_bin
+

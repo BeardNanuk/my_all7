@@ -1,0 +1,8 @@
+#!/bin/sh
+
+echo "open google search in firefox"
+
+firefox "https://www.google.com/"
+
+#cd /home/jiazeh/Desktop/my_files/my_bin
+

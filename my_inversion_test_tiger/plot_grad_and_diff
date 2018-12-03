@@ -1,0 +1,153 @@
+#!/bin/sh
+''''exec python -W ignore -- "$0" "$@" # '''
+
+import os
+import sys
+import numpy as np
+import matplotlib.pyplot as plt
+import pylab
+from glob import glob
+from os.path import abspath, join
+from seisflows.plugins.solver_io.fortran_binary import _read
+from seisflows.tools.tools import exists
+
+
+def getcoords(dir):
+    for names in getnames(dir):
+        if exists(names):
+            x, z = _read(names[0]), _read(names[1])
+            return x, z
+    else:
+        print('Coordinate files not found.')
+        sys.exit()
+
+
+def multi_meshplot(x, y, old_model,new_model,real_model,gradient, variable, it):
+    """ Plots values on 2D unstructured mesh
+    """
+    gap_old_real = abs(old_model - real_model)
+    gap_new_real = abs(new_model - real_model)
+    progress = 100 * (gap_old_real - gap_new_real) / max(gap_old_real )
+    r = (max(x) - min(x))/(max(y) - min(y))
+    rx = r/np.sqrt(1 + r**2)
+    ry = 1/np.sqrt(1 + r**2)
+    plt.figure(figsize=(30*rx, 20*ry))
+    plt.suptitle(variable + ' : iteration ' + str(it) , fontsize=30, fontweight='bold')
+
+    plt.subplot(231)
+    plt.tricontourf(x, y, new_model, 125)
+    plt.set_cmap(plt.cm.rainbow)
+    plt.colorbar(fraction=0.046,pad=0.04)
+    plt.title('Model', fontsize=18)
+    plt.axis('image')
+    plt.axis('off')
+
+    plt.subplot(232)
+    plt.tricontourf(x, y, gap_new_real, 125)
+    plt.set_cmap(plt.cm.rainbow)
+    plt.colorbar(fraction=0.046,pad=0.04)
+    plt.title('Gap model / true model', fontsize=14)
+    plt.axis('image')
+    plt.axis('off')
+
+    plt.subplot(233)
+    plt.tricontourf(x, y, -gradient, 125)
+    plt.set_cmap(plt.cm.rainbow)
+    plt.colorbar(fraction=0.046,pad=0.04)
+    plt.title('Gradient', fontsize=18)
+    plt.axis('image')
+    plt.axis('off')
+
+    plt.subplot(234)
+    plt.tricontourf(x, y, new_model - old_model, 125)
+    plt.set_cmap(plt.cm.rainbow)
+    plt.colorbar(fraction=0.046,pad=0.04)
+    plt.title('Direction of descent', fontsize=18)
+    plt.axis('image')
+    plt.axis('off')
+ 
+    plt.subplot(235)
+    plt.tricontourf(x, y, progress, 125)
+    plt.set_cmap(plt.cm.rainbow)
+    plt.colorbar(fraction=0.046,pad=0.04)
+    plt.title('Absolute progression [%]', fontsize=18)
+    plt.axis('image')
+    plt.axis('off')
+
+    plt.subplot(236)
+    plt.axis('off')
+    plt.plot(range(12), color='w')
+    plt.title('Progression in model space', fontsize=18)
+    measure_progress_percent = 100 * ( gap_old_real.sum()- gap_new_real.sum() ) / gap_old_real.sum()
+    plt.text(0, 7.5,'Maximum gap : ' + str("%f" % max(gap_new_real)), fontsize=14)
+    plt.text(0, 6.5,'Maximum change : ' + str("%f" % max(abs(new_model - old_model))), fontsize=14)
+    plt.text(0, 2.5,'Average progress : ' + str("%+.4f" % progress.mean()) + ' %', fontsize=14)
+    plt.text(0, 1.5,'Absolute progression of the gap : ' + str("%+.4f" % measure_progress_percent) + ' %', fontsize=14)
+
+    plt.subplots_adjust(wspace=0.3)
+
+    #plt.show()
+    #return f, p
+
+
+def getnames(dir):
+    return [
+        (abspath(join(dir, subdir, 'proc000000_x.bin')),
+         abspath(join(dir, subdir, 'proc000000_z.bin'))) 
+         for subdir in [
+         '.',
+         '../model', 
+         '../output/model_init',
+         '../../output/model_init',
+         '../../../output/model_init',
+         '../../../../output/model_init',
+         ]]
+
+
+msg = '''
+%s\nmin, max: %f, %f
+'''
+
+
+if __name__ == '__main__':
+    """ Plots data on 2-D unstructured mesh
+
+    Reads mesh coordinates from first two columns of text file and data from
+    subsequent columns, computes Delaunay triangulation, and plots data
+    using matplotlib.
+
+    In particular, can be used to plot kernels and models output from SPECFEM2D
+    on unstructured GLL bases.
+    """
+    num_it = sys.argv[1].zfill(4)
+    it = int(num_it)
+    variable = sys.argv[2]
+    it_prev = str(it-1).zfill(4)
+
+
+    dirname_old_model = './output/model_' + it_prev
+    if (it-1==0):
+      dirname_old_model = './model_init80'
+    dirname_new_model = './output/model_' + num_it
+    dirname_real_model = './model_true80'
+    dirname_gradient = './output/gradient_' + num_it
+    file_old_model  = dirname_old_model + '/proc000000_' + variable + '.bin'
+    file_new_model  = dirname_new_model + '/proc000000_' + variable + '.bin'
+    file_real_model = dirname_real_model + '/proc000000_' + variable + '.bin'
+    file_gradient = dirname_gradient + '/proc000000_' + variable + '_kernel.bin'
+
+    x,z = getcoords(dirname_real_model)
+
+    old_model  = _read(file_old_model)
+    new_model  = _read(file_new_model)
+    real_model = _read(file_real_model)
+    gradient   = _read(file_gradient)
+
+    f = open(variable + '_model_space_misfit', 'a')
+    f.write(str(num_it) + ' ' + str(((new_model-real_model)**2).sum()) + '\n')
+    f.close()
+
+    multi_meshplot(x, z,old_model,new_model,real_model,gradient,variable,it) 
+    figure = plt.gcf() # get current figure
+    #figure.set_size_inches(10, 6)
+    plt.savefig(sys.argv[3] + '.png')

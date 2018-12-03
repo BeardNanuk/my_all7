@@ -1,0 +1,45 @@
+#!/bin/sh
+echo "open indeed with a few common searches"
+
+
+cygstart /cygdrive/d/dk_ze/NIA/\!NIA_proposals
+
+# general 
+cygstart "https://nspires.nasaprs.com/external/solicitations/solicitations.do?orderBy=release_date&sortOrder=ASC&year=&method="
+cygstart "https://home.grantsolutions.gov/home/"
+cygstart "http://www.federalgrants.com/"
+
+
+# DOE
+cygstart "https://www.grants.gov/web/grants/search-grants.html"
+
+#DOE
+cygstart "https://science.energy.gov/grants/foas/open/"
+
+#Army 
+cygstart "/www.usamraa.army.mil/Pages/BAA.aspx"
+cygstart "https://www.arl.army.mil/www/default.cfm?page=506"
+cygstart "https://www.arl.army.mil/www/default.cfm?page=8"
+
+#NIH
+cygstart "https://grants.nih.gov/funding/searchguide/index.html"
+cygstart "https://www.pop.upenn.edu/aggregator/sources/1"
+
+
+#NASA
+cygstart "https://nspires.nasaprs.com/external/solicitations/solicitations.do?orderBy=release_date&sortOrder=ASC&year=&method="
+
+#NAVY
+cygstart "https://www.onr.navy.mil/en/Contracts-Grants/Funding-Opportunities/Broad-Agency-Announcements"
+
+#AFOSR 
+cygstart "https://www.wpafb.af.mil/Welcome/Fact-Sheets/Display/Article/842050/"
+
+# DOT
+cygstart "http://www.utrc2.org/research/rfps"
+
+
+
+
+
+#cygstart /cygdrive/d/dk_ze/NIA/\!NIA_proposals

@@ -1,0 +1,22 @@
+#!/bin/sh
+echo "open my CV"
+cygstart /cygdrive/c/Program\ Files\ \(x86\)/Texmaker/texmaker.exe
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017/resume\ updates/UltrasoundImagingResearch 
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017/resume\ updates/Awesome-CV-master/Awesome-CV-master/examples/awesome-cv.cls
+
+
+
+#cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017/resume\ updates/Awesome-CV-master/Awesome-CV-master/examples/JiazeHe.tex
+
+
+
+
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017/resume\ updates/Awesome-CV-master/Awesome-CV-master/examples
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017/resume\ updates/Awesome-CV-master/Awesome-CV-master/examples/cv
+
+
+
+
+
+
+

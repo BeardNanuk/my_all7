@@ -1,0 +1,29 @@
+#!/bin/sh
+echo "open my job search related"
+cygstart "https://www.linkedin.com/jobs/search/?location=United%20States&locationId=us%3A0" 
+cygstart "https://www.linkedin.com/in/jiazehe/" 
+cygstart "https://www.indeed.com/"
+cygstart "https://www.google.com/"
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017/Jobs
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017/resume\ updates/UltrasoundImagingResearch 
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017/Jobs/ApplicationTrack.xlsx
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017/Jobs/ContactTrack.xlsx
+#cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017/resume\ updates/Awesome-CV-master/Awesome-CV-master/examples/awesome-cv.cls
+
+
+
+#cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017/resume\ updates/Awesome-CV-master/Awesome-CV-master/examples/JiazeHe.tex
+
+
+
+
+cygstart /cygdrive/d/dk_ze/IamAProgrammer/How\ to\ find\ a\ job\ 2017/resume\ updates/Awesome-CV-master/Awesome-CV-master/examples
+
+
+
+
+
+
+

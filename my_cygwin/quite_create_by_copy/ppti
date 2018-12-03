@@ -1,0 +1,18 @@
+#!/bin/sh
+echo "create a PPT file to record data"
+
+
+# oxford
+cp /usr/local/bin/QuickCreate/pptinfo.pptx pptinfo.pptx
+cygstart pptinfo.pptx
+
+
+
+
+
+
+
+
+
+
+

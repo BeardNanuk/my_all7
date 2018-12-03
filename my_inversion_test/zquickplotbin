@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+./zplotbin 'output/model_0001' 'vp' '1'
+./viewvp

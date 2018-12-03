@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "Google map go home"
+cygstart "https://www.google.com/maps/dir/100+Exploration+Way,+Hampton,+VA+23666-6266,+USA/5509+Alson+Dr,+Norfolk,+VA+23508,+USA/@36.9691097,-76.4898107,11z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x89ba83b9d5ec2709:0x8496d26d2a75245b!2m2!1d-76.3983936!2d37.0825749!1m5!1m1!1s0x89ba99b0d851db05:0x20a76da81740b4fc!2m2!1d-76.3009037!2d36.8923623!3e0/"
+ 
+

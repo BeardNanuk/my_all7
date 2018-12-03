@@ -1,0 +1,15 @@
+#!/bin/sh
+echo "open LinkedIn with a few common searches, ranked by time"
+
+cygstart "https://www.linkedin.com/jobs/search/?keywords=geophysics&location=United%20States&locationId=us%3A0&sortBy=DD"
+cygstart "https://www.linkedin.com/jobs/search/?keywords=ultrasound%20phd&location=United%20States&locationId=us%3A0&sortBy=DD"
+cygstart "https://www.linkedin.com/jobs/search/?keywords=machine%20learning%20imaging&location=United%20States&locationId=us%3A0&sortBy=DD"
+cygstart "https://www.linkedin.com/jobs/search/?keywords=nde%20phd&location=United%20States&locationId=us%3A0&sortBy=DD"
+cygstart "https://www.linkedin.com/jobs/search/?keywords=composite%20mechanics&location=United%20States&locationId=us%3A0&sortBy=DD"
+cygstart "https://www.linkedin.com/jobs/search/?keywords=ultrasound%20imaging%20phd&location=United%20States&locationId=us%3A0&sortBy=DD"
+cygstart "https://www.linkedin.com/jobs/search/?keywords=imaging%20phd%20&location=United%20States&locationId=us%3A0&sortBy=DD"
+cygstart "https://www.linkedin.com/jobs/search/?keywords=signal%20processing%20imaging&location=United%20States&locationId=us%3A0&sortBy=DD"
+cygstart "https://www.linkedin.com/jobs/"
+cygstart "https://www.linkedin.com/jobs/search/?keywords=machine%20learning%20python%20%20&location=United%20States&locationId=us%3A0&sortBy=DD"
+
+

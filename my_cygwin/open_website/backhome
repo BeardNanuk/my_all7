@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "Google map go home"
+cygstart "https://www.google.com/maps/dir/510+Ravens+Crest+Dr,+Plainsboro+Township,+NJ+08536,+USA/LOT+21,+Princeton,+NJ+08540,+USA/@40.3272727,-74.6180768,14z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x89c3ddd3cd546143:0xac73abacd8ffff44!2m2!1d-74.5514362!2d40.3255268!1m5!1m1!1s0x89c3e6dbe3623e13:0xb55050a37f365b2d!2m2!1d-74.6457157!2d40.3447384!3e0"
+ 
+

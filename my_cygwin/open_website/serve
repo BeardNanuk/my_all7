@@ -1,0 +1,7 @@
+#!/bin/sh
+echo "Open free dictionary in firefox"
+ 
+#cygstart chrome "https://scholar-google-com.prox.lib.ncsu.edu/"
+#cygstart firefox "http://www.thefreedictionary.com/serve"
+ 
+cygstart firefox "http://www.thefreedictionary.com/serve"

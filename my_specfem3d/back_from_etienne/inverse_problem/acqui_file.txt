@@ -1,0 +1,30 @@
+#######################################################
+event_name : EX1
+moment : ./DATA/DATA_SYNTHS/1/CMTSOLUTION
+station_file : ./DATA/DATA_SYNTHS/1/STATIONS
+data_file : ./DATA/DATA_SYNTHS/1/Gather.bin
+component : PR PR PR
+NSTEP : 1400
+DT : 0.000000015
+event_name : EX1
+moment : ./DATA/DATA_SYNTHS/2/CMTSOLUTION
+station_file : ./DATA/DATA_SYNTHS/2/STATIONS
+data_file : ./DATA/DATA_SYNTHS/2/Gather.bin
+component : PR PR PR
+NSTEP : 1400
+DT : 0.000000015
+event_name : EX1
+moment : ./DATA/DATA_SYNTHS/3/CMTSOLUTION
+station_file : ./DATA/DATA_SYNTHS/3/STATIONS
+data_file : ./DATA/DATA_SYNTHS/3/Gather.bin
+component : PR PR PR
+NSTEP : 1400
+DT : 0.000000015
+event_name : EX1
+moment : ./DATA/DATA_SYNTHS/4/CMTSOLUTION
+station_file : ./DATA/DATA_SYNTHS/4/STATIONS
+data_file : ./DATA/DATA_SYNTHS/4/Gather.bin
+component : PR PR PR
+NSTEP : 1400
+DT : 0.000000015
+
